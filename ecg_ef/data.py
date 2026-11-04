@@ -20,6 +20,9 @@ def load_split(split: str, variant: str, img_hw: tuple[int, int]):
     imgs = np.empty((len(df), 1, h, w), np.uint8)
     for i, ecg_id in enumerate(df.ecg_id):
         im = cv2.imread(str(CACHE_DIR / variant / f"{ecg_id}.png"), cv2.IMREAD_GRAYSCALE)
+        if im is None:
+            raise FileNotFoundError(f"no cached '{variant}' image for {ecg_id}; run "
+                                    f"python -m ecg_ef.preprocess --variants {variant}")
         if im.shape != (h, w):
             im = cv2.resize(im, (w, h), interpolation=cv2.INTER_AREA)
         imgs[i, 0] = im

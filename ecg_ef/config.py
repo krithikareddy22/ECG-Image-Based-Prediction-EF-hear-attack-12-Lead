@@ -11,7 +11,7 @@ MODELS_DIR = ROOT / "models"
 CLASSES = ["Normal", "Mild", "Moderate", "Severe"]
 CLASS_TO_IDX = {c: i for i, c in enumerate(CLASSES)}
 
-# How the folders were labelled from the echo report (ECG_ECHO/ecg_echo_matching.ipynb,
+# How the folders were labelled from the echo report (ECG-echo matching notebook, since removed;
 # EF by Teichholz). Kept here for documentation and for the README.
 EF_RANGES = {
     "Normal": "EF > 52% (male) / EF >= 54% (female)",

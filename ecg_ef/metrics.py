@@ -37,6 +37,18 @@ def pick_hf_threshold(y_true, probs, target_sensitivity: float) -> float:
     return float(pos[min(max(k, 0), len(pos) - 1)])
 
 
+def fast_macro_f1(y_true, y_pred, n_classes: int = 4) -> float:
+    """Same value as sklearn f1_score(average="macro", zero_division=0) (averaged over the
+    labels present in y_true or y_pred), ~50x faster - used inside search/bootstrap loops."""
+    y_true = np.asarray(y_true); y_pred = np.asarray(y_pred)
+    cm = np.bincount(y_true * n_classes + y_pred, minlength=n_classes ** 2).reshape(n_classes, n_classes)
+    tp = np.diag(cm).astype(float)
+    denom = 2 * tp + (cm.sum(0) - tp) + (cm.sum(1) - tp)
+    f1 = np.divide(2 * tp, denom, out=np.zeros_like(tp), where=denom > 0)
+    present = (cm.sum(0) + cm.sum(1)) > 0
+    return float(f1[present].mean())
+
+
 def severity_score(probs) -> np.ndarray:
     """Expected class index sum_k k*p_k in [0, 3] (classes are ordered by severity)."""
     probs = np.asarray(probs)
@@ -61,7 +73,7 @@ def fit_ordinal_cutpoints(y_true, probs, n_grid: int = 41) -> list[float]:
             b = grid[j]
             for c in grid[j + 1:]:
                 pred = np.searchsorted([a, b, c], s, side="right")
-                f = f1_score(y, pred, average="macro", zero_division=0)
+                f = fast_macro_f1(y, pred)
                 if f > best:
                     best, best_c = f, [float(a), float(b), float(c)]
     return best_c

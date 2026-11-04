@@ -9,3 +9,4 @@ __pycache__/
 # trained checkpoints except the selected one (see results/best_model.json)
 models/*.pt
 !models/ecgnet_filtered.pt
+!models/resnet18_filtered.pt

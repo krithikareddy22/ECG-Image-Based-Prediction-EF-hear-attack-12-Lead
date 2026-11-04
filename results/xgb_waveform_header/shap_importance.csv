@@ -1,0 +1,21 @@
+,0
+hdr:T_axis_cos,0.0755
+ecg:V1_spec_entropy,0.0535
+ecg:V3_sd,0.0393
+hdr:summary=ABNORMAL ECG,0.0373
+ecg:V2_band_15_40,0.0335
+ecg:aVR_skew,0.0302
+ecg:rhythmII_zcr,0.0294
+ecg:aVL_t_area,0.0267
+ecg:aVL_sd,0.0253
+ecg:V3_skew,0.0234
+ecg:aVF_band_15_40,0.0225
+ecg:V2_r_amp,0.0224
+ecg:III_t_area,0.0219
+ecg:V1_band_15_40,0.0217
+ecg:I_skew,0.0215
+ecg:V3_band_15_40,0.0212
+ecg:aVR_s_amp,0.0203
+ecg:III_qrs_area,0.0203
+ecg:V3_spec_entropy,0.0196
+ecg:V1_band_0_5,0.0195
