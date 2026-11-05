@@ -1,0 +1,67 @@
+{
+ "pdf_files_in_label_folders": 1047,
+ "pdfs_in_manifest": 1047,
+ "pdfs_not_in_manifest (excluded)": 0,
+ "manifest_rows_without_pdf": 0,
+ "spreadsheets_present_not_opened": 4,
+ "per_year_per_class": {
+  "2020": {
+   "Mild": 48,
+   "Moderate": 36,
+   "Normal": 120,
+   "Severe": 28
+  },
+  "2021": {
+   "Mild": 74,
+   "Moderate": 69,
+   "Normal": 120,
+   "Severe": 31
+  },
+  "2022": {
+   "Mild": 42,
+   "Moderate": 43,
+   "Normal": 120,
+   "Severe": 21
+  },
+  "2024": {
+   "Mild": 68,
+   "Moderate": 73,
+   "Normal": 120,
+   "Severe": 34
+  }
+ },
+ "class_totals": {
+  "Normal": 480,
+  "Mild": 232,
+  "Moderate": 221,
+  "Severe": 114
+ },
+ "byte_identical_pdf_groups": 0,
+ "byte_identical_detail": [],
+ "files_with_copy_suffix_like_(1).pdf": 5,
+ "duplicate_ecg_ids": 0,
+ "duplicate_acquisition_timestamps": 0,
+ "patients_total": 993,
+ "ecgs_from_patients_with_multiple_ecgs": 101,
+ "patients_with_multiple_ecgs_spanning_years": 39,
+ "patients_with_multiple_ecgs_different_labels": 31,
+ "split_counts": {
+  "train": {
+   "ecgs": 669,
+   "patients": 635
+  },
+  "val": {
+   "ecgs": 168,
+   "patients": 159
+  },
+  "test": {
+   "ecgs": 210,
+   "patients": 199
+  }
+ },
+ "development_D": {
+  "ecgs": 837,
+  "patients": 794
+ },
+ "patients_shared_between_D_and_test": 0
+}

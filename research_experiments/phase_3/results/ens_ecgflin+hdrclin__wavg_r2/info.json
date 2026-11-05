@@ -1,0 +1,35 @@
+{
+ "members": [
+  "ecgf_lin_dist",
+  "hdr_clin_lr"
+ ],
+ "method": "wavg",
+ "params": {
+  "fold0": [
+   0.8,
+   0.2
+  ],
+  "fold1": [
+   0.4,
+   0.6
+  ],
+  "fold2": [
+   0.8,
+   0.2
+  ],
+  "fold3": [
+   0.8,
+   0.2
+  ],
+  "fold4": [
+   0.4,
+   0.6
+  ],
+  "final": [
+   0.8,
+   0.2
+  ]
+ },
+ "seed": -1,
+ "repeat": 2
+}

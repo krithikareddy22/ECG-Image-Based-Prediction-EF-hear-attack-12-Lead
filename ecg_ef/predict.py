@@ -5,7 +5,10 @@
     python -m ecg_ef.predict ecg.png --model models/resnet18_filtered.pt
 
 By default the model chosen by `python -m ecg_ef.compare` (results/best_model.json) is
-used; that can be a single CNN or a soft-voting ensemble of several.
+used: a single CNN, a soft-voting ensemble, or a CNN fused with the model on the PDF
+header's machine measurements/statements (ecg_ef/header.py). The header part needs the
+PDF's text layer; for PNG/JPG inputs (or with --no-header) only the image CNN is used,
+with its own screening threshold.
 
 Output per ECG:
   * LVEF category: Normal / Mild / Moderate / Severe (+ probability of each)
@@ -38,7 +41,7 @@ SUPPORTED = {".pdf", ".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"}
 
 def load_checkpoint(path: Path):
     ckpt = torch.load(path, map_location="cpu", weights_only=False)
-    model = build_model(ckpt["model_name"], len(ckpt["classes"]))
+    model = build_model(ckpt["model_name"], ckpt.get("n_outputs", len(ckpt["classes"])))
     model.load_state_dict(ckpt["state_dict"])
     model.eval()
     return model, ckpt
@@ -48,7 +51,9 @@ class Predictor:
     """One checkpoint or a soft-voting ensemble of several."""
 
     def __init__(self, ckpt_paths: list[Path], hf_threshold: float | None = None, name: str = "",
-                 cutpoints: list[float] | None = None):
+                 cutpoints: list[float] | None = None, decoding: str = "argmax",
+                 header_model: Path | None = None, header_weight: float = 0.0,
+                 image_hf_threshold: float | None = None):
         self.members = []
         for p in ckpt_paths:
             model, ckpt = load_checkpoint(p)
@@ -62,7 +67,19 @@ class Predictor:
             ordj = RESULTS_DIR / ckpt_paths[0].stem / "ordinal.json"
             if ordj.exists():
                 cutpoints = json.loads(ordj.read_text())["cutpoints"]
-        self.cutpoints = cutpoints        # None -> argmax decoding
+        if decoding == "ordinal" and cutpoints is None:
+            raise SystemExit("ordinal decoding needs cut-points (run python -m ecg_ef.compare)")
+        self.cutpoints = cutpoints if decoding == "ordinal" else None   # None -> argmax
+        self.header = None
+        self.header_weight = float(header_weight)
+        self.image_hf_threshold = float(image_hf_threshold if image_hf_threshold is not None
+                                        else self.members[0][4].get("hf_threshold", HF_THRESHOLD))
+        if header_model is not None and self.header_weight > 0:
+            import joblib
+            self.header = joblib.load(header_model)
+            if self.cutpoints is not None:
+                raise SystemExit("ordinal cut-points are fitted for image-only models; "
+                                 "use --no-header with --decoding ordinal")
 
     def category(self, probs: np.ndarray) -> int:
         if self.cutpoints is None:
@@ -70,22 +87,43 @@ class Predictor:
         return int(ordinal_decode(probs[None], self.cutpoints)[0])
 
     @classmethod
-    def from_args(cls, model_args):
+    def from_args(cls, model_args, decoding: str = "argmax", use_header: bool = True):
         if model_args:
             paths = [Path(m) for m in model_args]
             if len(paths) == 1 and paths[0].suffix == ".json":
-                return cls._from_json(paths[0])
-            return cls(paths)
+                return cls._from_json(paths[0], decoding, use_header)
+            return cls(paths, decoding=decoding)
         best = RESULTS_DIR / "best_model.json"
         if not best.exists():
             raise SystemExit("No results/best_model.json - pass --model models/<name>.pt")
-        return cls._from_json(best)
+        return cls._from_json(best, decoding, use_header)
 
     @classmethod
-    def _from_json(cls, path: Path):
+    def _from_json(cls, path: Path, decoding: str, use_header: bool = True):
         spec = json.loads(path.read_text())
-        return cls([ROOT / c for c in spec["checkpoints"]], spec.get("hf_threshold"),
-                   spec.get("model", spec.get("tag", "")), spec.get("ordinal_cutpoints"))
+        header = spec.get("header_model") if use_header else None
+        ckpts = [ROOT / c for c in spec["checkpoints"]]
+        if header:
+            return cls(ckpts, spec["hf_threshold"], spec.get("model", spec.get("tag", "")),
+                       None, decoding, ROOT / header, spec["header_weight"],
+                       spec.get("image_hf_threshold"))
+        # image-only: its own threshold / cut-points
+        thr = spec.get("image_hf_threshold", spec.get("hf_threshold")) if spec.get("header_model") \
+            else spec.get("hf_threshold")
+        name = spec.get("image_model", spec.get("model", spec.get("tag", "")))
+        cut = spec.get("image_ordinal_cutpoints", spec.get("ordinal_cutpoints"))
+        return cls(ckpts, thr, name, cut, decoding)
+
+    def fuse(self, p_img: np.ndarray, path: Path) -> tuple[np.ndarray, float, str]:
+        """Combine with the header model when possible -> (probs, threshold, source)."""
+        if self.header is None:
+            return p_img, self.hf_threshold, "image"
+        if Path(path).suffix.lower() != ".pdf":
+            return p_img, self.image_hf_threshold, "image only (no PDF text layer)"
+        from .header import header_probs
+        w = self.header_weight
+        return w * header_probs(path, self.header) + (1 - w) * p_img, self.hf_threshold, \
+            "image + header"
 
     def inputs(self, path: Path):
         cache = {}
@@ -98,7 +136,8 @@ class Predictor:
 
     @torch.no_grad()
     def probs(self, xs) -> np.ndarray:
-        return np.mean([F.softmax(m(x), 1)[0].numpy() for (m, *_), x in zip(self.members, xs)], 0)
+        return np.mean([F.softmax(m(x)[:, :len(CLASSES)], 1)[0].numpy()
+                        for (m, *_), x in zip(self.members, xs)], 0)
 
     def gradcam(self, xs, target: int) -> np.ndarray:
         cams = [cv2.resize(gradcam(m, x, target), (512, 256), interpolation=cv2.INTER_CUBIC)
@@ -148,21 +187,26 @@ def main():
                          "(default: results/best_model.json)")
     ap.add_argument("--csv", type=Path, default=None, help="write all predictions to CSV")
     ap.add_argument("--gradcam", type=Path, default=None, help="folder for Grad-CAM heatmaps")
+    ap.add_argument("--no-header", action="store_true",
+                    help="ignore the PDF header text; use the image CNN only")
+    ap.add_argument("--decoding", choices=["argmax", "ordinal"], default="argmax",
+                    help="4-class rule: most probable class (default) or ordinal severity bands "
+                         "(more Mild/Moderate calls, but misses more Severe)")
     args = ap.parse_args()
 
     torch.set_num_threads(4)
-    pred = Predictor.from_args(args.model)
-    thr = pred.hf_threshold
-    print(f"model: {pred.name}  ({len(pred.members)} network(s)); "
+    pred = Predictor.from_args(args.model, args.decoding, use_header=not args.no_header)
+    extra = (f" + header model (weight {pred.header_weight:.1f})" if pred.header is not None else "")
+    print(f"model: {pred.name}  ({len(pred.members)} network(s){extra}); "
           f"category by {'ordinal' if pred.cutpoints else 'argmax'} decoding; "
-          f"further-evaluation threshold: HF likelihood >= {thr:.0%}\n")
+          f"further-evaluation threshold: HF likelihood >= {pred.hf_threshold:.0%}\n")
     if args.gradcam:
         args.gradcam.mkdir(parents=True, exist_ok=True)
 
     rows = []
     for path in iter_inputs(args.inputs):
         xs = pred.inputs(path)
-        probs = pred.probs(xs)
+        probs, thr, source = pred.fuse(pred.probs(xs), path)
         k = pred.category(probs)
         cat = CLASSES[k]
         hf = float(1 - probs[0])
@@ -172,14 +216,15 @@ def main():
             "is above the screening threshold; consider echo" if needs else
             "NO  - borderline: heart-failure likelihood below the screening threshold; "
             "use clinical judgement")
-        rows.append(dict(file=str(path), category=cat,
+        rows.append(dict(file=str(path), category=cat, source=source, threshold=thr,
                          hf_likelihood=hf, further_evaluation="YES" if needs else "NO",
                          recommendation=rec, **{f"p_{c}": float(p) for c, p in zip(CLASSES, probs)}))
         print(f"{path.name}")
         print(f"  LVEF category           : {cat}      probabilities: "
               + "  ".join(f"{c} {p:.0%}" for c, p in zip(CLASSES, probs)))
         print(f"  Heart-failure likelihood: {hf:.0%}")
-        print(f"  Further evaluation      : {rec}\n")
+        print(f"  Further evaluation      : {rec}")
+        print(f"  (based on {source}; threshold {thr:.0%})\n")
 
         if args.gradcam:
             cam = pred.gradcam(xs, k)

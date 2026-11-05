@@ -1,0 +1,63 @@
+{
+  "spec": {
+    "blocks": [
+      [
+        "hdr",
+        "numeric"
+      ],
+      [
+        "ecgf",
+        "aligned",
+        "f6"
+      ]
+    ]
+  },
+  "cfg": {
+    "head": "mlp",
+    "loss": "ce",
+    "weight": "none",
+    "hidden": 64,
+    "dropout": 0.5
+  },
+  "repeat": 0,
+  "seed": 43,
+  "sk_lr": false,
+  "folds": [
+    {
+      "fold": 0,
+      "l2": 0.01,
+      "val_s3": 0.47080417990025364,
+      "n_params": 66884,
+      "best_epoch": 61
+    },
+    {
+      "fold": 1,
+      "l2": 0.001,
+      "val_s3": 0.5601536894817065,
+      "n_params": 66884,
+      "best_epoch": 68
+    },
+    {
+      "fold": 2,
+      "l2": 0.01,
+      "val_s3": 0.5702996381207915,
+      "n_params": 66884,
+      "best_epoch": 54
+    },
+    {
+      "fold": 3,
+      "l2": 0.01,
+      "val_s3": 0.4828017689283723,
+      "n_params": 66884,
+      "best_epoch": 31
+    },
+    {
+      "fold": 4,
+      "l2": 0.01,
+      "val_s3": 0.5466903830575208,
+      "n_params": 66884,
+      "best_epoch": 56
+    }
+  ],
+  "minutes": 0.7362876017888387
+}

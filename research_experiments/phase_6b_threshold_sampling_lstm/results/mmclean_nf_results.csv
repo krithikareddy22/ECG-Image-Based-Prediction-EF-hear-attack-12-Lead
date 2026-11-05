@@ -1,0 +1,73 @@
+config,evaluated_on,labels,n_ecgs,model,trained,accuracy,balanced_accuracy,macro_f1,recall_Normal,recall_Mild,recall_Moderate,recall_Severe,min_recall,f1_Mild,classes_present,accuracy_ci95_corrected,admissible
+NFS,all_837,ORIG,837,MLP fusion,ORIG,0.5436,0.4662,0.4399,0.8003,0.1405,0.4369,0.4872,0.1405,0.1860,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.505, 0.583]",False
+NFS,all_837,ORIG,837,MLP fusion,NFS,0.5408,0.4586,0.4339,0.8116,0.1514,0.3917,0.4799,0.1514,0.1962,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.509, 0.573]",True
+NFS,all_837,ORIG,837,C1 vote,ORIG,0.5480,0.4673,0.4558,0.7856,0.2216,0.4369,0.4249,0.2216,0.2572,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.505, 0.591]",True
+NFS,all_837,ORIG,837,C1 vote,NFS,0.5484,0.4578,0.4408,0.8316,0.1856,0.3635,0.4505,0.1856,0.2274,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.519, 0.577]",True
+NFS,all_837,ORIG,837,C3 (vote + nested prior rule),ORIG,0.5623,0.4571,0.4493,0.8464,0.1784,0.4595,0.3443,0.1784,0.2235,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.519, 0.605]",True
+NFS,all_837,ORIG,837,C3 (vote + nested prior rule),NFS,0.5520,0.4539,0.4312,0.8715,0.1495,0.3183,0.4762,0.1495,0.1960,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.521, 0.583]",False
+NFS,NF_set,ORIG,366,MLP fusion,ORIG,0.6029,0.5384,0.4943,0.7978,0.1991,0.5315,0.6250,0.1991,0.2507,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.531, 0.679]",True
+NFS,NF_set,ORIG,366,MLP fusion,NFS,0.5938,0.5259,0.4833,0.8051,0.1991,0.4640,0.6354,0.1991,0.2402,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.527, 0.663]",True
+NFS,NF_set,ORIG,366,C1 vote,ORIG,0.6157,0.5430,0.5171,0.7978,0.2814,0.5405,0.5521,0.2814,0.3147,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.546, 0.690]",True
+NFS,NF_set,ORIG,366,C1 vote,NFS,0.6020,0.5223,0.4932,0.8215,0.2338,0.4505,0.5833,0.2338,0.2664,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.532, 0.675]",True
+NFS,NF_set,ORIG,366,C3 (vote + nested prior rule),ORIG,0.6266,0.5246,0.5121,0.8488,0.2554,0.5360,0.4583,0.2554,0.2969,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.552, 0.705]",True
+NFS,NF_set,ORIG,366,C3 (vote + nested prior rule),NFS,0.6093,0.5208,0.4862,0.8670,0.1948,0.3964,0.6250,0.1948,0.2398,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.548, 0.674]",True
+NFS,NFS_set,ORIG,425,MLP fusion,ORIG,0.5765,0.5039,0.4932,0.7978,0.1991,0.5315,0.4872,0.1991,0.2428,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.514, 0.639]",True
+NFS,NFS_set,ORIG,425,MLP fusion,NFS,0.5663,0.4870,0.4798,0.8051,0.1991,0.4640,0.4799,0.1991,0.2256,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.511, 0.621]",True
+NFS,NFS_set,ORIG,425,C1 vote,ORIG,0.5796,0.5112,0.5059,0.7978,0.2814,0.5405,0.4249,0.2814,0.2968,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.526, 0.634]",True
+NFS,NFS_set,ORIG,425,C1 vote,NFS,0.5710,0.4891,0.4875,0.8215,0.2338,0.4505,0.4505,0.2338,0.2463,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.511, 0.630]",True
+NFS,NFS_set,ORIG,425,C3 (vote + nested prior rule),ORIG,0.5788,0.4961,0.4898,0.8488,0.2554,0.5360,0.3443,0.2554,0.2786,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.519, 0.638]",True
+NFS,NFS_set,ORIG,425,C3 (vote + nested prior rule),NFS,0.5796,0.4836,0.4812,0.8670,0.1948,0.3964,0.4762,0.1948,0.2203,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.528, 0.631]",True
+NFS,not_NFS,ORIG,412,MLP fusion,ORIG,0.5097,0.3176,0.3255,0.8027,0.0988,0.3689,0.0000,0.0988,0.1394,"['Normal', 'Mild', 'Moderate']","[0.470, 0.549]",False
+NFS,not_NFS,ORIG,412,MLP fusion,NFS,0.5146,0.3187,0.3288,0.8176,0.1173,0.3398,0.0000,0.1173,0.1694,"['Normal', 'Mild', 'Moderate']","[0.479, 0.550]",False
+NFS,not_NFS,ORIG,412,C1 vote,ORIG,0.5154,0.3290,0.3452,0.7745,0.1790,0.3625,0.0000,0.1790,0.2237,"['Normal', 'Mild', 'Moderate']","[0.454, 0.578]",True
+NFS,not_NFS,ORIG,412,C1 vote,NFS,0.5251,0.3233,0.3346,0.8408,0.1512,0.3010,0.0000,0.1512,0.2091,"['Normal', 'Mild', 'Moderate']","[0.486, 0.564]",True
+NFS,not_NFS,ORIG,412,C3 (vote + nested prior rule),ORIG,0.5453,0.3430,0.3455,0.8441,0.1235,0.4045,0.0000,0.1235,0.1728,"['Normal', 'Mild', 'Moderate']","[0.490, 0.600]",False
+NFS,not_NFS,ORIG,412,C3 (vote + nested prior rule),NFS,0.5235,0.3138,0.3183,0.8756,0.1173,0.2621,0.0000,0.1173,0.1730,"['Normal', 'Mild', 'Moderate']","[0.476, 0.571]",False
+NFS,NF_clear,ORIG,264,MLP fusion,ORIG,0.6692,0.5102,0.4671,0.8161,0.1616,0.4571,0.6061,0.1616,0.1730,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.605, 0.736]",True
+NFS,NF_clear,ORIG,264,MLP fusion,NFS,0.6679,0.5014,0.4596,0.8238,0.1414,0.4190,0.6212,0.1414,0.1516,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.587, 0.754]",False
+NFS,NF_clear,ORIG,264,C1 vote,ORIG,0.6793,0.5319,0.4982,0.8142,0.2121,0.4952,0.6061,0.2121,0.2032,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.596, 0.766]",True
+NFS,NF_clear,ORIG,264,C1 vote,NFS,0.6818,0.5112,0.4775,0.8391,0.1616,0.4381,0.6061,0.1616,0.1666,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.593, 0.776]",True
+NFS,NF_clear,ORIG,264,C3 (vote + nested prior rule),ORIG,0.7071,0.5251,0.5073,0.8678,0.1919,0.4952,0.5455,0.1919,0.2002,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.617, 0.801]",True
+NFS,NF_clear,ORIG,264,C3 (vote + nested prior rule),NFS,0.7020,0.5031,0.4737,0.8851,0.1212,0.4000,0.6061,0.1212,0.1395,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.624, 0.784]",False
+NFS,HC,ORIG,333,MLP fusion,ORIG,0.6236,0.4805,0.4663,0.8161,0.1616,0.4571,0.4872,0.1616,0.1609,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.558, 0.688]",True
+NFS,HC,ORIG,333,MLP fusion,NFS,0.6196,0.4660,0.4558,0.8238,0.1414,0.4190,0.4799,0.1414,0.1310,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.559, 0.680]",False
+NFS,HC,ORIG,333,C1 vote,ORIG,0.6146,0.4866,0.4693,0.8142,0.2121,0.4952,0.4249,0.2121,0.1760,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.553, 0.676]",True
+NFS,HC,ORIG,333,C1 vote,NFS,0.6236,0.4723,0.4636,0.8391,0.1616,0.4381,0.4505,0.1616,0.1391,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.549, 0.698]",True
+NFS,HC,ORIG,333,C3 (vote + nested prior rule),ORIG,0.6186,0.4748,0.4556,0.8678,0.1919,0.4952,0.3443,0.1919,0.1696,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.549, 0.687]",True
+NFS,HC,ORIG,333,C3 (vote + nested prior rule),NFS,0.6466,0.4706,0.4667,0.8851,0.1212,0.4000,0.4762,0.1212,0.1147,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.576, 0.716]",False
+NF,all_837,ORIG,837,MLP fusion,ORIG,0.5436,0.4662,0.4399,0.8003,0.1405,0.4369,0.4872,0.1405,0.1860,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.505, 0.583]",False
+NF,all_837,ORIG,837,MLP fusion,NF,0.5424,0.4550,0.4393,0.8056,0.1658,0.4275,0.4212,0.1658,0.2046,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.502, 0.582]",True
+NF,all_837,ORIG,837,C1 vote,ORIG,0.5480,0.4673,0.4558,0.7856,0.2216,0.4369,0.4249,0.2216,0.2572,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.505, 0.591]",True
+NF,all_837,ORIG,837,C1 vote,NF,0.5440,0.4422,0.4373,0.8247,0.1820,0.4143,0.3480,0.1820,0.2104,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.502, 0.586]",True
+NF,all_837,ORIG,837,C3 (vote + nested prior rule),ORIG,0.5623,0.4571,0.4493,0.8464,0.1784,0.4595,0.3443,0.1784,0.2235,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.519, 0.605]",True
+NF,all_837,ORIG,837,C3 (vote + nested prior rule),NF,0.5464,0.4313,0.4281,0.8507,0.1712,0.4068,0.2967,0.1712,0.2009,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.508, 0.585]",True
+NF,NF_set,ORIG,366,MLP fusion,ORIG,0.6029,0.5384,0.4943,0.7978,0.1991,0.5315,0.6250,0.1991,0.2507,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.531, 0.679]",True
+NF,NF_set,ORIG,366,MLP fusion,NF,0.5947,0.5236,0.4902,0.7978,0.2165,0.4865,0.5938,0.2165,0.2426,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.526, 0.665]",True
+NF,NF_set,ORIG,366,C1 vote,ORIG,0.6157,0.5430,0.5171,0.7978,0.2814,0.5405,0.5521,0.2814,0.3147,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.546, 0.690]",True
+NF,NF_set,ORIG,366,C1 vote,NF,0.5938,0.4973,0.4837,0.8179,0.2251,0.4775,0.4688,0.2251,0.2394,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.521, 0.670]",True
+NF,NF_set,ORIG,366,C3 (vote + nested prior rule),ORIG,0.6266,0.5246,0.5121,0.8488,0.2554,0.5360,0.4583,0.2554,0.2969,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.552, 0.705]",True
+NF,NF_set,ORIG,366,C3 (vote + nested prior rule),NF,0.5965,0.4811,0.4738,0.8434,0.2121,0.4730,0.3958,0.2121,0.2309,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.527, 0.670]",True
+NF,NFS_set,ORIG,425,MLP fusion,ORIG,0.5765,0.5039,0.4932,0.7978,0.1991,0.5315,0.4872,0.1991,0.2428,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.514, 0.639]",True
+NF,NFS_set,ORIG,425,MLP fusion,NF,0.5576,0.4805,0.4751,0.7978,0.2165,0.4865,0.4212,0.2165,0.2282,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.503, 0.612]",True
+NF,NFS_set,ORIG,425,C1 vote,ORIG,0.5796,0.5112,0.5059,0.7978,0.2814,0.5405,0.4249,0.2814,0.2968,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.526, 0.634]",True
+NF,NFS_set,ORIG,425,C1 vote,NF,0.5506,0.4671,0.4638,0.8179,0.2251,0.4775,0.3480,0.2251,0.2210,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.492, 0.609]",True
+NF,NFS_set,ORIG,425,C3 (vote + nested prior rule),ORIG,0.5788,0.4961,0.4898,0.8488,0.2554,0.5360,0.3443,0.2554,0.2786,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.519, 0.638]",True
+NF,NFS_set,ORIG,425,C3 (vote + nested prior rule),NF,0.5475,0.4563,0.4509,0.8434,0.2121,0.4730,0.2967,0.2121,0.2122,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.496, 0.599]",True
+NF,not_NFS,ORIG,412,MLP fusion,ORIG,0.5097,0.3176,0.3255,0.8027,0.0988,0.3689,0.0000,0.0988,0.1394,"['Normal', 'Mild', 'Moderate']","[0.470, 0.549]",False
+NF,not_NFS,ORIG,412,MLP fusion,NF,0.5267,0.3318,0.3403,0.8126,0.1296,0.3851,0.0000,0.1296,0.1813,"['Normal', 'Mild', 'Moderate']","[0.483, 0.570]",False
+NF,not_NFS,ORIG,412,C1 vote,ORIG,0.5154,0.3290,0.3452,0.7745,0.1790,0.3625,0.0000,0.1790,0.2237,"['Normal', 'Mild', 'Moderate']","[0.454, 0.578]",True
+NF,not_NFS,ORIG,412,C1 vote,NF,0.5372,0.3378,0.3418,0.8308,0.1512,0.3689,0.0000,0.1512,0.1999,"['Normal', 'Mild', 'Moderate']","[0.488, 0.585]",True
+NF,not_NFS,ORIG,412,C3 (vote + nested prior rule),ORIG,0.5453,0.3430,0.3455,0.8441,0.1235,0.4045,0.0000,0.1235,0.1728,"['Normal', 'Mild', 'Moderate']","[0.490, 0.600]",False
+NF,not_NFS,ORIG,412,C3 (vote + nested prior rule),NF,0.5453,0.3396,0.3411,0.8574,0.1420,0.3592,0.0000,0.1420,0.1904,"['Normal', 'Mild', 'Moderate']","[0.497, 0.592]",False
+NF,NF_clear,ORIG,264,MLP fusion,ORIG,0.6692,0.5102,0.4671,0.8161,0.1616,0.4571,0.6061,0.1616,0.1730,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.605, 0.736]",True
+NF,NF_clear,ORIG,264,MLP fusion,NF,0.6616,0.4931,0.4606,0.8161,0.1616,0.4190,0.5758,0.1616,0.1614,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.577, 0.750]",True
+NF,NF_clear,ORIG,264,C1 vote,ORIG,0.6793,0.5319,0.4982,0.8142,0.2121,0.4952,0.6061,0.2121,0.2032,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.596, 0.766]",True
+NF,NF_clear,ORIG,264,C1 vote,NF,0.6692,0.4801,0.4657,0.8352,0.1717,0.4286,0.4848,0.1717,0.1611,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.583, 0.759]",True
+NF,NF_clear,ORIG,264,C3 (vote + nested prior rule),ORIG,0.7071,0.5251,0.5073,0.8678,0.1919,0.4952,0.5455,0.1919,0.2002,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.617, 0.801]",True
+NF,NF_clear,ORIG,264,C3 (vote + nested prior rule),NF,0.6831,0.4739,0.4660,0.8621,0.1616,0.4476,0.4242,0.1616,0.1569,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.603, 0.768]",True
+NF,HC,ORIG,333,MLP fusion,ORIG,0.6236,0.4805,0.4663,0.8161,0.1616,0.4571,0.4872,0.1616,0.1609,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.558, 0.688]",True
+NF,HC,ORIG,333,MLP fusion,NF,0.6016,0.4545,0.4447,0.8161,0.1616,0.4190,0.4212,0.1616,0.1383,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.541, 0.663]",True
+NF,HC,ORIG,333,C1 vote,ORIG,0.6146,0.4866,0.4693,0.8142,0.2121,0.4952,0.4249,0.2121,0.1760,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.553, 0.676]",True
+NF,HC,ORIG,333,C1 vote,NF,0.5936,0.4459,0.4342,0.8352,0.1717,0.4286,0.3480,0.1717,0.1337,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.523, 0.664]",True
+NF,HC,ORIG,333,C3 (vote + nested prior rule),ORIG,0.6186,0.4748,0.4556,0.8678,0.1919,0.4952,0.3443,0.1919,0.1696,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.549, 0.687]",True
+NF,HC,ORIG,333,C3 (vote + nested prior rule),NF,0.5946,0.4420,0.4259,0.8621,0.1616,0.4476,0.2967,0.1616,0.1284,"['Normal', 'Mild', 'Moderate', 'Severe']","[0.533, 0.657]",True

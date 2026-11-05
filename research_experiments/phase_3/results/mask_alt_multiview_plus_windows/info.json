@@ -1,0 +1,57 @@
+{
+ "spec": {
+  "blocks": [
+   [
+    "ecgf",
+    "aligned",
+    "f6"
+   ],
+   [
+    "ecgf3",
+    "windows",
+    "f6"
+   ]
+  ]
+ },
+ "cfg": {
+  "head": "linear",
+  "loss": "ce",
+  "weight": "balanced"
+ },
+ "seed": 42,
+ "sk_lr": false,
+ "folds": [
+  {
+   "fold": 0,
+   "l2": 0.01,
+   "best_epoch": null,
+   "n_params": 8196
+  },
+  {
+   "fold": 1,
+   "l2": 10.0,
+   "best_epoch": null,
+   "n_params": 8196
+  },
+  {
+   "fold": 2,
+   "l2": 0.001,
+   "best_epoch": null,
+   "n_params": 8196
+  },
+  {
+   "fold": 3,
+   "l2": 0.01,
+   "best_epoch": null,
+   "n_params": 8196
+  },
+  {
+   "fold": 4,
+   "l2": 0.01,
+   "best_epoch": null,
+   "n_params": 8196
+  }
+ ],
+ "minutes": 0.04893993139266968,
+ "repeat": 0
+}

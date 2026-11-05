@@ -1,0 +1,165 @@
+{
+ "files": {
+  "2020": {
+   "sha256": "1723d72134daf682c14278a65fcdc37674aa899dbaa653246de692fe1da43c45",
+   "identical_to_phase4_private_copy": true,
+   "matched_rows": 968,
+   "rows_without_parsable_timestamp": 0
+  },
+  "2021": {
+   "sha256": "c1048deeacc96484328b009757faa8ae28562b8010a4cb58701461fbc4cc7d82",
+   "identical_to_phase4_private_copy": true,
+   "matched_rows": 1226,
+   "rows_without_parsable_timestamp": 0
+  },
+  "2022": {
+   "sha256": "002092d1273106c8acf7b04e4915a7ca4ab59c887441ed21128f1922e42c1875",
+   "identical_to_phase4_private_copy": true,
+   "matched_rows": 937,
+   "rows_without_parsable_timestamp": 0
+  },
+  "2024": {
+   "sha256": "28af73180b3521833f362c3c2da2bb5eba5a69fc2bf54c9b5c2c2389193e1678",
+   "identical_to_phase4_private_copy": true,
+   "matched_rows": 1596,
+   "rows_without_parsable_timestamp": 0
+  }
+ },
+ "scope": "development ECGs only (837); locked-test rows dropped before any check",
+ "data_quality_linked_rows": {
+  "linked_rows": 1016,
+  "ef_missing": 2,
+  "ef_fraction_format_le_1": 0,
+  "ef_outside_5_95": 0,
+  "ef_min": 6.1,
+  "ef_max": 86.5,
+  "sex_missing_or_invalid": 0,
+  "ecg_date_unparsable": 0,
+  "echo_date_unparsable": 0,
+  "sheet_ecg_date_equals_timestamp_date": 0.9153543307086615,
+  "exact_duplicate_rows": 19,
+  "timestamps_in_more_than_one_year_sheet": 0,
+  "ecg_year_vs_sheet_year_mismatch": 0
+ },
+ "rule_vs_sheet_LV_column_agreement": 0.9783464566929134,
+ "rule_vs_sheet_LV_disagreements": 22,
+ "linking": {
+  "dev_ecgs": 837,
+  "with_at_least_one_link": 837,
+  "links_per_ecg": {
+   "1": 709,
+   "2": 90,
+   "3": 28,
+   "4": 9,
+   "7": 1
+  },
+  "folder_label_reproduced_by_some_link": 820,
+  "folder_label_reproduced_by_sheet_LV_of_some_link": 837
+ },
+ "nearest_echo_vs_phase4_tables": {
+  "ef_identical": 837,
+  "of": 837,
+  "derived_class_identical": 837,
+  "abs_days_identical": 837
+ },
+ "folder_vs_nearest_echo_class": {
+  "agreement": 0.9342891278375149,
+  "crosstab": {
+   "Normal": {
+    "Normal": 381,
+    "Mild": 10,
+    "Moderate": 14,
+    "Severe": 10
+   },
+   "Mild": {
+    "Normal": 3,
+    "Mild": 166,
+    "Moderate": 1,
+    "Severe": 0
+   },
+   "Moderate": {
+    "Normal": 0,
+    "Mild": 9,
+    "Moderate": 155,
+    "Severe": 1
+   },
+   "Severe": {
+    "Normal": 0,
+    "Mild": 0,
+    "Moderate": 7,
+    "Severe": 80
+   },
+   "Unknown": {
+    "Normal": 0,
+    "Mild": 0,
+    "Moderate": 0,
+    "Severe": 0
+   }
+  }
+ },
+ "phase6a_configs_rederived": {
+  "B2_movers": 27,
+  "B2_matches_label_table": true,
+  "B3_band": 26,
+  "B3_band_matches": true
+ },
+ "finding_2021_ecg_date_swap": {
+  "linked_rows_with_wrong_sheet_ecg_date": 86,
+  "explained_by_day_month_swap": 86,
+  "rows_per_year": {
+   "2021": 86
+  },
+  "dev_ecgs_with_changed_interval": 83,
+  "dev_ecgs_with_changed_nearest_ef": 2,
+  "max_abs_change_nearest_ef": 6.200000000000003,
+  "dev_ecgs_with_changed_nearest_class": 0,
+  "interval_counts_sheet_vs_true": {
+   "<= 0 d": [
+    451,
+    514
+   ],
+   "<= 7 d": [
+    541,
+    607
+   ],
+   "<= 14 d": [
+    550,
+    617
+   ],
+   "<= 30 d": [
+    587,
+    645
+   ],
+   "<= 90 d": [
+    688,
+    716
+   ]
+  },
+  "G_cohort_sheet_vs_true": [
+   357,
+   395
+  ],
+  "G_membership_changes": 40,
+  "folder_Mild_same_day_sheet_vs_true": [
+   105,
+   118
+  ],
+  "B2_movers_same_day_sheet_vs_true": [
+   11,
+   11
+  ],
+  "B2_movers_G_sheet_vs_true": [
+   14,
+   15
+  ],
+  "B2_and_B3_membership_unchanged_with_true_dates": true,
+  "echo_dates": "correct as stored: swapping them lowers same-day ECG-echo pairs in every year",
+  "folder_labels": "unaffected (made by name matching without a date window)"
+ },
+ "other_findings": {
+  "rule_vs_sheet_LV_disagreements_within_1_point_of_a_boundary": "21 of 22 (rounding at class boundaries; the sheet LV column reproduces every folder label)",
+  "exact_duplicate_link_rows": 19,
+  "links_without_EF": 2
+ },
+ "all_consistent": true
+}

@@ -1,0 +1,45 @@
+model,comparator,metric,delta,delta_per_repeat,ci95_corrected_delta,p_corrected_t,same_sign_all_repeats,p_holm
+E1-f6 (reproduction),MLP fusion seed 42 (same folds),accuracy,0.0000,"[0.0, 0.0, 0.0]","[+0.000, +0.000]",1.0000,False,1.0000
+E1-f6 (reproduction),MLP fusion seed 42 (same folds),macro_f1,0.0000,"[0.0, 0.0, 0.0]","[+0.000, +0.000]",1.0000,False,1.0000
+E1-f6 (reproduction),MLP fusion seed 42 (same folds),f1_Mild,0.0000,"[0.0, 0.0, 0.0]","[+0.000, +0.000]",1.0000,False,1.0000
+E1-f6 (reproduction),C3,accuracy,-0.0187,"[-0.006, -0.0299, -0.0203]","[-0.049, +0.012]",0.2077,True,1.0000
+E1-msp stage-5 mean||max||std,MLP fusion seed 42 (same folds),accuracy,-0.0271,"[-0.0597, -0.0131, -0.0084]","[-0.070, +0.016]",0.2000,True,1.0000
+E1-msp stage-5 mean||max||std,MLP fusion seed 42 (same folds),macro_f1,-0.0269,"[-0.0634, -0.007, -0.0104]","[-0.074, +0.020]",0.2336,True,1.0000
+E1-msp stage-5 mean||max||std,MLP fusion seed 42 (same folds),f1_Mild,0.0080,"[-0.0167, 0.0525, -0.0117]","[-0.109, +0.123]",0.8926,False,1.0000
+E1-msp stage-5 mean||max||std,C3,accuracy,-0.0458,"[-0.0657, -0.043, -0.0287]","[-0.092, +0.001]",0.0537,True,1.0000
+E1-col per-column stage-5 mean,MLP fusion seed 42 (same folds),accuracy,-0.0163,"[-0.0382, -0.0108, 0.0]","[-0.056, +0.024]",0.3973,False,1.0000
+E1-col per-column stage-5 mean,MLP fusion seed 42 (same folds),macro_f1,-0.0053,"[-0.0394, 0.0056, 0.018]","[-0.060, +0.046]",0.7823,False,1.0000
+E1-col per-column stage-5 mean,MLP fusion seed 42 (same folds),f1_Mild,0.0197,"[0.006, 0.0458, 0.0074]","[-0.124, +0.148]",0.8517,True,1.0000
+E1-col per-column stage-5 mean,C3,accuracy,-0.0350,"[-0.0442, -0.0406, -0.0203]","[-0.082, +0.012]",0.1303,True,1.0000
+E1-s45 stage-4 mean || f6,MLP fusion seed 42 (same folds),accuracy,-0.0143,"[-0.0335, 0.0084, -0.0179]","[-0.045, +0.016]",0.3283,False,1.0000
+E1-s45 stage-4 mean || f6,MLP fusion seed 42 (same folds),macro_f1,-0.0110,"[-0.0327, 0.0292, -0.0296]","[-0.060, +0.038]",0.6357,False,1.0000
+E1-s45 stage-4 mean || f6,MLP fusion seed 42 (same folds),f1_Mild,-0.0009,"[-0.0279, 0.0913, -0.0661]","[-0.121, +0.129]",0.9484,False,1.0000
+E1-s45 stage-4 mean || f6,C3,accuracy,-0.0331,"[-0.0394, -0.0215, -0.0382]","[-0.063, -0.004]",0.0305,True,1.0000
+E1-dx 150 pre-trained diagnostic outputs,MLP fusion seed 42 (same folds),accuracy,-0.0127,"[-0.0287, -0.0048, -0.0048]","[-0.052, +0.027]",0.5010,True,1.0000
+E1-dx 150 pre-trained diagnostic outputs,MLP fusion seed 42 (same folds),macro_f1,-0.0239,"[-0.0432, -0.0111, -0.0175]","[-0.093, +0.036]",0.3580,True,1.0000
+E1-dx 150 pre-trained diagnostic outputs,MLP fusion seed 42 (same folds),f1_Mild,-0.0135,"[-0.0304, 0.0269, -0.0368]","[-0.158, +0.136]",0.8772,False,1.0000
+E1-dx 150 pre-trained diagnostic outputs,C3,accuracy,-0.0315,"[-0.0346, -0.0346, -0.0251]","[-0.071, +0.008]",0.1080,True,1.0000
+E2-ce CE control,MLP fusion seed 42 (same folds),accuracy,-0.0024,"[-0.0143, -0.0012, 0.0084]","[-0.028, +0.024]",0.8472,False,1.0000
+E2-ce CE control,MLP fusion seed 42 (same folds),macro_f1,-0.0045,"[-0.0221, -0.0015, 0.01]","[-0.035, +0.027]",0.7930,False,1.0000
+E2-ce CE control,MLP fusion seed 42 (same folds),f1_Mild,-0.0200,"[-0.0494, 0.0058, -0.0165]","[-0.098, +0.063]",0.6481,False,1.0000
+E2-ce CE control,C3,accuracy,-0.0211,"[-0.0203, -0.0311, -0.0119]","[-0.056, +0.014]",0.2121,True,1.0000
+E2-mt multitask CE + EF,MLP fusion seed 42 (same folds),accuracy,0.0016,"[-0.0239, 0.0048, 0.0239]","[-0.034, +0.037]",0.9243,False,1.0000
+E2-mt multitask CE + EF,MLP fusion seed 42 (same folds),macro_f1,0.0037,"[-0.0311, 0.0169, 0.0251]","[-0.043, +0.051]",0.8565,False,1.0000
+E2-mt multitask CE + EF,MLP fusion seed 42 (same folds),f1_Mild,0.0117,"[-0.0399, 0.0464, 0.0287]","[-0.078, +0.102]",0.7792,False,1.0000
+E2-mt multitask CE + EF,C3,accuracy,-0.0171,"[-0.0299, -0.0251, 0.0036]","[-0.050, +0.015]",0.2791,False,1.0000
+E2-ldl boundary-aware soft labels,MLP fusion seed 42 (same folds),accuracy,0.0044,"[-0.0155, 0.0155, 0.0131]","[-0.027, +0.036]",0.7674,False,1.0000
+E2-ldl boundary-aware soft labels,MLP fusion seed 42 (same folds),macro_f1,-0.0035,"[-0.0314, 0.0193, 0.0016]","[-0.048, +0.041]",0.8794,False,1.0000
+E2-ldl boundary-aware soft labels,MLP fusion seed 42 (same folds),f1_Mild,-0.0047,"[-0.0298, 0.0394, -0.0237]","[-0.097, +0.096]",0.9929,False,1.0000
+E2-ldl boundary-aware soft labels,C3,accuracy,-0.0143,"[-0.0215, -0.0143, -0.0072]","[-0.044, +0.016]",0.3250,True,1.0000
+E2-scl EF-weighted supervised contrastive,MLP fusion seed 42 (same folds),accuracy,0.0024,"[-0.0191, 0.0108, 0.0155]","[-0.028, +0.033]",0.8676,False,1.0000
+E2-scl EF-weighted supervised contrastive,MLP fusion seed 42 (same folds),macro_f1,-0.0007,"[-0.0269, 0.0206, 0.0041]","[-0.041, +0.038]",0.9267,False,1.0000
+E2-scl EF-weighted supervised contrastive,MLP fusion seed 42 (same folds),f1_Mild,-0.0032,"[-0.0004, 0.0328, -0.042]","[-0.129, +0.120]",0.9386,False,1.0000
+E2-scl EF-weighted supervised contrastive,C3,accuracy,-0.0163,"[-0.0251, -0.0191, -0.0048]","[-0.052, +0.019]",0.3366,True,1.0000
+E3-cnn multi-lead 1D ResNet (repeat 0),MLP fusion seed 42 (same folds),accuracy,-0.0633,[-0.0633],"[-0.142, +0.016]",0.0902,True,1.0000
+E3-cnn multi-lead 1D ResNet (repeat 0),MLP fusion seed 42 (same folds),macro_f1,-0.0771,[-0.0771],"[-0.155, -0.006]",0.0398,True,1.0000
+E3-cnn multi-lead 1D ResNet (repeat 0),MLP fusion seed 42 (same folds),f1_Mild,0.0020,[0.002],"[-0.288, +0.273]",0.9454,True,1.0000
+E3-cnn multi-lead 1D ResNet (repeat 0),C3,accuracy,-0.0693,[-0.0693],"[-0.152, +0.013]",0.0794,True,1.0000
+E3-cnnhdr 1D ResNet + header (repeat 0),MLP fusion seed 42 (same folds),accuracy,-0.0741,[-0.0741],"[-0.155, +0.007]",0.0649,True,1.0000
+E3-cnnhdr 1D ResNet + header (repeat 0),MLP fusion seed 42 (same folds),macro_f1,-0.0836,[-0.0836],"[-0.148, -0.033]",0.0117,True,0.5146
+E3-cnnhdr 1D ResNet + header (repeat 0),MLP fusion seed 42 (same folds),f1_Mild,0.0019,[0.0019],"[-0.336, +0.321]",0.9533,True,1.0000
+E3-cnnhdr 1D ResNet + header (repeat 0),C3,accuracy,-0.0800,[-0.08],"[-0.156, -0.004]",0.0425,True,1.0000

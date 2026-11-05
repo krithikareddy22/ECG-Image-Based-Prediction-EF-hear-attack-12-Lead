@@ -1,0 +1,50 @@
+{
+ "spec": {
+  "blocks": [
+   [
+    "hdr",
+    "numeric"
+   ],
+   [
+    "clin"
+   ]
+  ]
+ },
+ "cfg": null,
+ "seed": 42,
+ "sk_lr": false,
+ "folds": [
+  {
+   "fold": 0,
+   "depth": 3,
+   "n_estimators": 300,
+   "val_s3": 0.4421979823489182
+  },
+  {
+   "fold": 1,
+   "depth": 3,
+   "n_estimators": 300,
+   "val_s3": 0.4805295404678225
+  },
+  {
+   "fold": 2,
+   "depth": 2,
+   "n_estimators": 100,
+   "val_s3": 0.38846541222940695
+  },
+  {
+   "fold": 3,
+   "depth": 3,
+   "n_estimators": 100,
+   "val_s3": 0.39143197093042487
+  },
+  {
+   "fold": 4,
+   "depth": 3,
+   "n_estimators": 100,
+   "val_s3": 0.48876286555093307
+  }
+ ],
+ "minutes": 0.10627235174179077,
+ "repeat": 0
+}

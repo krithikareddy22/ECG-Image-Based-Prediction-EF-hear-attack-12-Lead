@@ -1,0 +1,10 @@
+{
+ "members": [
+  "mlp2",
+  "image_cnn"
+ ],
+ "method": "stack",
+ "params": {},
+ "seed": -1,
+ "repeat": 0
+}

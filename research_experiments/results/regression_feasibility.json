@@ -1,0 +1,23 @@
+{
+  "data/manifest.csv": {
+    "n_columns": 7,
+    "ef_like_columns": []
+  },
+  "data/header_features.csv": {
+    "n_columns": 15,
+    "ef_like_columns": []
+  },
+  "data/ecg_features.csv": {
+    "n_columns": 264,
+    "ef_like_columns": []
+  },
+  "results/split.csv": {
+    "n_columns": 4,
+    "ef_like_columns": []
+  },
+  "pdf_text_ef_token_files": 0,
+  "filename_second_bracket_nonempty": 0,
+  "filename_second_bracket_numeric_like": 0,
+  "xlsx_spreadsheets_opened": false,
+  "conclusion": "No continuous LVEF value exists in the authorised data (folder labels only)."
+}

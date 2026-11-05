@@ -1,0 +1,36 @@
+{
+  "method": "wavg",
+  "members": [
+    "img_resnet18_baseline_recipe",
+    "ecgf_f6_lin_cedist1"
+  ],
+  "rule": "argmax",
+  "objective": "s3",
+  "params": {
+    "fold0": [
+      0.3,
+      0.7
+    ],
+    "fold1": [
+      0.4,
+      0.6
+    ],
+    "fold2": [
+      0.3,
+      0.7
+    ],
+    "fold3": [
+      0.3,
+      0.7
+    ],
+    "fold4": [
+      0.4,
+      0.6
+    ],
+    "final": [
+      0.3,
+      0.7
+    ]
+  },
+  "decision_params": {}
+}

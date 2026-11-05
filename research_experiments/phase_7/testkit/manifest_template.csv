@@ -1,0 +1,3 @@
+ecg_file,patient_id,sex,ef,echo_gap_days,ef_method
+new_ecgs/ECG_0001.pdf,P0001,M,58,3,Simpson biplane
+new_ecgs/ECG_0002.pdf,P0002,F,45,10,Teichholz

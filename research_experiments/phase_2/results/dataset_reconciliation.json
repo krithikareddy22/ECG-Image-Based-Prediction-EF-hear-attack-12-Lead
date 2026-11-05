@@ -1,0 +1,71 @@
+{
+ "dataset_version": {
+  "manifest_sha256": "2463bd35b02013751474c418c195ef7a7c073699e8bfb5c113bd1848200fc4a8",
+  "split_csv_sha256": "7fc76b0e52a07f299f5bb2d004e809293f877dbb1d5f13520614dac82d5401c1",
+  "unchanged_since_phase1_snapshot": true
+ },
+ "total": {
+  "ecgs": 1047,
+  "patients": 993,
+  "patients_with_>1_ecg": 47
+ },
+ "original_split": {
+  "train": {
+   "ecgs": 669,
+   "patients": 635,
+   "classes": {
+    "Normal": 307,
+    "Mild": 148,
+    "Moderate": 141,
+    "Severe": 73
+   }
+  },
+  "val": {
+   "ecgs": 168,
+   "patients": 159,
+   "classes": {
+    "Normal": 77,
+    "Mild": 37,
+    "Moderate": 36,
+    "Severe": 18
+   }
+  },
+  "test": {
+   "ecgs": 210,
+   "patients": 199,
+   "classes": {
+    "Normal": 96,
+    "Mild": 47,
+    "Moderate": 44,
+    "Severe": 23
+   }
+  }
+ },
+ "phase2": {
+  "development_D = train + val": {
+   "ecgs": 837,
+   "patients": 794,
+   "classes": {
+    "Normal": 384,
+    "Mild": 185,
+    "Moderate": 177,
+    "Severe": 91
+   }
+  },
+  "locked_test_T = test": {
+   "ecgs": 210,
+   "patients": 199,
+   "classes": {
+    "Normal": 96,
+    "Mild": 47,
+    "Moderate": 44,
+    "Severe": 23
+   }
+  },
+  "patients_in_both_D_and_T": 0,
+  "split_csv_matches_manifest": true,
+  "locked_test_ecgs_in_any_cv_fold": 0
+ },
+ "where_669_comes_from": "669 = the ORIGINAL TRAINING split only (635 patients). It was never the total: the brief of the experimental phase listed 'Total labelled ECGs: 669', which was corrected in the phase-1 report. Total labelled = 1,047 (993 patients) = train 669 + validation 168 + test 210.",
+ "patient_identifier": "manifest column 'patient' = anonymous hash created by the original project from the patient name in the file name; grouping therefore assumes consistent name spelling across visits (cannot be verified without reading names, which this work does not do)."
+}

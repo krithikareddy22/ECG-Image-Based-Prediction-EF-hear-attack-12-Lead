@@ -1,0 +1,46 @@
+{
+ "selftest": true,
+ "rows_excluded_not_verified": 0,
+ "rows_with_simpson": 0,
+ "labels_changed": 0,
+ "new_labels": {
+  "n": 837,
+  "class_counts": [
+   415,
+   170,
+   165,
+   87
+  ],
+  "accuracy": 0.5937873357228196,
+  "accuracy_ci95_corrected": [
+   0.560290413229941,
+   0.6271965176701634
+  ],
+  "kappa": 0.35250749791529873,
+  "recall_Normal": 0.9108433734939759,
+  "recall_Mild": 0.196078431372549,
+  "recall_Moderate": 0.3191919191919192,
+  "recall_Severe": 0.37931034482758613
+ },
+ "current_labels_same_ecgs": {
+  "n": 837,
+  "class_counts": [
+   415,
+   170,
+   165,
+   87
+  ],
+  "accuracy": 0.5937873357228196,
+  "accuracy_ci95_corrected": [
+   0.560290413229941,
+   0.6271965176701634
+  ],
+  "kappa": 0.35250749791529873,
+  "recall_Normal": 0.9108433734939759,
+  "recall_Mild": 0.196078431372549,
+  "recall_Moderate": 0.3191919191919192,
+  "recall_Severe": 0.37931034482758613
+ },
+ "delta_accuracy": 0.0,
+ "p": 1.0
+}

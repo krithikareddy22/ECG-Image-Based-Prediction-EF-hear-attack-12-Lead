@@ -1,0 +1,10 @@
+{
+ "members": [
+  "ecgf_lin_dist",
+  "hdr_clin_lr"
+ ],
+ "method": "stack",
+ "params": {},
+ "seed": -1,
+ "repeat": 0
+}

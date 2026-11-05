@@ -1,0 +1,66 @@
+{
+  "cfg": {
+    "tag": "ft_b3_lrb3e-5",
+    "depth": "block3",
+    "head": "ce",
+    "loss": "ce",
+    "weight": "balanced",
+    "sampler": "none",
+    "gamma": 2.0,
+    "lr_b": 3e-05,
+    "lr_h": 0.001,
+    "wd": 0.05,
+    "dropout": 0.3,
+    "smooth": 0.05,
+    "noise": 0.1,
+    "crop": 0.9,
+    "ema": 0.99,
+    "bs": 16,
+    "epochs": 20,
+    "min_epochs": 3,
+    "patience": 6,
+    "seeds": [
+      42
+    ],
+    "threads": 1
+  },
+  "runs": [
+    {
+      "fold": 0,
+      "seed": 42,
+      "best_epoch": 10,
+      "val_s3": 0.4544613624527834,
+      "infer_s_per_ecg_cached": 0.001144453173591977
+    },
+    {
+      "fold": 1,
+      "seed": 42,
+      "best_epoch": 12,
+      "val_s3": 0.5418078595166912,
+      "infer_s_per_ecg_cached": 0.0010764613038017636
+    },
+    {
+      "fold": 2,
+      "seed": 42,
+      "best_epoch": 16,
+      "val_s3": 0.5393279897212168,
+      "infer_s_per_ecg_cached": 0.0011505723713400836
+    },
+    {
+      "fold": 3,
+      "seed": 42,
+      "best_epoch": 5,
+      "val_s3": 0.5166933799630969,
+      "infer_s_per_ecg_cached": 0.0012447876844577446
+    },
+    {
+      "fold": 4,
+      "seed": 42,
+      "best_epoch": 5,
+      "val_s3": 0.522653436283794,
+      "infer_s_per_ecg_cached": 0.0011901912574996492
+    }
+  ],
+  "trainable_params": 3422724,
+  "minutes": 4.816676012674967
+}

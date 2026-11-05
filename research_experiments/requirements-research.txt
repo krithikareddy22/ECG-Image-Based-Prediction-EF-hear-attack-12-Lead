@@ -1,0 +1,15 @@
+# Exact versions used for phases 1-4 (CPU, Linux x86_64, Python 3.13.18). Install: pip install -r research_experiments/requirements-research.txt
+torch==2.15.0
+timm==1.0.30
+numpy==2.5.3
+pandas==3.0.5
+scikit-learn==1.9.1
+scipy==1.18.1
+xgboost==3.4.1
+opencv-python-headless==5.0.0
+pymupdf==2.1
+matplotlib==3.11.2
+openpyxl==3.1.5
+joblib==1.6.0
+tabulate>=0.9
+# not needed: rapidfuzz (only the deleted ECG_ECHO matching notebook used it; phase 4 reads its OUTPUT sheets)

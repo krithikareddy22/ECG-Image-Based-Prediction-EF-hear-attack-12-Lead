@@ -1,0 +1,430 @@
+{
+ "created": "2026-11-05 15:56:55",
+ "minutes": 22.7292511622111,
+ "n_runs": 24,
+ "n_exact": 24,
+ "all_within_0_005": true,
+ "max_abs_diff": 0.0,
+ "runs": [
+  {
+   "run_id": "P5A-import-vote-v1__s0_r0",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5483870967741935,
+   "committed_accuracy": 0.5483870967741935,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-vote-v1__s0_r1",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5448028673835126,
+   "committed_accuracy": 0.5448028673835126,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-vote-v1__s0_r2",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5483870967741935,
+   "committed_accuracy": 0.5483870967741935,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-mlpfusion-v1__s42_r0",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5591397849462365,
+   "committed_accuracy": 0.5591397849462365,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-mlpfusion-v1__s43_r0",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5364396654719236,
+   "committed_accuracy": 0.5364396654719236,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-mlpfusion-v1__s44_r0",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5531660692951016,
+   "committed_accuracy": 0.5531660692951016,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-mlpfusion-v1__s42_r1",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5412186379928315,
+   "committed_accuracy": 0.5412186379928315,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-mlpfusion-v1__s43_r1",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5519713261648745,
+   "committed_accuracy": 0.5519713261648745,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-mlpfusion-v1__s44_r1",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5436081242532855,
+   "committed_accuracy": 0.5436081242532855,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-mlpfusion-v1__s42_r2",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5304659498207885,
+   "committed_accuracy": 0.5304659498207885,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-mlpfusion-v1__s43_r2",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5340501792114696,
+   "committed_accuracy": 0.5340501792114696,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-mlpfusion-v1__s44_r2",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5316606929510155,
+   "committed_accuracy": 0.5316606929510155,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-ecgflindist-v1__s0_r0",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5388291517323776,
+   "committed_accuracy": 0.5388291517323776,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-ecgflindist-v1__s0_r1",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5292712066905615,
+   "committed_accuracy": 0.5292712066905615,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-ecgflindist-v1__s0_r2",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5209080047789725,
+   "committed_accuracy": 0.5209080047789725,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-hdrclinlr-v1__s0_r0",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5197132616487455,
+   "committed_accuracy": 0.5197132616487455,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-hdrclinlr-v1__s0_r1",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5065710872162486,
+   "committed_accuracy": 0.5065710872162486,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-import-hdrclinlr-v1__s0_r2",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.4778972520908005,
+   "committed_accuracy": 0.4778972520908005,
+   "within_0_005": true
+  },
+  {
+   "run_id": "P5A-calmlp-protected-v1__s0_r0",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5710872162485066,
+   "committed_accuracy": 0.5710872162485066,
+   "within_0_005": true,
+   "params_per_fold": [
+    0.0,
+    0.7,
+    0.3,
+    0.5,
+    0.1
+   ],
+   "committed_params_per_fold": [
+    0.0,
+    0.7,
+    0.3,
+    0.5,
+    0.1
+   ]
+  },
+  {
+   "run_id": "P5D-E5-vote-prior-protected-v1__s0_r0",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5651135005973715,
+   "committed_accuracy": 0.5651135005973715,
+   "within_0_005": true,
+   "params_per_fold": [
+    0.0,
+    0.2,
+    0.1,
+    0.4,
+    0.2
+   ],
+   "committed_params_per_fold": [
+    0.0,
+    0.2,
+    0.1,
+    0.4,
+    0.2
+   ]
+  },
+  {
+   "run_id": "P5A-calmlp-protected-v1__s0_r1",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5686977299880526,
+   "committed_accuracy": 0.5686977299880526,
+   "within_0_005": true,
+   "params_per_fold": [
+    0.3,
+    0.4,
+    0.3,
+    0.5,
+    0.4
+   ],
+   "committed_params_per_fold": [
+    0.3,
+    0.4,
+    0.3,
+    0.5,
+    0.4
+   ]
+  },
+  {
+   "run_id": "P5D-E5-vote-prior-protected-v1__s0_r1",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5675029868578255,
+   "committed_accuracy": 0.5675029868578255,
+   "within_0_005": true,
+   "params_per_fold": [
+    0.2,
+    0.2,
+    0.5,
+    0.3,
+    0.5
+   ],
+   "committed_params_per_fold": [
+    0.2,
+    0.2,
+    0.5,
+    0.3,
+    0.5
+   ]
+  },
+  {
+   "run_id": "P5A-calmlp-protected-v1__s0_r2",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5651135005973715,
+   "committed_accuracy": 0.5651135005973715,
+   "within_0_005": true,
+   "params_per_fold": [
+    0.0,
+    0.2,
+    0.4,
+    0.4,
+    0.5
+   ],
+   "committed_params_per_fold": [
+    0.0,
+    0.2,
+    0.4,
+    0.4,
+    0.5
+   ]
+  },
+  {
+   "run_id": "P5D-E5-vote-prior-protected-v1__s0_r2",
+   "exact_sha256": true,
+   "max_abs_diff": 0.0,
+   "diffs": {
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "min_recall": 0.0
+   },
+   "accuracy": 0.5507765830346476,
+   "committed_accuracy": 0.5507765830346476,
+   "within_0_005": true,
+   "params_per_fold": [
+    0.0,
+    0.4,
+    0.2,
+    0.3,
+    0.4
+   ],
+   "committed_params_per_fold": [
+    0.0,
+    0.4,
+    0.2,
+    0.3,
+    0.4
+   ]
+  }
+ ]
+}

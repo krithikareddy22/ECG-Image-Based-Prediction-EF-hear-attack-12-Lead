@@ -1,0 +1,155 @@
+{
+ "checks": {
+  "recipe_reproduction": {
+   "imgvote_r0": {
+    "accuracy_recomputed": 0.5448028673835126,
+    "accuracy_committed": 0.5448028673835126,
+    "argmax_agreement": 1.0,
+    "mean_abs_prob_diff": 1.1942492144233718e-05
+   },
+   "ef_codepath_max_abs_diff_vs_e6_r0_fold0": {
+    "H1_W1": 1.7053025658242404e-13,
+    "H1_W.3": 2.5579538487363607e-13,
+    "H1_W0": 1.4210854715202004e-13,
+    "H2_W1": 0.0,
+    "H2_W.3": 0.0,
+    "H2_W0": 0.0,
+    "H3_W1": 8.526512829121202e-14,
+    "H3_W.3": 1.1368683772161603e-13,
+    "H3_W0": 7.105427357601002e-14
+   }
+  },
+  "pdf_reproduction": {
+   "n_sampled": 25,
+   "sample_seed": 0,
+   "unreadable": 0,
+   "f6_min_cosine": 0.9999999999980355,
+   "f6_max_abs_diff": 8.299946784973145e-06,
+   "image_features_equal_fraction": 1.0,
+   "rows_all_image_features_equal": 1.0,
+   "same_triage_decision": 1.0,
+   "same_imgc3_class": 1.0,
+   "ef_estimate_max_abs_diff": 5.744817158870319e-06,
+   "in_sample_sanity": {
+    "note": "frozen model on its own 837 training ECGs (cached inputs): NOT a performance estimate",
+    "answered_share": 0.5364396654719236,
+    "accuracy_answered": 0.8975501113585747,
+    "imgc3_accuracy_all": 0.8673835125448028
+   }
+  },
+  "scorer_pipeline_test": {
+   "note": "end-to-end scorer run on development (training) ECGs: verifies the code path only; numbers are NOT estimates",
+   "n_ecgs": 40,
+   "all_rows_scored": true,
+   "development_duplicates_detected": 40,
+   "outputs": "private only; no ledger entry, no results/testkit file"
+  }
+ },
+ "model": "header-free triage (AGT-img): answer when the image EF grade agrees with IMG-C3 and the EF estimate is far from every cut",
+ "created": "2026-11-06 00:23:40",
+ "git_head_at_freeze": "32c96f1",
+ "frozen_file": "phase_7/data/private/testkit/frozen_triage.pt (git-ignored)",
+ "frozen_sha256": "09808d126e0f73e50addcf64ee978625e82755747df8c18c3d2755b1e6933071",
+ "n_development_ecgs": 837,
+ "recipe": {
+  "members": "ECGFounder-f6 MLP seeds 42/43/44 + linear distance-CE seed 42; fit on all 837 with a grouped 80/20 selection split (random_state 5000)",
+  "alpha": "choose_alpha(protected) on committed IMG-vote outer OOF pooled over 3 repeats",
+  "ef": "E6 variant with lowest pooled outer-OOF RMSE on verified ECGs; refit on all 837 (H2 split random_state 5001)",
+  "cuts_and_threshold": "floor-objective cuts and distance threshold (answered accuracy >= 0.70, >= 20 answered) on the pooled outer OOF"
+ },
+ "chosen": {
+  "alpha": 0.5,
+  "prior": {
+   "Normal": 0.4588,
+   "Mild": 0.221,
+   "Moderate": 0.2115,
+   "Severe": 0.1087
+  },
+  "ef_variant": "H3_W.3",
+  "ef_rmse_pooled_oof_verified": {
+   "H1_W1": 12.513686094401098,
+   "H1_W.3": 12.341321181147155,
+   "H1_W0": 12.563174290110654,
+   "H2_W1": 12.62201753669784,
+   "H2_W.3": 12.504346523451705,
+   "H2_W0": 12.677152792623495,
+   "H3_W1": 12.311362588941147,
+   "H3_W.3": 12.15499166436975,
+   "H3_W0": 12.317013301757065
+  },
+  "cuts": {
+   "d0": 0.0,
+   "t1": 45.5,
+   "t2": 35.0
+  },
+  "t_answer_ef_points": 3.052,
+  "normal_mild_cut": "sex boundary (52 men / 54 women) + d0",
+  "mildfeat": {
+   "qrs_threshold": 0.1,
+   "t_end_mode": "median",
+   "p_threshold": 0.5
+  },
+  "n_image_features": 118
+ },
+ "selection_data": {
+  "note": "computed on the same pooled OOF used to choose these values: optimistic, NOT a performance estimate",
+  "answered_share": 0.5539625647152528,
+  "accuracy_answered": 0.700215672178289,
+  "imgc3_accuracy_all": 0.5615292712066906,
+  "grade_accuracy_all": 0.5599362803663879
+ },
+ "ef_oof_vs_e6_max_abs_diff_same_variant": 0.0,
+ "members": [
+  {
+   "kind": "mlp",
+   "loss": "ce",
+   "seed": 42,
+   "best_epoch": 45
+  },
+  {
+   "kind": "mlp",
+   "loss": "ce",
+   "seed": 43,
+   "best_epoch": 13
+  },
+  {
+   "kind": "mlp",
+   "loss": "ce",
+   "seed": 44,
+   "best_epoch": 17
+  },
+  {
+   "kind": "linear",
+   "loss": "ce_dist",
+   "seed": 42,
+   "best_epoch": null
+  }
+ ],
+ "cv_expectation": {
+  "source": "patient-grouped 5-fold CV x 3 repeats on the 837 development ECGs (results/triage_scores.json, e6_cascades.csv)",
+  "triage": {
+   "answered_share": 0.5563520509757068,
+   "answered_share_ci95": [
+    0.48,
+    0.63
+   ],
+   "accuracy_answered": 0.6938668324458453,
+   "accuracy_answered_ci95": [
+    0.655315266689739,
+    0.735770273550088
+   ],
+   "macro_f1_answered": 0.3889189192181295,
+   "balanced_accuracy_answered": 0.4026803333697906,
+   "recall_Mild_answered": 0.015579710144927537
+  },
+  "imgc3_all": {
+   "accuracy": 0.5575,
+   "accuracy_ci95": "[0.504, 0.611]",
+   "macro_f1": 0.4405,
+   "balanced_accuracy": 0.4447,
+   "recall_Mild": 0.1874,
+   "precision_Mild": 0.2898
+  }
+ },
+ "minutes": 1.2
+}

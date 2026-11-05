@@ -1,0 +1,3 @@
+# Phase 5 additions on top of research_experiments/requirements-research.txt (Python 3.13.18, CPU)
+PyWavelets==1.8.0
+lightgbm==4.7.0

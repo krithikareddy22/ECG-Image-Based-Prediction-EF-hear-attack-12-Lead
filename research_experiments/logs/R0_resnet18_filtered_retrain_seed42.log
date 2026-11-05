@@ -1,0 +1,32 @@
+[R0_resnet18_filtered_retrain_seed42] train 669  val 168  test 210  img (256, 512)  lr 0.001  device cpu
+class weights {'Normal': 0.41999998688697815, 'Mild': 0.8799999952316284, 'Moderate': 0.9200000166893005, 'Severe': 1.7799999713897705}
+ep  1  loss 1.420/1.381  acc 0.227/0.280  vF1 0.223  vQWK 0.107  vHF-AUC 0.606  score 0.312  4.2m
+ep  2  loss 1.423/1.471  acc 0.241/0.208  vF1 0.138  vQWK 0.077  vHF-AUC 0.588  score 0.268  8.9m
+ep  3  loss 1.405/1.225  acc 0.334/0.476  vF1 0.267  vQWK 0.237  vHF-AUC 0.733  score 0.412  13.7m
+ep  4  loss 1.349/1.173  acc 0.381/0.482  vF1 0.271  vQWK 0.223  vHF-AUC 0.777  score 0.424  17.9m
+ep  5  loss 1.339/1.355  acc 0.396/0.351  vF1 0.241  vQWK 0.298  vHF-AUC 0.773  score 0.437  22.7m
+ep  6  loss 1.306/1.441  acc 0.477/0.321  vF1 0.247  vQWK 0.284  vHF-AUC 0.781  score 0.438  26.3m
+ep  7  loss 1.314/1.307  acc 0.442/0.435  vF1 0.291  vQWK 0.472  vHF-AUC 0.790  score 0.518  30.9m
+ep  8  loss 1.304/1.218  acc 0.457/0.494  vF1 0.280  vQWK 0.342  vHF-AUC 0.773  score 0.465  34.7m *
+ep  9  loss 1.287/1.217  acc 0.488/0.494  vF1 0.278  vQWK 0.347  vHF-AUC 0.764  score 0.463  35.8m
+ep 10  loss 1.300/1.162  acc 0.505/0.530  vF1 0.352  vQWK 0.504  vHF-AUC 0.768  score 0.541  36.9m *
+ep 11  loss 1.281/1.145  acc 0.468/0.518  vF1 0.323  vQWK 0.507  vHF-AUC 0.784  score 0.538  38.0m
+ep 12  loss 1.255/1.157  acc 0.495/0.482  vF1 0.286  vQWK 0.472  vHF-AUC 0.790  score 0.516  39.3m
+ep 13  loss 1.254/1.170  acc 0.503/0.482  vF1 0.316  vQWK 0.484  vHF-AUC 0.786  score 0.529  40.5m
+ep 14  loss 1.238/1.146  acc 0.527/0.530  vF1 0.364  vQWK 0.509  vHF-AUC 0.775  score 0.550  41.7m *
+ep 15  loss 1.253/1.178  acc 0.524/0.500  vF1 0.338  vQWK 0.537  vHF-AUC 0.764  score 0.546  42.8m
+ep 16  loss 1.235/1.173  acc 0.517/0.494  vF1 0.324  vQWK 0.535  vHF-AUC 0.767  score 0.542  43.9m
+ep 17  loss 1.242/1.181  acc 0.512/0.494  vF1 0.310  vQWK 0.544  vHF-AUC 0.769  score 0.541  45.0m
+ep 18  loss 1.265/1.208  acc 0.497/0.470  vF1 0.287  vQWK 0.489  vHF-AUC 0.768  score 0.515  46.1m
+ep 19  loss 1.230/1.195  acc 0.520/0.482  vF1 0.305  vQWK 0.510  vHF-AUC 0.762  score 0.526  47.3m
+ep 20  loss 1.225/1.206  acc 0.506/0.500  vF1 0.352  vQWK 0.501  vHF-AUC 0.764  score 0.539  48.4m
+ep 21  loss 1.208/1.194  acc 0.538/0.506  vF1 0.358  vQWK 0.522  vHF-AUC 0.765  score 0.548  49.5m
+ep 22  loss 1.208/1.197  acc 0.540/0.500  vF1 0.346  vQWK 0.520  vHF-AUC 0.765  score 0.543  50.6m
+ep 23  loss 1.228/1.224  acc 0.523/0.476  vF1 0.323  vQWK 0.494  vHF-AUC 0.769  score 0.529  51.7m
+ep 24  loss 1.186/1.233  acc 0.550/0.476  vF1 0.331  vQWK 0.468  vHF-AUC 0.770  score 0.523  52.9m
+early stop (no val improvement for 10 epochs)
+
+[R0_resnet18_filtered_retrain_seed42] best epoch 14  (52.9 min)
+  TEST  acc 0.481  bal-acc 0.347  macro-F1 0.310  QWK 0.301
+  HF screen (reduced EF vs normal): AUC 0.731  sens 0.728  spec 0.562  (threshold 0.338, tuned on val)
+  EF<=40% detection: AUC 0.696

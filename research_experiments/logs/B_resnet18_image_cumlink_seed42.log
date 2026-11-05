@@ -1,0 +1,33 @@
+[B_resnet18_image_cumlink_seed42] params total 11,170,756 trainable 11,170,756
+ep  1 loss 1.385/1.365 vacc 0.232 vbal 0.265 vF1 0.153 vQWK 0.149 vHF 0.601 score 0.301 1.5m
+ep  2 loss 1.362/1.370 vacc 0.310 vbal 0.338 vF1 0.306 vQWK 0.219 vHF 0.643 score 0.389 2.8m
+ep  3 loss 1.328/1.176 vacc 0.476 vbal 0.314 vF1 0.295 vQWK 0.310 vHF 0.753 score 0.453 4.2m
+ep  4 loss 1.324/1.420 vacc 0.339 vbal 0.403 vF1 0.332 vQWK 0.346 vHF 0.764 score 0.481 5.5m
+ep  5 loss 1.309/1.440 vacc 0.262 vbal 0.310 vF1 0.242 vQWK 0.348 vHF 0.754 score 0.448 6.8m
+ep  6 loss 1.287/1.155 vacc 0.536 vbal 0.436 vF1 0.418 vQWK 0.429 vHF 0.778 score 0.542 7.9m
+ep  7 loss 1.274/1.188 vacc 0.488 vbal 0.412 vF1 0.368 vQWK 0.479 vHF 0.766 score 0.538 9.1m
+ep  8 loss 1.288/1.398 vacc 0.310 vbal 0.343 vF1 0.274 vQWK 0.359 vHF 0.735 score 0.456 10.3m *
+ep  9 loss 1.254/1.206 vacc 0.458 vbal 0.389 vF1 0.336 vQWK 0.499 vHF 0.762 score 0.533 11.6m *
+ep 10 loss 1.236/1.266 vacc 0.417 vbal 0.379 vF1 0.317 vQWK 0.496 vHF 0.766 score 0.526 12.9m
+ep 11 loss 1.250/1.137 vacc 0.512 vbal 0.401 vF1 0.378 vQWK 0.444 vHF 0.767 score 0.529 14.1m
+ep 12 loss 1.250/1.184 vacc 0.452 vbal 0.375 vF1 0.331 vQWK 0.515 vHF 0.764 score 0.537 15.3m *
+ep 13 loss 1.214/1.231 vacc 0.417 vbal 0.365 vF1 0.298 vQWK 0.511 vHF 0.761 score 0.523 16.6m
+ep 14 loss 1.218/1.185 vacc 0.446 vbal 0.361 vF1 0.307 vQWK 0.526 vHF 0.765 score 0.533 17.9m
+ep 15 loss 1.226/1.209 vacc 0.440 vbal 0.386 vF1 0.307 vQWK 0.512 vHF 0.772 score 0.530 19.1m
+ep 16 loss 1.211/1.211 vacc 0.446 vbal 0.407 vF1 0.331 vQWK 0.513 vHF 0.770 score 0.538 20.4m *
+ep 17 loss 1.218/1.280 vacc 0.446 vbal 0.439 vF1 0.353 vQWK 0.464 vHF 0.767 score 0.528 21.7m
+ep 18 loss 1.196/1.257 vacc 0.446 vbal 0.439 vF1 0.354 vQWK 0.475 vHF 0.771 score 0.533 22.9m
+ep 19 loss 1.196/1.224 vacc 0.452 vbal 0.432 vF1 0.338 vQWK 0.506 vHF 0.774 score 0.539 24.2m *
+ep 20 loss 1.181/1.249 vacc 0.423 vbal 0.415 vF1 0.322 vQWK 0.490 vHF 0.782 score 0.531 25.7m
+ep 21 loss 1.191/1.220 vacc 0.452 vbal 0.421 vF1 0.335 vQWK 0.504 vHF 0.786 score 0.542 26.9m *
+ep 22 loss 1.192/1.290 vacc 0.423 vbal 0.426 vF1 0.342 vQWK 0.454 vHF 0.786 score 0.527 28.1m
+ep 23 loss 1.194/1.336 vacc 0.387 vbal 0.410 vF1 0.327 vQWK 0.409 vHF 0.783 score 0.506 29.3m
+ep 24 loss 1.188/1.300 vacc 0.405 vbal 0.416 vF1 0.332 vQWK 0.437 vHF 0.784 score 0.518 30.3m
+ep 25 loss 1.147/1.315 vacc 0.381 vbal 0.393 vF1 0.302 vQWK 0.423 vHF 0.783 score 0.503 31.5m
+ep 26 loss 1.167/1.299 vacc 0.405 vbal 0.416 vF1 0.330 vQWK 0.437 vHF 0.782 score 0.516 32.6m
+ep 27 loss 1.153/1.311 vacc 0.393 vbal 0.402 vF1 0.312 vQWK 0.429 vHF 0.780 score 0.507 33.8m
+ep 28 loss 1.157/1.322 vacc 0.399 vbal 0.410 vF1 0.323 vQWK 0.434 vHF 0.780 score 0.512 34.9m
+ep 29 loss 1.152/1.337 vacc 0.369 vbal 0.386 vF1 0.295 vQWK 0.416 vHF 0.780 score 0.497 36.1m
+ep 30 loss 1.178/1.346 vacc 0.363 vbal 0.387 vF1 0.298 vQWK 0.411 vHF 0.779 score 0.496 37.3m
+[B_resnet18_image_cumlink_seed42] TEST acc 0.400 bal 0.342 mF1 0.302 QWK 0.325 MildF1 0.118 macroAUC 0.618 HF-AUC 0.715 | VAL bal 0.421 mF1 0.335
+[B_resnet18_image_cumlink_seed42] best epoch 21, 37.3 min

@@ -1,0 +1,10 @@
+{
+ "blocked": {},
+ "milestone_overrides": {},
+ "known_issues": [
+  "Experiment C (extra unlabelled / matched ECGs) not run: no extra PDFs or waveforms exist; confirmed blocked by the owner (PHASE6_PLAN.md 4.3).",
+  "Repository is public: main tracks the patient-named PDFs, its history contains the deleted ECG_ECHO sheets, and Phase 1-3 per-ECG CSVs (incl. phase_2/locked_test probabilities) are tracked. Owner handles it; Phase 6 modifies none of it and adds nothing similar (REPOSITORY_AUDIT_P6.md).",
+  "Name pairs: 11 near-identical name pairs straddle D and T and 3 lie within T; they must be resolved by the owner before any locked-test evaluation (counts only).",
+  "Do not run phase_5.resume5 (rewrites PHASE5_STATUS.md / checkpoint.json) or phase_5.integrity5 verify (writes into phase_5/results) in a Phase-6 session; use resume6 / integrity6."
+ ]
+}

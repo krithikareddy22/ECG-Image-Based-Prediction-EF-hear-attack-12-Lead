@@ -1,0 +1,1142 @@
+[
+ {
+  "model": "P5C-lr-hdr+qrs-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.5380326563122262,
+  "balanced_accuracy": 0.4527570312792771,
+  "macro_f1": 0.44088451065424866,
+  "macro_auroc": 0.7042397505462027,
+  "recall_Severe": 0.4249084249084249,
+  "precision_Severe": 0.30845829947053655,
+  "f1_Mild": 0.25648590002046995,
+  "min_class_recall_mean": 0.21621621621621623,
+  "admissible": true,
+  "d_accuracy": 0.049023381807812974,
+  "p_accuracy": 0.04256215773481036,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   0.0019,
+   0.0962
+  ],
+  "d_balanced_accuracy": 0.03880255682887261,
+  "p_balanced_accuracy": 0.054439572008911946,
+  "same_sign_balanced_accuracy": true,
+  "ci_balanced_accuracy": [
+   -0.0008,
+   0.0785
+  ],
+  "d_macro_f1": 0.045722042685760786,
+  "p_macro_f1": 0.05270471076124155,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   -0.0006,
+   0.0921
+  ],
+  "d_recall_Severe": -0.01461988304093566,
+  "p_recall_Severe": 0.8366976464132805,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.1639,
+   0.1347
+  ],
+  "d_f1_Mild": 0.05725458971647336,
+  "p_f1_Mild": 0.32230087722612377,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0624,
+   0.1769
+  ],
+  "p_holm_accuracy": 0.38305941961329326,
+  "p_holm_balanced_accuracy": 0.4899561480802075,
+  "p_holm_macro_f1": 0.47434239685117396,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "header + family vs header LR"
+ },
+ {
+  "model": "P5C-lr-hdr+allnew-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.5025886101154918,
+  "balanced_accuracy": 0.4340349218129938,
+  "macro_f1": 0.42539392065165155,
+  "macro_auroc": 0.689633093515393,
+  "recall_Severe": 0.3956043956043956,
+  "precision_Severe": 0.30546557199125585,
+  "f1_Mild": 0.24696465480779206,
+  "min_class_recall_mean": 0.23063063063063063,
+  "admissible": true,
+  "d_accuracy": 0.013575230491398164,
+  "p_accuracy": 0.6690581776573813,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   -0.0531,
+   0.0803
+  ],
+  "d_balanced_accuracy": 0.020062485588801374,
+  "p_balanced_accuracy": 0.5241649710799595,
+  "same_sign_balanced_accuracy": true,
+  "ci_balanced_accuracy": [
+   -0.0458,
+   0.0859
+  ],
+  "d_macro_f1": 0.0315948105920087,
+  "p_macro_f1": 0.3074724826002943,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   -0.0324,
+   0.0956
+  ],
+  "d_recall_Severe": -0.04444444444444443,
+  "p_recall_Severe": 0.5785363891448725,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.212,
+   0.1232
+  ],
+  "d_f1_Mild": 0.04810383105648069,
+  "p_f1_Mild": 0.42855067884804116,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0784,
+   0.1746
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "header + family vs header LR"
+ },
+ {
+  "model": "P5C-lr-hdr+clin3+allnew-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.49940262843488653,
+  "balanced_accuracy": 0.428722115540177,
+  "macro_f1": 0.4203662840718487,
+  "macro_auroc": 0.6817507263573295,
+  "recall_Severe": 0.38095238095238093,
+  "precision_Severe": 0.2867225535102123,
+  "f1_Mild": 0.24592667790904077,
+  "min_class_recall_mean": 0.23243243243243242,
+  "admissible": true,
+  "d_accuracy": 0.010381617716947057,
+  "p_accuracy": 0.6738477687824552,
+  "same_sign_accuracy": false,
+  "ci_accuracy": [
+   -0.0414,
+   0.0622
+  ],
+  "d_balanced_accuracy": 0.014766056213424628,
+  "p_balanced_accuracy": 0.47622326415674565,
+  "same_sign_balanced_accuracy": false,
+  "ci_balanced_accuracy": [
+   -0.0285,
+   0.058
+  ],
+  "d_macro_f1": 0.026460498913057632,
+  "p_macro_f1": 0.1738629037178774,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   -0.0131,
+   0.0661
+  ],
+  "d_recall_Severe": -0.05906432748538011,
+  "p_recall_Severe": 0.4541846133616304,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.2236,
+   0.1055
+  ],
+  "d_f1_Mild": 0.04778803493931217,
+  "p_f1_Mild": 0.38651769447297246,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0669,
+   0.1625
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "header + family vs header LR"
+ },
+ {
+  "model": "P5C-lr-hdr+leadstat-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.49860613301473516,
+  "balanced_accuracy": 0.4264771362295197,
+  "macro_f1": 0.41683190339891146,
+  "macro_auroc": 0.6990614779260632,
+  "recall_Severe": 0.38827838827838823,
+  "precision_Severe": 0.26384658122114296,
+  "f1_Mild": 0.26510841065737206,
+  "min_class_recall_mean": 0.24684684684684685,
+  "admissible": true,
+  "d_accuracy": 0.009621233723030136,
+  "p_accuracy": 0.6449656820196652,
+  "same_sign_accuracy": false,
+  "ci_accuracy": [
+   -0.0342,
+   0.0534
+  ],
+  "d_balanced_accuracy": 0.012310066389013748,
+  "p_balanced_accuracy": 0.650140813371113,
+  "same_sign_balanced_accuracy": false,
+  "ci_balanced_accuracy": [
+   -0.0447,
+   0.0693
+  ],
+  "d_macro_f1": 0.02265988389036233,
+  "p_macro_f1": 0.3989079920479389,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   -0.0332,
+   0.0785
+  ],
+  "d_recall_Severe": -0.052046783625730994,
+  "p_recall_Severe": 0.4891215669853565,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.2092,
+   0.1051
+  ],
+  "d_f1_Mild": 0.06479977095522622,
+  "p_f1_Mild": 0.2878778461106719,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.061,
+   0.1906
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "header + family vs header LR"
+ },
+ {
+  "model": "P5C-lr-hdr+sq-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.4950219036240542,
+  "balanced_accuracy": 0.4430875330769399,
+  "macro_f1": 0.42184052374544745,
+  "macro_auroc": 0.6912230196988193,
+  "recall_Severe": 0.5054945054945055,
+  "precision_Severe": 0.2902447488126296,
+  "f1_Mild": 0.24972011348822942,
+  "min_class_recall_mean": 0.22342342342342345,
+  "admissible": true,
+  "d_accuracy": 0.006016538351867695,
+  "p_accuracy": 0.7491256652832022,
+  "same_sign_accuracy": false,
+  "ci_accuracy": [
+   -0.0335,
+   0.0456
+  ],
+  "d_balanced_accuracy": 0.029052246025930237,
+  "p_balanced_accuracy": 0.18896074657136164,
+  "same_sign_balanced_accuracy": true,
+  "ci_balanced_accuracy": [
+   -0.0161,
+   0.0742
+  ],
+  "d_macro_f1": 0.02640341096963185,
+  "p_macro_f1": 0.3197870798582861,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   -0.0285,
+   0.0813
+  ],
+  "d_recall_Severe": 0.06549707602339182,
+  "p_recall_Severe": 0.32080283375021224,
+  "same_sign_recall_Severe": true,
+  "ci_recall_Severe": [
+   -0.071,
+   0.202
+  ],
+  "d_f1_Mild": 0.0484551070675493,
+  "p_f1_Mild": 0.4191005153872466,
+  "same_sign_f1_Mild": true,
+  "ci_f1_Mild": [
+   -0.0764,
+   0.1733
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "header + family vs header LR"
+ },
+ {
+  "model": "P5C-lr-hdr+freq-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.4834727200318598,
+  "balanced_accuracy": 0.41650109428843535,
+  "macro_f1": 0.40545613052247315,
+  "macro_auroc": 0.6897239515864245,
+  "recall_Severe": 0.3956043956043956,
+  "precision_Severe": 0.25760768993523186,
+  "f1_Mild": 0.2693671540583903,
+  "min_class_recall_mean": 0.25405405405405407,
+  "admissible": true,
+  "d_accuracy": -0.005543674555650587,
+  "p_accuracy": 0.7887138487877894,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   -0.0491,
+   0.038
+  ],
+  "d_balanced_accuracy": 0.0028358245463508515,
+  "p_balanced_accuracy": 0.9002146368853047,
+  "same_sign_balanced_accuracy": false,
+  "ci_balanced_accuracy": [
+   -0.0448,
+   0.0505
+  ],
+  "d_macro_f1": 0.011283113440773896,
+  "p_macro_f1": 0.5752568602111499,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   -0.0309,
+   0.0535
+  ],
+  "d_recall_Severe": -0.04327485380116958,
+  "p_recall_Severe": 0.5469528086749085,
+  "same_sign_recall_Severe": true,
+  "ci_recall_Severe": [
+   -0.1936,
+   0.1071
+  ],
+  "d_f1_Mild": 0.07202699266752992,
+  "p_f1_Mild": 0.18917051399966534,
+  "same_sign_f1_Mild": true,
+  "ci_f1_Mild": [
+   -0.0399,
+   0.184
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "header + family vs header LR"
+ },
+ {
+  "model": "P5C-lr-hdr+st-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.48227797690163277,
+  "balanced_accuracy": 0.4132569922228291,
+  "macro_f1": 0.3988894543177765,
+  "macro_auroc": 0.6694136879011632,
+  "recall_Severe": 0.4102564102564103,
+  "precision_Severe": 0.27191648930779366,
+  "f1_Mild": 0.19190547138535763,
+  "min_class_recall_mean": 0.1693693693693694,
+  "admissible": true,
+  "d_accuracy": -0.0067674175458606505,
+  "p_accuracy": 0.7944777436190533,
+  "same_sign_accuracy": false,
+  "ci_accuracy": [
+   -0.0614,
+   0.0479
+  ],
+  "d_balanced_accuracy": -0.0006426299847352435,
+  "p_balanced_accuracy": 0.982647922586368,
+  "same_sign_balanced_accuracy": false,
+  "ci_balanced_accuracy": [
+   -0.0629,
+   0.0616
+  ],
+  "d_macro_f1": 0.005198714668262838,
+  "p_macro_f1": 0.8553932738375802,
+  "same_sign_macro_f1": false,
+  "ci_macro_f1": [
+   -0.0549,
+   0.0653
+  ],
+  "d_recall_Severe": -0.029044834307992193,
+  "p_recall_Severe": 0.6975009965518593,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.186,
+   0.128
+  ],
+  "d_f1_Mild": -0.008209356969970676,
+  "p_f1_Mild": 0.8839904037640467,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.1267,
+   0.1103
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "header + family vs header LR"
+ },
+ {
+  "model": "P5C-lr-hdr+hrv-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.4727200318598168,
+  "balanced_accuracy": 0.4036512141914684,
+  "macro_f1": 0.3799190368902014,
+  "macro_auroc": 0.6760104908250085,
+  "recall_Severe": 0.45787545787545786,
+  "precision_Severe": 0.252768119581726,
+  "f1_Mild": 0.1856018160168629,
+  "min_class_recall_mean": 0.14954954954954955,
+  "admissible": false,
+  "d_accuracy": -0.016312612869499088,
+  "p_accuracy": 0.17704751059131266,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   -0.0409,
+   0.0083
+  ],
+  "d_balanced_accuracy": -0.010156013840224376,
+  "p_balanced_accuracy": 0.5022926663801925,
+  "same_sign_balanced_accuracy": false,
+  "ci_balanced_accuracy": [
+   -0.0418,
+   0.0215
+  ],
+  "d_macro_f1": -0.014932151497845174,
+  "p_macro_f1": 0.3333552590443905,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   -0.0469,
+   0.017
+  ],
+  "d_recall_Severe": 0.01871345029239766,
+  "p_recall_Severe": 0.7538121115975609,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.1068,
+   0.1442
+  ],
+  "d_f1_Mild": -0.013556501551221409,
+  "p_f1_Mild": 0.6159943094304944,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0702,
+   0.0431
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "header + family vs header LR"
+ },
+ {
+  "model": "P5C-lr-hdr+wavelet-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.46873755475906015,
+  "balanced_accuracy": 0.4111504821780245,
+  "macro_f1": 0.39821518038518605,
+  "macro_auroc": 0.6789704794952994,
+  "recall_Severe": 0.39926739926739935,
+  "precision_Severe": 0.2405517082219288,
+  "f1_Mild": 0.25682366394277495,
+  "min_class_recall_mean": 0.23603603603603604,
+  "admissible": true,
+  "d_accuracy": -0.020285619237715043,
+  "p_accuracy": 0.39888982651875554,
+  "same_sign_accuracy": false,
+  "ci_accuracy": [
+   -0.0703,
+   0.0297
+  ],
+  "d_balanced_accuracy": -0.002785993443888172,
+  "p_balanced_accuracy": 0.890216221869259,
+  "same_sign_balanced_accuracy": false,
+  "ci_balanced_accuracy": [
+   -0.0453,
+   0.0397
+  ],
+  "d_macro_f1": 0.004686592350770753,
+  "p_macro_f1": 0.8257790100163999,
+  "same_sign_macro_f1": false,
+  "ci_macro_f1": [
+   -0.0401,
+   0.0495
+  ],
+  "d_recall_Severe": -0.040350877192982464,
+  "p_recall_Severe": 0.474310102869153,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.1581,
+   0.0774
+  ],
+  "d_f1_Mild": 0.05826871128140249,
+  "p_f1_Mild": 0.2470362739676423,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0452,
+   0.1617
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "header + family vs header LR"
+ },
+ {
+  "model": "P5A-import-ecgflin-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.5280764635603344,
+  "balanced_accuracy": 0.4420722074456185,
+  "macro_f1": 0.4335753617826501,
+  "macro_auroc": 0.6954217205010836,
+  "recall_Severe": 0.3626373626373627,
+  "precision_Severe": 0.29055938614762145,
+  "f1_Mild": 0.244187950870525,
+  "min_class_recall_mean": 0.21441441441441444,
+  "admissible": true,
+  "d_accuracy": 0.03902670848778635,
+  "p_accuracy": 0.0477737202228141,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   0.0004,
+   0.0776
+  ],
+  "d_balanced_accuracy": 0.028200970964128855,
+  "p_balanced_accuracy": 0.09300490320038075,
+  "same_sign_balanced_accuracy": true,
+  "ci_balanced_accuracy": [
+   -0.0054,
+   0.0618
+  ],
+  "d_macro_f1": 0.040052483765828525,
+  "p_macro_f1": 0.03587315992671965,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   0.003,
+   0.0771
+  ],
+  "d_recall_Severe": -0.07680311890838205,
+  "p_recall_Severe": 0.24313654199660656,
+  "same_sign_recall_Severe": true,
+  "ci_recall_Severe": [
+   -0.212,
+   0.0584
+  ],
+  "d_f1_Mild": 0.04566353629982681,
+  "p_f1_Mild": 0.43567865756464264,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0764,
+   0.1677
+  ],
+  "p_holm_accuracy": 0.3821897617825128,
+  "p_holm_balanced_accuracy": 0.8370441288034268,
+  "p_holm_macro_f1": 0.35873159926719644,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "family alone vs header LR"
+ },
+ {
+  "model": "P5C-lr-allnew-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.5065710872162486,
+  "balanced_accuracy": 0.43315159871701187,
+  "macro_f1": 0.4232578067755373,
+  "macro_auroc": 0.6935589716378171,
+  "recall_Severe": 0.39194139194139194,
+  "precision_Severe": 0.30091590508257177,
+  "f1_Mild": 0.23935252987692204,
+  "min_class_recall_mean": 0.21441441441441444,
+  "admissible": true,
+  "d_accuracy": 0.017560117859519074,
+  "p_accuracy": 0.5222696295725985,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   -0.0398,
+   0.0749
+  ],
+  "d_balanced_accuracy": 0.019040569961622608,
+  "p_balanced_accuracy": 0.48560409198305915,
+  "same_sign_balanced_accuracy": true,
+  "ci_balanced_accuracy": [
+   -0.038,
+   0.0761
+  ],
+  "d_macro_f1": 0.029315341081682343,
+  "p_macro_f1": 0.27105496858901035,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   -0.0256,
+   0.0842
+  ],
+  "d_recall_Severe": -0.04873294346978558,
+  "p_recall_Severe": 0.5754564374435657,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.231,
+   0.1335
+  ],
+  "d_f1_Mild": 0.04046887693908318,
+  "p_f1_Mild": 0.4444036185830043,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0698,
+   0.1508
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "family alone vs header LR"
+ },
+ {
+  "model": "P5A-import-hdrclinlr-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.5013938669852649,
+  "balanced_accuracy": 0.43991867475712815,
+  "macro_f1": 0.424089155726273,
+  "macro_auroc": 0.6864892083926407,
+  "recall_Severe": 0.46520146520146516,
+  "precision_Severe": 0.2861164051828653,
+  "f1_Mild": 0.268761168983859,
+  "min_class_recall_mean": 0.24324324324324328,
+  "admissible": true,
+  "d_accuracy": 0.012389506700883946,
+  "p_accuracy": 0.5838200060747208,
+  "same_sign_accuracy": false,
+  "ci_accuracy": [
+   -0.035,
+   0.0598
+  ],
+  "d_balanced_accuracy": 0.0260437949911634,
+  "p_balanced_accuracy": 0.2775223590101142,
+  "same_sign_balanced_accuracy": false,
+  "ci_balanced_accuracy": [
+   -0.0234,
+   0.0755
+  ],
+  "d_macro_f1": 0.029311721249261527,
+  "p_macro_f1": 0.23608220397320573,
+  "same_sign_macro_f1": false,
+  "ci_macro_f1": [
+   -0.0215,
+   0.0801
+  ],
+  "d_recall_Severe": 0.025925925925925943,
+  "p_recall_Severe": 0.6617813500119579,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.0985,
+   0.1504
+  ],
+  "d_f1_Mild": 0.06776393202246499,
+  "p_f1_Mild": 0.20802488797228794,
+  "same_sign_f1_Mild": true,
+  "ci_f1_Mild": [
+   -0.0423,
+   0.1779
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "family alone vs header LR"
+ },
+ {
+  "model": "P5C-lr-qrs-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.5009956192751891,
+  "balanced_accuracy": 0.409959929736148,
+  "macro_f1": 0.3980734291430264,
+  "macro_auroc": 0.6680281747602691,
+  "recall_Severe": 0.3772893772893773,
+  "precision_Severe": 0.27095264592863977,
+  "f1_Mild": 0.208685809204225,
+  "min_class_recall_mean": 0.17837837837837842,
+  "admissible": true,
+  "d_accuracy": 0.011983176504134585,
+  "p_accuracy": 0.6572617930856791,
+  "same_sign_accuracy": false,
+  "ci_accuracy": [
+   -0.0447,
+   0.0687
+  ],
+  "d_balanced_accuracy": -0.003919921288342346,
+  "p_balanced_accuracy": 0.8664252677834335,
+  "same_sign_balanced_accuracy": false,
+  "ci_balanced_accuracy": [
+   -0.053,
+   0.0452
+  ],
+  "d_macro_f1": 0.0036671595582194795,
+  "p_macro_f1": 0.8723033903079177,
+  "same_sign_macro_f1": false,
+  "ci_macro_f1": [
+   -0.0444,
+   0.0517
+  ],
+  "d_recall_Severe": -0.06218323586744638,
+  "p_recall_Severe": 0.4371290767106386,
+  "same_sign_recall_Severe": true,
+  "ci_recall_Severe": [
+   -0.2289,
+   0.1045
+  ],
+  "d_f1_Mild": 0.009078010636515402,
+  "p_f1_Mild": 0.8732750040697831,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.1108,
+   0.1289
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "family alone vs header LR"
+ },
+ {
+  "model": "P5C-lr-clin3-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.48307447232178413,
+  "balanced_accuracy": 0.4198766083233774,
+  "macro_f1": 0.3948670511788334,
+  "macro_auroc": 0.6752027922986716,
+  "recall_Severe": 0.5091575091575092,
+  "precision_Severe": 0.2763368015611286,
+  "f1_Mild": 0.2204701087784956,
+  "min_class_recall_mean": 0.190990990990991,
+  "admissible": true,
+  "d_accuracy": -0.0059357475525140145,
+  "p_accuracy": 0.7400676668556122,
+  "same_sign_accuracy": false,
+  "ci_accuracy": [
+   -0.0436,
+   0.0317
+  ],
+  "d_balanced_accuracy": 0.005961162803268065,
+  "p_balanced_accuracy": 0.7693018087615145,
+  "same_sign_balanced_accuracy": false,
+  "ci_balanced_accuracy": [
+   -0.0368,
+   0.0487
+  ],
+  "d_macro_f1": 0.0008194586095277457,
+  "p_macro_f1": 0.9679494456494184,
+  "same_sign_macro_f1": false,
+  "ci_macro_f1": [
+   -0.0421,
+   0.0438
+  ],
+  "d_recall_Severe": 0.06998050682261209,
+  "p_recall_Severe": 0.3637457198694707,
+  "same_sign_recall_Severe": true,
+  "ci_recall_Severe": [
+   -0.0899,
+   0.2299
+  ],
+  "d_f1_Mild": 0.022500015408696124,
+  "p_f1_Mild": 0.6173555837901442,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0719,
+   0.1169
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "family alone vs header LR"
+ },
+ {
+  "model": "P5C-lr-leadstat-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.4747112704101952,
+  "balanced_accuracy": 0.4065113196667751,
+  "macro_f1": 0.3952394482111294,
+  "macro_auroc": 0.6775054697790028,
+  "recall_Severe": 0.39194139194139194,
+  "precision_Severe": 0.25170707972162293,
+  "f1_Mild": 0.2441804563986745,
+  "min_class_recall_mean": 0.22702702702702704,
+  "admissible": true,
+  "d_accuracy": -0.014314228685486163,
+  "p_accuracy": 0.4541275055184236,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   -0.0542,
+   0.0256
+  ],
+  "d_balanced_accuracy": -0.007718874034663518,
+  "p_balanced_accuracy": 0.7329461410556779,
+  "same_sign_balanced_accuracy": false,
+  "ci_balanced_accuracy": [
+   -0.0553,
+   0.0398
+  ],
+  "d_macro_f1": 5.092895952999073e-05,
+  "p_macro_f1": 0.998114606279101,
+  "same_sign_macro_f1": false,
+  "ci_macro_f1": [
+   -0.0454,
+   0.0455
+  ],
+  "d_recall_Severe": -0.04853801169590643,
+  "p_recall_Severe": 0.5829564432806575,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.2338,
+   0.1367
+  ],
+  "d_f1_Mild": 0.043219226815516446,
+  "p_f1_Mild": 0.3584745824233088,
+  "same_sign_f1_Mild": true,
+  "ci_f1_Mild": [
+   -0.0544,
+   0.1408
+  ],
+  "p_holm_accuracy": 1.0,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "family alone vs header LR"
+ },
+ {
+  "model": "P5C-lr-st-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.4416567104739148,
+  "balanced_accuracy": 0.37612549382941335,
+  "macro_f1": 0.3668034518020233,
+  "macro_auroc": 0.6360080094722019,
+  "recall_Severe": 0.32600732600732596,
+  "precision_Severe": 0.19331436804422295,
+  "f1_Mild": 0.22825344800871408,
+  "min_class_recall_mean": 0.209009009009009,
+  "admissible": true,
+  "d_accuracy": -0.047367170421062636,
+  "p_accuracy": 0.14495534255566203,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   -0.1132,
+   0.0184
+  ],
+  "d_balanced_accuracy": -0.03786083075556759,
+  "p_balanced_accuracy": 0.2562856594982519,
+  "same_sign_balanced_accuracy": true,
+  "ci_balanced_accuracy": [
+   -0.1065,
+   0.0307
+  ],
+  "d_macro_f1": -0.027345437135715734,
+  "p_macro_f1": 0.40958780983479015,
+  "same_sign_macro_f1": false,
+  "ci_macro_f1": [
+   -0.0963,
+   0.0416
+  ],
+  "d_recall_Severe": -0.11403508771929825,
+  "p_recall_Severe": 0.04110413153612552,
+  "same_sign_recall_Severe": true,
+  "ci_recall_Severe": [
+   -0.2228,
+   -0.0053
+  ],
+  "d_f1_Mild": 0.030497645649543388,
+  "p_f1_Mild": 0.6228537240262518,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0996,
+   0.1606
+  ],
+  "p_holm_accuracy": 0.8697320553339722,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 0.45214544689738073,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "family alone vs header LR"
+ },
+ {
+  "model": "P5C-lr-freq-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.43647949024293115,
+  "balanced_accuracy": 0.36292371067927215,
+  "macro_f1": 0.3563500450666998,
+  "macro_auroc": 0.6583386717914474,
+  "recall_Severe": 0.29304029304029305,
+  "precision_Severe": 0.17050224625682087,
+  "f1_Mild": 0.24916227202976293,
+  "min_class_recall_mean": 0.23423423423423426,
+  "admissible": true,
+  "d_accuracy": -0.05255679117954567,
+  "p_accuracy": 0.07925405100163027,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   -0.1121,
+   0.007
+  ],
+  "d_balanced_accuracy": -0.051185989475463156,
+  "p_balanced_accuracy": 0.0584456243786144,
+  "same_sign_balanced_accuracy": true,
+  "ci_balanced_accuracy": [
+   -0.1045,
+   0.0021
+  ],
+  "d_macro_f1": -0.03769173176815731,
+  "p_macro_f1": 0.11255271198811691,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   -0.0854,
+   0.0101
+  ],
+  "d_recall_Severe": -0.14736842105263157,
+  "p_recall_Severe": 0.13012099870155375,
+  "same_sign_recall_Severe": true,
+  "ci_recall_Severe": [
+   -0.3439,
+   0.0492
+  ],
+  "d_f1_Mild": 0.0519273379719263,
+  "p_f1_Mild": 0.28180974354764055,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0476,
+   0.1514
+  ],
+  "p_holm_accuracy": 0.5547783570114119,
+  "p_holm_balanced_accuracy": 0.584456243786144,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "family alone vs header LR"
+ },
+ {
+  "model": "P5C-lr-sq-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.43608124253285546,
+  "balanced_accuracy": 0.401525633431089,
+  "macro_f1": 0.37767191842279413,
+  "macro_auroc": 0.6523555760348009,
+  "recall_Severe": 0.4908424908424908,
+  "precision_Severe": 0.25864669646337085,
+  "f1_Mild": 0.23078342845784705,
+  "min_class_recall_mean": 0.20540540540540542,
+  "admissible": true,
+  "d_accuracy": -0.05292034977663719,
+  "p_accuracy": 0.04198891281961656,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   -0.1036,
+   -0.0022
+  ],
+  "d_balanced_accuracy": -0.012540749909170968,
+  "p_balanced_accuracy": 0.6428899899256256,
+  "same_sign_balanced_accuracy": true,
+  "ci_balanced_accuracy": [
+   -0.0693,
+   0.0442
+  ],
+  "d_macro_f1": -0.017411300234603737,
+  "p_macro_f1": 0.5021111866441876,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   -0.0716,
+   0.0368
+  ],
+  "d_recall_Severe": 0.050877192982456146,
+  "p_recall_Severe": 0.5693253237678079,
+  "same_sign_recall_Severe": true,
+  "ci_recall_Severe": [
+   -0.1364,
+   0.2381
+  ],
+  "d_f1_Mild": 0.02974359330495446,
+  "p_f1_Mild": 0.603045682231511,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0902,
+   0.1496
+  ],
+  "p_holm_accuracy": 0.37967976447829777,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "family alone vs header LR"
+ },
+ {
+  "model": "P5C-lr-wavelet-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.4277180406212664,
+  "balanced_accuracy": 0.3851446849129582,
+  "macro_f1": 0.37196441239941186,
+  "macro_auroc": 0.6546767873449792,
+  "recall_Severe": 0.3956043956043956,
+  "precision_Severe": 0.23089637501575166,
+  "f1_Mild": 0.25416736908671683,
+  "min_class_recall_mean": 0.2504504504504505,
+  "admissible": true,
+  "d_accuracy": -0.061351107309191126,
+  "p_accuracy": 0.037967976447829774,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   -0.1188,
+   -0.0039
+  ],
+  "d_balanced_accuracy": -0.028984230300019776,
+  "p_balanced_accuracy": 0.1907882266322032,
+  "same_sign_balanced_accuracy": true,
+  "ci_balanced_accuracy": [
+   -0.0742,
+   0.0162
+  ],
+  "d_macro_f1": -0.021897327895251777,
+  "p_macro_f1": 0.3555428307065748,
+  "same_sign_macro_f1": false,
+  "ci_macro_f1": [
+   -0.0711,
+   0.0273
+  ],
+  "d_recall_Severe": -0.0446393762183236,
+  "p_recall_Severe": 0.49396737933735785,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.181,
+   0.0917
+  ],
+  "d_f1_Mild": 0.05903148555666889,
+  "p_f1_Mild": 0.3328432149899419,
+  "same_sign_f1_Mild": false,
+  "ci_f1_Mild": [
+   -0.0672,
+   0.1853
+  ],
+  "p_holm_accuracy": 0.37967976447829777,
+  "p_holm_balanced_accuracy": 1.0,
+  "p_holm_macro_f1": 1.0,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "family alone vs header LR"
+ },
+ {
+  "model": "P5C-lr-hrv-v1",
+  "reference": "P5A-import-hdrlr-v1",
+  "repeats": 3,
+  "runs": 3,
+  "accuracy": 0.34368777379530063,
+  "balanced_accuracy": 0.30423511005476045,
+  "macro_f1": 0.2520160212211648,
+  "macro_auroc": 0.5356933991795386,
+  "recall_Severe": 0.5018315018315018,
+  "precision_Severe": 0.162072618338657,
+  "f1_Mild": 0.1109078195692369,
+  "min_class_recall_mean": 0.07567567567567568,
+  "admissible": false,
+  "d_accuracy": -0.14534977663720175,
+  "p_accuracy": 4.026685416741505e-07,
+  "same_sign_accuracy": true,
+  "ci_accuracy": [
+   -0.1805,
+   -0.1102
+  ],
+  "d_balanced_accuracy": -0.10983090746248643,
+  "p_balanced_accuracy": 0.00013426008824226173,
+  "same_sign_balanced_accuracy": true,
+  "ci_balanced_accuracy": [
+   -0.1551,
+   -0.0645
+  ],
+  "d_macro_f1": -0.14344659638258878,
+  "p_macro_f1": 5.977156690515219e-06,
+  "same_sign_macro_f1": true,
+  "ci_macro_f1": [
+   -0.1872,
+   -0.0997
+  ],
+  "d_recall_Severe": 0.06159844054580897,
+  "p_recall_Severe": 0.4578570080058629,
+  "same_sign_recall_Severe": false,
+  "ci_recall_Severe": [
+   -0.1114,
+   0.2346
+  ],
+  "d_f1_Mild": -0.09408713156810282,
+  "p_f1_Mild": 0.22599903138574795,
+  "same_sign_f1_Mild": true,
+  "ci_f1_Mild": [
+   -0.2534,
+   0.0652
+  ],
+  "p_holm_accuracy": 4.4293539584156555e-06,
+  "p_holm_balanced_accuracy": 0.001476860970664879,
+  "p_holm_macro_f1": 6.574872359566742e-05,
+  "p_holm_recall_Severe": 1.0,
+  "p_holm_f1_Mild": 1.0,
+  "genuine_accuracy_gain": false,
+  "comparison": "family alone vs header LR"
+ }
+]

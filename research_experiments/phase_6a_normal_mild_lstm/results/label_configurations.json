@@ -1,0 +1,138 @@
+{
+ "rule": "Normal M>52 / F>=54; Mild 41<=EF<=52 (M) / 41<=EF<54 (F); Moderate 31<=EF<41; Severe EF<31 (Teichholz)",
+ "labels_csv_sha256": "1efb90ab2fe3bbb837a1976127e573f3b05e3e1fd70896c0fefe2ced52d6a7e4",
+ "classes": {
+  "Normal": {
+   "ecgs": 384,
+   "patients": 382
+  },
+  "Mild": {
+   "ecgs": 185,
+   "patients": 180
+  },
+  "Moderate": {
+   "ecgs": 177,
+   "patients": 172
+  },
+  "Severe": {
+   "ecgs": 91,
+   "patients": 86
+  }
+ },
+ "borderline_audit": {
+  "all_folder_Mild": {
+   "ecgs": 185,
+   "patients": 180,
+   "ef_quartiles": [
+    43.4,
+    45.8,
+    49.0
+   ],
+   "name_score_100": 100,
+   "name_score_below_100": 85,
+   "same_day_echo": 105,
+   "echo_within_30d": 131,
+   "echo_over_30d": 54,
+   "single_link": 156,
+   "multiple_links": 29,
+   "high_confidence_G": 79,
+   "patient_key_with_repeated_ecgs": 23,
+   "verified_link": 0
+  },
+  "Mild_nearest_echo_outside_Mild_band": {
+   "ecgs": 19,
+   "patients": 19,
+   "ef_quartiles": [
+    40.8,
+    60.1,
+    71.2
+   ],
+   "name_score_100": 8,
+   "name_score_below_100": 11,
+   "same_day_echo": 7,
+   "echo_within_30d": 10,
+   "echo_over_30d": 9,
+   "single_link": 7,
+   "multiple_links": 12,
+   "high_confidence_G": 6,
+   "patient_key_with_repeated_ecgs": "<5",
+   "verified_link": 0
+  },
+  "Mild_consistent_EF_ge_50 (B2 movers)": {
+   "ecgs": 27,
+   "patients": 27,
+   "ef_quartiles": [
+    51.1,
+    51.9,
+    52.5
+   ],
+   "name_score_100": 19,
+   "name_score_below_100": 8,
+   "same_day_echo": 11,
+   "echo_within_30d": 16,
+   "echo_over_30d": 11,
+   "single_link": 25,
+   "multiple_links": "<5",
+   "high_confidence_G": 14,
+   "patient_key_with_repeated_ecgs": "<5",
+   "verified_link": 0
+  },
+  "Mild_within_2_of_sex_boundary": {
+   "ecgs": 16,
+   "patients": 16,
+   "ef_quartiles": [
+    52.0,
+    52.3,
+    53.2
+   ],
+   "name_score_100": 13,
+   "name_score_below_100": "<5",
+   "same_day_echo": 7,
+   "echo_within_30d": 11,
+   "echo_over_30d": 5,
+   "single_link": 15,
+   "multiple_links": "<5",
+   "high_confidence_G": 9,
+   "patient_key_with_repeated_ecgs": "<5",
+   "verified_link": 0
+  },
+  "note": "EF values come from fuzzy NAME matches (no patient ID): none is verified (verified_link = 0)."
+ },
+ "B2": {
+  "boundary": "sex-independent EF >= 50 % is Normal (only clearly defined Mild movers)",
+  "moved_ecgs": 27,
+  "moved_patients": 27,
+  "class_counts_B2": {
+   "Normal": 411,
+   "Mild": 158,
+   "Moderate": 177,
+   "Severe": 91
+  }
+ },
+ "B3": {
+  "definition": "Normal/Mild with nearest-echo EF within +-2 of the sex-specific boundary, or a conflicting Normal/Mild link",
+  "uncertain_ecgs": 45,
+  "uncertain_patients": 44,
+  "by_band": 26,
+  "by_conflicting_link": 23,
+  "uncertain_by_class": {
+   "Normal": 11,
+   "Mild": 34,
+   "Moderate": 0,
+   "Severe": 0
+  },
+  "removed_from_inner_train_per_fold": "see a270 / b3 fold table"
+ },
+ "A270": {
+  "target": 270,
+  "all_folds_exactly_270": true,
+  "moved_ecgs_per_fold": [
+   23,
+   25
+  ],
+  "inner_val_normal_after": [
+   37,
+   38
+  ]
+ }
+}

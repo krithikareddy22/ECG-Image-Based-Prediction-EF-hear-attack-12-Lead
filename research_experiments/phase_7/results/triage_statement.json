@@ -1,0 +1,158 @@
+{
+ "AGT-img": {
+  "coverage": {
+   "mean": 0.5564109875487121,
+   "ci95_corrected": [
+    0.4830575220336897,
+    0.6297644530637345
+   ]
+  },
+  "accuracy_answered": {
+   "mean": 0.6955427701199135,
+   "ci95_corrected": [
+    0.655315266689739,
+    0.735770273550088
+   ]
+  },
+  "answered_Normal_calls_truly_Normal": {
+   "mean": 0.7418864615237172,
+   "ci95_corrected": [
+    0.703265875932783,
+    0.7805070471146514
+   ]
+  },
+  "answered_Normal_calls_truly_Mild": {
+   "mean": 0.1586619462065021,
+   "ci95_corrected": [
+    0.1298273663358032,
+    0.187496526077201
+   ]
+  },
+  "answered_Normal_calls_truly_Moderate": {
+   "mean": 0.07146861646051571,
+   "ci95_corrected": [
+    0.04593549649554123,
+    0.09700173642549018
+   ]
+  },
+  "answered_Normal_calls_truly_Severe": {
+   "mean": 0.027982975809265058,
+   "ci95_corrected": [
+    0.008322666848593969,
+    0.04764328476993615
+   ]
+  },
+  "ruleout_EF_lt_41_among_Normal_calls": {
+   "mean": 0.9005484077302193,
+   "ci95_corrected": [
+    0.8625496700129975,
+    0.938547145447441
+   ]
+  },
+  "share_of_all_EF_lt_41_called_Normal": {
+   "mean": 0.14933612858141163,
+   "ci95_corrected": [
+    0.07581390604035555,
+    0.2228583511224677
+   ]
+  },
+  "share_of_all_Mild_called_Normal": {
+   "mean": 0.3387387387387388,
+   "ci95_corrected": [
+    0.24841341325277805,
+    0.4290640642246995
+   ]
+  },
+  "answered_ModSev_calls_truly_EF_lt_41": {
+   "mean": 0.626875541400713,
+   "ci95_corrected": [
+    0.4072867418191328,
+    0.8464643409822932
+   ]
+  },
+  "answered_calls_per_run": {
+   "Normal": 393.6666666666667,
+   "Mild": 4.0,
+   "Moderate": 57.333333333333336,
+   "Severe": 10.666666666666666
+  }
+ },
+ "G2T-img": {
+  "coverage": {
+   "mean": 0.5333285809333713,
+   "ci95_corrected": [
+    0.4422203454905673,
+    0.6244368163761753
+   ]
+  },
+  "accuracy_answered": {
+   "mean": 0.6967202058021523,
+   "ci95_corrected": [
+    0.6410511941298709,
+    0.7523892174744338
+   ]
+  },
+  "answered_Normal_calls_truly_Normal": {
+   "mean": 0.7365892573616709,
+   "ci95_corrected": [
+    0.6814977602397684,
+    0.7916807544835734
+   ]
+  },
+  "answered_Normal_calls_truly_Mild": {
+   "mean": 0.16404300275817907,
+   "ci95_corrected": [
+    0.12970746090661173,
+    0.1983785446097464
+   ]
+  },
+  "answered_Normal_calls_truly_Moderate": {
+   "mean": 0.07106754476584194,
+   "ci95_corrected": [
+    0.042491600764500995,
+    0.09964348876718289
+   ]
+  },
+  "answered_Normal_calls_truly_Severe": {
+   "mean": 0.02830019511430798,
+   "ci95_corrected": [
+    0.005989129823001815,
+    0.050611260405614145
+   ]
+  },
+  "ruleout_EF_lt_41_among_Normal_calls": {
+   "mean": 0.9006322601198502,
+   "ci95_corrected": [
+    0.8597979894954972,
+    0.9414665307442032
+   ]
+  },
+  "share_of_all_EF_lt_41_called_Normal": {
+   "mean": 0.15178197064989518,
+   "ci95_corrected": [
+    0.07062346671696881,
+    0.23294047458282155
+   ]
+  },
+  "share_of_all_Mild_called_Normal": {
+   "mean": 0.3567567567567568,
+   "ci95_corrected": [
+    0.23301858973160583,
+    0.4804949237819077
+   ]
+  },
+  "answered_ModSev_calls_truly_EF_lt_41": {
+   "mean": 0.6407725872011587,
+   "ci95_corrected": [
+    0.39977323268845466,
+    0.8817719417138628
+   ]
+  },
+  "answered_calls_per_run": {
+   "Normal": 397.0,
+   "Mild": 0.3333333333333333,
+   "Moderate": 37.0,
+   "Severe": 12.0
+  }
+ }
+}

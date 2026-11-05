@@ -1,0 +1,21 @@
+{
+  "tag": "fusion_header_resnet18",
+  "model": "Fusion: header 0.6 + ResNet-18 0.4",
+  "input": "header text + image",
+  "checkpoints": [
+    "models/resnet18_filtered.pt"
+  ],
+  "header_model": "models/header_logreg.joblib",
+  "header_weight": 0.6,
+  "hf_threshold": 0.49114900000000006,
+  "decoding": "argmax",
+  "selected_by": "validation score = mean(macro-F1, QWK, HF AUC)",
+  "val_score": 0.612010442092017,
+  "image_model": "ResNet-18",
+  "image_hf_threshold": 0.378747820854187,
+  "image_ordinal_cutpoints": [
+    0.8745995,
+    1.637751748,
+    2.146934776
+  ]
+}

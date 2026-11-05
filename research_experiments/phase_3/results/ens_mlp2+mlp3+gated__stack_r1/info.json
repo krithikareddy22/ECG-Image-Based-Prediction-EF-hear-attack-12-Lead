@@ -1,0 +1,11 @@
+{
+ "members": [
+  "mlp2",
+  "mlp3",
+  "gated"
+ ],
+ "method": "stack",
+ "params": {},
+ "seed": -1,
+ "repeat": 1
+}

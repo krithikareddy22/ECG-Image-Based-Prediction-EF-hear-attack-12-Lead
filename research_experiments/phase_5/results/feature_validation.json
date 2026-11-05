@@ -1,0 +1,84 @@
+{
+ "n_ecgs": 837,
+ "families": {
+  "qrs": {
+   "n_features": 75,
+   "missing_share": 0.0011,
+   "features_with_any_missing": 39,
+   "constant_features": 0
+  },
+  "st": {
+   "n_features": 48,
+   "missing_share": 0.001,
+   "features_with_any_missing": 24,
+   "constant_features": 0
+  },
+  "hrv": {
+   "n_features": 10,
+   "missing_share": 0.0002,
+   "features_with_any_missing": 2,
+   "constant_features": 0
+  },
+  "freq": {
+   "n_features": 60,
+   "missing_share": 0.0,
+   "features_with_any_missing": 0,
+   "constant_features": 0
+  },
+  "wavelet": {
+   "n_features": 84,
+   "missing_share": 0.0,
+   "features_with_any_missing": 0,
+   "constant_features": 0
+  },
+  "leadstat": {
+   "n_features": 72,
+   "missing_share": 0.0,
+   "features_with_any_missing": 0,
+   "constant_features": 0
+  },
+  "sq": {
+   "n_features": 26,
+   "missing_share": 0.0,
+   "features_with_any_missing": 0,
+   "constant_features": 0
+  }
+ },
+ "consistency_with_machine_measurements": {
+  "heart_rate_bpm (rhythm strip vs printed Rate)": {
+   "n": 837,
+   "pearson_r": 0.854,
+   "mean_diff": 1.18,
+   "median_abs_diff": 0.35,
+   "measure": "bpm"
+  },
+  "mean_RR_ms (rhythm strip vs printed RR)": {
+   "n": 837,
+   "pearson_r": 0.797,
+   "mean_diff": -4.59,
+   "median_abs_diff": 3.0,
+   "measure": "ms"
+  },
+  "QRS_width_ms (median-beat estimate vs printed QRSD)": {
+   "n": 837,
+   "pearson_r": 0.747,
+   "mean_diff": -29.09,
+   "median_abs_diff": 28.0,
+   "measure": "ms"
+  }
+ },
+ "version_notes": [
+  "sq v2: poor-lead flag = amplitude < 0.15 mV or kurtosis-SQI < 3 or HF-noise power > 30 % or baseline-wander power > 50 %; flat-line fraction kept as a descriptive feature only (digitisation artefact); quality spectra at full-length resolution. v1 (flat-line criterion, 1-Hz spectra) marked 98 % of leads poor and was never used by any experiment."
+ ],
+ "sq_quality_score": {
+  "count": 837.0,
+  "mean": 0.916,
+  "std": 0.131,
+  "min": 0.083,
+  "25%": 0.917,
+  "50%": 1.0,
+  "75%": 1.0,
+  "max": 1.0
+ },
+ "sq_n_poor_leads_share_ecgs_with_any": 0.474
+}
