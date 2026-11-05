@@ -1,0 +1,40 @@
+{
+ "spec": {
+  "blocks": [
+   [
+    "hdr",
+    "numeric"
+   ],
+   [
+    "clin"
+   ]
+  ]
+ },
+ "cfg": null,
+ "seed": 42,
+ "sk_lr": true,
+ "folds": [
+  {
+   "fold": 0,
+   "C": 0.1
+  },
+  {
+   "fold": 1,
+   "C": 0.03
+  },
+  {
+   "fold": 2,
+   "C": 1.0
+  },
+  {
+   "fold": 3,
+   "C": 0.03
+  },
+  {
+   "fold": 4,
+   "C": 1.0
+  }
+ ],
+ "minutes": 0.015501260757446289,
+ "repeat": 1
+}

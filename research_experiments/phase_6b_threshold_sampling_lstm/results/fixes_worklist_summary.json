@@ -1,0 +1,53 @@
+{
+ "n_ecgs": 837,
+ "flags": {
+  "label_differs_from_nearest_echo": 55,
+  "ef_within_3_of_limit": 212,
+  "ef_within_3_to_6_of_limit": 209,
+  "name_score_below_100": 391,
+  "echo_more_than_30_days": 192,
+  "echo_8_to_30_days": 38,
+  "other_class_echo_within_30_days": 10,
+  "ef_spread_over_10": 77,
+  "teichholz_unreliable_pattern_mi_or_lbbb": 222
+ },
+ "priority_tiers": {
+  "high (>= 5)": {
+   "n": 197,
+   "by_folder_label": {
+    "Moderate": 78,
+    "Mild": 70,
+    "Normal": 25,
+    "Severe": 24
+   }
+  },
+  "medium (3-4)": {
+   "n": 266,
+   "by_folder_label": {
+    "Normal": 93,
+    "Mild": 75,
+    "Moderate": 62,
+    "Severe": 36
+   }
+  },
+  "low (1-2)": {
+   "n": 220,
+   "by_folder_label": {
+    "Normal": 120,
+    "Mild": 39,
+    "Moderate": 37,
+    "Severe": 24
+   }
+  },
+  "none (0)": {
+   "n": 154,
+   "by_folder_label": {
+    "Normal": 146,
+    "Severe": 7,
+    "Mild": 1
+   }
+  }
+ },
+ "any_flag": 683,
+ "protocol": "Re-read protocol: reader blinded to the folder label and to any model output; confirm the ECG-echo link by MRN/UHID; re-measure EF by biplane Simpson; use every re-read value whatever it shows."
+}

@@ -1,0 +1,40 @@
+col_only observed fraction 0.25
+limb_only observed fraction 0.292
+precordial_plus_II observed fraction 0.208
+precordial_only observed fraction 0.125
+leadII_2p5 observed fraction 0.021
+{
+ "col_only": 0.25,
+ "limb_only": 0.29165563514804205,
+ "precordial_plus_II": 0.208320694046482,
+ "precordial_only": 0.12499049665711556,
+ "leadII_2p5": 0.020833333333333332,
+ "aligned": 0.4166461318051576
+}
+[mask_col_only_f6_lin] acc 0.536 bal 0.451 mF1 0.438 Mild 0.245 QWK 0.549 AUC 0.708 S3 0.475
+[mask_limb_only_f6_lin] acc 0.470 bal 0.401 mF1 0.391 Mild 0.292 QWK 0.459 AUC 0.662 S3 0.421
+[mask_precordial_plus_II_f6_lin] acc 0.492 bal 0.402 mF1 0.392 Mild 0.217 QWK 0.487 AUC 0.667 S3 0.429
+[mask_precordial_only_f6_lin] acc 0.503 bal 0.415 mF1 0.400 Mild 0.180 QWK 0.484 AUC 0.678 S3 0.440
+[mask_leadII_2p5_f6_lin] acc 0.459 bal 0.390 mF1 0.360 Mild 0.194 QWK 0.398 AUC 0.649 S3 0.403
+[mask_alt_windows_mean] acc 0.507 bal 0.416 mF1 0.413 Mild 0.259 QWK 0.494 AUC 0.677 S3 0.445
+[mask_alt_windows_concat] acc 0.534 bal 0.434 mF1 0.430 Mild 0.232 QWK 0.545 AUC 0.708 S3 0.466
+[mask_alt_multiview] acc 0.516 bal 0.432 mF1 0.410 Mild 0.198 QWK 0.508 AUC 0.690 S3 0.453
+                                                  construction  observed_fraction              source  labelfree_median_auroc  accuracy  balanced_accuracy  macro_f1  mild_f1   qwk    s3
+                                                       aligned              0.417             phase 2                   0.887     0.532              0.441     0.437    0.272 0.540 0.470
+                                                  aligned_meas              0.312             phase 2                   0.885     0.528              0.445     0.432    0.242 0.526 0.468
+                                                      leadII12              0.083             phase 2                   0.858     0.459              0.391     0.371    0.264 0.427 0.407
+                                                      col_only              0.250             phase 3                   0.881     0.536              0.451     0.438    0.245 0.549 0.475
+                                                     limb_only              0.292             phase 3                   0.870     0.470              0.401     0.391    0.292 0.459 0.421
+                                            precordial_plus_II              0.208             phase 3                   0.873     0.492              0.402     0.392    0.217 0.487 0.429
+                                               precordial_only              0.125             phase 3                   0.800     0.503              0.415     0.400    0.180 0.484 0.440
+                                                    leadII_2p5              0.021             phase 3                   0.772     0.459              0.390     0.360    0.194 0.398 0.403
+   windows_mean (each 2.5-s window alone, recorded leads only)                NaN phase 3 alternative                     NaN     0.507              0.416     0.413    0.259 0.494 0.445
+                                                windows_concat                NaN phase 3 alternative                     NaN     0.534              0.434     0.430    0.232 0.545 0.466
+multiview: aligned 12-lead + 1-lead model on true 10-s lead II                NaN phase 3 alternative                     NaN     0.516              0.432     0.410    0.198 0.508 0.453
+                                      multiview + windows_mean                NaN phase 3 alternative                     NaN     0.516              0.432     0.410    0.198 0.508 0.453
+{
+ "s3_per_10pct_observed_all": 0.016712416838362144,
+ "accuracy_per_10pct_observed_all": 0.0176403929457267,
+ "s3_per_10pct_observed_upper_range": 0.014165991837672592,
+ "note": "linear fit over constructions that only REMOVE real signal; extrapolating beyond 42 % observed is a HYPOTHESIS"
+}

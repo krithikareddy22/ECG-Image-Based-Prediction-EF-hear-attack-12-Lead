@@ -109,14 +109,64 @@ def raw_gray(rgb: np.ndarray, out_hw: tuple[int, int] = (CACHE_H, CACHE_W)) -> n
     return cv2.resize(gray, (out_hw[1], out_hw[0]), interpolation=cv2.INTER_AREA)
 
 
+# --- classic image filters, for the preprocessing comparison --------------------------
+# Each works on the inverted grayscale image (trace bright, background dark, grid kept
+# faint) at full resolution, before area-resizing - so only the filter differs.
+def _inv_gray(rgb):
+    return 255 - cv2.cvtColor(rgb, cv2.COLOR_RGB2GRAY)
+
+
+def _resize(img, out_hw):
+    return cv2.resize(img, (out_hw[1], out_hw[0]), interpolation=cv2.INTER_AREA)
+
+
+def gaussian_filter(rgb, out_hw=(CACHE_H, CACHE_W)):
+    """Gaussian blur (5x5, sigma 1): removes high-frequency noise, slightly softens edges."""
+    return _resize(cv2.GaussianBlur(_inv_gray(rgb), (5, 5), 1.0), out_hw)
+
+
+def median_filter(rgb, out_hw=(CACHE_H, CACHE_W)):
+    """3x3 median: removes salt-and-pepper noise (can thin 1-px trace lines)."""
+    return _resize(cv2.medianBlur(_inv_gray(rgb), 3), out_hw)
+
+
+def bilateral_filter(rgb, out_hw=(CACHE_H, CACHE_W)):
+    """Edge-preserving smoothing: flattens background/grid texture, keeps trace edges."""
+    return _resize(cv2.bilateralFilter(_inv_gray(rgb), 7, 50, 7), out_hw)
+
+
+def clahe_filter(rgb, out_hw=(CACHE_H, CACHE_W)):
+    """CLAHE (clip 2.0, 8x8 tiles): local contrast enhancement of the trace."""
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    return _resize(clahe.apply(_inv_gray(rgb)), out_hw)
+
+
+def adaptive_threshold(rgb, out_hw=(CACHE_H, CACHE_W)):
+    """Adaptive (local Gaussian-mean) threshold: separates the dark trace from the
+    lighter grid/background without using colour. Offset C=60: the bold grid lines are
+    ~80 grey levels below the background, so a smaller C keeps them as 'trace'."""
+    gray = cv2.cvtColor(rgb, cv2.COLOR_RGB2GRAY)
+    binary = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                   cv2.THRESH_BINARY_INV, 25, 60)
+    return cv2.normalize(_resize(binary, out_hw), None, 0, 255, cv2.NORM_MINMAX)
+
+
+VARIANTS = {
+    "filtered": filter_trace,        # colour grid removal + Otsu + denoise + thicken (default)
+    "raw": raw_gray,                 # grayscale only, no filter
+    "gaussian": gaussian_filter,
+    "median": median_filter,
+    "bilateral": bilateral_filter,
+    "clahe": clahe_filter,
+    "adaptive": adaptive_threshold,
+}
+
+
 def preprocess(path: str | Path, variant: str = "filtered",
                out_hw: tuple[int, int] = (CACHE_H, CACHE_W)) -> np.ndarray:
-    rgb = load_waveform(path)
-    if variant == "filtered":
-        return filter_trace(rgb, out_hw)
-    if variant == "raw":
-        return raw_gray(rgb, out_hw)
-    raise ValueError(variant)
+    if variant not in VARIANTS:
+        raise ValueError(f"unknown variant {variant}; choose from {list(VARIANTS)}")
+    return VARIANTS[variant](load_waveform(path), out_hw)
 
 
 def prepare_for_model(path: str | Path, variant: str, img_hw: tuple[int, int]) -> np.ndarray:
@@ -174,28 +224,43 @@ def make_split(df: pd.DataFrame, seed: int = 42) -> pd.Series:
 
 
 def _cache_one(args):
-    src, ecg_id = args
-    rgb = render_pdf_waveform(ROOT / src)
-    for variant, fn in (("filtered", filter_trace), ("raw", raw_gray)):
-        out = CACHE_DIR / variant / f"{ecg_id}.png"
-        if not out.exists():
-            cv2.imwrite(str(out), fn(rgb))
+    src, ecg_id, variants = args
+    todo = [(v, VARIANTS[v]) for v in variants
+            if not (CACHE_DIR / v / f"{ecg_id}.png").exists()]
+    if todo:
+        rgb = render_pdf_waveform(ROOT / src)
+        for variant, fn in todo:
+            cv2.imwrite(str(CACHE_DIR / variant / f"{ecg_id}.png"), fn(rgb))
     return ecg_id
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--variants", nargs="+", default=["filtered", "raw"],
+                    help=f"image variants to cache: {list(VARIANTS)} or 'all'")
+    ap.add_argument("--resplit", action="store_true",
+                    help="make a new split instead of reusing results/split.csv")
     args = ap.parse_args()
 
     df = build_manifest()
-    df["split"] = make_split(df)
-    for variant in ("filtered", "raw"):
+    if SPLIT_CSV.exists() and not args.resplit:
+        # reuse the committed split so results are comparable across machines
+        saved = pd.read_csv(SPLIT_CSV).set_index("ecg_id").split
+        missing = set(df.ecg_id) - set(saved.index)
+        if missing:
+            raise SystemExit(f"{len(missing)} ECGs are not in {SPLIT_CSV}; run with --resplit")
+        df["split"] = df.ecg_id.map(saved)
+        print(f"using the saved split in {SPLIT_CSV}")
+    else:
+        df["split"] = make_split(df)
+    variants = list(VARIANTS) if args.variants == ["all"] else args.variants
+    for variant in variants:
         (CACHE_DIR / variant).mkdir(parents=True, exist_ok=True)
     DATA_DIR.mkdir(exist_ok=True)
     RESULTS_DIR.mkdir(exist_ok=True)
 
-    jobs = list(zip(df.source, df.ecg_id))
+    jobs = [(s, e, variants) for s, e in zip(df.source, df.ecg_id)]
     with Pool(args.workers) as pool:
         for i, _ in enumerate(pool.imap_unordered(_cache_one, jobs, chunksize=8), 1):
             if i % 100 == 0 or i == len(jobs):

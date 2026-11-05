@@ -1,0 +1,34 @@
+{
+  "image_preprocess": {
+    "median_ms": 145.09721200010972,
+    "mean_ms": 148.49412667854267
+  },
+  "resnet18_forward": {
+    "median_ms": 53.948597500493634,
+    "mean_ms": 55.808220714230366
+  },
+  "header_parse_and_model": {
+    "median_ms": 46.16885450013797,
+    "mean_ms": 46.65113353576089
+  },
+  "signal_extract_pdf": {
+    "median_ms": 59.68636050056375,
+    "mean_ms": 79.4202382856903
+  },
+  "ecgfounder_input_build": {
+    "median_ms": 8.930937499826541,
+    "mean_ms": 9.043486428773965
+  },
+  "ecgfounder_forward": {
+    "median_ms": 51.18611250054528,
+    "mean_ms": 50.713084857242
+  },
+  "n_pdfs": 28,
+  "pipelines_median_ms": {
+    "image CNN (ResNet-18)": 199.04580950060335,
+    "header model": 46.16885450013797,
+    "default fusion (header + ResNet-18)": 245.21466400074132,
+    "ECGFounder (signal extraction + build + forward)": 119.80341050093557,
+    "header + ECGFounder fusion": 165.97226500107354
+  }
+}

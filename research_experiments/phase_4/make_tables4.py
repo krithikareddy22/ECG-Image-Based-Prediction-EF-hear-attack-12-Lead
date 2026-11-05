@@ -1,0 +1,116 @@
+"""Render the Phase-4 report tables (markdown) from the saved aggregate results -> results/phase4_tables.md.
+Reads only results/phase4_benchmark.{csv,json}, g_cohort_analysis.json, mild_analysis.json, cohort_summary.csv.
+    python -m research_experiments.phase_4.make_tables4
+"""
+from __future__ import annotations
+
+import json
+
+import pandas as pd
+
+from research_experiments.phase_4.p4common import RES4
+
+B = pd.read_csv(RES4 / "phase4_benchmark.csv").set_index("model")
+J = json.loads((RES4 / "phase4_benchmark.json").read_text())
+ST, BO = J["comparisons_vs_vote"], J["bootstrap_r0_vs_vote"]
+f3 = lambda x: "–" if pd.isna(x) else f"{x:.3f}"
+f2 = lambda x: "–" if pd.isna(x) else f"{x:.2f}"
+
+
+def cls_table(models, title):
+    L = [f"### {title}", "",
+         "| Model | Runs | Accuracy | Balanced acc. | Macro-F1 | F1 Normal | F1 Mild | F1 Moderate | F1 Severe | QWK | S3 [corrected 95 % CI] | ΔS3 vs vote (p) | Δacc vs vote (p) |",
+         "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+    for m in models:
+        if m not in B.index:
+            continue
+        r = B.loc[m]; ci = json.loads(r["all_folder:s3:ci95_corrected"]) if isinstance(r["all_folder:s3:ci95_corrected"], str) else r["all_folder:s3:ci95_corrected"]
+        ds = "–" if m == "bench_vote" else f"{ST[m]['all_folder:s3']['diff']:+.3f} ({ST[m]['all_folder:s3']['p_corrected_t']:.2f})"
+        da = "–" if m == "bench_vote" else f"{ST[m]['all_folder:accuracy']['diff']:+.3f} ({ST[m]['all_folder:accuracy']['p_corrected_t']:.2f})"
+        L.append(f"| `{m}` | {r.runs} | {f3(r['all_folder:accuracy'])} | {f3(r['all_folder:balanced_accuracy'])} | {f3(r['all_folder:macro_f1'])} | "
+                 f"{f3(r['all_folder:f1_Normal'])} | {f3(r['all_folder:f1_Mild'])} | {f3(r['all_folder:f1_Moderate'])} | {f3(r['all_folder:f1_Severe'])} | "
+                 f"{f3(r['all_folder:qwk'])} | {f3(r['all_folder:s3'])} [{ci[0]:.3f}, {ci[1]:.3f}] | {ds} | {da} |")
+    return L + [""]
+
+
+def subset_table(models, title):
+    L = [f"### {title}", "", "| Model | G: acc (folder) | G: acc (echo class) | G: S3 (folder) | non-G: acc | non-G: S3 | ΔS3 vs vote on G (folder) | ΔS3 vs vote on G (echo) |",
+         "|---|---|---|---|---|---|---|---|"]
+    for m in models:
+        if m not in B.index:
+            continue
+        r = B.loc[m]
+        dg = "–" if m == "bench_vote" else f"{ST[m]['G_folder:s3']['diff']:+.3f} (p {ST[m]['G_folder:s3']['p_corrected_t']:.2f})"
+        dd = "–" if m == "bench_vote" else f"{ST[m]['G_derived:s3']['diff']:+.3f} (p {ST[m]['G_derived:s3']['p_corrected_t']:.2f})"
+        L.append(f"| `{m}` | {f3(r['G_folder:accuracy'])} | {f3(r['G_derived:accuracy'])} | {f3(r['G_folder:s3'])} | {f3(r['nonG_folder:accuracy'])} | "
+                 f"{f3(r['nonG_folder:s3'])} | {dg} | {dd} |")
+    return L + [""]
+
+
+def reg_table(models, title):
+    L = [f"### {title}", "", "| Model | Train cohort | MAE A | RMSE A | R² A | MAE C | R² C | MAE G | RMSE G | R² G | Pearson G | Spearman G | Calibration slope (echo on pred., A) |",
+         "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+    for m in models:
+        if m not in B.index or pd.isna(B.loc[m].get("reg_A:mae")):
+            continue
+        r = B.loc[m]; co = "A" if "_A" in m else ("C" if "_C" in m else ("G" if "_G" in m else "A"))
+        L.append(f"| `{m.replace('__tuned', '')}` | {co} | {f2(r['reg_A:mae'])} | {f2(r['reg_A:rmse'])} | {f3(r['reg_A:r2'])} | {f2(r['reg_C:mae'])} | "
+                 f"{f3(r['reg_C:r2'])} | {f2(r['reg_G:mae'])} | {f2(r['reg_G:rmse'])} | {f3(r['reg_G:r2'])} | {f3(r['reg_G:pearson'])} | "
+                 f"{f3(r['reg_G:spearman'])} | {f2(r['reg_A:calib_slope'])} |")
+    return L + [""]
+
+
+def binary_table(models, title):
+    L = [f"### {title}", "", "| Model | EF < 41: all (folder) | EF < 41: G (echo) | EF < 31: all (folder) | EF < 31: G (echo) | Mild OvR | Mild vs Normal | Mild vs Moderate |",
+         "|---|---|---|---|---|---|---|---|"]
+    for m in models:
+        if m not in B.index:
+            continue
+        r = B.loc[m]
+        L.append(f"| `{m}` | {f3(r['auroc:ef_lt41__all_folder__probs'])} | {f3(r['auroc:ef_lt41__G_derived__probs'])} | {f3(r['auroc:ef_lt31__all_folder__probs'])} | "
+                 f"{f3(r['auroc:ef_lt31__G_derived__probs'])} | {f3(r['mild_auroc_all_folder:mild_ovr'])} | {f3(r['mild_auroc_all_folder:mild_vs_normal'])} | "
+                 f"{f3(r['mild_auroc_all_folder:mild_vs_moderate'])} |")
+    return L + [""]
+
+
+def main():
+    reg = [m for m in B.index if m.startswith("reg_")]
+    order = lambda ms: sorted(ms, key=lambda m: -B.loc[m, "all_folder:s3"])
+    key = ["bench_vote", "bench_mlpfusion", "bench_ecgflin_dist", "bench_hdrclin_lr"]
+    mt = order([m for m in B.index if m.startswith("mt_")])
+    lq = order([m for m in B.index if m.startswith("lq_")])
+    fus = order([m for m in B.index if m.startswith("fus_")])
+    L = ["# Phase 4 tables (generated by `python -m research_experiments.phase_4.make_tables4`; aggregates only)", "",
+         "All classification metrics: 837 development ECGs / 794 patients, folder labels, outer-fold predictions, mean over CV",
+         "repeats 0–2 (seeds combined within a repeat). Corrected repeated-CV t-test on the 15 matched (repeat, fold) cells.", ""]
+    L += cls_table(key, "Benchmarks (re-evaluated on the phase-4 sets)")
+    L += cls_table(order([m for m in reg if m.endswith("__tuned")]), "4D EF regression, primary decoder (tuned cut-points)")
+    L += cls_table(order([m for m in reg if not m.endswith("__tuned")]), "4D EF regression, secondary decoders (clin / recal / gauss)")
+    L += reg_table(order([m for m in reg if m.endswith("__tuned")]) + [m for m in mt if m != "mt_lam0_A"], "4D/4E regression metrics (target: nearest-echo EF)")
+    L += cls_table(["bench_mlpfusion"] + mt, "4E multitask")
+    L += cls_table(["bench_mlpfusion"] + lq, "4F label-quality training (MLP fusion)")
+    L += cls_table(["bench_vote"] + fus, "4F regression-assisted ensembles")
+    allm = key + mt + lq + fus + ["reg_ridge_hdr+ecgf_A__tuned", "reg_mlp_hdr+ecgf_A__tuned", "reg_mlp_hdr+ecgf_C__clin"]
+    L += subset_table(allm, "Evaluation-set effects: high-confidence cohort G (357 ECGs / 345 patients) vs non-G (480 / 469)")
+    L += binary_table(allm, "Clinically standard binary endpoints and Mild discrimination (AUROC)")
+    conf = B[B.confirmatory & (B.index != "bench_vote")]
+    L += ["### Confirmatory family: genuine-improvement test", "",
+          f"{len(conf)} confirmatory models; Holm within metric. Genuine improvement = better than the vote ensemble on all-D folder labels, "
+          "Holm-adjusted p < 0.05 and the same sign in all three repeats.", "",
+          "| Metric | Models with positive difference | Smallest Holm-adjusted p | Genuine improvements |", "|---|---|---|---|"]
+    for k in ("s3", "accuracy", "balanced_accuracy", "macro_f1"):
+        pos = int((conf[f"vs_vote:all_folder:{k}:diff"] > 0).sum())
+        L.append(f"| {k} | {pos} | {conf[f'vs_vote:all_folder:{k}:p_holm'].min():.3f} | {int(conf[f'genuine_improvement:{k}'].sum())} |")
+    L += ["", "### Patient-cluster paired bootstrap, repeat 0 (difference vs vote, 95 % CI)", "",
+          "| Model | Δ accuracy | Δ balanced acc. | Δ macro-F1 | Δ Mild F1 | McNemar (b right/a wrong : a right/b wrong, p) |", "|---|---|---|---|---|---|"]
+    for m, b in sorted(BO.items(), key=lambda kv: -kv[1]["accuracy"]["diff"]):
+        g = lambda k: f"{b[k]['diff']:+.3f} [{b[k]['ci95'][0]:+.3f}, {b[k]['ci95'][1]:+.3f}]"
+        mc = b["mcnemar_accuracy"]
+        L.append(f"| `{m}` | {g('accuracy')} | {g('balanced_accuracy')} | {g('macro_f1')} | {g('mild_f1')} | "
+                 f"{mc['b_right_a_wrong']}:{mc['a_right_b_wrong']}, p {mc['p_exact']:.2f} |")
+    (RES4 / "phase4_tables.md").write_text("\n".join(L) + "\n")
+    print(f"wrote phase4_tables.md ({len(L)} lines)")
+
+
+if __name__ == "__main__":
+    main()

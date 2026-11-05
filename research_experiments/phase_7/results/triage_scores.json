@@ -1,0 +1,42 @@
+{
+ "accuracy": 0.6938668324458453,
+ "balanced_accuracy": 0.4026803333697906,
+ "macro_f1": 0.3889189192181295,
+ "precision_Normal": 0.7396234568282756,
+ "recall_Normal": 0.9819027380365263,
+ "f1_Normal": 0.8436542461273518,
+ "precision_Mild": 0.3333333333333333,
+ "recall_Mild": 0.015579710144927537,
+ "f1_Mild": 0.0296696992049832,
+ "precision_Moderate": 0.46428571428571425,
+ "recall_Moderate": 0.44703009408891764,
+ "f1_Moderate": 0.45456268488703894,
+ "precision_Severe": 0.3678571428571429,
+ "recall_Severe": 0.1662087912087912,
+ "f1_Severe": 0.22778904665314403,
+ "accuracy_ci95_corrected": [
+  0.655315266689739,
+  0.735770273550088
+ ],
+ "macro_f1_ci95_corrected": [
+  0.2894594821833212,
+  0.44609643864829507
+ ],
+ "balanced_accuracy_ci95_corrected": [
+  0.310763688498203,
+  0.4757567250826036
+ ],
+ "answered_share": 0.5563520509757068,
+ "answered_true_class_counts": {
+  "Normal": 296.3333333333333,
+  "Mild": 86.0,
+  "Moderate": 59.666666666666664,
+  "Severe": 23.666666666666668
+ },
+ "answered_predicted_counts": {
+  "Normal": 393.6666666666667,
+  "Mild": 4.0,
+  "Moderate": 57.333333333333336,
+  "Severe": 10.666666666666666
+ }
+}

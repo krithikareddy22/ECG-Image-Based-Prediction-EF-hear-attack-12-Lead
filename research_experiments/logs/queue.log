@@ -1,0 +1,18 @@
+=== 12:30:45 start A2_ecgf_ft56_ce_seed42
+=== 12:41:41 done A2_ecgf_ft56_ce_seed42 (exit 0)
+=== 12:41:41 start A2_ecgf_ft56_cumlink_seed42
+=== 12:47:29 done A2_ecgf_ft56_cumlink_seed42 (exit 0)
+=== 12:47:29 start A2_ecgf_ft56_ce_seed43
+=== 12:53:32 done A2_ecgf_ft56_ce_seed43 (exit 0)
+=== 12:53:32 start A2_ecgf_ft56_cumlink_seed43
+=== 13:00:26 done A2_ecgf_ft56_cumlink_seed43 (exit 0)
+=== 13:00:26 start A2_ecgf_ft56_ce_seed44
+=== 13:05:58 done A2_ecgf_ft56_ce_seed44 (exit 0)
+=== 13:05:58 start A2_ecgf_ft56_cumlink_seed44
+=== 13:11:22 done A2_ecgf_ft56_cumlink_seed44 (exit 0)
+=== 13:11:22 start A2_ecgf_ft6_ce_seed42
+=== 13:16:59 done A2_ecgf_ft6_ce_seed42 (exit 0)
+=== 13:16:59 start B_resnet18_image_cumlink_seed42
+=== 13:55:08 done B_resnet18_image_cumlink_seed42 (exit 0)
+=== 13:55:08 start R0 retrain
+=== 14:48:22 done R0 (exit 0)

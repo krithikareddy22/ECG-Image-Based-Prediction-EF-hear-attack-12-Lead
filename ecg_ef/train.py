@@ -27,6 +27,7 @@ from .config import CLASSES, HF_TARGET_SENSITIVITY, IMG_H, IMG_W, MODELS_DIR, RE
 from .data import Normalizer, augment, load_split
 from .metrics import evaluate, pick_hf_threshold
 from .models import MODEL_NAMES, build_model
+from .preprocess import VARIANTS
 
 
 def seed_all(seed: int):
@@ -55,13 +56,17 @@ class EMA:
                 e.copy_(m)
 
 
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
 @torch.no_grad()
 def predict_probs(model, imgs_u8, norm, bs=32):
     model.eval()
+    dev = next(model.parameters()).device
     out = []
     for i in range(0, len(imgs_u8), bs):
-        x = norm(imgs_u8[i:i + bs].float() / 255).contiguous(memory_format=torch.channels_last)
-        out.append(F.softmax(model(x), 1))
+        x = norm(imgs_u8[i:i + bs].to(dev).float() / 255).contiguous(memory_format=torch.channels_last)
+        out.append(F.softmax(model(x)[:, :len(CLASSES)], 1).cpu())   # [:, :4]: ignore aux heads
     return torch.cat(out).numpy()
 
 
@@ -109,7 +114,8 @@ def plot_history(hist: pd.DataFrame, path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="ecgnet", choices=MODEL_NAMES)
-    ap.add_argument("--variant", default="filtered", choices=["filtered", "raw"])
+    ap.add_argument("--variant", default="filtered", choices=list(VARIANTS),
+                    help="image preprocessing (see preprocess.VARIANTS)")
     ap.add_argument("--epochs", type=int, default=30)
     ap.add_argument("--patience", type=int, default=10)
     ap.add_argument("--min-epochs", type=int, default=8, help="no model selection before this")
@@ -119,6 +125,12 @@ def main():
     ap.add_argument("--label-smoothing", type=float, default=0.05)
     ap.add_argument("--class-weight", default="balanced", choices=["balanced", "sqrt", "none"])
     ap.add_argument("--ema", type=float, default=0.99, help="EMA decay (0 disables)")
+    ap.add_argument("--multitask", action="store_true",
+                    help="extra binary heads 'EF reduced?' and 'EF <= 40%%?' sharing the backbone "
+                         "(multi-task learning, after Boribalburephan et al., Sci Rep 2024)")
+    ap.add_argument("--aux-weight", type=float, default=0.5, help="weight of the auxiliary losses")
+    ap.add_argument("--focal-gamma", type=float, default=0.0,
+                    help="focal loss gamma (0 = plain cross-entropy; Swamy et al. 2025 used 0.2)")
     ap.add_argument("--img-size", type=int, nargs=2, default=[IMG_H, IMG_W], metavar=("H", "W"))
     ap.add_argument("--pretrained", action="store_true", help="ImageNet init (downloads weights)")
     ap.add_argument("--seed", type=int, default=42)
@@ -128,7 +140,9 @@ def main():
 
     torch.set_num_threads(args.threads)
     seed_all(args.seed)
-    tag = args.tag or f"{args.model}_{args.variant}" + ("_pretrained" if args.pretrained else "")
+    tag = args.tag or (f"{args.model}_{args.variant}" + ("_pretrained" if args.pretrained else "")
+                       + ("_mtl" if args.multitask else "")
+                       + (f"_focal{args.focal_gamma:g}" if args.focal_gamma else ""))
     lr = args.lr or (3e-4 if args.pretrained else 1e-3)
     out_dir = RESULTS_DIR / tag
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -139,7 +153,9 @@ def main():
     xva, yva, dva = load_split("val", args.variant, img_hw)
     xte, yte, dte = load_split("test", args.variant, img_hw)
     norm = Normalizer.fit(xtr)
-    print(f"[{tag}] train {len(xtr)}  val {len(xva)}  test {len(xte)}  img {img_hw}  lr {lr}")
+    print(f"[{tag}] train {len(xtr)}  val {len(xva)}  test {len(xte)}  img {img_hw}  lr {lr}  "
+          f"device {DEVICE}")
+    torch.backends.cudnn.benchmark = True
 
     # Class imbalance (Normal 46% ... Severe 11%): inverse-frequency loss weights.
     counts = torch.bincount(ytr, minlength=len(CLASSES)).float()
@@ -151,8 +167,10 @@ def main():
     class_w = class_w / class_w.mean()
     print("class weights", dict(zip(CLASSES, class_w.round(decimals=2).tolist())))
 
-    model = build_model(args.model, len(CLASSES), pretrained=args.pretrained)
-    model = model.to(memory_format=torch.channels_last)
+    n_outputs = len(CLASSES) + (2 if args.multitask else 0)
+    model = build_model(args.model, n_outputs, pretrained=args.pretrained)
+    model = model.to(DEVICE, memory_format=torch.channels_last)
+    class_w = class_w.to(DEVICE)
     ema = EMA(model, args.ema) if args.ema > 0 else None
     eval_model = ema.model if ema else model
     n_params = sum(p.numel() for p in model.parameters())
@@ -171,11 +189,20 @@ def main():
         tl, tc, tn = 0.0, 0, 0
         for i in range(steps_per_epoch):
             idx = perm[i * args.batch_size:(i + 1) * args.batch_size]
-            x = augment(xtr[idx].float() / 255)
+            x = augment(xtr[idx].to(DEVICE).float() / 255)
             x = norm(x).contiguous(memory_format=torch.channels_last)
-            y = ytr[idx]
-            logits = model(x)
-            loss = F.cross_entropy(logits, y, weight=class_w, label_smoothing=args.label_smoothing)
+            y = ytr[idx].to(DEVICE)
+            out = model(x)
+            logits = out[:, :len(CLASSES)]
+            ce = F.cross_entropy(logits, y, weight=class_w, label_smoothing=args.label_smoothing,
+                                 reduction="none")
+            if args.focal_gamma:      # down-weight easy examples
+                p_true = F.softmax(logits, 1).gather(1, y[:, None])[:, 0].detach()
+                ce = (1 - p_true) ** args.focal_gamma * ce
+            loss = ce.sum() / class_w[y].sum()          # = weighted mean, as F.cross_entropy
+            if args.multitask:        # aux heads: EF reduced (class > 0), EF <= 40% (class >= 2)
+                aux_t = torch.stack([(y > 0), (y >= 2)], 1).float()
+                loss = loss + args.aux_weight * F.binary_cross_entropy_with_logits(out[:, 4:6], aux_t)
             opt.zero_grad(set_to_none=True); loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
             opt.step(); sched.step()
@@ -198,7 +225,8 @@ def main():
         flag = ""
         if epoch >= args.min_epochs:
             if score > best:
-                best, best_state, best_epoch, bad, flag = score, copy.deepcopy(eval_model.state_dict()), epoch, 0, " *"
+                best_state = {k: v.detach().cpu().clone() for k, v in eval_model.state_dict().items()}
+                best, best_epoch, bad, flag = score, epoch, 0, " *"
             else:
                 bad += 1
         h = hist[-1]
@@ -222,6 +250,7 @@ def main():
         for y in sorted(dte.year.unique())}
 
     ckpt = dict(model_name=args.model, variant=args.variant, img_hw=img_hw, classes=CLASSES,
+                n_outputs=n_outputs,
                 normalizer=norm.state(), state_dict=best_state, best_epoch=best_epoch,
                 hf_threshold=hf_thr, val_metrics=val_m, args=vars(args))
     torch.save(ckpt, MODELS_DIR / f"{tag}.pt")

@@ -1,0 +1,188 @@
+{
+  "aligned": {
+    "n_statements": 14,
+    "median_auroc": 0.8871080143490513,
+    "per_statement": {
+      "ABNORMAL ECG": [
+        0.8318514564587463,
+        632
+      ],
+      "NORMAL ECG": [
+        0.8899457770425513,
+        117
+      ],
+      "SINUS RHYTHM": [
+        0.8870875044410542,
+        811
+      ],
+      "ATRIAL FIBRILLATION": [
+        0.8757040822251901,
+        34
+      ],
+      "SINUS TACHYCARDIA": [
+        0.9679699847645628,
+        158
+      ],
+      "OTHERWISE NORMAL ECG": [
+        0.7900008388558006,
+        130
+      ],
+      "LEFT AXIS DEVIATION": [
+        0.9099318403115871,
+        20
+      ],
+      "BORDERLINE ECG": [
+        0.6765398992361451,
+        168
+      ],
+      "RIGHT BUNDLE BRANCH BLOCK": [
+        0.990067581404874,
+        19
+      ],
+      "LEFT ATRIAL ENLARGEMENT": [
+        0.8871285242570485,
+        31
+      ],
+      "LEFT BUNDLE BRANCH BLOCK": [
+        0.9897499634449481,
+        70
+      ],
+      "LEFT VENTRICULAR HYPERTROPHY": [
+        0.8595617529880478,
+        43
+      ],
+      "LEFT ANTERIOR FASCICULAR BLOCK": [
+        0.979540681525642,
+        29
+      ],
+      "NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY": [
+        0.6317719680464777,
+        27
+      ]
+    }
+  },
+  "tiled": {
+    "n_statements": 14,
+    "median_auroc": 0.7645667487452501,
+    "per_statement": {
+      "ABNORMAL ECG": [
+        0.7094974836053073,
+        632
+      ],
+      "NORMAL ECG": [
+        0.7578715191618417,
+        117
+      ],
+      "SINUS RHYTHM": [
+        0.711169512424502,
+        811
+      ],
+      "ATRIAL FIBRILLATION": [
+        0.7940305441031299,
+        34
+      ],
+      "SINUS TACHYCARDIA": [
+        0.7712619783286584,
+        158
+      ],
+      "OTHERWISE NORMAL ECG": [
+        0.7344350306182367,
+        130
+      ],
+      "LEFT AXIS DEVIATION": [
+        0.8841772151898734,
+        20
+      ],
+      "BORDERLINE ECG": [
+        0.6328146161763909,
+        168
+      ],
+      "RIGHT BUNDLE BRANCH BLOCK": [
+        0.9891972148269507,
+        19
+      ],
+      "LEFT ATRIAL ENLARGEMENT": [
+        0.799244348488697,
+        31
+      ],
+      "LEFT BUNDLE BRANCH BLOCK": [
+        0.9762538382804504,
+        70
+      ],
+      "LEFT VENTRICULAR HYPERTROPHY": [
+        0.744278699156861,
+        43
+      ],
+      "LEFT ANTERIOR FASCICULAR BLOCK": [
+        0.9657882257299641,
+        29
+      ],
+      "NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY": [
+        0.5704066811909949,
+        27
+      ]
+    }
+  },
+  "short": {
+    "n_statements": 14,
+    "median_auroc": 0.7671488016170422,
+    "per_statement": {
+      "ABNORMAL ECG": [
+        0.6720260789995425,
+        632
+      ],
+      "NORMAL ECG": [
+        0.7363937138130686,
+        117
+      ],
+      "SINUS RHYTHM": [
+        0.7490961148613346,
+        811
+      ],
+      "ATRIAL FIBRILLATION": [
+        0.7505952035305732,
+        34
+      ],
+      "SINUS TACHYCARDIA": [
+        0.8122766299782147,
+        158
+      ],
+      "OTHERWISE NORMAL ECG": [
+        0.7255515476889522,
+        130
+      ],
+      "LEFT AXIS DEVIATION": [
+        0.8880233690360272,
+        20
+      ],
+      "BORDERLINE ECG": [
+        0.6220813695216425,
+        168
+      ],
+      "RIGHT BUNDLE BRANCH BLOCK": [
+        0.9915523243907434,
+        19
+      ],
+      "LEFT ATRIAL ENLARGEMENT": [
+        0.7896240792481586,
+        31
+      ],
+      "LEFT BUNDLE BRANCH BLOCK": [
+        0.9781693230004386,
+        70
+      ],
+      "LEFT VENTRICULAR HYPERTROPHY": [
+        0.7837023997035114,
+        43
+      ],
+      "LEFT ANTERIOR FASCICULAR BLOCK": [
+        0.9540004064765261,
+        29
+      ],
+      "NONSPECIFIC INTRAVENTRICULAR CONDUCTION DELAY": [
+        0.5711692084241103,
+        27
+      ]
+    }
+  }
+}

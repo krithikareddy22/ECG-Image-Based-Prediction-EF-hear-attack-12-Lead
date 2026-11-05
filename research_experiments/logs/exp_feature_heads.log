@@ -1,0 +1,26 @@
+[A1_ecgf_aligned_deep_multinomial] TEST acc 0.500 bal 0.421 mF1 0.412 QWK 0.464 MildF1 0.265 macroAUC 0.668 HF-AUC 0.810 | VAL bal 0.445 mF1 0.444
+[A1_ecgf_aligned_logits_multinomial] TEST acc 0.514 bal 0.462 mF1 0.442 QWK 0.519 MildF1 0.286 macroAUC 0.703 HF-AUC 0.801 | VAL bal 0.421 mF1 0.414
+[A1_ecgf_aligned_deep_logits_multinomial] TEST acc 0.486 bal 0.404 mF1 0.396 QWK 0.464 MildF1 0.220 macroAUC 0.667 HF-AUC 0.808 | VAL bal 0.438 mF1 0.438
+[A1_ecgf_tiled_deep_multinomial] TEST acc 0.486 bal 0.398 mF1 0.392 QWK 0.402 MildF1 0.250 macroAUC 0.633 HF-AUC 0.734 | VAL bal 0.418 mF1 0.411
+[A1_ecgf_tiled_logits_multinomial] TEST acc 0.438 bal 0.385 mF1 0.365 QWK 0.423 MildF1 0.150 macroAUC 0.629 HF-AUC 0.737 | VAL bal 0.360 mF1 0.345
+[A1_ecgf_tiled_deep_logits_multinomial] TEST acc 0.495 bal 0.408 mF1 0.404 QWK 0.413 MildF1 0.300 macroAUC 0.635 HF-AUC 0.735 | VAL bal 0.387 mF1 0.381
+[A1_ecgf_short_deep_multinomial] TEST acc 0.467 bal 0.373 mF1 0.370 QWK 0.440 MildF1 0.214 macroAUC 0.649 HF-AUC 0.765 | VAL bal 0.458 mF1 0.449
+[A1_ecgf_short_logits_multinomial] TEST acc 0.429 bal 0.381 mF1 0.357 QWK 0.398 MildF1 0.175 macroAUC 0.639 HF-AUC 0.739 | VAL bal 0.396 mF1 0.383
+[A1_ecgf_short_deep_logits_multinomial] TEST acc 0.481 bal 0.395 mF1 0.392 QWK 0.420 MildF1 0.262 macroAUC 0.652 HF-AUC 0.760 | VAL bal 0.444 mF1 0.438
+[AB_ecgf_aligned_deep_focal] TEST acc 0.510 bal 0.440 mF1 0.440 QWK 0.461 MildF1 0.340 macroAUC 0.655 HF-AUC 0.802 | VAL bal 0.438 mF1 0.439
+[AB_ecgf_aligned_deep_coral] TEST acc 0.419 bal 0.404 mF1 0.388 QWK 0.417 MildF1 0.350 macroAUC 0.664 HF-AUC 0.761 | VAL bal 0.427 mF1 0.417
+[AB_ecgf_aligned_deep_cumlink] TEST acc 0.438 bal 0.409 mF1 0.406 QWK 0.451 MildF1 0.268 macroAUC 0.673 HF-AUC 0.775 | VAL bal 0.435 mF1 0.437
+[B_header_multinomial] TEST acc 0.524 bal 0.455 mF1 0.432 QWK 0.460 MildF1 0.156 macroAUC 0.695 HF-AUC 0.804 | VAL bal 0.435 mF1 0.413
+[B_header_focal] TEST acc 0.500 bal 0.429 mF1 0.411 QWK 0.432 MildF1 0.152 macroAUC 0.681 HF-AUC 0.802 | VAL bal 0.442 mF1 0.425
+[B_header_coral] TEST acc 0.414 bal 0.382 mF1 0.373 QWK 0.348 MildF1 0.310 macroAUC 0.656 HF-AUC 0.730 | VAL bal 0.394 mF1 0.380
+[B_header_cumlink] TEST acc 0.486 bal 0.453 mF1 0.447 QWK 0.469 MildF1 0.305 macroAUC 0.661 HF-AUC 0.774 | VAL bal 0.406 mF1 0.394
+                                    tag  val_score  test_bal
+       A1_ecgf_aligned_deep_multinomial      0.612     0.421
+     A1_ecgf_aligned_logits_multinomial      0.580     0.462
+A1_ecgf_aligned_deep_logits_multinomial      0.602     0.404
+         A1_ecgf_tiled_deep_multinomial      0.535     0.398
+       A1_ecgf_tiled_logits_multinomial      0.503     0.385
+  A1_ecgf_tiled_deep_logits_multinomial      0.516     0.408
+         A1_ecgf_short_deep_multinomial      0.563     0.373
+       A1_ecgf_short_logits_multinomial      0.522     0.381
+  A1_ecgf_short_deep_logits_multinomial      0.549     0.395

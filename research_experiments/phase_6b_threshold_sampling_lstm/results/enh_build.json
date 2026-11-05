@@ -1,0 +1,13 @@
+{
+ "n_ecgs": 837,
+ "rpeak_detection_ok": 0.998805256869773,
+ "median_heart_rate": 82.41758241758242,
+ "template_vs_recorded_corr_median": 0.9816580434869455,
+ "template_vs_recorded_corr_iqr": [
+  0.9373301245197941,
+  0.9917960866930964
+ ],
+ "share_leads_with_complete_cycle": 0.995221027479092,
+ "build_seconds": 11.4,
+ "ecgfounder_seconds": 11.6
+}

@@ -1,0 +1,33 @@
+fold 0 done
+fold 1 done
+fold 2 done
+fold 3 done
+fold 4 done
+                              accuracy  balanced_accuracy  macro_f1  f1_mild  recall_mild    qwk  recall_Normal  share_pred_normal
+original                         0.548              0.469     0.458    0.277        0.243  0.576          0.779              0.481
+calibrated: prior, accuracy      0.569              0.442     0.436    0.220        0.168  0.556          0.883              0.591
+calibrated: prior, protected     0.568              0.467     0.459    0.241        0.195  0.575          0.841              0.536
+calibrated: bias, accuracy       0.573              0.444     0.401    0.030        0.016  0.588          0.917              0.602
+calibrated: bias, protected      0.565              0.455     0.444    0.212        0.162  0.576          0.867              0.557
+fold 0 done
+fold 1 done
+fold 2 done
+fold 3 done
+fold 4 done
+                              accuracy  balanced_accuracy  macro_f1  f1_mild  recall_mild    qwk  recall_Normal  share_pred_normal
+original                         0.545              0.464     0.455    0.256        0.227  0.568          0.781              0.483
+calibrated: prior, accuracy      0.565              0.444     0.442    0.201        0.157  0.554          0.878              0.588
+calibrated: prior, protected     0.568              0.462     0.458    0.239        0.195  0.574          0.849              0.546
+calibrated: bias, accuracy       0.565              0.448     0.411    0.048        0.027  0.565          0.883              0.579
+calibrated: bias, protected      0.569              0.454     0.424    0.090        0.054  0.576          0.885              0.576
+fold 0 done
+fold 1 done
+fold 2 done
+fold 3 done
+fold 4 done
+                              accuracy  balanced_accuracy  macro_f1  f1_mild  recall_mild    qwk  recall_Normal  share_pred_normal
+original                         0.548              0.468     0.453    0.232        0.189  0.579          0.792              0.502
+calibrated: prior, accuracy      0.553              0.419     0.409    0.168        0.124  0.558          0.891              0.603
+calibrated: prior, protected     0.551              0.442     0.431    0.183        0.141  0.568          0.846              0.557
+calibrated: bias, accuracy       0.560              0.422     0.384    0.059        0.032  0.578          0.906              0.602
+calibrated: bias, protected      0.568              0.454     0.434    0.155        0.103  0.581          0.875              0.577

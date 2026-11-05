@@ -1,0 +1,23 @@
+{
+ "checked": "2026-11-05 08:05:26",
+ "snapshot": "phase6_before",
+ "n_ref": 3366,
+ "n_cur": 3377,
+ "changed": 0,
+ "changed_groups": {},
+ "missing": 0,
+ "added_groups": {
+  "research_experiments/models": 3,
+  "research_experiments/phase_5": 8
+ },
+ "git": {
+  "base_commit": "27cbdbd",
+  "base_is_ancestor_of_head": true,
+  "n_tracked_changed_in_worktree": 0,
+  "n_staged_changed": 0,
+  "n_committed_changed_since_base": 0,
+  "n_untracked_outside_phase6": 0,
+  "ok": true
+ },
+ "ok_protected_unchanged": true
+}

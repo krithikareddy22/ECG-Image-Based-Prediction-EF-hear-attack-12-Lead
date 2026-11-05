@@ -1,0 +1,9 @@
+{
+ "blocked": {},
+ "milestone_overrides": {"M0 audit + foundation": "DONE"},
+ "known_issues": [
+  "Patient key = hash of the normalised name (no MRN); 29 near-identical name pairs under different keys (15 inside development, 11 straddling development/locked test) - see REPOSITORY_AUDIT.md section 6.",
+  "Repository is PUBLIC; phases 1-3 already published per-ECG prediction CSVs (incl. 207 locked-test probability files). Phase 5 commits aggregates only.",
+  "Locked test exposed in phase 1; never predicted or scored in phase 5."
+ ]
+}

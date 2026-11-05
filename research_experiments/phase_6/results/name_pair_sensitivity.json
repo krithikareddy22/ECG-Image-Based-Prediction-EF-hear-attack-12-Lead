@@ -1,0 +1,101 @@
+{
+ "info": {
+  "pairs_within_development": 15,
+  "groups_before": 794,
+  "groups_after": 779,
+  "ecgs_in_merged_groups": 29
+ },
+ "summary": {
+  "mlpfusion_accuracy": {
+   "merged": 0.5420151334129829,
+   "original": 0.5436081242532856,
+   "delta": -0.0015929908403027326,
+   "merged_sd_repeats": 0.01421470991443627
+  },
+  "mlpfusion_balanced_accuracy": {
+   "merged": 0.4652324929668679,
+   "original": 0.4662446844252988,
+   "delta": -0.0010121914584309,
+   "merged_sd_repeats": 0.01953461025684717
+  },
+  "mlpfusion_macro_f1": {
+   "merged": 0.4416200342858809,
+   "original": 0.43991530029919895,
+   "delta": 0.0017047339866819722,
+   "merged_sd_repeats": 0.016493679356510648
+  },
+  "mlpfusion_f1_Mild": {
+   "merged": 0.2056547889881223,
+   "original": 0.18601576933598654,
+   "delta": 0.01963901965213577,
+   "merged_sd_repeats": 0.02167610441754756
+  },
+  "mlpfusion_min_recall": {
+   "merged": 0.15855855855855858,
+   "original": 0.14054054054054055,
+   "delta": 0.01801801801801803,
+   "merged_sd_repeats": 0.024307635249066744
+  },
+  "vote_accuracy": {
+   "merged": 0.5372361608920749,
+   "original": 0.5471923536439666,
+   "delta": -0.009956192751891635,
+   "merged_sd_repeats": 0.009771281677726227
+  },
+  "vote_balanced_accuracy": {
+   "merged": 0.45982884112518646,
+   "original": 0.4668442845813079,
+   "delta": -0.0070154434561214285,
+   "merged_sd_repeats": 0.019501690987438515
+  },
+  "vote_macro_f1": {
+   "merged": 0.4453139359816955,
+   "original": 0.45532739716255494,
+   "delta": -0.01001346118085944,
+   "merged_sd_repeats": 0.017992731596345957
+  },
+  "vote_f1_Mild": {
+   "merged": 0.22453040546144312,
+   "original": 0.25493623912296176,
+   "delta": -0.03040583366151864,
+   "merged_sd_repeats": 0.027251036753542037
+  },
+  "vote_min_recall": {
+   "merged": 0.19279279279279282,
+   "original": 0.21981981981981982,
+   "delta": -0.027027027027027,
+   "merged_sd_repeats": 0.030999370331685143
+  },
+  "c3_accuracy": {
+   "merged": 0.5531660692951016,
+   "original": 0.5611310234966149,
+   "delta": -0.00796495420151333,
+   "merged_sd_repeats": 0.014729782563844628
+  },
+  "c3_balanced_accuracy": {
+   "merged": 0.43927511381166046,
+   "original": 0.45625683356747976,
+   "delta": -0.016981719755819302,
+   "merged_sd_repeats": 0.024267109892879946
+  },
+  "c3_macro_f1": {
+   "merged": 0.4325048111362526,
+   "original": 0.44827472824326203,
+   "delta": -0.015769917107009424,
+   "merged_sd_repeats": 0.0262487353160748
+  },
+  "c3_f1_Mild": {
+   "merged": 0.20235080741906494,
+   "original": 0.22130399587054608,
+   "delta": -0.01895318845148114,
+   "merged_sd_repeats": 0.0373719203311341
+  },
+  "c3_min_recall": {
+   "merged": 0.16036036036036036,
+   "original": 0.17657657657657658,
+   "delta": -0.016216216216216217,
+   "merged_sd_repeats": 0.03539978865655586
+  }
+ },
+ "note": "different folds -> no paired cell test; compare pooled metrics (mean over 3 repeats) against the repeat-to-repeat SD. Same code on both fold sets."
+}

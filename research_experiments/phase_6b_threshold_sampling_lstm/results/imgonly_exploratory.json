@@ -1,0 +1,52 @@
+{
+ "summary": {
+  "ECGF-MLP (no header)": {
+   "accuracy": 0.5416168857029072,
+   "balanced_accuracy": 0.45658213799103636,
+   "macro_f1": 0.4461421985348515,
+   "recall_Normal": 0.7847222222222223,
+   "recall_Mild": 0.20720720720720723,
+   "recall_Moderate": 0.4387947269303201,
+   "recall_Severe": 0.3956043956043956,
+   "f1_Mild": 0.23852122534600415,
+   "min_recall": 0.20720720720720723,
+   "accuracy_per_repeat": [
+    0.5436,
+    0.5496,
+    0.5317
+   ]
+  },
+  "IMG-vote": {
+   "accuracy": 0.5408203902827559,
+   "balanced_accuracy": 0.4563690507215401,
+   "macro_f1": 0.44973425566693054,
+   "recall_Normal": 0.7734375,
+   "recall_Mild": 0.23783783783783785,
+   "recall_Moderate": 0.43691148775894534,
+   "recall_Severe": 0.3772893772893773,
+   "f1_Mild": 0.2639352743829548,
+   "min_recall": 0.23783783783783785,
+   "accuracy_per_repeat": [
+    0.5448,
+    0.5484,
+    0.5293
+   ]
+  },
+  "IMG-C3": {
+   "accuracy": 0.5591397849462365,
+   "balanced_accuracy": 0.4476392286773643,
+   "macro_f1": 0.44372340128457016,
+   "recall_Normal": 0.8472222222222222,
+   "recall_Mild": 0.190990990990991,
+   "recall_Moderate": 0.4519774011299435,
+   "recall_Severe": 0.30036630036630035,
+   "f1_Mild": 0.23010735408342406,
+   "min_recall": 0.190990990990991,
+   "accuracy_per_repeat": [
+    0.5627,
+    0.5687,
+    0.546
+   ]
+  }
+ }
+}

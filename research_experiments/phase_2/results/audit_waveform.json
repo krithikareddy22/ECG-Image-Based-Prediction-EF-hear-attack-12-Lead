@@ -1,0 +1,170 @@
+{
+  "calibration": {
+    "minor_grid_spacing_pt_median": 8.0,
+    "expected_1mm_pt": 8.208,
+    "major_grid_spacing_pt_median": 41.0,
+    "expected_5mm_pt": 41.04,
+    "pulse_height_pt_median": 82.0,
+    "pulse_height_pt_range": [
+      82.0,
+      82.0
+    ],
+    "expected_pulse_pt_(1mV)": 82.0,
+    "files_with_4_pulses": 1047,
+    "files_with_13_cells": 1047,
+    "n_files": 1047
+  },
+  "native_points_per_second_median": {
+    "I": 287.2,
+    "II": 292.4,
+    "III": 285.2,
+    "aVR": 281.6,
+    "aVL": 272.0,
+    "aVF": 278.8,
+    "V1": 272.0,
+    "V2": 291.2,
+    "V3": 286.8,
+    "V4": 284.4,
+    "V5": 281.6,
+    "V6": 276.8,
+    "rhythm": 291.4
+  },
+  "duration_coverage": {
+    "I": {
+      "median_cover": 1.0,
+      "min_cover": 0.8011695906432749,
+      "max_start_gap_s": 0.4970760233918129,
+      "max_end_gap_s": 0.0
+    },
+    "II": {
+      "median_cover": 1.0,
+      "min_cover": 1.0,
+      "max_start_gap_s": 0.0,
+      "max_end_gap_s": 0.0
+    },
+    "III": {
+      "median_cover": 1.0,
+      "min_cover": 0.8011695906432749,
+      "max_start_gap_s": 0.4970760233918129,
+      "max_end_gap_s": 0.0
+    },
+    "aVR": {
+      "median_cover": 1.0,
+      "min_cover": 1.0,
+      "max_start_gap_s": 0.0,
+      "max_end_gap_s": 0.0
+    },
+    "aVL": {
+      "median_cover": 1.0,
+      "min_cover": 1.0,
+      "max_start_gap_s": 0.0,
+      "max_end_gap_s": 0.0
+    },
+    "aVF": {
+      "median_cover": 1.0,
+      "min_cover": 1.0,
+      "max_start_gap_s": 0.0,
+      "max_end_gap_s": 0.0
+    },
+    "V1": {
+      "median_cover": 1.0,
+      "min_cover": 1.0,
+      "max_start_gap_s": 0.0,
+      "max_end_gap_s": 0.0
+    },
+    "V2": {
+      "median_cover": 1.0,
+      "min_cover": 1.0,
+      "max_start_gap_s": 0.0,
+      "max_end_gap_s": 0.0
+    },
+    "V3": {
+      "median_cover": 1.0,
+      "min_cover": 1.0,
+      "max_start_gap_s": 0.0,
+      "max_end_gap_s": 0.0
+    },
+    "V4": {
+      "median_cover": 1.0,
+      "min_cover": 0.8401559454191033,
+      "max_start_gap_s": 0.0,
+      "max_end_gap_s": 0.39961013645224175
+    },
+    "V5": {
+      "median_cover": 1.0,
+      "min_cover": 0.8401559454191033,
+      "max_start_gap_s": 0.0,
+      "max_end_gap_s": 0.39961013645224175
+    },
+    "V6": {
+      "median_cover": 1.0,
+      "min_cover": 0.8401559454191033,
+      "max_start_gap_s": 0.0,
+      "max_end_gap_s": 0.39961013645224175
+    },
+    "rhythm": {
+      "median_cover": 1.0,
+      "min_cover": 0.9605263157894737,
+      "max_start_gap_s": 0.0,
+      "max_end_gap_s": 0.39473684210526316
+    }
+  },
+  "dominant_positive_QRS_fraction": {
+    "I": 0.9465138490926457,
+    "II": 0.8319006685768864,
+    "III": 0.4040114613180516,
+    "aVR": 0.050620821394460364,
+    "aVL": 0.839541547277937,
+    "aVF": 0.6475644699140402,
+    "V1": 0.06208213944603629,
+    "V2": 0.24068767908309455,
+    "V3": 0.5721107927411653,
+    "V4": 0.6809933142311366,
+    "V5": 0.772683858643744,
+    "V6": 0.8624641833810889
+  },
+  "median_log_R_over_S_V1_to_V6": [
+    -1.5579907667844535,
+    -0.6620502511200893,
+    0.17458253475682747,
+    0.49571754323564354,
+    0.816516317697151,
+    1.1734598735429214
+  ],
+  "heart_rate_vs_printed": {
+    "n": 1046,
+    "pearson_r": 0.8314957967136986,
+    "median_abs_diff_bpm": 0.35133399295249035,
+    "within_5bpm": 0.8919694072657743
+  },
+  "qrs_axis_vs_printed": {
+    "n": 1001,
+    "median_abs_diff_deg": 7.998869463724816,
+    "within_30deg": 0.9070929070929071,
+    "circular_corr": 0.726227419309821
+  },
+  "einthoven_col1_III_eq_II_minus_I": {
+    "median_r": 0.9925526202807208,
+    "p5_r": 0.9574082271332344,
+    "median_rel_rms_residual": 0.13489603632150263
+  },
+  "goldberger_col2_sum_zero": {
+    "median_r_aVR_vs_-(aVL+aVF)": 0.9909892691342707,
+    "median_rel_rms_residual": 0.13739617157703873
+  },
+  "cross_column_2(aVF-aVR)/3_vs_rhythmII_2.5-5s": {
+    "median_r": 0.9973242178011964,
+    "p5_r": 0.9852027585287362,
+    "median_r_wrong_window": -0.03754596865618742
+  },
+  "junction_jump_over_median_step": {
+    "I": 12195.125222206116,
+    "III": 12195.125222206116,
+    "I_jump_mV_median": 0.024390242993831635
+  },
+  "aligned_input_composition_lead_seconds_of_120": {
+    "measured": 37.5,
+    "exactly_derived": 12.5,
+    "not_recorded_zero": 70.0
+  }
+}

@@ -1,0 +1,13 @@
+{
+ "members": [
+  "mlp2",
+  "mlp3",
+  "gated",
+  "ecgf_lin_dist",
+  "hdr_clin_lr"
+ ],
+ "method": "vote",
+ "params": {},
+ "seed": -1,
+ "repeat": 1
+}

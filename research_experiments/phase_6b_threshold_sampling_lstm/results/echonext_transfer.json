@@ -1,0 +1,51 @@
+{
+ "n": 837,
+ "image_heart_rate_median": 82.64462809917356,
+ "variants": {
+  "primary": {
+   "auroc_ef_le_45": 0.7915274678888017,
+   "auroc_normal_vs_mild": 0.7072635135135136,
+   "auroc_mild_vs_moderate": 0.6061078027179722,
+   "auroc_normal_vs_reduced": 0.7775190857247976,
+   "spearman_with_ef": -0.525347731424592,
+   "mean_prob_by_class": {
+    "Normal": 0.3115106225013733,
+    "Mild": 0.4791582226753235,
+    "Moderate": 0.5672427415847778,
+    "Severe": 0.6450993418693542
+   }
+  },
+  "bandpass": {
+   "auroc_ef_le_45": 0.794235060001206,
+   "auroc_normal_vs_mild": 0.7132319819819819,
+   "auroc_mild_vs_moderate": 0.6138036341426172,
+   "auroc_normal_vs_reduced": 0.7810602924944813,
+   "spearman_with_ef": -0.5364964650993684,
+   "mean_prob_by_class": {
+    "Normal": 0.34986457228660583,
+    "Mild": 0.5186375975608826,
+    "Moderate": 0.6054432988166809,
+    "Severe": 0.6804430484771729
+   }
+  },
+  "no_hr": {
+   "auroc_ef_le_45": 0.7861665561116806,
+   "auroc_normal_vs_mild": 0.7047156531531532,
+   "auroc_mild_vs_moderate": 0.6065048098946404,
+   "auroc_normal_vs_reduced": 0.7745872424576896,
+   "spearman_with_ef": -0.5183596226839335,
+   "mean_prob_by_class": {
+    "Normal": 0.3099949061870575,
+    "Mild": 0.4735482633113861,
+    "Moderate": 0.5599525570869446,
+    "Severe": 0.6319944858551025
+   }
+  }
+ },
+ "in_house_ef_ridge_reference": {
+  "auroc_ef_le_45": 0.8570825544232045,
+  "auroc_normal_vs_mild": 0.7680461711711711,
+  "auroc_mild_vs_moderate": 0.6503588334096809,
+  "spearman_with_ef": 0.6324852662494087
+ }
+}

@@ -1,0 +1,230 @@
+{
+ "phase": "6",
+ "updated": "2026-11-05 09:19:09",
+ "git_commit": "02bbd49",
+ "current_milestone": "Stage 2 (full evaluation)",
+ "milestones": {
+  "M0 setup + pre-registration": "DONE",
+  "M1 timing": "DONE",
+  "A stage 1 (fine-tuning screen)": "DONE",
+  "B stage 1 (encoder screen)": "DONE",
+  "D input fidelity": "DONE",
+  "Stage 2 (full evaluation)": "NOT STARTED",
+  "E diverse ensembling": "NOT STARTED",
+  "N name-pair sensitivity": "DONE",
+  "F statistics + final report": "NOT STARTED"
+ },
+ "experiments": {
+  "P6-restore-inputs": {
+   "status": "DONE",
+   "milestone": "M0 setup + pre-registration",
+   "command": "python -m research_experiments.phase_6.features.restore_inputs --mirror-phase5",
+   "runs": null,
+   "artifacts": [
+    "results/restore_inputs.json"
+   ]
+  },
+  "P6-baseline-regeneration": {
+   "status": "DONE",
+   "milestone": "M0 setup + pre-registration",
+   "command": "python -m research_experiments.phase_6.baselines",
+   "runs": null,
+   "artifacts": [
+    "results/baseline_regeneration.json"
+   ]
+  },
+  "P6-plan": {
+   "status": "DONE",
+   "milestone": "M0 setup + pre-registration",
+   "command": "(written by hand; sha256 in configs/PLAN.sha256)",
+   "runs": null,
+   "artifacts": [
+    "PHASE6_PLAN.md",
+    "configs/PLAN.sha256"
+   ]
+  },
+  "P6-timing-A": {
+   "status": "DONE",
+   "milestone": "M1 timing",
+   "command": "python -m research_experiments.phase_6.experiments.timing_a",
+   "runs": null,
+   "artifacts": [
+    "results/timing_A.json"
+   ]
+  },
+  "P6R0-joint-frozen-v1": {
+   "status": "DONE",
+   "milestone": "A stage 1 (fine-tuning screen)",
+   "command": "python -m research_experiments.phase_6.experiments.finetune --exp R0",
+   "runs": {
+    "P6R0-joint-frozen-v1__s42_r0": "DONE",
+    "P6R0-joint-frozen-v1__s43_r0": "DONE",
+    "P6R0-joint-frozen-v1__s44_r0": "DONE",
+    "P6R0-joint-frozen-v1__s42_r1": "DONE",
+    "P6R0-joint-frozen-v1__s43_r1": "DONE",
+    "P6R0-joint-frozen-v1__s44_r1": "DONE",
+    "P6R0-joint-frozen-v1__s42_r2": "DONE",
+    "P6R0-joint-frozen-v1__s43_r2": "DONE",
+    "P6R0-joint-frozen-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P6A1-ft-s6-joint-v1": {
+   "status": "DONE",
+   "milestone": "A stage 1 (fine-tuning screen)",
+   "command": "python -m research_experiments.phase_6.experiments.finetune --exp A1",
+   "runs": {
+    "P6A1-ft-s6-joint-v1__s42_r0": "DONE",
+    "P6A1-ft-s6-joint-v1__s42_r1": "DONE",
+    "P6A1-ft-s6-joint-v1__s42_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P6A2-ft-s56-joint-v1": {
+   "status": "DONE",
+   "milestone": "A stage 1 (fine-tuning screen)",
+   "command": "python -m research_experiments.phase_6.experiments.finetune --exp A2",
+   "runs": {
+    "P6A2-ft-s56-joint-v1__s42_r0": "DONE",
+    "P6A2-ft-s56-joint-v1__s42_r1": "DONE",
+    "P6A2-ft-s56-joint-v1__s42_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P6-stage1-screen": {
+   "status": "DONE",
+   "milestone": "A stage 1 (fine-tuning screen)",
+   "command": "python -m research_experiments.phase_6.validation.screen",
+   "runs": null,
+   "artifacts": [
+    "results/stage1_screen.json",
+    "results/stage1_screen.csv"
+   ]
+  },
+  "P6-encoder-licence-gate": {
+   "status": "DONE",
+   "milestone": "B stage 1 (encoder screen)",
+   "command": "(licence check by hand; see configs/encoders.json)",
+   "runs": null,
+   "artifacts": [
+    "configs/encoders.json"
+   ]
+  },
+  "P6B0-ecgf-f6-v1": {
+   "status": "DONE",
+   "milestone": "B stage 1 (encoder screen)",
+   "command": "python -m research_experiments.phase_6.experiments.encoders_b --emb B0",
+   "runs": {
+    "P6B0-ecgf-f6-v1__s42_r0": "DONE",
+    "P6B0-ecgf-f6-v1__s42_r1": "DONE",
+    "P6B0-ecgf-f6-v1__s42_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P6B-ecgfm-embed": {
+   "status": "DONE",
+   "milestone": "B stage 1 (encoder screen)",
+   "command": "python -m research_experiments.phase_6.experiments.embed_ecgfm",
+   "runs": null,
+   "artifacts": [
+    "results/ecgfm_embedding_validation.json"
+   ]
+  },
+  "P6B-ecgfm-v1": {
+   "status": "DONE",
+   "milestone": "B stage 1 (encoder screen)",
+   "command": "python -m research_experiments.phase_6.experiments.encoders_b --emb ECGFM",
+   "runs": {
+    "P6B-ecgfm-v1__s42_r0": "DONE",
+    "P6B-ecgfm-v1__s42_r1": "DONE",
+    "P6B-ecgfm-v1__s42_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P6D1-quality-strata": {
+   "status": "DONE",
+   "milestone": "D input fidelity",
+   "command": "python -m research_experiments.phase_6.experiments.fidelity_d --d1",
+   "runs": null,
+   "artifacts": [
+    "results/fidelity_d1.json"
+   ]
+  },
+  "P6D2-leadII-2p5s-v1": {
+   "status": "DONE",
+   "milestone": "D input fidelity",
+   "command": "python -m research_experiments.phase_6.experiments.fidelity_d --d2",
+   "runs": {
+    "P6D2-leadII-2p5s-v1__s42_r0": "DONE",
+    "P6D2-leadII-2p5s-v1__s42_r1": "DONE",
+    "P6D2-leadII-2p5s-v1__s42_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P6N-name-pair-sensitivity": {
+   "status": "DONE",
+   "milestone": "N name-pair sensitivity",
+   "command": "python -m research_experiments.phase_6.experiments.name_pairs",
+   "runs": null,
+   "artifacts": [
+    "results/name_pair_sensitivity.json"
+   ]
+  }
+ },
+ "completed": [
+  "P6-restore-inputs",
+  "P6-baseline-regeneration",
+  "P6-plan",
+  "P6-timing-A",
+  "P6R0-joint-frozen-v1",
+  "P6A1-ft-s6-joint-v1",
+  "P6A2-ft-s56-joint-v1",
+  "P6-stage1-screen",
+  "P6-encoder-licence-gate",
+  "P6B0-ecgf-f6-v1",
+  "P6B-ecgfm-embed",
+  "P6B-ecgfm-v1",
+  "P6D1-quality-strata",
+  "P6D2-leadII-2p5s-v1",
+  "P6N-name-pair-sensitivity"
+ ],
+ "running": [],
+ "interrupted": [],
+ "pending": [],
+ "missing_private": [],
+ "last_successful_run": {
+  "run_id": "P6D2-leadII-2p5s-v1__s42_r2",
+  "at": "2026-11-05 08:51:10"
+ },
+ "n_runs_done": 24,
+ "aggregate_results": "research_experiments/phase_6/results/experiments/<run_id>.json",
+ "private_predictions": "research_experiments/phase_6/data/private/runs/<run_id>/oof.csv (git-ignored)",
+ "seeds": [
+  42,
+  43,
+  44
+ ],
+ "repeats": [
+  0,
+  1,
+  2
+ ],
+ "fingerprints": {
+  "data/manifest.csv": "2463bd35b02013751474c418c195ef7a7c073699e8bfb5c113bd1848200fc4a8",
+  "results/split.csv": "7fc76b0e52a07f299f5bb2d004e809293f877dbb1d5f13520614dac82d5401c1",
+  "research_experiments/phase_2/configs/folds_D.csv": "a5e37f3ded8d958a1a183ad2438d707209697ad3b1af19852aaa9a7a72b69bbc",
+  "data/header_features.csv": "a9a379035729d806159185af53b1408644e63a53c820ec0cac95c394b1a4c638",
+  "research_experiments/phase_2/models/ecgf_aligned_features.npz": "7dab71334d92ea5e55dc7206077aaa5c2f21de08a7046db5064e2bf88d9fa3a5",
+  "data/signals.npz": "823c54ef0a2aa04e748b2c59e9dd14eee1ccdfd9d7d23dae38a4179902597367",
+  "research_experiments/phase_4/data/private/cohorts.csv": "631fce57bbad984ca6c4668d6e2a38694270ba53c4b060b357eae1115cd94d76",
+  "research_experiments/models/pretrained/12_lead_ECGFounder.pth": "ee199f3781f4ae1f732973267f003da0a759ea12bddb0dd28a77faa60aca7997"
+ },
+ "next_action": "all registered experiments complete",
+ "blocked": {},
+ "known_issues": [
+  "Experiment C (extra unlabelled / matched ECGs) not run: no extra PDFs or waveforms exist; confirmed blocked by the owner (PHASE6_PLAN.md 4.3).",
+  "Repository is public: main tracks the patient-named PDFs, its history contains the deleted ECG_ECHO sheets, and Phase 1-3 per-ECG CSVs (incl. phase_2/locked_test probabilities) are tracked. Owner handles it; Phase 6 modifies none of it and adds nothing similar (REPOSITORY_AUDIT_P6.md).",
+  "Name pairs: 11 near-identical name pairs straddle D and T and 3 lie within T; they must be resolved by the owner before any locked-test evaluation (counts only).",
+  "Do not run phase_5.resume5 (rewrites PHASE5_STATUS.md / checkpoint.json) or phase_5.integrity5 verify (writes into phase_5/results) in a Phase-6 session; use resume6 / integrity6."
+ ]
+}

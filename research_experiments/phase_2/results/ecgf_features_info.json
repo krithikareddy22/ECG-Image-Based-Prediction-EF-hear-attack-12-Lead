@@ -1,0 +1,47 @@
+{
+ "aligned": {
+  "input_shape": [
+   12,
+   5000
+  ],
+  "nonzero_fraction": 0.4166461318051576,
+  "build_s": 7.843737602233887,
+  "forward_s": 40.97664475440979
+ },
+ "aligned_meas": {
+  "input_shape": [
+   12,
+   5000
+  ],
+  "nonzero_fraction": 0.31247946513849095,
+  "build_s": 8.034845113754272,
+  "forward_s": 35.97273564338684
+ },
+ "leadII12": {
+  "input_shape": [
+   12,
+   5000
+  ],
+  "nonzero_fraction": 0.08333333333333333,
+  "build_s": 2.1580114364624023,
+  "forward_s": 36.588220834732056
+ },
+ "onelead_II": {
+  "input_shape": [
+   1,
+   5000
+  ],
+  "nonzero_fraction": 1.0,
+  "build_s": 1.3368394374847412,
+  "forward_s": 36.85183835029602
+ },
+ "tiled": {
+  "input_shape": [
+   12,
+   5000
+  ],
+  "nonzero_fraction": 1.0,
+  "build_s": 8.555573463439941,
+  "forward_s": 35.89534568786621
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "run_id": "P6A1-ft-s6-joint-v1__s42_r1",
+ "committed_sha256": "429e0f90fd7eaca76b871e0fa89e5abb2bf50eb61af6c94ff164f468964d92e3",
+ "regenerated_sha256": "eea9719a62eca23faabeaaec57fcf0ec5cab9a6bb4e3c73cf2a454de5105f375",
+ "exact": false,
+ "max_abs_diff_acc_bal_mf1": 0.0,
+ "metric_abs_diff": {
+  "accuracy": 0.0,
+  "balanced_accuracy": 0.0,
+  "macro_f1": 0.0,
+  "qwk": 0.0,
+  "macro_auroc": 0.0,
+  "precision_Normal": 0.0,
+  "recall_Normal": 0.0,
+  "f1_Normal": 0.0,
+  "precision_Mild": 0.0,
+  "recall_Mild": 0.0,
+  "f1_Mild": 0.0,
+  "precision_Moderate": 0.0,
+  "recall_Moderate": 0.0,
+  "f1_Moderate": 0.0,
+  "precision_Severe": 0.0,
+  "recall_Severe": 0.0,
+  "f1_Severe": 0.0,
+  "s3": 0.0,
+  "min_recall": 0.0
+ },
+ "tolerance": 0.005,
+ "within_tolerance": true,
+ "regenerated": "2026-11-05 15:52:07",
+ "git": "1785ff1",
+ "platform": "Windows-11-10.0.26300-SP0",
+ "torch": "2.15.0+cu132",
+ "ef_pearson_A_regenerated_vs_committed": [
+  0.6418375379644374,
+  0.6418375081343682
+ ]
+}

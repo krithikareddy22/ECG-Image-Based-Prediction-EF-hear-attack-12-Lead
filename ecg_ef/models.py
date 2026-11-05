@@ -77,11 +77,15 @@ class ECGNet(nn.Module):
 
 
 TIMM_MODELS = {
+    "vgg16": "vgg16",
     "resnet18": "resnet18",
     "resnet34": "resnet34",
+    "resnet50": "resnet50",
     "efficientnet_b0": "efficientnet_b0",
     "densenet121": "densenet121",
+    "mobilenetv2": "mobilenetv2_100",
     "mobilenetv3": "mobilenetv3_large_100",
+    "inception_v3": "inception_v3",
     "convnext_atto": "convnext_atto",
 }
 MODEL_NAMES = ["ecgnet", *TIMM_MODELS]

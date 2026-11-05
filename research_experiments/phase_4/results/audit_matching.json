@@ -1,0 +1,257 @@
+{
+ "matched_sheet_rows_per_year": {
+  "2020": 968,
+  "2021": 1226,
+  "2022": 937,
+  "2024": 1596
+ },
+ "unmatched_rows_per_year": {
+  "2020": {
+   "Unmatched Echo": 290,
+   "Unmatched ECG": 1401
+  },
+  "2021": {
+   "Unmatched Echo": 901,
+   "Unmatched ECG": 4210
+  },
+  "2022": {
+   "Unmatched Echo": 28,
+   "Unmatched ECG": 3960
+  },
+  "2024": {
+   "Unmatched Echo": 43,
+   "Unmatched ECG": 2658
+  }
+ },
+ "matched_rows_unique_ecgs_per_year": {
+  "2020": 738,
+  "2021": 1195,
+  "2022": 868,
+  "2024": 1377
+ },
+ "ef_rounding": {
+  "integer_valued_share": 0.10395934787211518,
+  "one_decimal_share": 0.8960406521278849
+ },
+ "sheet_lv_vs_recomputed_rule_agreement": 0.98942246668077,
+ "dataset_ecgs": 1047,
+ "dataset_ecgs_with_any_echo_link": 1047,
+ "links_per_ecg_distribution": {
+  "1": 883,
+  "2": 120,
+  "3": 31,
+  "4": 12,
+  "7": 1
+ },
+ "ecgs_with_links_of_conflicting_derived_class": 91,
+ "ecgs_with_no_link_agreeing_with_folder_label": 22,
+ "primary_link": {
+  "ecgs": 1047,
+  "consistent_with_folder_label": 1025,
+  "abs_interval_days_quantiles": {
+   "0.0": 0.0,
+   "0.25": 0.0,
+   "0.5": 0.0,
+   "0.75": 60.0,
+   "0.9": 142.4,
+   "1.0": 343.0
+  },
+  "echo_before_ecg": 256,
+  "same_day": 543,
+  "echo_after_ecg": 248,
+  "missing_dates": 0,
+  "score_100_exact_name": 562,
+  "score_lt_100": 485,
+  "score_quantiles": {
+   "0.0": 50.0,
+   "0.1": 70.0,
+   "0.25": 87.65,
+   "0.5": 100.0
+  },
+  "sex_echo_available": 519,
+  "sex_agree_where_available": 1.0
+ },
+ "windows_primary_link": {
+  "<=7d": {
+   "ecgs": 647,
+   "patients": 622,
+   "classes": {
+    "Normal": 298,
+    "Mild": 144,
+    "Moderate": 142,
+    "Severe": 63
+   },
+   "dev": 521,
+   "test": 126,
+   "echo_before": 13,
+   "echo_after_or_same": 634,
+   "ef_median": 49.0
+  },
+  "<=14d": {
+   "ecgs": 664,
+   "patients": 639,
+   "classes": {
+    "Normal": 307,
+    "Mild": 150,
+    "Moderate": 144,
+    "Severe": 63
+   },
+   "dev": 530,
+   "test": 134,
+   "echo_before": 19,
+   "echo_after_or_same": 645,
+   "ef_median": 49.05
+  },
+  "<=30d": {
+   "ecgs": 710,
+   "patients": 682,
+   "classes": {
+    "Normal": 325,
+    "Mild": 161,
+    "Moderate": 158,
+    "Severe": 66
+   },
+   "dev": 565,
+   "test": 145,
+   "echo_before": 44,
+   "echo_after_or_same": 666,
+   "ef_median": 48.95
+  },
+  "<=60d": {
+   "ecgs": 786,
+   "patients": 749,
+   "classes": {
+    "Normal": 364,
+    "Mild": 170,
+    "Moderate": 170,
+    "Severe": 82
+   },
+   "dev": 624,
+   "test": 162,
+   "echo_before": 87,
+   "echo_after_or_same": 699,
+   "ef_median": 49.3
+  },
+  "<=90d": {
+   "ecgs": 843,
+   "patients": 803,
+   "classes": {
+    "Normal": 389,
+    "Mild": 182,
+    "Moderate": 181,
+    "Severe": 91
+   },
+   "dev": 671,
+   "test": 172,
+   "echo_before": 120,
+   "echo_after_or_same": 723,
+   "ef_median": 49.3
+  },
+  ">90d": {
+   "ecgs": 204,
+   "patients": 200,
+   "classes": {
+    "Normal": 91,
+    "Mild": 50,
+    "Moderate": 40,
+    "Severe": 23
+   },
+   "dev": 166,
+   "test": 38,
+   "echo_before": 136,
+   "echo_after_or_same": 68,
+   "ef_median": 48.7
+  }
+ },
+ "label_audit": {
+  "Normal": {
+   "n": 480,
+   "patients": 477,
+   "ef_min": 50.1,
+   "ef_max": 85.9,
+   "ef_median": 69.69999999999999,
+   "borderline_within_2_points": 12,
+   "derived_from_primary_ef": {
+    "Normal": 477,
+    "Mild": 3
+   }
+  },
+  "Mild": {
+   "n": 232,
+   "patients": 226,
+   "ef_min": 35.0,
+   "ef_max": 75.9,
+   "ef_median": 45.45,
+   "borderline_within_2_points": 70,
+   "derived_from_primary_ef": {
+    "Mild": 221,
+    "Moderate": 9,
+    "Normal": 2
+   }
+  },
+  "Moderate": {
+   "n": 221,
+   "patients": 214,
+   "ef_min": 30.0,
+   "ef_max": 56.39999999999999,
+   "ef_median": 36.1,
+   "borderline_within_2_points": 69,
+   "derived_from_primary_ef": {
+    "Moderate": 213,
+    "Severe": 7,
+    "Normal": 1
+   }
+  },
+  "Severe": {
+   "n": 114,
+   "patients": 108,
+   "ef_min": 6.1,
+   "ef_max": 30.8,
+   "ef_median": 26.05,
+   "borderline_within_2_points": 22,
+   "derived_from_primary_ef": {
+    "Severe": 114
+   }
+  }
+ },
+ "folder_vs_nearest_link_derived": {
+  "agreement": 0.9350525310410697,
+  "crosstab": {
+   "Mild": {
+    "Mild": 209,
+    "Moderate": 0,
+    "Normal": 4,
+    "Severe": 0
+   },
+   "Moderate": {
+    "Mild": 11,
+    "Moderate": 195,
+    "Normal": 0,
+    "Severe": 1
+   },
+   "Normal": {
+    "Mild": 12,
+    "Moderate": 18,
+    "Normal": 476,
+    "Severe": 14
+   },
+   "Severe": {
+    "Mild": 0,
+    "Moderate": 8,
+    "Normal": 0,
+    "Severe": 99
+   }
+  }
+ },
+ "high_confidence_nearest_link": {
+  "rule": "exact name score 100, |ECG-echo| <= 30 d, sex agrees where recorded",
+  "ecgs": 462,
+  "agreement_with_folder": 0.948051948051948,
+  "classes_folder": {
+   "Normal": 217,
+   "Mild": 104,
+   "Moderate": 98,
+   "Severe": 43
+  }
+ }
+}

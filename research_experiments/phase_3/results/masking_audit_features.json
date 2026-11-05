@@ -1,0 +1,91 @@
+{
+ "A_coverage": {
+  "per_lead": {
+   "I": {
+    "seconds_measured": 2.5,
+    "seconds_exactly_derived": 2.5,
+    "seconds_not_recorded": 5.0,
+    "observed_fraction_median_over_ecgs": 0.5
+   },
+   "II": {
+    "seconds_measured": 10.0,
+    "seconds_exactly_derived": 0.0,
+    "seconds_not_recorded": 0.0,
+    "observed_fraction_median_over_ecgs": 1.0
+   },
+   "III": {
+    "seconds_measured": 2.5,
+    "seconds_exactly_derived": 2.5,
+    "seconds_not_recorded": 5.0,
+    "observed_fraction_median_over_ecgs": 0.5
+   },
+   "aVR": {
+    "seconds_measured": 2.5,
+    "seconds_exactly_derived": 2.5,
+    "seconds_not_recorded": 5.0,
+    "observed_fraction_median_over_ecgs": 0.5
+   },
+   "aVL": {
+    "seconds_measured": 2.5,
+    "seconds_exactly_derived": 2.5,
+    "seconds_not_recorded": 5.0,
+    "observed_fraction_median_over_ecgs": 0.5
+   },
+   "aVF": {
+    "seconds_measured": 2.5,
+    "seconds_exactly_derived": 2.5,
+    "seconds_not_recorded": 5.0,
+    "observed_fraction_median_over_ecgs": 0.5
+   },
+   "V1": {
+    "seconds_measured": 2.5,
+    "seconds_exactly_derived": 0.0,
+    "seconds_not_recorded": 7.5,
+    "observed_fraction_median_over_ecgs": 0.25
+   },
+   "V2": {
+    "seconds_measured": 2.5,
+    "seconds_exactly_derived": 0.0,
+    "seconds_not_recorded": 7.5,
+    "observed_fraction_median_over_ecgs": 0.25
+   },
+   "V3": {
+    "seconds_measured": 2.5,
+    "seconds_exactly_derived": 0.0,
+    "seconds_not_recorded": 7.5,
+    "observed_fraction_median_over_ecgs": 0.25
+   },
+   "V4": {
+    "seconds_measured": 2.5,
+    "seconds_exactly_derived": 0.0,
+    "seconds_not_recorded": 7.5,
+    "observed_fraction_median_over_ecgs": 0.25
+   },
+   "V5": {
+    "seconds_measured": 2.5,
+    "seconds_exactly_derived": 0.0,
+    "seconds_not_recorded": 7.5,
+    "observed_fraction_median_over_ecgs": 0.25
+   },
+   "V6": {
+    "seconds_measured": 2.5,
+    "seconds_exactly_derived": 0.0,
+    "seconds_not_recorded": 7.5,
+    "observed_fraction_median_over_ecgs": 0.25
+   }
+  },
+  "observed_fraction_per_ecg": {
+   "median": 0.4166666666666667,
+   "min": 0.4034333333333333,
+   "max": 0.4166666666666667
+  }
+ },
+ "observed_fraction": {
+  "col_only": 0.25,
+  "limb_only": 0.29165563514804205,
+  "precordial_plus_II": 0.208320694046482,
+  "precordial_only": 0.12499049665711556,
+  "leadII_2p5": 0.020833333333333332,
+  "aligned": 0.4166461318051576
+ }
+}

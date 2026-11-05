@@ -1,0 +1,54 @@
+{
+ "all_matched_ecgs": {
+  "total": 4177,
+  "in_dataset": 1047,
+  "not_in_dataset": 3130,
+  "by_class_not_in_dataset": {
+   "Normal": 3106,
+   "Mild": 22,
+   "Moderate": 1,
+   "Severe": 1
+  },
+  "by_class_in_dataset": {
+   "Normal": 520,
+   "Mild": 214,
+   "Moderate": 206,
+   "Severe": 107
+  }
+ },
+ "nearest_link_within_14d": {
+  "total": 2777,
+  "in_dataset": 688,
+  "not_in_dataset": 2089,
+  "by_class_not_in_dataset": {
+   "Normal": 2074,
+   "Mild": 15,
+   "Moderate": 0,
+   "Severe": 0
+  },
+  "by_class_in_dataset": {
+   "Normal": 332,
+   "Mild": 146,
+   "Moderate": 140,
+   "Severe": 70
+  }
+ },
+ "exact_name_and_within_30d": {
+  "total": 1879,
+  "in_dataset": 459,
+  "not_in_dataset": 1420,
+  "by_class_not_in_dataset": {
+   "Normal": 1409,
+   "Mild": 11,
+   "Moderate": 0,
+   "Severe": 0
+  },
+  "by_class_in_dataset": {
+   "Normal": 225,
+   "Mild": 95,
+   "Moderate": 96,
+   "Severe": 43
+  }
+ },
+ "note": "Counts of unique ECG acquisition timestamps in the 'Matched Records' sheets, class of the nearest-in-time linked echo (fuzzy name match, not verified). Whether the PDFs of the ECGs not in the dataset are still available is unknown. Unmatched-ECG rows (no echo) are not counted."
+}

@@ -1,0 +1,4 @@
+# large or in-progress artefacts: never commit
+models/
+logs/
+__pycache__/

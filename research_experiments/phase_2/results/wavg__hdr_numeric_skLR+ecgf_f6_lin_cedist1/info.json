@@ -1,0 +1,36 @@
+{
+  "method": "wavg",
+  "members": [
+    "hdr_numeric_skLR",
+    "ecgf_f6_lin_cedist1"
+  ],
+  "rule": "argmax",
+  "objective": "s3",
+  "params": {
+    "fold0": [
+      0.5,
+      0.5
+    ],
+    "fold1": [
+      0.5,
+      0.5
+    ],
+    "fold2": [
+      0.5,
+      0.5
+    ],
+    "fold3": [
+      0.5,
+      0.5
+    ],
+    "fold4": [
+      0.5,
+      0.5
+    ],
+    "final": [
+      0.5,
+      0.5
+    ]
+  },
+  "decision_params": {}
+}

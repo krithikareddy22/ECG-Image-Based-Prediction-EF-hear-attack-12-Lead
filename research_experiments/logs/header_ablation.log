@@ -1,0 +1,17 @@
+[HA_H1_demographics] TEST acc 0.390 bal 0.341 mF1 0.331 QWK 0.211 MildF1 0.214 macroAUC 0.614 HF-AUC 0.667 | VAL bal 0.324 mF1 0.314
+[HA_H2_measurements] TEST acc 0.495 bal 0.408 mF1 0.385 QWK 0.431 MildF1 0.174 macroAUC 0.686 HF-AUC 0.793 | VAL bal 0.452 mF1 0.410
+[HA_H3_demographics+measurements] TEST acc 0.510 bal 0.449 mF1 0.414 QWK 0.488 MildF1 0.137 macroAUC 0.698 HF-AUC 0.802 | VAL bal 0.438 mF1 0.396
+[HA_H4_verdict_only] TEST acc 0.352 bal 0.341 mF1 0.218 QWK 0.254 MildF1 0.000 macroAUC 0.607 HF-AUC 0.693 | VAL bal 0.372 mF1 0.226
+[HA_H5_statements_only] TEST acc 0.414 bal 0.359 mF1 0.337 QWK 0.242 MildF1 0.080 macroAUC 0.628 HF-AUC 0.729 | VAL bal 0.374 mF1 0.361
+[HA_H6_verdict+statements] TEST acc 0.424 bal 0.379 mF1 0.355 QWK 0.258 MildF1 0.137 macroAUC 0.642 HF-AUC 0.755 | VAL bal 0.408 mF1 0.396
+[HA_H7_all_minus_statements] TEST acc 0.490 bal 0.450 mF1 0.415 QWK 0.426 MildF1 0.189 macroAUC 0.702 HF-AUC 0.801 | VAL bal 0.466 mF1 0.434
+[HA_H8_all] TEST acc 0.514 bal 0.442 mF1 0.421 QWK 0.422 MildF1 0.160 macroAUC 0.684 HF-AUC 0.795 | VAL bal 0.422 mF1 0.395
+                                        subset  n_features    C  val_score   acc  bal_acc  macro_f1   qwk  mild_f1  macro_auroc  hf_auc
+                               H1_demographics           2 0.10      0.378 0.390    0.341     0.331 0.211    0.214        0.614   0.667
+                               H2_measurements          14 0.01      0.528 0.495    0.408     0.385 0.431    0.174        0.686   0.793
+H3_demographics+measurements (no machine text)          16 0.01      0.516 0.510    0.449     0.414 0.488    0.137        0.698   0.802
+                               H4_verdict_only           4 0.01      0.410 0.352    0.341     0.218 0.254    0.000        0.607   0.693
+                            H5_statements_only          90 0.01      0.458 0.414    0.359     0.337 0.242    0.080        0.628   0.729
+     H6_verdict+statements (machine text only)          94 0.01      0.510 0.424    0.379     0.355 0.258    0.137        0.642   0.755
+                       H7_all_minus_statements          20 0.01      0.559 0.490    0.450     0.415 0.426    0.189        0.702   0.801
+              H8_all (= baseline header model)         110 0.01      0.532 0.514    0.442     0.421 0.422    0.160        0.684   0.795

@@ -1,0 +1,11 @@
+[clin_hdrnum+clin_skLR] acc 0.520 bal 0.452 mF1 0.432 Mild 0.282 QWK 0.514 AUC 0.702 S3 0.468
+[clin_clinonly_skLR] acc 0.480 bal 0.413 mF1 0.389 Mild 0.207 QWK 0.481 AUC 0.679 S3 0.427
+[clin_hdrnum+clin_xgb] acc 0.490 bal 0.416 mF1 0.402 Mild 0.205 QWK 0.500 AUC 0.684 S3 0.436
+[clin_hdrnum+clin+ning_xgb] acc 0.499 bal 0.390 mF1 0.386 Mild 0.232 QWK 0.480 AUC 0.707 S3 0.425
+[clin_mlpfusion_hdr+clin+ecgf] acc 0.536 bal 0.464 mF1 0.443 Mild 0.233 QWK 0.564 AUC 0.722 S3 0.481
+[gate_scalar_hdr+ecgf] acc 0.526 bal 0.458 mF1 0.434 Mild 0.211 QWK 0.503 AUC 0.705 S3 0.473
+[gate_vector_hdr+ecgf] acc 0.515 bal 0.435 mF1 0.424 Mild 0.215 QWK 0.519 AUC 0.702 S3 0.458
+[gate_scalar_hdr+clin+ecgf] acc 0.533 bal 0.449 mF1 0.437 Mild 0.250 QWK 0.509 AUC 0.697 S3 0.473
+[attn_hdr+clin+ecgf] acc 0.526 bal 0.440 mF1 0.429 Mild 0.218 QWK 0.522 AUC 0.680 S3 0.465
+[gate_scalar_hdr+clin+ecgf_h64] acc 0.527 bal 0.446 mF1 0.433 Mild 0.199 QWK 0.538 AUC 0.707 S3 0.469
+[gate_scalar_hdr+clin+ecgf_dist] acc 0.536 bal 0.460 mF1 0.450 Mild 0.264 QWK 0.530 AUC 0.703 S3 0.482

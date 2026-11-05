@@ -1,0 +1,8 @@
+# Phase 6: everything under data/ is private (per-ECG predictions, embeddings, features, inner caches,
+# name-pair groups, integrity snapshots). Never commit it.
+data/
+*.pt
+*.pth
+*.npz
+*.npy
+results/running/

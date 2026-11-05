@@ -1,0 +1,92 @@
+{
+ "overlap": {
+  "joint_correctness": {
+   "both right": {
+    "n": 314,
+    "share": 0.3751493428912784,
+    "fusion_accuracy_in_cell": 0.9808917197452229
+   },
+   "header only right": {
+    "n": 92,
+    "share": 0.10991636798088411,
+    "fusion_accuracy_in_cell": 0.30434782608695654
+   },
+   "ECGFounder only right": {
+    "n": 141,
+    "share": 0.16845878136200718,
+    "fusion_accuracy_in_cell": 0.75177304964539
+   },
+   "both wrong": {
+    "n": 290,
+    "share": 0.34647550776583036,
+    "fusion_accuracy_in_cell": 0.06551724137931035
+   }
+  },
+  "kappa_between_predictions": 0.3945961106167256,
+  "corr_P_reduced": 0.7135201666076827,
+  "corr_expected_severity": 0.7310548488656641,
+  "accuracy": {
+   "header": 0.4850657108721625,
+   "ecgf": 0.5436081242532855,
+   "fusion": 0.5507765830346476,
+   "oracle": 0.6535244922341696
+  },
+  "recall_by_class": {
+   "Normal": {
+    "header_recall": 0.7239583333333334,
+    "ecgf_recall": 0.7786458333333334,
+    "fusion_recall": 0.7864583333333334,
+    "oracle_recall": 0.859375
+   },
+   "Mild": {
+    "header_recall": 0.15675675675675677,
+    "ecgf_recall": 0.21621621621621623,
+    "fusion_recall": 0.1783783783783784,
+    "oracle_recall": 0.2918918918918919
+   },
+   "Moderate": {
+    "header_recall": 0.3163841807909605,
+    "ecgf_recall": 0.4463276836158192,
+    "fusion_recall": 0.4293785310734463,
+    "oracle_recall": 0.6101694915254238
+   },
+   "Severe": {
+    "header_recall": 0.4725274725274725,
+    "ecgf_recall": 0.4065934065934066,
+    "fusion_recall": 0.5494505494505495,
+    "oracle_recall": 0.6043956043956044
+   }
+  }
+ },
+ "ecgfounder_decodes_measurements_cv_r2": {
+  "Rate": 0.9317392297957204,
+  "PR": 0.4510882389822286,
+  "QRSD": 0.7026970667382771,
+  "QT": 0.5677868185568715,
+  "QTcB": 0.38256870535021636,
+  "age": 0.242925635823396
+ },
+ "fusion_cfg": {
+  "head": "mlp",
+  "loss": "ce",
+  "weight": "balanced",
+  "hidden": 64,
+  "dropout": 0.5
+ },
+ "permutation_importance_mean_over_seeds": {
+  "ecgfounder": {
+   "drop_accuracy": 0.21415770609319,
+   "drop_balanced_accuracy": 0.20973078073184004,
+   "drop_macro_f1": 0.18928784763489595,
+   "drop_f1_mild": 0.04663746586703748,
+   "drop_s3": 0.20439211148664196
+  },
+  "header": {
+   "drop_accuracy": 0.021405814416567154,
+   "drop_balanced_accuracy": 0.032046231881705876,
+   "drop_macro_f1": 0.022392981996581518,
+   "drop_f1_mild": 0.007417889300962756,
+   "drop_s3": 0.025281676098284855
+  }
+ }
+}

@@ -1,0 +1,5 @@
+models/
+logs/
+__pycache__/
+# derived patient-level data: never commit without review
+data/private/
