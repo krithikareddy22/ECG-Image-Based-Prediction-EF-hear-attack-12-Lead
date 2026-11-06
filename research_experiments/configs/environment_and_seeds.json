@@ -1,0 +1,42 @@
+{
+  "environment": {
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v233-x86_64-with-glibc2.39",
+    "torch": "2.15.0+cu132",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1",
+    "cpu_threads": 4,
+    "cuda": false,
+    "cpu_count": 4,
+    "time": "2026-11-04 14:50:22",
+    "timm": "1.0.30",
+    "scipy": "1.18.1",
+    "xgboost": "3.4.1",
+    "cv2": "5.0.0",
+    "pymupdf": "2.1"
+  },
+  "seeds": {
+    "global_seed": 42,
+    "a2_seeds": [
+      42,
+      43,
+      44
+    ],
+    "bootstrap_seed": 42,
+    "n_bootstrap": 2000,
+    "cv_outer": "StratifiedGroupKFold(5, shuffle, random_state=42)",
+    "cv_inner": "StratifiedGroupKFold(5, shuffle, random_state=fold)"
+  },
+  "git": {
+    "branch": "research/ecg-ef-model-improvements",
+    "base_commit": "c2487308f6221c0a5132e2f9fd5a7073b30bb7e7"
+  },
+  "ecgfounder": {
+    "repo": "https://github.com/PKUDigitalHealth/ECGFounder",
+    "repo_commit": "04edac702b61c91face519774ddcc0cd712fef23",
+    "hf_revision": "d9b1793951b2342f5f7e84f1ac03cd37f8a08724",
+    "sha256": "ee199f3781f4ae1f732973267f003da0a759ea12bddb0dd28a77faa60aca7997",
+    "licence": "MIT"
+  }
+}

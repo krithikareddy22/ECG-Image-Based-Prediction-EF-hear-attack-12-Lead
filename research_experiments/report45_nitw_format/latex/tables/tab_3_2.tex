@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\caption{Layers, activation functions, normalisation and size of every network used in Phase I.}\label{tab:3.2}
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.172\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.440\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.111\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.155\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.119\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Network} & \textbf{Layers and blocks} & \textbf{Activation} & \textbf{Norm.} & \textbf{Params} \\
+\midrule
+ResNet-18 & 7 $\times$ 7 conv stem + max-pool; 4 stages $\times$ 2 basic blocks of two 3 $\times$ 3 convs (64--512 channels); global average pool; FC(4) --- 18 weight layers & ReLU & BatchNorm & 11.2 M \\
+ECGNet (custom) & 7 $\times$ 7/2 stem; 4 stages of 1--1--2--2 residual SE blocks (widths 64--256) with time-elongated 3 $\times$ 5 kernels; [GAP $\|$ GMP]; dropout 0.3; FC(4) ---13 conv layers & ReLU; sigmoid (SE) & BatchNorm & 6.3 M \\
+EfficientNet-B0 & 3 $\times$ 3 stem; 16 MBConv blocks in 7 stages with SE; 1 $\times$ 1 head conv; FC(4) & SiLU & BatchNorm & 4.0 M \\
+EfficientNet-B2 (IMG70) & 3 $\times$ 3 stem; 23 MBConv blocks in 7 stages with SE; 1 $\times$ 1 head conv; FC(4) + EF head & SiLU & BatchNorm & 7.7 M \\
+MobileNetV3-Large & 3 $\times$ 3 stem; 15 inverted-residual bottlenecks, SE in 8; 1 $\times$ 1 head & h-swish, ReLU & BatchNorm & 4.2 M \\
+ConvNeXt-Atto & 4 $\times$ 4 patchify stem; 4 stages of 2--2--6--2 blocks (7 $\times$ 7 depth-wise conv + MLP) & GELU & LayerNorm & 3.4 M \\
+ConvNeXt-Tiny (IMG70) & 4 $\times$ 4 patchify stem; 4 stages of 3--3--9--3 blocks (96--768 channels); FC(4) + EF head & GELU & LayerNorm & 27.8 M \\
+1-D SE-ResNet & 1-D residual blocks, kernel 9, SE; [GAP $\|$ GMP]; FC(4) & ReLU & BatchNorm & -- \\
+ECGFounder (Net1D) & 1-D conv stem (kernel 16, stride 2); 7 stages of 2--2--2--3--3--4--4 blocks (20 blocks; 64--1,024 filters), grouped kernel-16 convs with SE; GAP $\rightarrow$ 1,024-d embedding & Swish & none & 30.8 M \\
+MLP head / fusion & dropout 0.5 $\rightarrow$ linear 64 $\rightarrow$ GELU $\rightarrow$ dropout 0.5 $\rightarrow$ linear 4 & GELU & standardised input & 66 k \\
+LSTM L0--L4 & 1--2 LSTM layers, 64 hidden units, uni- or bidirectional; [last state $\|$ masked mean]; dropout 0.3; linear 4 & sigmoid, tanh & -- & 18--147 k \\
+CNN-LSTM (L5) & 3 $\times$ [Conv1d $ k$ 7, stride 2] (26 $\rightarrow$ 32 $\rightarrow$ 64 $\rightarrow$ 64 channels); BiLSTM-64; linear 4 & GELU; sigmoid, tanh & -- & 117 k \\
+Meta-learners & multinomial logistic regression; Frank--Hall ordinal (3 binary logistic models) & softmax; sigmoid & standardised & $<1$ k \\
+\bottomrule
+\end{tabular}
+\end{table}

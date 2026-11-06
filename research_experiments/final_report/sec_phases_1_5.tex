@@ -1,0 +1,163 @@
+% ---------------------------------------------------------------------------------------------------------
+\section{Original project and Phases 1--5}\label{sec:p15}
+
+\subsection{Original project (baseline)}
+\begin{itemize}
+  \item \textbf{Goal:} a CNN on the cropped, grid-filtered ECG page image, predicting the four-class LVEF category
+    and a heart-failure yes/no screen.
+  \item \textbf{Location:} code on \url{main} (\texttt{ecg\_ef/}); results and write-up on
+    \url{claude/funny-gauss-udlmv0}.
+  \item \textbf{Evaluation:} scored on the fixed 210-ECG test set.
+\end{itemize}
+\begin{table}[H]\centering\small
+\caption{Original project, fixed test set ($n=210$).}\label{tab:orig}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccc}\toprule
+Model & Accuracy & Bal.\ acc. & Macro-F1 & QWK & HF AUC \\\midrule
+HOG + SVM & 0.481 & 0.322 & 0.283 & 0.229 & 0.737 \\
+ECGNet (custom CNN) & 0.471 & 0.360 & 0.262 & 0.389 & 0.745 \\
+ResNet-18 (selected image model) & 0.486 & 0.356 & 0.323 & 0.290 & 0.735 \\
+EfficientNet-B0 / MobileNetV3-L & 0.300 / 0.143 & 0.318 / 0.243 & 0.236 / 0.111 & -- & 0.712 / 0.649 \\
+ConvNeXt-Atto (two learning rates) & 0.395 / 0.443 & 0.283 / 0.289 & 0.262 / 0.262 & -- & 0.618 / 0.586 \\
+1-D ResNet $\times5$ (digitised waveform) & 0.457 & 0.364 & 0.358 & 0.410 & 0.752 \\
+Header logistic regression & 0.514 & 0.442 & 0.421 & 0.422 & 0.795 \\
+XGBoost on engineered features & 0.490 & -- & 0.373 & 0.382 & 0.742 \\
+\textbf{Header 0.6 + ResNet-18 0.4 (default)} & \textbf{0.552} & 0.454 & 0.433 & 0.447 & 0.791 \\
+Always ``Normal'' & 0.457 & 0.250 & 0.157 & 0 & -- \\\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\textbf{Findings:}
+\begin{itemize}
+  \item Mild and Moderate were mostly called Normal: Mild recall was 6\,\% for ResNet-18 and 11\,\% for the default.
+  \item HOG + SVM matched the CNNs, and large CNNs trained from scratch failed.
+  \item The printed header numbers gave the largest gain.
+\end{itemize}
+
+\subsection{Phase 1: foundation model, ordinal heads (fixed split, test scored)}
+\textbf{Goal:} ECGFounder frozen (A1) or fine-tuned (A2), ordinal heads (B) and EF regression (C). Branch
+\url{research/ecg-ef-model-improvements}.
+\begin{table}[H]\centering\small
+\caption{Phase 1, fixed test set.}\label{tab:p1}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccc}\toprule
+Model & Accuracy & Bal.\ acc. & Macro-F1 & Mild recall & HF AUC \\\midrule
+Default (header + ResNet-18), reproduced & 0.552 & 0.454 & 0.433 & 0.106 & 0.791 \\
+A1 frozen ECGFounder & 0.500 & 0.421 & 0.412 & 0.234 & 0.810 \\
+\textbf{A2 fine-tuned ECGFounder, 3-seed ensemble} & 0.524 & \textbf{0.464} & \textbf{0.448} & \textbf{0.255} & 0.812 \\
+A2 ordinal (cumulative link) & 0.510 & 0.417 & 0.393 & 0.170 & 0.790 \\
+A1 CORAL ordinal & 0.390 & 0.376 & 0.345 & 0.489 & -- \\
+Header + A2 fusion & 0.505 & 0.445 & 0.425 & 0.213 & 0.819 \\\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\textbf{Findings:}
+\begin{itemize}
+  \item Ordinal heads lowered accuracy.
+  \item EF regression could not be run: no EF values were available then.
+  \item A claimed significance ($p<0.001$) was retracted in an erratum; the corrected $p$ is 0.12.
+  \item About 40 models were scored on the test set, so it became \emph{exposed}. From Phase 2 on, all modelling
+    used development CV only.
+\end{itemize}
+
+\subsection{Phase 2: audit, pre-registration, development CV}
+Phase 2 fixed the statistics, defined the 837-ECG development set and its fixed folds, and re-ran all models in
+cross-validation. The test set was not scored.
+\begin{table}[H]\centering\small
+\caption{Phase 2, development CV (mean of 3 repeats unless marked r0 = repeat 0).}\label{tab:p2}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccc}\toprule
+Model & Accuracy & Bal.\ acc. & Macro-F1 & Mild recall & S3 \\\midrule
+Header, numbers only (LR) & 0.489 & 0.414 & 0.393 & 0.162 & 0.432 \\
+Header, text only (r0) & 0.415 & 0.351 & 0.338 & 0.151 & 0.368 \\
+ECGFounder linear / + distance penalty & 0.528 / 0.530 & 0.442 / 0.449 & 0.434 / 0.444 & 0.214 / 0.247 & 0.468 / 0.474 \\
+ECGFounder MLP (3 seeds) & 0.542 & 0.457 & 0.446 & 0.207 & 0.481 \\
+\textbf{Header + ECGFounder MLP fusion} & \textbf{0.544} & 0.466 & 0.440 & 0.141 & \textbf{0.483} \\
+ECGFounder fine-tuned (r0) & 0.530 & 0.445 & 0.432 & 0.178 & 0.469 \\
+ECGFounder CORAL / cumulative link (r0) & 0.421 / 0.474 & 0.385 / 0.412 & 0.385 / 0.409 & 0.411 / 0.249 & -- \\\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\textbf{Input variants (S3):}
+\begin{itemize}
+  \item aligned 0.470;
+  \item tiled 0.432;
+  \item lead II only 0.407.
+\end{itemize}
+
+\subsection{Phase 3: towards 60--65\,\% (development CV)}
+\begin{table}[H]\centering\small
+\caption{Phase 3, development CV.}\label{tab:p3}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccc}\toprule
+Model & Accuracy & Bal.\ acc. & Macro-F1 & Mild F1 & S3 \\\midrule
+Header + clinical LR & 0.501 & 0.440 & 0.424 & 0.269 & 0.455 \\
+3-way MLP (+ clinical) & 0.541 & 0.466 & 0.442 & 0.202 & 0.483 \\
+Gated / attention fusion & 0.515--0.533 & -- & -- & -- & 0.458--0.473 \\
+\textbf{Vote ensemble (= C1)} & \textbf{0.547} & \textbf{0.467} & \textbf{0.455} & 0.255 & \textbf{0.490} \\
+Stacked LR & 0.547 & 0.473 & 0.442 & -- & 0.487 \\
+MLP fusion + nested prior calibration (= C2) & 0.568 & 0.463 & 0.442 & 0.159 & -- \\
+Per-class thresholds & 0.571 & 0.443 & 0.399 & 0.031 & -- \\\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\textbf{Findings:}
+\begin{itemize}
+  \item More than 20 model families plateau at 0.53--0.55.
+  \item Mild one-vs-rest AUROC is 0.53--0.55 in every model.
+  \item The calibration ``gain'' comes from predicting Normal more often (C2's Mild recall is 0.11, so it is not
+    admissible).
+\end{itemize}
+
+\subsection{Phase 4: EF regression, multitask learning, label quality}
+\begin{table}[H]\centering\small
+\caption{Phase 4, development CV.}\label{tab:p4}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccc}\toprule
+Model & Accuracy & Bal.\ acc. & Macro-F1 & Mild F1 & S3 \\\midrule
+Vote ensemble (benchmark) & 0.547 & 0.467 & 0.455 & 0.255 & 0.490 \\
+Train without disagreeing labels & 0.554 & 0.471 & 0.449 & 0.197 & 0.491 \\
+Multitask (8 variants) & 0.545--0.551 & -- & -- & 0.189--0.214 & 0.484--0.490 \\
+Vote + MLP-regression member & 0.560 & 0.458 & 0.446 & 0.226 & 0.488 \\
+EF regression, tuned cut-points & 0.546 & 0.435 & 0.432 & 0.248 & 0.471 \\
+EF regression, clinical thresholds & 0.558 & 0.416 & 0.418 & 0.287 & 0.464 \\\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\textbf{EF regression quality:}
+\begin{itemize}
+  \item MAE 10.4 and $R^2$ 0.43 (training-mean baseline MAE 15.6).
+  \item $r=0.66$ overall and 0.74--0.75 on the high-confidence cohort.
+  \item AUROC 0.82 for EF $<41$\,\%.
+\end{itemize}
+\textbf{Conclusions:}
+\begin{itemize}
+  \item 0 of 26 confirmatory models improved on the vote.
+  \item 60\,\% accuracy needs $r\approx0.80$, against the observed 0.66: the limit is information, not the model.
+\end{itemize}
+
+\subsection{Phase 5: features, boosting, stacking, decision rules (selection of C3)}
+\begin{table}[H]\centering\small
+\caption{Phase 5, development CV (min recall = lowest class recall; admissible if $\ge0.15$).}\label{tab:p5}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccl}\toprule
+Experiment & Accuracy & Min recall & Verdict \\\midrule
+E1 MLP + all engineered feature families & 0.554 & 0.164 & no gain ($p$ 0.59) \\
+E2 LightGBM & 0.544 & 0.184 & no gain \\
+E3 stacking (weighted / unweighted) & 0.547 / 0.567 & 0.184 / 0.041 & no gain / not admissible \\
+E4 hierarchical model & 0.567 & 0.067 & not admissible \\
+\textbf{E5 vote + nested prior rule (= C3)} & \textbf{0.561} [0.520, 0.603] & 0.177 & \textbf{selected} \\
+E6 signal-quality gating & 0.546 & 0.164 & no gain \\
+E7 mixup / augmentation & 0.552 / 0.533 & -- & n.s. \\
+E7 unweighted cross-entropy & 0.572 & 0.144 & not admissible \\
+Original default re-run in CV (r0): header + ResNet-18 / ResNet-18 & 0.495 / 0.471 & -- & reference \\\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\textbf{Conclusions:}
+\begin{itemize}
+  \item 0 of 43 candidates is a genuine improvement.
+  \item 65\,\% lies outside every model's CI.
+  \item On the 50\,\% most confident ECGs, accuracy is 0.66--0.68. This is the first sign of the triage result in
+    Section~\ref{sec:final}.
+\end{itemize}

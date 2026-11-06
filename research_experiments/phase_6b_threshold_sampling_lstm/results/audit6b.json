@@ -1,0 +1,214 @@
+{
+ "thresholds": {
+  "ORIG": "Normal: male EF > 52, female EF >= 54 | Mild: 41 <= EF <= 52 (M) / 41 <= EF < 54 (F) | Moderate: 31 <= EF < 41 | Severe: EF < 31",
+  "borderline_assignment": "male 52.0 -> Mild, 52.1 -> Normal; female 53.9 -> Mild, 54.0 -> Normal; 41.0 -> Mild, 40.9 -> Moderate; 31.0 -> Moderate, 30.9 -> Severe",
+  "T50": "sex-independent Normal >= 50 (consistently linked folder-Mild ECGs with nearest-echo EF >= 50 -> Normal)",
+  "T55": "sex-independent Normal >= 55 (consistently linked folder-Normal ECGs with nearest-echo EF < 55 -> Mild)",
+  "source": "classify_lv in the original matching notebook (code cells only) = ecg_ef/config.py; Teichholz EF"
+ },
+ "classes": {
+  "Normal": {
+   "ecgs": 384,
+   "patient_keys": 382
+  },
+  "Mild": {
+   "ecgs": 185,
+   "patient_keys": 180
+  },
+  "Moderate": {
+   "ecgs": 177,
+   "patient_keys": 172
+  },
+  "Severe": {
+   "ecgs": 91,
+   "patient_keys": 86
+  }
+ },
+ "definitions": {
+  "T50": {
+   "Normal": 411,
+   "Mild": 158,
+   "Moderate": 177,
+   "Severe": 91
+  },
+  "T55": {
+   "Normal": 374,
+   "Mild": 195,
+   "Moderate": 177,
+   "Severe": 91
+  },
+  "moved": {
+   "T50_Mild_to_Normal": 27,
+   "T55_Normal_to_Mild": 10
+  }
+ },
+ "folds": {
+  "inner_train": {
+   "Normal": "245-247",
+   "Mild": "118-119",
+   "Moderate": "112-114",
+   "Severe": "58-59"
+  },
+  "inner_val": {
+   "Normal": "61-62",
+   "Mild": "29-30",
+   "Moderate": "28-29",
+   "Severe": "14-15"
+  },
+  "outer_test": {
+   "Normal": "76-77",
+   "Mild": "37",
+   "Moderate": "35-36",
+   "Severe": "18-19"
+  }
+ },
+ "training_configurations": {
+  "ORIG": {
+   "normal_inner_train": "245-247",
+   "normal_outer_training": "307-308",
+   "removed_training_ecgs": "0"
+  },
+  "XUNC": {
+   "normal_inner_train": "237-243",
+   "normal_outer_training": "298-305",
+   "removed_training_ecgs": "22-35"
+  },
+  "N300": {
+   "normal_inner_train": "238-239",
+   "normal_outer_training": "300",
+   "removed_training_ecgs": "7-8"
+  },
+  "N270": {
+   "normal_inner_train": "208-209",
+   "normal_outer_training": "270",
+   "removed_training_ecgs": "37-38"
+  },
+  "N240": {
+   "normal_inner_train": "178-179",
+   "normal_outer_training": "240",
+   "removed_training_ecgs": "67-68"
+  },
+  "N200": {
+   "normal_inner_train": "138-139",
+   "normal_outer_training": "200",
+   "removed_training_ecgs": "107-108"
+  },
+  "A270X": {
+   "normal_inner_train": "270",
+   "normal_inner_val": "37-38",
+   "note": "Normal patients moved from inner-val"
+  }
+ },
+ "patient_grouping": {
+  "patient_keys": 794,
+  "ecgs": 837,
+  "keys_with_1_ecg": 756,
+  "keys_with_2_ecgs": 33,
+  "keys_with_3plus_ecgs": 5,
+  "keys_with_ecgs_in_more_than_one_class": 25,
+  "key": "pseudonymous name-derived hash (data/manifest.csv:patient); no patient ID exists",
+  "folds": "patient-disjoint between inner-train, inner-val and outer test (asserted by phase_6 tests)"
+ },
+ "matching_quality": {
+  "sheets_identical_to_phase4_copies": true,
+  "dev_ecgs_with_a_link": 837,
+  "links_per_ecg": {
+   "1": 709,
+   "2": 90,
+   "3": 28,
+   "4": 9,
+   "7": 1
+  },
+  "linked_rows": 1016,
+  "links_without_ef": 2,
+  "exact_duplicate_rows": 19,
+  "ef_range": [
+   6.1,
+   86.5
+  ],
+  "rule_vs_sheet_LV_agreement": 0.9783464566929134,
+  "rule_vs_sheet_LV_disagreements": 22,
+  "folder_vs_nearest_echo_class_agreement": 0.9342891278375149,
+  "date_swap_2021": {
+   "rows_with_wrong_sheet_ecg_date": 86,
+   "explained_by_day_month_swap": 86,
+   "dev_ecgs_with_changed_interval": 83,
+   "dev_ecgs_with_changed_nearest_ef": "<5",
+   "max_abs_change_nearest_ef": 6.200000000000003,
+   "changed_nearest_class": 0,
+   "interval_counts_sheet_vs_true": {
+    "<= 0 d": [
+     451,
+     514
+    ],
+    "<= 7 d": [
+     541,
+     607
+    ],
+    "<= 14 d": [
+     550,
+     617
+    ],
+    "<= 30 d": [
+     587,
+     645
+    ],
+    "<= 90 d": [
+     688,
+     716
+    ]
+   },
+   "labels_and_configurations_affected": false
+  }
+ },
+ "multiple_links": {
+  "ecgs_with_more_than_one_link": 127,
+  "ef_spread_gt_10_points": 77,
+  "ecgs_with_a_link_of_another_class": 85,
+  "repeated_patient_ecgs": 81
+ },
+ "borderline_mild": {
+  "definition": "folder label Mild and nearest-echo EF within 3 points of the sex-specific Normal/Mild boundary (52 M / 54 F)",
+  "all": {
+   "ecgs": 30,
+   "patient_keys": 30
+  },
+  "above_boundary": {
+   "ecgs": 0,
+   "patient_keys": 0
+  },
+  "at_or_below_boundary": {
+   "ecgs": 30,
+   "patient_keys": 30
+  },
+  "1_matching_uncertainty": {
+   "ecgs": 15,
+   "patient_keys": 15
+  },
+  "2_potentially_unreliable_ef": {
+   "ecgs": 10,
+   "patient_keys": 10
+  },
+  "3_high_confidence": {
+   "ecgs": 5,
+   "patient_keys": 5
+  },
+  "4_genuinely_difficult_of_3": {
+   "ecgs": "<5",
+   "patient_keys": "<5"
+  },
+  "matching_uncertainty_reasons": {
+   "name_score_lt_100": 10,
+   "interval_gt_30d_true_dates": 9,
+   "linked_echo_of_another_class": "<5"
+  },
+  "in_T50_movers": 23,
+  "in_XUNC": 17,
+  "mild_with_nearest_ef_above_boundary": {
+   "all": 10,
+   "more_than_3_points_above": 10,
+   "nearest_echo_class_normal": 10
+  },
+  "rules": "precedence 1 > 2 > 3; 4 = category-3 ECGs misclassified by C3 (Phase 5 selected) in all three repeats (descriptive only, never used for training or evaluation choices); no EF is verified (name matching only)"
+ }
+}

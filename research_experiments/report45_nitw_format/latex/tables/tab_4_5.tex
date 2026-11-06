@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\caption{LSTM family: architecture, size, cost and results (development CV, original labels).}\label{tab:4.5}
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.119\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.170\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.099\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.068\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.110\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.090\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.152\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.106\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.082\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{ID} & \textbf{Input} & \textbf{Layers} & \textbf{Dir.} & \textbf{Params} & \textbf{Train min} & \textbf{Accuracy [95 \% CI]} & \textbf{Macro-F1} & \textbf{HF AUC} \\
+\midrule
+L0 & rhythm strip (1 ch) & 1 & uni & 17,668 & 0.31 & 0.426 [0.387, 0.466] & 0.257 & 0.570 \\
+L1 & aligned (26 ch) & 1 & uni & 24,068 & 0.33 & 0.452 [0.399, 0.504] & 0.324 & 0.697 \\
+L2 & aligned & 2 & uni & 57,348 & 0.47 & 0.483 [0.437, 0.529] & 0.352 & 0.714 \\
+L3 & aligned & 1 & bi & 48,132 & 0.44 & 0.467 [0.417, 0.516] & 0.337 & 0.704 \\
+L4 & aligned & 2 & bi & 147,460 & 0.74 & 0.472 [0.424, 0.519] & 0.339 & 0.718 \\
+LSTM-sel & nested choice of L0--L4 & -- & -- & 24k--147k & 2.29 & 0.470 [0.424, 0.515] & 0.344 & 0.721 \\
+L5 CNN-LSTM & aligned, 3 conv layers & 1 & bi & 116,580 & 0.38 & 0.484 [0.435, 0.532] & 0.368 & 0.761 \\
+\bottomrule
+\end{tabular}
+\end{table}

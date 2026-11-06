@@ -1,0 +1,24 @@
+\chapter{Literature Review}\label{ch:2}
+
+\section{Ejection fraction and its ECG signature}\label{sec:2.1}
+
+Guidelines grade LVEF into normal, mildly reduced and reduced ranges \cite{ref1,ref2}, and echocardiography quantifies it \cite{ref5}. Repeat measurements of the same patient can differ by about 10 EF points \cite{ref6}, which matters when classes are only 10--13 points wide. On the ECG, LV dysfunction appears as QRS prolongation and bundle-branch block \cite{ref7}, fragmented QRS \cite{ref8}, a wide spatial QRS--T angle \cite{ref9} and repolarisation heterogeneity \cite{ref10,ref11}.
+
+\section{AI on the ECG for LV dysfunction}\label{sec:2.2}
+
+Convolutional networks on digital 12-lead ECGs detect EF $\le35$ \% with AUC 0.93 \cite{ref3}, and a pragmatic trial raised new diagnoses in primary care \cite{ref4}. Graded estimation is less common: Vaid et al. predicted three EF bands and regressed EF from 715,890 ECGs \cite{ref12}. Models on ECG \emph{images} reach AUROC 0.90--0.95 for EF $<40$ \% when trained on 385,601 ECGs \cite{ref13}, and image digitisation is an active research area \cite{ref14,ref15,ref16}. Composite structural-disease models showed that each additional input type raises discrimination \cite{ref17}, and single-lead and wearable studies extended screening beyond the hospital \cite{ref18,ref19,ref20}.
+
+\section{Foundation models and public data}\label{sec:2.3}
+
+\input{tables/tab_2_1}
+
+ECGFounder was pre-trained on 10.8 million ECGs and transfers to new tasks with little data \cite{ref21}. ECG-FM reported AUROC 0.929 for EF $\le40$ \% \cite{ref22}. EchoNext released ECG--echocardiography pairs and models that outperformed cardiologists \cite{ref23,ref24}. Earlier 1-D networks reached cardiologist-level rhythm classification \cite{ref25} and automated 12-lead diagnosis \cite{ref26}. The image backbones used in this project are ResNet \cite{ref27}, EfficientNet \cite{ref28}, MobileNetV3 \cite{ref29} and ConvNeXt \cite{ref30}; the sequence models are the LSTM \cite{ref31} and its convolutional variants.
+
+\section{Research gaps addressed in Phase I}\label{sec:2.4}
+
+\begin{itemize}
+  \item \textbf{Graded EF from printouts.} Published work is mostly binary and uses digital signals; four-class grading including Mild from printout images had not been reported.
+  \item \textbf{Small single-centre data.} Methods for a few hundred labelled printouts, with nested evaluation, are rarely studied.
+  \item \textbf{Transfer to the printout format.} Public ECG--echo data had not been redrawn in a hospital's printout format for pre-training.
+  \item \textbf{Confident subsets.} Triage that answers only confident cases and refers the rest is seldom evaluated for graded EF.
+\end{itemize}

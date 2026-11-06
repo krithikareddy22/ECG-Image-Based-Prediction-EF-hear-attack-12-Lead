@@ -1,0 +1,145 @@
+{
+ "n_ecgs_timed": 64,
+ "batch": 32,
+ "input_build_s_per_ecg": 0.05825832486152649,
+ "threads": {
+  "4": {
+   "frozen_forward_to_stage4_s_per_ecg": 0.006287859125002626,
+   "frozen_forward_to_stage5_s_per_ecg": 0.010339506296872969,
+   "cache_shapes": {
+    "stage4": [
+     400,
+     79
+    ],
+    "stage5": [
+     1024,
+     40
+    ]
+   },
+   "A1_stage6": {
+    "train_step_s_per_ecg": 0.007620008437498882,
+    "eval_s_per_ecg": 0.0019906035937538036,
+    "trainable_params": 13741445
+   },
+   "A2_stages5-6": {
+    "train_step_s_per_ecg": 0.018700570687499862,
+    "eval_s_per_ecg": 0.0050814955624929325,
+    "trainable_params": 26775717
+   },
+   "full_backbone_raw": {
+    "train_step_s_per_ecg": 0.045355596406253085,
+    "eval_s_per_ecg": 0.010724252781244559,
+    "trainable_params": 30732085
+   }
+  },
+  "1": {
+   "frozen_forward_to_stage4_s_per_ecg": 0.021434438109373843,
+   "frozen_forward_to_stage5_s_per_ecg": 0.03113368565625052,
+   "cache_shapes": {
+    "stage4": [
+     400,
+     79
+    ],
+    "stage5": [
+     1024,
+     40
+    ]
+   },
+   "A1_stage6": {
+    "train_step_s_per_ecg": 0.02124910015625403,
+    "eval_s_per_ecg": 0.006417719812503719,
+    "trainable_params": 13741445
+   },
+   "A2_stages5-6": {
+    "train_step_s_per_ecg": 0.05460407193750427,
+    "eval_s_per_ecg": 0.01166834765624003,
+    "trainable_params": 26775717
+   },
+   "full_backbone_raw": {
+    "train_step_s_per_ecg": 0.1386176259062495,
+    "eval_s_per_ecg": 0.03499854996874774,
+    "trainable_params": 30732085
+   }
+  }
+ },
+ "projection": {
+  "A1_stage6__threads4x1__25ep": {
+   "hours_per_outer_fold": 0.030255157136327687,
+   "hours_stage1_15_folds": 0.45382735704491534,
+   "hours_stage2_extra_30_folds": 0.9076547140898307,
+   "hours_E_inner_oof_seed42_60_fits": 1.361482071134746
+  },
+  "A1_stage6__threads4x1__40ep": {
+   "hours_per_outer_fold": 0.04835284628476482,
+   "hours_stage1_15_folds": 0.7252926942714722,
+   "hours_stage2_extra_30_folds": 1.4505853885429445,
+   "hours_E_inner_oof_seed42_60_fits": 2.175878082814417
+  },
+  "A1_stage6__threads1x4__25ep": {
+   "hours_per_outer_fold": 0.08521606532513147,
+   "hours_stage1_15_folds": 0.319560244969243,
+   "hours_stage2_extra_30_folds": 0.639120489938486,
+   "hours_E_inner_oof_seed42_60_fits": 0.9586807349077291
+  },
+  "A1_stage6__threads1x4__40ep": {
+   "hours_per_outer_fold": 0.13616707798542899,
+   "hours_stage1_15_folds": 0.5106265424453587,
+   "hours_stage2_extra_30_folds": 1.0212530848907173,
+   "hours_E_inner_oof_seed42_60_fits": 1.531879627336076
+  },
+  "A2_stages5-6__threads4x1__25ep": {
+   "hours_per_outer_fold": 0.0744421535662773,
+   "hours_stage1_15_folds": 1.1166323034941597,
+   "hours_stage2_extra_30_folds": 2.2332646069883193,
+   "hours_E_inner_oof_seed42_60_fits": 3.349896910482479
+  },
+  "A2_stages5-6__threads4x1__40ep": {
+   "hours_per_outer_fold": 0.11896601074622097,
+   "hours_stage1_15_folds": 1.7844901611933146,
+   "hours_stage2_extra_30_folds": 3.568980322386629,
+   "hours_E_inner_oof_seed42_60_fits": 5.353470483579945
+  },
+  "A2_stages5-6__threads1x4__25ep": {
+   "hours_per_outer_fold": 0.21426862246419884,
+   "hours_stage1_15_folds": 0.8035073342407457,
+   "hours_stage2_extra_30_folds": 1.6070146684814914,
+   "hours_E_inner_oof_seed42_60_fits": 2.4105220027222374
+  },
+  "A2_stages5-6__threads1x4__40ep": {
+   "hours_per_outer_fold": 0.3425050269329528,
+   "hours_stage1_15_folds": 1.284393850998573,
+   "hours_stage2_extra_30_folds": 2.568787701997146,
+   "hours_E_inner_oof_seed42_60_fits": 3.853181552995719
+  },
+  "full_backbone_raw__threads4x1__25ep": {
+   "hours_per_outer_fold": 0.17898563860146446,
+   "hours_stage1_15_folds": 2.684784579021967,
+   "hours_stage2_extra_30_folds": 5.369569158043934,
+   "hours_E_inner_oof_seed42_60_fits": 8.0543537370659
+  },
+  "full_backbone_raw__threads4x1__40ep": {
+   "hours_per_outer_fold": 0.2860785300599319,
+   "hours_stage1_15_folds": 4.2911779508989785,
+   "hours_stage2_extra_30_folds": 8.582355901797957,
+   "hours_E_inner_oof_seed42_60_fits": 12.873533852696934
+  },
+  "full_backbone_raw__threads1x4__25ep": {
+   "hours_per_outer_fold": 0.5491946240933813,
+   "hours_stage1_15_folds": 2.0594798403501797,
+   "hours_stage2_extra_30_folds": 4.1189596807003594,
+   "hours_E_inner_oof_seed42_60_fits": 6.17843952105054
+  },
+  "full_backbone_raw__threads1x4__40ep": {
+   "hours_per_outer_fold": 0.8777372722419465,
+   "hours_stage1_15_folds": 3.2915147709072996,
+   "hours_stage2_extra_30_folds": 6.583029541814599,
+   "hours_E_inner_oof_seed42_60_fits": 9.874544312721898
+  },
+  "one_off_cache_all_837_dev_hours": {
+   "stage5": 0.0024039352140229654,
+   "stage4": 0.0014619272465631107,
+   "input_build": 0.013545060530304909
+  }
+ },
+ "note": "compute only; random targets of zero, no label / EF / metric read. Projections assume the pre-registered recipe and no parallel contention beyond the stated thread layout."
+}

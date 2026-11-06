@@ -1,0 +1,29 @@
+{
+ "r0_k0": {
+  "inner_rows": 669,
+  "true_mild": 148,
+  "mild_calls": 104,
+  "mild_precision": 0.2980769230769231,
+  "mild_calls_needed_for_10pct": 58,
+  "best_accuracy_with_10pct_mild": 0.5877551020408164,
+  "answered": 245
+ },
+ "r1_k2": {
+  "inner_rows": 670,
+  "true_mild": 148,
+  "mild_calls": 114,
+  "mild_precision": 0.3157894736842105,
+  "mild_calls_needed_for_10pct": 49,
+  "best_accuracy_with_10pct_mild": 0.6309859154929578,
+  "answered": 355
+ },
+ "r2_k4": {
+  "inner_rows": 670,
+  "true_mild": 148,
+  "mild_calls": 103,
+  "mild_precision": 0.27184466019417475,
+  "mild_calls_needed_for_10pct": 48,
+  "best_accuracy_with_10pct_mild": 0.636,
+  "answered": 250
+ }
+}

@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\caption{Preprocessing filters and their parameters for each input representation.}\label{tab:3.1}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.216\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.157\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.626\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Input} & \textbf{Step} & \textbf{Filter / operation and parameters} \\
+\midrule
+Page image (CNNs) & rasterise and crop & vector PDF rendered at 1 px/pt; crop to the waveform area (removes all header text) \\
+ & grid removal & colour filter: darkness $=255$ $-$ max$(R, G, B)$ (HSV value); the pink grid has a high value and vanishes \\
+ & binarisation & Otsu threshold (clamped) \\
+ & denoising & connected components $<6$ px removed (keeps 1-px trace lines that a median filter would erode) \\
+ & thickening, resizing & scale-aware dilation; area interpolation to 512 $\times$ 1024, then 256 $\times$ 512 network input \\
+ & filter ablations & Gaussian 5 $\times$ 5, $\sigma =1$; median 3 $\times$ 3; bilateral ($ d$ 7, $\sigma$ 50/7); CLAHE (clip 2.0, 8 $\times$ 8 tiles); adaptive Gaussian threshold (block 25, $ C$ 60) \\
+\midrule
+Digitised signal (ECGFounder) & exact digitisation & vector paths converted at 82 pt/mV and 616$/$3 pt/s; 500 Hz \\
+ & power-line notch & IIR notch at 50 Hz, $Q =30$ \\
+ & band-pass & 4th-order Butterworth, 0.67--40 Hz, zerophase (forward--backward) \\
+ & baseline & 0.4-s moving-median baseline subtracted \\
+ & scaling, layout & z-score per lead; 12 leads in their own 2.5-s windows on a 10-s axis (12 $\times$ 5,000) \\
+\midrule
+LSTM / CNN-LSTM & as above, then decimation & 100 Hz; amplitudes clipped at $\pm5$ mV; 13 signals + 13 mask channels (26 $\times$ 1,000) \\
+\midrule
+Engineered features & beat analysis & 0.5 Hz high-pass; R-peak detection; Raligned median beats; vectorcardiogram by the Kors matrix \\
+\midrule
+EchoNext signals & harmonisation & de-normalisation to $\mu$ V; resampling 250 $\rightarrow$ 500 Hz; cascaded median filters (0.2 s, 0.6 s) for baseline removal; clipping; printout cut (2.5-s windows) \\
+\midrule
+Pixel CNNs (IMG) & page image & waveform area, text removed, grid filtered; 320 $\times$ 640 (ResNet-18) or 384 $\times$ 768 (ConvNeXt-Tiny, EfficientNet-B2); grey channel repeated to RGB \\
+\bottomrule
+\end{tabular}
+\end{table}

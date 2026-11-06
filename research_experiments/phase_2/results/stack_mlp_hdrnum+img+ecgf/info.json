@@ -1,0 +1,30 @@
+{
+  "method": "stack_mlp_hdr",
+  "members": [
+    "img_resnet18_baseline_recipe",
+    "ecgf_f6_lin_cedist1"
+  ],
+  "rule": "argmax",
+  "objective": "s3",
+  "params": {
+    "fold0": {
+      "alpha": 1.0
+    },
+    "fold1": {
+      "alpha": 1.0
+    },
+    "fold2": {
+      "alpha": 1.0
+    },
+    "fold3": {
+      "alpha": 1.0
+    },
+    "fold4": {
+      "alpha": 1.0
+    },
+    "final": {
+      "alpha": 1.0
+    }
+  },
+  "decision_params": {}
+}

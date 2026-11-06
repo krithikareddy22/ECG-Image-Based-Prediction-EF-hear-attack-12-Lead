@@ -1,0 +1,69 @@
+% ---------------------------------------------------------------------------------------------------------
+\appendix
+\section{Repository branch map}\label{app:branches}
+\begin{table}[H]\centering\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{p{4.6cm}p{10.4cm}}\toprule
+Branch & Content \\\midrule
+\url{main}, \url{claude/funny-gauss-udlmv0} & Original project: PDF preprocessing and baseline image models (code on \url{main}; results and write-up on \url{claude/funny-gauss-udlmv0}) \\
+\url{research/ecg-ef-model-improvements} & Phases 1--3: improved models, Phase 3 report, \texttt{FINAL\_REPORT.md} \\
+\url{research/phase4-handoff} & Phase 4: label quality, regression, multitask, final report \\
+\url{research/phase5} & Phase 5: baselines, feature families, nested decision rules; selection of C3 \\
+\url{research/phase6} & Phase 6 (foundation-model improvement), 6A, 6B and all exploratory studies; Phase 7 (\texttt{phase\_7/}); this report (\texttt{final\_report/}) \\
+\url{research/phase7-testkit} & Frozen header-free triage model, test kit and the one-time locked-test result \\
+\url{research/public-ef} & EchoNext public-data pre-training study (code only; data stay on the laptop) \\\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\section{Glossary}\label{app:glossary}
+\begin{description}
+  \item[C1] Equal-weight vote of three members: the MLP fusion of the printed header and the ECGFounder embedding, an
+    ECGFounder linear head (distance-penalised cross-entropy), and a header + clinical logistic regression.
+  \item[C2] Calibrated MLP fusion (not admissible: Mild recall 0.11).
+  \item[C3] C1 plus a class-prior decision rule tuned inside the training folds. The Phase 5 selected model.
+  \item[IMG-C3] The C3 recipe without any header input (ECGFounder heads only).
+  \item[Admissible] Every class recall $\ge 0.15$.
+  \item[Definition vs training effect] Under changed labels, the gain of the unchanged model (definition effect)
+    vs the gain from retraining (training effect).
+  \item[Aligned / synth input] The 12 $\times$ 10-s ECGFounder input built from the printout: leads at their true
+    2.5-s position with zeros elsewhere (aligned), or a beat-synchronous reconstruction (synth).
+  \item[Triage] A model that answers only when confident and otherwise refers to echocardiography.
+\end{description}
+
+\section{Integrity and reproducibility}\label{app:repro}
+\begin{itemize}
+  \item \textbf{Pre-registration:} every phase and exploratory study has a plan or a dated amendment committed
+    \emph{before} it was run. Plan hashes are stored in \texttt{configs/PLAN.sha256}.
+  \item \textbf{Locked test:} the 210-ECG test set was never used for training or selection. It was scored exactly
+    once, with the owner's written authorisation, by the frozen model (2026-11-06; rules committed beforehand).
+  \item \textbf{Privacy:} only aggregate metrics are committed. Per-ECG predictions, embeddings, model weights and
+    the ECG--echo sheets stay in git-ignored folders, and every push is privacy-scanned.
+  \item \textbf{Excluded as invalid:} relabelling ECGs to the model's own predictions (circular), and hand-picking
+    evaluation cases.
+  \item \textbf{Re-running a study:} each study's code is next to its report. For example:
+{\footnotesize
+\begin{verbatim}
+python -m research_experiments.phase_6b_threshold_sampling_lstm.ult \
+       --members --combine
+python -m research_experiments.phase_7.testkit.score --help
+python -m research_experiments.final_report.make_figures
+\end{verbatim}}
+\end{itemize}
+
+\section*{References}
+\begin{itemize}
+  \item Li J, et al. An electrocardiogram foundation model built on over 10 million recordings (ECGFounder).
+    \emph{NEJM AI}, 2025.
+  \item McKeen K, et al. ECG-FM: an open electrocardiogram foundation model. \emph{JAMIA Open}, 2025.
+  \item Hughes JW, Jing L, Finer J, et al. EchoNext-Mini: a dataset and baseline AI model for detecting structural
+    heart disease from electrocardiograms. \emph{NEJM AI}, 2026. doi:10.1056/AIdbp2500516.
+  \item Poterucha TJ, et al. Detecting structural heart disease from electrocardiograms using AI. \emph{Nature}, 2025;
+    644(8075). doi:10.1038/s41586-025-09227-0.
+  \item McDonagh TA, et al. 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure.
+    \emph{Eur Heart J}, 2021.
+  \item Nadeau C, Bengio Y. Inference for the generalization error. \emph{Machine Learning}, 2003 (corrected
+    resampled $t$-test).
+  \item Dempster A, Schmidt DF, Webb GI. MiniRocket: a very fast (almost) deterministic transform for time series
+    classification. \emph{KDD}, 2021.
+\end{itemize}

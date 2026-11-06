@@ -1,0 +1,10 @@
+{
+ "members": [
+  "mlp2",
+  "image_cnn"
+ ],
+ "method": "vote",
+ "params": {},
+ "seed": -1,
+ "repeat": 0
+}

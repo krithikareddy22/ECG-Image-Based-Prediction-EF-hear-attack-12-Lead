@@ -1,0 +1,34 @@
+% =============================================================================================
+% Phase I Project Progress Report -- NIT Warangal template format
+% Compile with pdfLaTeX (Overleaf default):  latexmk -pdf main.tex
+% =============================================================================================
+\documentclass[12pt,a4paper,oneside]{report}
+\usepackage{nitw-report}
+\input{equations}
+\numberwithin{equation}{chapter}
+
+\begin{document}
+\input{frontmatter}
+
+% ---------------------------------------------------------------- main text: arabic numbers, every chapter on a new page
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\input{body/ch1}
+\input{body/ch2}
+\input{body/ch3}
+\input{body/ch4}
+\input{body/ch5}
+\input{body/ch6}
+\input{body/ch7}
+
+% ---------------------------------------------------------------- references (IEEE numbering, as in the template)
+\renewcommand{\bibname}{References}
+\begingroup
+\setstretch{\refstretch}            % template: references at 12 pt, 1.1 line stretch, 9 pt between entries
+\chapter*{References}
+\phantomsection\addcontentsline{toc}{chapter}{References}
+\markboth{References}{}
+\renewcommand{\chapter}[2]{}        % thebibliography must not open a second heading
+\input{references}
+\endgroup
+\end{document}

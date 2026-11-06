@@ -1,0 +1,10 @@
+[clin_mlpfusion_hdr+clin+ecgf_seed43] acc 0.542 bal 0.472 mF1 0.451 Mild 0.242 QWK 0.580 AUC 0.732 S3 0.489
+[clin_mlpfusion_hdr+clin+ecgf_seed44] acc 0.526 bal 0.453 mF1 0.428 Mild 0.189 QWK 0.550 AUC 0.717 S3 0.469
+[clin_mlpfusion_hdr+clin+ecgf_r1] acc 0.550 bal 0.477 mF1 0.456 Mild 0.216 QWK 0.595 AUC 0.725 S3 0.494
+[clin_mlpfusion_hdr+clin+ecgf_seed43_r1] acc 0.557 bal 0.488 mF1 0.470 Mild 0.227 QWK 0.596 AUC 0.726 S3 0.505
+[clin_mlpfusion_hdr+clin+ecgf_seed44_r1] acc 0.552 bal 0.477 mF1 0.454 Mild 0.210 QWK 0.584 AUC 0.725 S3 0.494
+[clin_hdrnum+clin_skLR_r1] acc 0.507 bal 0.456 mF1 0.440 Mild 0.266 QWK 0.502 AUC 0.680 S3 0.467
+[clin_mlpfusion_hdr+clin+ecgf_r2] acc 0.538 bal 0.459 mF1 0.433 Mild 0.179 QWK 0.571 AUC 0.726 S3 0.477
+[clin_mlpfusion_hdr+clin+ecgf_seed43_r2] acc 0.526 bal 0.448 mF1 0.412 Mild 0.151 QWK 0.541 AUC 0.715 S3 0.462
+[clin_mlpfusion_hdr+clin+ecgf_seed44_r2] acc 0.540 bal 0.455 mF1 0.434 Mild 0.173 QWK 0.568 AUC 0.724 S3 0.476
+[clin_hdrnum+clin_skLR_r2] acc 0.478 bal 0.412 mF1 0.401 Mild 0.258 QWK 0.494 AUC 0.678 S3 0.430

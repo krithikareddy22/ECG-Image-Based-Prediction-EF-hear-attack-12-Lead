@@ -1,0 +1,23 @@
+{
+ "exact name, both echoes within 30 d of the ECG": {
+  "pairs": 18,
+  "median_abs_diff": 0.0,
+  "p90": 15.310000000000002,
+  "share_le_5pts": 0.7777777777777778,
+  "implied_sd_single": 0.0
+ },
+ "exact name, any interval": {
+  "pairs": 66,
+  "median_abs_diff": 6.149999999999999,
+  "p90": 32.7,
+  "share_le_5pts": 0.4393939393939394,
+  "implied_sd_single": 6.446540880503143
+ },
+ "any score, within 30 d": {
+  "pairs": 57,
+  "median_abs_diff": 2.8999999999999915,
+  "p90": 40.099999999999994,
+  "share_le_5pts": 0.5263157894736842,
+  "implied_sd_single": 3.039832285115295
+ }
+}

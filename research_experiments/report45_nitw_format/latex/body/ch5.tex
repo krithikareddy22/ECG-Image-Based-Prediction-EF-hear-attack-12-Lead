@@ -1,0 +1,34 @@
+\chapter{Public-Data Transfer and Image-Only Deep Learning}\label{ch:5}
+
+This chapter adds external knowledge: 4,827 ECG--echocardiography pairs from the public EchoNext data \cite{ref23}, redrawn in the hospital printout format. The EchoNext file was split by patient into 3,853 training and 974 locked EchoNext test ECGs.
+
+\section{EchoNext in the printout format}\label{sec:5.1}
+
+\input{tables/tab_5_1}
+
+EchoNext waveforms were converted back to millivolts, resampled to 500 Hz, harmonised to the hospital baseline and cut into the printout's 2.5-s windows. The converted signals behave like the hospital's: heart-rate agreement $r=0.96$, QRS duration 82 against 82 ms and QTc 415 against 416 ms. Models trained only on EchoNext were then applied to the hospital printouts. \textbf{Transfer result.} Without any hospital training of the model, the EchoNext-trained classifier
+
+separates EF $\le45$ \% from higher EF with AUROC \textbf{0.846}, Normal from Mild with 0.768, and estimates EF with $ r=0.62$. With only its decision thresholds tuned on the hospital training folds it reaches 0.551 four-class accuracy.
+
+\section{Pruned ensembles of all image-derived models}\label{sec:5.2}
+
+\input{tables/tab_5_2}
+
+Twenty-one image-derived members were pooled: ECGFounder heads, the ENH and ULT members, tabular feature models, the EF band model and the EchoNext-trained models. Inside every training fold, members were selected either greedily (gain $\ge0.002$, at most 10 members) or as the ten best single members (TOP10), and combined by a logistic, staged (STAGED-4: Normal / middle / Severe, then Mild against Moderate) or ordinal (Frank--Hall) meta-learner (Table~\ref{tab:5.2}). The best ensemble, SUPER-TOP10 with the ordinal meta-learner, reaches \textbf{0.587} [0.565, 0.610] with all four classes detected; the staged ensemble reaches \textbf{0.585}.
+
+\section{Additional features for Mild and Moderate}\label{sec:5.3}
+
+Seventy-three further features targeted the Mild and Moderate classes: repolarisation heterogeneity (TCRT, T-wave morphology dispersion, T complexity, non-dipolar residuum), QT dispersion, the QT variability index and per-lead R amplitude ratios. The strongest single markers were TCRT (AUROC 0.738 for Normal against reduced EF) and the lead I R ratio (0.731). They were added as members of the extended ensemble pool (X), which gave the best staged model.
+
+\section{Image-only pixel models with EchoNext pre-training}\label{sec:5.4}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.91\linewidth,height=0.80\textheight,keepaspectratio]{figures/fig_5_1}
+\caption{Four-class accuracy of every stack and ensemble variant of the public-data study, with cor- rected 95 \% confidence intervals.}\label{fig:5.1}
+\end{figure}
+
+\input{tables/tab_5_3}
+
+Pixel CNNs read the page image directly. EchoNext ECGs were drawn as hospital printouts and used to pre-train them, before fine-tuning on the hospital images. Pre-training on the printoutformat EchoNext images raised ResNet-18 from 0.492 (ImageNet only) to 0.530. The final model, a three-seed ConvNeXt-Tiny ensemble trained with an EF-led loss, layer-wise learning rates, mixup and test-time augmentation, reached \textbf{0.548} [0.513, 0.582] from the page pixels alone (Table~\ref{tab:5.3}), within about two points of C3, which also reads the printed measurements. As a triage model it answers 60.6 \% of the ECGs at 0.661, and its 50 \% most confident ECGs are graded with 0.70 accuracy (descriptive). Added to the stacks, the pixel network gave 0.569.
+

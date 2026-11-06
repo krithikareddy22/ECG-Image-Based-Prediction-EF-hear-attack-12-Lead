@@ -1,0 +1,39 @@
+{
+ "patient_key": "sha1(normalised name)[:12]; no medical-record number available",
+ "ecgs_per_patient_development": {
+  "1": 756,
+  "2": 33,
+  "3": 5
+ },
+ "development_ecgs_patients": [
+  837,
+  794
+ ],
+ "ecgs_per_patient_locked_test": {
+  "1": 190,
+  "2": 7,
+  "3": 2
+ },
+ "locked_test_ecgs_patients": [
+  210,
+  199
+ ],
+ "similar_name_pairs_under_different_keys": {
+  "criterion": "difflib ratio >= 0.90, or one normalised name (>= 8 letters) contained in the other",
+  "pairs": 29,
+  "ratio_ge_0_95": 8,
+  "containment": 13,
+  "straddling_development_and_locked_test": 11,
+  "both_in_development": 15,
+  "dev_pairs_split_across_outer_folds_in_at_least_one_repeat": 15,
+  "note": "a pair is a POSSIBLE same person; names cannot be verified without an identifier"
+ },
+ "exact_duplicate_rhythm_strips": 0,
+ "near_duplicate_rhythm_strips": {
+  "criterion": "Pearson r >= 0.98 between 10-s lead-II strips",
+  "pairs": 0,
+  "same_patient_key": 0,
+  "different_patient_key": 0,
+  "straddling_development_and_locked_test": 0
+ }
+}

@@ -1,0 +1,10 @@
+{
+  "members": [
+    "ecgf_aligned_f6_mlp",
+    "ecgf_f6_mlp_seed43",
+    "ecgf_f6_mlp_seed44"
+  ],
+  "repeat": 0,
+  "seed": -1,
+  "kind": "seed ensemble"
+}

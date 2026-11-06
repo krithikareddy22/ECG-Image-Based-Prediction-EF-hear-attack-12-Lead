@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\caption{EchoNext-trained models: internal checks and transfer to the 837 hospital ECGs without any hospital training.}\label{tab:5.1}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.225\linewidth-2\tabcolsep\relax}%
+>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.090\linewidth-2\tabcolsep\relax}%
+>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.090\linewidth-2\tabcolsep\relax}%
+>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.125\linewidth-2\tabcolsep\relax}%
+>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.110\linewidth-2\tabcolsep\relax}%
+>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.120\linewidth-2\tabcolsep\relax}%
+>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.100\linewidth-2\tabcolsep\relax}%
+>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.140\linewidth-2\tabcolsep\relax}}
+\toprule
+ & \multicolumn{2}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.180\linewidth-2\tabcolsep\relax}}{\textbf{EchoNext locked test (974)}}
+ & \multicolumn{4}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.445\linewidth-2\tabcolsep\relax}}{\textbf{Hospital transfer AUROC / $\bm{r}$}}
+ & \textbf{Zero-shot} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-7}\cmidrule(lr){8-8}
+\textbf{Model} & \textbf{Acc.} & \textbf{EF $\bm{r}$} & \textbf{EF$\bm{\le}$45} & \textbf{N vs Mi} & \textbf{Mi vs Mo} & \textbf{EF $\bm{r}$} & \textbf{4-class acc.} \\
+\midrule
+EN-cls (plan, ECGFounder embeddings) & 0.586 & 0.603 & 0.835 & 0.755 & 0.619 & 0.616 & 0.513 \\
+EN-all, harmonised hospital input & 0.648 & 0.629 & \textbf{0.846} & \textbf{0.768} & 0.615 & \textbf{0.622} & 0.554 \\
+EN-all, plain hospital input & -- & -- & 0.836 & 0.760 & 0.609 & 0.620 & \textbf{0.560} \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,80 @@
+\chapter{Theoretical Study and Methodology}\label{ch:3}
+
+\section{System overview}\label{sec:3.1}
+
+\begin{figure}[htbp]
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{\input{figures/fig3_1_system.tex}}
+\caption{System architecture of the Phase I pipeline. Dashed arrows: knowledge transferred from the EchoNext public dataset.}\label{fig:3.1}
+\end{figure}
+
+The Phase I pipeline (Figure~\ref{fig:3.1}) has three parts. The printout PDF is digitised exactly, turned into image, signal and feature representations, and passed to the model families. External knowledge enters from the public EchoNext data, redrawn in the hospital printout format.
+
+\section{Dataset}\label{sec:3.2}
+
+The data are 1,047 12-lead ECG printouts (PDF) from 993 patients of one tertiary hospital, recorded in 2020--2024. Each page has the standard 3 $\times$ 4 layout (2.5 s per lead), a 10-s lead II rhythm strip, 25 mm/s and 10 mm/mV. Each ECG was matched to an echocardiography report of the same patient, whose EF gives the class. The data were split once by patient into a \textbf{develop-} \textbf{ment set} of 837 ECGs (384 Normal, 185 Mild, 177 Moderate, 91 Severe) used for all modelling and a \textbf{locked test set} of 210 ECGs (96 / 47 / 44 / 23) held back until the final model was frozen.
+
+\section{Exact digitisation and the printout renderer}\label{sec:3.3}
+
+The PDFs are vector drawings: each lead is a polyline of about 700 segments, so the trace is recovered exactly. With the row baselines $y_{\text{base}}$ and column origins $ x_{0}$ of the page,
+\EqThreeOne
+resampled to 500 Hz. The inverse operation, a \emph{printout renderer}, draws any 12-lead signal on a page identical to the hospital's, rounding each point to whole drawing units as the machine does. Redrawn development ECGs match their real pages: 81 \% of drawn points are identical and the read-back error is 5--13 $\mu$ V.
+
+\section{Input representations and features}\label{sec:3.4}
+
+Four representations were built from each printout:
+
+\begin{itemize}
+  \item \textbf{page image}: the waveform area with text removed and the grid filtered, for CNNs;
+  \item \textbf{aligned signal}: the 12 leads in their own 2.5-s windows on a common 10-s axis, for ECGFounder and the LSTMs;
+  \item \textbf{ECGFounder embeddings}: the 1,024-d final embedding and 150 diagnostic outputs;
+  \item \textbf{engineered features}: 594 features, among them 191 clinician-style and vectorcardiographic measurements such as the spatial QRS--T angle, total cosine R-to-T (TCRT) and the QT variability index.
+\end{itemize}
+\section{Network architectures, preprocessing filters and training}\label{sec:3.5}
+
+\subsection{Preprocessing filters}\label{sec:3.5.1}
+
+\input{tables/tab_3_1}
+
+Each representation has its own filter chain (Table~\ref{tab:3.1}): a colour filter removes the pink grid from page images, and a 50 Hz notch, a 0.67--40 Hz band-pass and a moving-median baseline filter clean the signals.
+
+\subsection{Network layers and activation functions}\label{sec:3.5.2}
+
+Table~\ref{tab:3.2} gives the layers, kernels, activation functions, normalisation and size of every network. The activation functions used are
+\EqThreeTwo
+where $\Phi$ is the standard normal distribution function. Every four-class network ends in a softmax; ordinal heads use sigmoids for $ P(y> k)$, and LSTM gates use the sigmoid with a tanh cell activation.
+
+\subsection{Training settings and training accuracy}\label{sec:3.5.3}
+
+Image CNNs were trained with AdamW (learning rate 10$^{-3}$, weight decay 0.05), warm-up and cosine decay, batch 16, up to 30 epochs with early stopping, class-weighted cross-entropy with label smoothing 0.05, weight averaging (EMA 0.99) and augmentation (rotation $\pm2$$^{\circ}$, time and amplitude scaling, translation, random erasing). ECGFounder was fine-tuned with differential learning rates (backbone 10$^{-4}$, head 10$^{-3}$). LSTMs used AdamW (10$^{-3}$), batch 32, gradient clipping and early stopping on inner validation. Table~\ref{tab:3.3} compares training and validation accuracy.
+
+\begin{itemize}
+  \item \textbf{Image CNNs} reach 0.52 on training and 0.48--0.52 on validation data: they learn evenly and are not over-fitted.
+  \item \textbf{Foundation-feature heads} reach 0.73--0.76 on training folds against 0.51 held out, and fine-tuning drives the training loss to 0.66 while validation loss stays at 1.17. With 837 ECGs for 30.8 million parameters, frozen features, regularisation, nested selection and ensembling were therefore used in all later phases.
+\end{itemize}
+\subsection{Analysis of transfer learning}\label{sec:3.5.4}
+
+\input{tables/tab_3_2}
+
+\input{tables/tab_3_3}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1.00\linewidth,height=0.80\textheight,keepaspectratio]{figures/fig_3_2}
+\caption{Training curves of six representative networks: training and validation accuracy (solid) and loss (dotted) per epoch.}\label{fig:3.2}
+\end{figure}
+
+\input{tables/tab_3_4}
+
+Transfer learning was used in four forms, from natural images to EF-labelled ECGs (Table~\ref{tab:3.4}). The closer the source is to the target, the larger the gain: ECG pre-training (ECGFounder) beat ImageNet pre-training by 4--5 points, and EF-labelled public ECGs (EchoNext) supplied the knowledge behind the best ensembles. A model trained only on US patients separates reduced from normal EF on our printouts with AUROC 0.85, which also validates the printout conversion. Frozen ECGFounder features match fine-tuning in EF correlation (0.652 against 0.650) without its over-fitting, and pre-training a pixel CNN on EchoNext ECGs drawn as hospital printouts adds 3.8 points over ImageNet initialisation.
+
+\section{Evaluation protocol}\label{sec:3.6}
+
+\begin{itemize}
+  \item \textbf{Cross-validation:} patient-grouped 5-fold CV repeated three times (15 cells), identical folds for every model.
+  \item \textbf{Nested choices:} every hyper-parameter, class weight, threshold and ensemble member is chosen inside the training folds \cite{ref37}. Class weights maximise accuracy subject to every recall $\ge0.18$ (fallback 0.15):
+\EqThreeThree
+  \item \textbf{Intervals and tests:} corrected resampled $t$ statistic \cite{ref38} with Holm adjustment \cite{ref39}:
+\EqThreeFour
+  \item \textbf{Integrity:} every study was pre-registered in a dated document before it was run; the locked test set was scored once.
+\end{itemize}

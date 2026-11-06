@@ -1,0 +1,194 @@
+{
+  "phase1_cv": {
+    "n_ecgs": 1047,
+    "n_patients": 993,
+    "patients_in_more_than_one_fold": 0,
+    "patients_with_multiple_ecgs": 47,
+    "fold_class_counts": {
+      "0": {
+        "Mild": 47,
+        "Moderate": 44,
+        "Normal": 96,
+        "Severe": 23
+      },
+      "1": {
+        "Mild": 46,
+        "Moderate": 44,
+        "Normal": 96,
+        "Severe": 23
+      },
+      "2": {
+        "Mild": 47,
+        "Moderate": 44,
+        "Normal": 96,
+        "Severe": 23
+      },
+      "3": {
+        "Mild": 46,
+        "Moderate": 45,
+        "Normal": 96,
+        "Severe": 22
+      },
+      "4": {
+        "Mild": 46,
+        "Moderate": 44,
+        "Normal": 96,
+        "Severe": 23
+      }
+    },
+    "test_split_ecgs_inside_cv": 210,
+    "inner_validation_leak_check": "asserted in cv_grouped.py (no patient shared between inner-train/inner-val/outer fold)"
+  },
+  "phase1_cv_significance_recheck": {
+    "nadeau_bengio_corrected_t": {
+      "FU_header+ecgfA1 vs header_LR [acc]": {
+        "mean_diff": 0.06597402597402599,
+        "t": 1.9909586647605104,
+        "p": 0.1173220459047433
+      },
+      "FU_header+ecgfA1 vs header_LR [bal_acc]": {
+        "mean_diff": 0.04775794777095656,
+        "t": 1.1177950926874072,
+        "p": 0.3262550335391677
+      },
+      "FU_header+ecgfA1 vs header_LR [macro_f1]": {
+        "mean_diff": 0.05117233736189779,
+        "t": 1.4514949308704528,
+        "p": 0.220273232137257
+      },
+      "ecgfA1_multinomial vs header_LR [acc]": {
+        "mean_diff": 0.06501708817498292,
+        "t": 1.9507213142110398,
+        "p": 0.12285542743213652
+      },
+      "ecgfA1_multinomial vs header_LR [bal_acc]": {
+        "mean_diff": 0.048373478073986856,
+        "t": 1.1344318489862348,
+        "p": 0.3199868511461096
+      },
+      "ecgfA1_multinomial vs header_LR [macro_f1]": {
+        "mean_diff": 0.05089957685994073,
+        "t": 1.4397088233536186,
+        "p": 0.22336411991663038
+      },
+      "FU_headerNumbersOnly+ecgfA1 vs headerNumbersOnly_LR [acc]": {
+        "mean_diff": 0.04014126224652541,
+        "t": 2.539538451184657,
+        "p": 0.06401228380680986
+      },
+      "FU_headerNumbersOnly+ecgfA1 vs headerNumbersOnly_LR [bal_acc]": {
+        "mean_diff": 0.02955149319279753,
+        "t": 0.8784858310040083,
+        "p": 0.42928397171651544
+      },
+      "FU_headerNumbersOnly+ecgfA1 vs headerNumbersOnly_LR [macro_f1]": {
+        "mean_diff": 0.03452752498402954,
+        "t": 1.4708857168582603,
+        "p": 0.21528134744924435
+      },
+      "ecgfA1_cumlink vs ecgfA1_multinomial [acc]": {
+        "mean_diff": -0.048689906584643415,
+        "t": -1.7458667818007154,
+        "p": 0.1557664779752682
+      },
+      "ecgfA1_cumlink vs ecgfA1_multinomial [bal_acc]": {
+        "mean_diff": -0.018700683406684793,
+        "t": -0.5699504934596653,
+        "p": 0.5991966731347599
+      },
+      "ecgfA1_cumlink vs ecgfA1_multinomial [macro_f1]": {
+        "mean_diff": -0.013321919479019052,
+        "t": -0.4211720685914853,
+        "p": 0.6952754821793721
+      },
+      "header_cumlink vs header_LR [acc]": {
+        "mean_diff": 0.008653451811346557,
+        "t": 0.28528042500773876,
+        "p": 0.7895915716697426
+      },
+      "header_cumlink vs header_LR [bal_acc]": {
+        "mean_diff": 0.01690340033078238,
+        "t": 0.5206838679684436,
+        "p": 0.630080465858544
+      },
+      "header_cumlink vs header_LR [macro_f1]": {
+        "mean_diff": 0.012125804875389511,
+        "t": 0.4167971286539531,
+        "p": 0.6982226123502637
+      }
+    },
+    "bootstrap_reported": {
+      "FU_header+ecgfA1 vs header_LR": {
+        "accuracy": 0.0,
+        "balanced_accuracy": 0.017
+      },
+      "FU_headerNumbersOnly+ecgfA1 vs headerNumbersOnly_LR": {
+        "accuracy": 0.0,
+        "balanced_accuracy": 0.078
+      },
+      "header_cumlink vs header_LR": {
+        "accuracy": 0.573,
+        "balanced_accuracy": 0.363
+      },
+      "ecgfA1_cumlink vs ecgfA1_multinomial": {
+        "accuracy": 0.002,
+        "balanced_accuracy": 0.317
+      },
+      "FU_ordinal_header+ecgfA1 vs FU_header+ecgfA1": {
+        "accuracy": 0.026,
+        "balanced_accuracy": 0.924
+      },
+      "headerNumbersOnly_LR vs header_LR": {
+        "accuracy": 0.096,
+        "balanced_accuracy": 0.279
+      }
+    },
+    "note": "bootstrap p=0.0 means p < 1/2000 (= 0.0005), not 0; the pooled-OOF bootstrap ignores training-set variability, the corrected t-test (5 folds, 4 df) is far more conservative"
+  },
+  "phase1_bootstrap": {
+    "resamples": 2000,
+    "resamples_skipped_missing_a_class": 0,
+    "cluster_unit": "patient (210 test ECGs / 199 patients)",
+    "ci_method": "percentile"
+  },
+  "holm_check": {
+    "phase1_impl": [
+      0.04,
+      0.09,
+      0.09,
+      0.025,
+      0.5
+    ],
+    "phase2_impl": [
+      0.04,
+      0.09,
+      0.09,
+      0.025,
+      0.5
+    ],
+    "by_hand": [
+      0.04,
+      0.09,
+      0.09,
+      0.025,
+      0.5
+    ],
+    "ok": true
+  },
+  "evaluation_populations": {
+    "fixed_split_test": "210 ECGs / 199 patients (original test split)",
+    "phase1_cv": "all 1,047 ECGs incl. the same 210 test ECGs -> NOT independent of the fixed-split test",
+    "phase2_cv": "837 development ECGs only (test split excluded) -> independent of the locked test set"
+  },
+  "test_set_influence": [
+    "Model/threshold/fusion-weight selection in phase-1 code used validation only (verified in heads.fit_head, train_deep, exp_fusion.fuse, header_ablation, ecg_ef/compare.py).",
+    "ECGFounder input construction chosen with a label-free check on all ECGs (no EF labels) -> no label leakage.",
+    "Researcher degrees of freedom: test results of ~40 phase-1 models (and ~30 earlier project models) were inspected; the decision to ADD the accuracy-selected fusion variants was taken after a preliminary look at test results (weights themselves chosen on validation). The fixed test set is therefore EXPOSED and the best test score across models is optimistically biased.",
+    "Phase-1 'primary model' recommendations referred to test results -> must not be used to select phase-2 models; phase 2 selects on development-set CV only."
+  ],
+  "evaluation_conditions": [
+    "Fixed split: all phase-1 models scored on the same 210 ECGs with the same metric code; YES/NO threshold tuned on validation per model.",
+    "NOT identical: the A2 'fine-tuned ECGFounder' row is a 3-seed ensemble, compared with single-seed image/header models (ensembling advantage); CORAL uses rank decoding (others argmax); fusion weights were tuned on only 168 validation ECGs.",
+    "Phase-1 CV did not include the image CNN, the default fusion or fine-tuned ECGFounder -> the default could not be compared with ECGFounder under the same CV (fixed in phase 2)."
+  ]
+}

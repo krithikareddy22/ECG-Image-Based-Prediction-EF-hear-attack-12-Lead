@@ -1,0 +1,17 @@
+{
+  "max_abs_prob_diff_vs_original": 0.09667099999999995,
+  "argmax_agreement_with_original": 0.9476190476190476,
+  "original_best_epoch": 14,
+  "retrain_best_epoch": 14,
+  "original_test": {
+    "accuracy": 0.4857,
+    "balanced_accuracy": 0.3562,
+    "macro_f1": 0.3233
+  },
+  "retrain_test": {
+    "accuracy": 0.48095238095238096,
+    "balanced_accuracy": 0.3474894790878255,
+    "macro_f1": 0.31004720378659256,
+    "qwk": 0.30090206185567003
+  }
+}

@@ -1,0 +1,25 @@
+fold 0 done
+fold 1 done
+fold 2 done
+/home/user/ECG-Image-Based-Prediction-EF-hear-attack-12-Lead/ecg_ef/header.py:89: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["stmt=" + v] = st.map(lambda L: float(v in L))
+/home/user/ECG-Image-Based-Prediction-EF-hear-attack-12-Lead/ecg_ef/header.py:89: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["stmt=" + v] = st.map(lambda L: float(v in L))
+fold 3 done
+fold 4 done
+                             acc_mean  acc_std  bal_acc_mean  bal_acc_std  macro_f1_mean  macro_f1_std  qwk_mean  qwk_std  mild_f1_mean  mild_f1_std  mild_recall_mean  mild_recall_std  macro_auroc_mean  macro_auroc_std  hf_auc_mean  hf_auc_std  pooled_oof_bal_acc  pooled_oof_acc
+model                                                                                                                                                                                                                                                                                  
+header_LR                       0.465    0.044         0.401        0.051          0.391         0.047     0.420    0.030         0.232        0.052             0.224            0.059             0.645            0.040        0.779       0.007               0.401           0.465
+headerNumbersOnly_LR            0.491    0.007         0.422        0.033          0.402         0.021     0.517    0.044         0.197        0.044             0.172            0.047             0.694            0.024        0.786       0.023               0.422           0.491
+header_cumlink                  0.474    0.012         0.418        0.028          0.403         0.022     0.501    0.065         0.268        0.043             0.267            0.065             0.678            0.031        0.787       0.037               0.418           0.474
+ecgfA1_multinomial              0.530    0.030         0.449        0.038          0.442         0.032     0.521    0.070         0.244        0.028             0.216            0.031             0.703            0.039        0.826       0.024               0.449           0.530
+ecgfA1_cumlink                  0.481    0.051         0.430        0.059          0.428         0.055     0.551    0.109         0.272        0.058             0.305            0.073             0.705            0.041        0.811       0.041               0.431           0.481
+FU_header+ecgfA1                0.531    0.031         0.449        0.038          0.442         0.032     0.527    0.079         0.253        0.020             0.224            0.021             0.704            0.039        0.825       0.024               0.449           0.531
+FU_headerNumbersOnly+ecgfA1     0.531    0.027         0.452        0.031          0.437         0.025     0.542    0.084         0.231        0.044             0.203            0.054             0.720            0.021        0.828       0.023               0.452           0.531
+FU_ordinal_header+ecgfA1        0.499    0.036         0.447        0.038          0.437         0.031     0.558    0.083         0.277        0.057             0.293            0.072             0.706            0.032        0.816       0.036               0.447           0.499
+FU_header+ecgfA1 vs header_LR {'accuracy': (0.066, [0.035, 0.098], 0.0), 'balanced_accuracy': (0.048, [0.01, 0.086], 0.017), 'macro_f1': (0.049, [0.013, 0.086], 0.009), 'mild_f1': (0.019, [-0.05, 0.087], 0.552)} folds+ 4
+FU_headerNumbersOnly+ecgfA1 vs headerNumbersOnly_LR {'accuracy': (0.04, [0.014, 0.066], 0.0), 'balanced_accuracy': (0.03, [-0.003, 0.063], 0.078), 'macro_f1': (0.034, [0.004, 0.066], 0.03), 'mild_f1': (0.034, [-0.02, 0.087], 0.225)} folds+ 3
+header_cumlink vs header_LR {'accuracy': (0.009, [-0.022, 0.04], 0.573), 'balanced_accuracy': (0.017, [-0.02, 0.054], 0.363), 'macro_f1': (0.013, [-0.023, 0.048], 0.433), 'mild_f1': (0.037, [-0.034, 0.102], 0.291)} folds+ 4
+ecgfA1_cumlink vs ecgfA1_multinomial {'accuracy': (-0.049, [-0.08, -0.018], 0.002), 'balanced_accuracy': (-0.019, [-0.055, 0.016], 0.317), 'macro_f1': (-0.011, [-0.046, 0.022], 0.518), 'mild_f1': (0.029, [-0.035, 0.093], 0.347)} folds+ 2
+FU_ordinal_header+ecgfA1 vs FU_header+ecgfA1 {'accuracy': (-0.032, [-0.063, -0.004], 0.026), 'balanced_accuracy': (-0.002, [-0.038, 0.035], 0.924), 'macro_f1': (-0.001, [-0.036, 0.033], 0.926), 'mild_f1': (0.026, [-0.039, 0.086], 0.417)} folds+ 2
+headerNumbersOnly_LR vs header_LR {'accuracy': (0.026, [-0.005, 0.057], 0.096), 'balanced_accuracy': (0.021, [-0.016, 0.057], 0.279), 'macro_f1': (0.012, [-0.021, 0.047], 0.48), 'mild_f1': (-0.034, [-0.097, 0.036], 0.345)} folds+ 3

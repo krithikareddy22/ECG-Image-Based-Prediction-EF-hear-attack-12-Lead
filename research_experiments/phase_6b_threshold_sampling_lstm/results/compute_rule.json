@@ -1,0 +1,9 @@
+{
+ "lstm_fixed": "L3",
+ "mean_fold_minutes_B1": 0.0884448303999724,
+ "parallel_jobs": 1,
+ "device": "cuda",
+ "estimated_wall_clock_hours_8_configs_3_seeds": 0.5306689823998344,
+ "rule": "3 seeds if <= 10 h, else seed 42 only",
+ "decision": "3 seeds"
+}

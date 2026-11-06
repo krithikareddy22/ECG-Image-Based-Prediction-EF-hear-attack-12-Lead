@@ -1,0 +1,8 @@
+[gate_scalar_hdr+clin+ecgf_dist_seed43] acc 0.510 bal 0.445 mF1 0.425 Mild 0.212 QWK 0.523 AUC 0.709 S3 0.460
+[gate_scalar_hdr+clin+ecgf_dist_seed44] acc 0.519 bal 0.441 mF1 0.419 Mild 0.163 QWK 0.548 AUC 0.699 S3 0.460
+[gate_scalar_hdr+clin+ecgf_dist_r1] acc 0.540 bal 0.464 mF1 0.452 Mild 0.244 QWK 0.583 AUC 0.710 S3 0.485
+[gate_scalar_hdr+clin+ecgf_dist_seed43_r1] acc 0.538 bal 0.466 mF1 0.447 Mild 0.219 QWK 0.551 AUC 0.700 S3 0.484
+[gate_scalar_hdr+clin+ecgf_dist_seed44_r1] acc 0.538 bal 0.465 mF1 0.452 Mild 0.237 QWK 0.557 AUC 0.707 S3 0.485
+[gate_scalar_hdr+clin+ecgf_dist_r2] acc 0.523 bal 0.436 mF1 0.428 Mild 0.239 QWK 0.530 AUC 0.699 S3 0.462
+[gate_scalar_hdr+clin+ecgf_dist_seed43_r2] acc 0.532 bal 0.439 mF1 0.433 Mild 0.224 QWK 0.557 AUC 0.708 S3 0.468
+[gate_scalar_hdr+clin+ecgf_dist_seed44_r2] acc 0.533 bal 0.450 mF1 0.440 Mild 0.235 QWK 0.538 AUC 0.702 S3 0.474

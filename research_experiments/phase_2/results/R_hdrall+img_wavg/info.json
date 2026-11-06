@@ -1,0 +1,36 @@
+{
+  "method": "wavg",
+  "members": [
+    "hdr_all_skLR",
+    "img_resnet18_baseline_recipe"
+  ],
+  "rule": "argmax",
+  "objective": "s3",
+  "params": {
+    "fold0": [
+      0.3,
+      0.7
+    ],
+    "fold1": [
+      0.2,
+      0.8
+    ],
+    "fold2": [
+      0.2,
+      0.8
+    ],
+    "fold3": [
+      0.2,
+      0.8
+    ],
+    "fold4": [
+      0.3,
+      0.7
+    ],
+    "final": [
+      0.2,
+      0.8
+    ]
+  },
+  "decision_params": {}
+}

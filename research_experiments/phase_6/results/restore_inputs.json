@@ -1,0 +1,18 @@
+{
+ "families": [
+  "qrs",
+  "st",
+  "hrv",
+  "freq",
+  "wavelet",
+  "leadstat",
+  "sq",
+  "clin3"
+ ],
+ "n_ecgs": 837,
+ "phase5_validation_identical": true,
+ "clin3": {
+  "n_features": 28,
+  "missing_share": 0.0023
+ }
+}

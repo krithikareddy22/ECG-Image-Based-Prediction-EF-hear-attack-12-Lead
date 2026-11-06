@@ -1,0 +1,20 @@
+{
+ "input": "filtered ECG image 256x512",
+ "recipe": "ecg_ef/train.py defaults (random init)",
+ "params": 11172292,
+ "best_epochs": [
+  13,
+  11,
+  13,
+  17,
+  11
+ ],
+ "train_minutes": [
+  24.493705423672996,
+  22.66532301902771,
+  23.8259717464447,
+  46.31592829227448,
+  17.88833729028702
+ ],
+ "inference_s_per_ecg_model_only": 0.028634724232556984
+}

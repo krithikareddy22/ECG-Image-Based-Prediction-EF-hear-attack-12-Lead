@@ -1,0 +1,11 @@
+{
+ "members": [
+  "mlp2",
+  "ecgf_lin_dist",
+  "hdr_clin_lr"
+ ],
+ "method": "vote",
+ "params": {},
+ "seed": -1,
+ "repeat": 0
+}

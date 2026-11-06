@@ -1,0 +1,3 @@
+aligned {'input_shape': [12, 5000], 'build_s_per_ecg': 0.009303999038229926, 'forward_s_per_ecg': 0.014093398820135631, 'feat_mean_abs': 0.23046113550662994, 'n_nonfinite': 0}
+tiled {'input_shape': [12, 5000], 'build_s_per_ecg': 0.009808792881205066, 'forward_s_per_ecg': 0.013584653650336644, 'feat_mean_abs': 0.2645058333873749, 'n_nonfinite': 0}
+short {'input_shape': [12, 1250], 'build_s_per_ecg': 0.007338063650850808, 'forward_s_per_ecg': 0.004239874787863483, 'feat_mean_abs': 0.269583523273468, 'n_nonfinite': 0}

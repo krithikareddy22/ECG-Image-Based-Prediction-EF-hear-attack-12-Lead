@@ -1,0 +1,57 @@
+{
+ "per_lead": {
+  "I": {
+   "files_gap_gt_50ms": 1,
+   "max_gap_s": 0.497
+  },
+  "II": {
+   "files_gap_gt_50ms": 0,
+   "max_gap_s": 0.0
+  },
+  "III": {
+   "files_gap_gt_50ms": 1,
+   "max_gap_s": 0.497
+  },
+  "aVR": {
+   "files_gap_gt_50ms": 0,
+   "max_gap_s": 0.0
+  },
+  "aVL": {
+   "files_gap_gt_50ms": 0,
+   "max_gap_s": 0.0
+  },
+  "aVF": {
+   "files_gap_gt_50ms": 0,
+   "max_gap_s": 0.0
+  },
+  "V1": {
+   "files_gap_gt_50ms": 0,
+   "max_gap_s": 0.0
+  },
+  "V2": {
+   "files_gap_gt_50ms": 0,
+   "max_gap_s": 0.0
+  },
+  "V3": {
+   "files_gap_gt_50ms": 0,
+   "max_gap_s": 0.0
+  },
+  "V4": {
+   "files_gap_gt_50ms": 1,
+   "max_gap_s": 0.4
+  },
+  "V5": {
+   "files_gap_gt_50ms": 1,
+   "max_gap_s": 0.4
+  },
+  "V6": {
+   "files_gap_gt_50ms": 1,
+   "max_gap_s": 0.4
+  },
+  "rhythm": {
+   "files_gap_gt_50ms": 1,
+   "max_gap_s": 0.395
+  }
+ },
+ "files_with_any_gap_gt_50ms": 2
+}

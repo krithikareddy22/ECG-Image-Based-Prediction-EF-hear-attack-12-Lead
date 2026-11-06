@@ -1,0 +1,12 @@
+{
+ "stage1_passers": [],
+ "stage2_run": false,
+ "selected_model": "P5D-E5-vote-prior-protected-v1 (C3, unchanged from Phase 5)",
+ "selected_accuracy": 0.561,
+ "selected_ci95": [
+  0.52,
+  0.603
+ ],
+ "genuine_improvements": 0,
+ "note": "No Phase 6 candidate passed the pre-registered Stage-1 screen (EF r >= 0.69 or macro-F1 >= 0.465 with all recalls >= 0.15); Phase 6A / 6B (separate reports) found no genuine improvement either."
+}

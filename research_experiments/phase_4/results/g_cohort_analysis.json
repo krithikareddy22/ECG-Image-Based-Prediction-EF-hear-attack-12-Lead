@@ -1,0 +1,266 @@
+{
+ "characterisation": {
+  "G": {
+   "ecgs": 357,
+   "patients": 345,
+   "folder_class_counts": {
+    "Normal": 170,
+    "Mild": 79,
+    "Moderate": 72,
+    "Severe": 36
+   },
+   "folder_class_share": {
+    "Normal": 0.476,
+    "Mild": 0.221,
+    "Moderate": 0.202,
+    "Severe": 0.101
+   },
+   "year_share": {
+    "2020": 0.115,
+    "2021": 0.291,
+    "2022": 0.277,
+    "2024": 0.317
+   },
+   "male_share": 0.625,
+   "age_mean": 57.0,
+   "ef_mean": 53.6,
+   "ef_sd": 17.6,
+   "interval_days_median": 0.0,
+   "share_same_day": 0.787,
+   "share_single_link": 0.857,
+   "folder_vs_nearest_echo_agreement": 0.958
+  },
+  "non_G": {
+   "ecgs": 480,
+   "patients": 469,
+   "folder_class_counts": {
+    "Normal": 214,
+    "Mild": 106,
+    "Moderate": 105,
+    "Severe": 55
+   },
+   "folder_class_share": {
+    "Normal": 0.446,
+    "Mild": 0.221,
+    "Moderate": 0.219,
+    "Severe": 0.115
+   },
+   "year_share": {
+    "2020": 0.31,
+    "2021": 0.285,
+    "2022": 0.158,
+    "2024": 0.246
+   },
+   "male_share": 0.629,
+   "age_mean": 56.4,
+   "ef_mean": 53.4,
+   "ef_sd": 17.5,
+   "interval_days_median": 41.0,
+   "share_same_day": 0.354,
+   "share_single_link": 0.842,
+   "folder_vs_nearest_echo_agreement": 0.917
+  },
+  "all_D": {
+   "ecgs": 837,
+   "patients": 794,
+   "folder_class_counts": {
+    "Normal": 384,
+    "Mild": 185,
+    "Moderate": 177,
+    "Severe": 91
+   },
+   "folder_class_share": {
+    "Normal": 0.459,
+    "Mild": 0.221,
+    "Moderate": 0.211,
+    "Severe": 0.109
+   },
+   "year_share": {
+    "2020": 0.227,
+    "2021": 0.288,
+    "2022": 0.209,
+    "2024": 0.276
+   },
+   "male_share": 0.627,
+   "age_mean": 56.7,
+   "ef_mean": 53.5,
+   "ef_sd": 17.6,
+   "interval_days_median": 0.0,
+   "share_same_day": 0.539,
+   "share_single_link": 0.848,
+   "folder_vs_nearest_echo_agreement": 0.934
+  },
+  "agreement_by_number_of_links_all_D": {
+   "single_link": {
+    "ecgs": 710,
+    "agreement": 0.98
+   },
+   "multiple_links": {
+    "ecgs": 127,
+    "agreement": 0.677
+   }
+  },
+  "G_disagreements": {
+   "n": 15,
+   "folder_equals_sheet_class_of_nearest_echo": 8,
+   "folder_equals_class_of_another_linked_echo": 6,
+   "note": "counts only; the folder labels were produced from the same matching sheets"
+  }
+ },
+ "g_vs_nonG": [
+  {
+   "model": "Vote ensemble (Phase 3 benchmark)",
+   "tag": "bench_vote",
+   "acc_G": 0.5882352941176471,
+   "acc_nonG": 0.5166666666666667,
+   "acc_nonG_reweighted_to_G_class_mix": 0.5282549603630319,
+   "acc_nonG_where_folder_eq_echo": 0.5454545454545454,
+   "acc_G_vs_echo_class": 0.5938375350140056,
+   "bal_acc_G": 0.5098933771820965,
+   "bal_acc_nonG": 0.43672989562603387,
+   "gap_total": 0.07156862745098036,
+   "gap_class_mix": 0.01158829369636516,
+   "gap_remaining": 0.0599803337546152
+  },
+  {
+   "model": "MLP fusion (Phase 2)",
+   "tag": "bench_mlpfusion",
+   "acc_G": 0.5816993464052287,
+   "acc_nonG": 0.5152777777777778,
+   "acc_nonG_reweighted_to_G_class_mix": 0.5266286426188863,
+   "acc_nonG_where_folder_eq_echo": 0.5462121212121213,
+   "acc_G_vs_echo_class": 0.5863678804855276,
+   "bal_acc_G": 0.509789615564932,
+   "bal_acc_nonG": 0.4357250681488029,
+   "gap_total": 0.06642156862745086,
+   "gap_class_mix": 0.011350864841108477,
+   "gap_remaining": 0.05507070378634238
+  },
+  {
+   "model": "Ridge EF regression, cohort A (tuned cut-points)",
+   "tag": "reg_ridge_hdr+ecgf_A__tuned",
+   "acc_G": 0.5704948646125118,
+   "acc_nonG": 0.5069444444444445,
+   "acc_nonG_reweighted_to_G_class_mix": 0.5213633736893014,
+   "acc_nonG_where_folder_eq_echo": 0.5371212121212121,
+   "acc_G_vs_echo_class": 0.5751633986928105,
+   "bal_acc_G": 0.4700739086070434,
+   "bal_acc_nonG": 0.3941022945784011,
+   "gap_total": 0.06355042016806722,
+   "gap_class_mix": 0.014418929244856882,
+   "gap_remaining": 0.04913149092321034
+  },
+  {
+   "model": "Ridge EF regression, cohort A (clinical thresholds)",
+   "tag": "reg_ridge_hdr+ecgf_A__clin",
+   "acc_G": 0.5863678804855276,
+   "acc_nonG": 0.5083333333333333,
+   "acc_nonG_reweighted_to_G_class_mix": 0.528447529976761,
+   "acc_nonG_where_folder_eq_echo": 0.5409090909090909,
+   "acc_G_vs_echo_class": 0.5845004668534081,
+   "bal_acc_G": 0.4364318758445713,
+   "bal_acc_nonG": 0.36591436444196096,
+   "gap_total": 0.07803454715219427,
+   "gap_class_mix": 0.02011419664342773,
+   "gap_remaining": 0.05792035050876654
+  },
+  {
+   "model": "MLP EF regression, cohort A (tuned)",
+   "tag": "reg_mlp_hdr+ecgf_A__tuned",
+   "acc_G": 0.5742296918767507,
+   "acc_nonG": 0.5111111111111111,
+   "acc_nonG_reweighted_to_G_class_mix": 0.5266662240044434,
+   "acc_nonG_where_folder_eq_echo": 0.5393939393939394,
+   "acc_G_vs_echo_class": 0.5751633986928105,
+   "bal_acc_G": 0.4599082002702628,
+   "bal_acc_nonG": 0.39567907454523565,
+   "gap_total": 0.06311858076563959,
+   "gap_class_mix": 0.015555112893332335,
+   "gap_remaining": 0.04756346787230725
+  },
+  {
+   "model": "Multitask, lambda selected",
+   "tag": "mt_sel",
+   "acc_G": 0.5863678804855276,
+   "acc_nonG": 0.5152777777777778,
+   "acc_nonG_reweighted_to_G_class_mix": 0.5275480414936797,
+   "acc_nonG_where_folder_eq_echo": 0.546969696969697,
+   "acc_G_vs_echo_class": 0.5919701213818861,
+   "bal_acc_G": 0.5162395548936874,
+   "bal_acc_nonG": 0.4268631410713936,
+   "gap_total": 0.07109010270774974,
+   "gap_class_mix": 0.012270263715901897,
+   "gap_remaining": 0.05881983899184784
+  },
+  {
+   "model": "Multitask, lambda 1",
+   "tag": "mt_lam1_A",
+   "acc_G": 0.5863678804855276,
+   "acc_nonG": 0.5166666666666666,
+   "acc_nonG_reweighted_to_G_class_mix": 0.5288189828546264,
+   "acc_nonG_where_folder_eq_echo": 0.5477272727272727,
+   "acc_G_vs_echo_class": 0.5919701213818861,
+   "bal_acc_G": 0.5206866537050826,
+   "bal_acc_nonG": 0.42995047968156763,
+   "gap_total": 0.06970121381886096,
+   "gap_class_mix": 0.012152316187959755,
+   "gap_remaining": 0.05754889763090121
+  },
+  {
+   "model": "MLP fusion trained on G only",
+   "tag": "lq_trainG",
+   "acc_G": 0.5723622782446312,
+   "acc_nonG": 0.5256944444444445,
+   "acc_nonG_reweighted_to_G_class_mix": 0.5372194733736353,
+   "acc_nonG_where_folder_eq_echo": 0.5621212121212121,
+   "acc_G_vs_echo_class": 0.5788982259570495,
+   "bal_acc_G": 0.4972449739389426,
+   "bal_acc_nonG": 0.4457347996935372,
+   "gap_total": 0.04666783380018669,
+   "gap_class_mix": 0.011525028929190828,
+   "gap_remaining": 0.03514280487099586
+  },
+  {
+   "model": "MLP fusion trained on EF-derived labels",
+   "tag": "lq_relabel",
+   "acc_G": 0.5751633986928104,
+   "acc_nonG": 0.5215277777777777,
+   "acc_nonG_reweighted_to_G_class_mix": 0.533053018581633,
+   "acc_nonG_where_folder_eq_echo": 0.5522727272727272,
+   "acc_G_vs_echo_class": 0.5854341736694678,
+   "bal_acc_G": 0.4950845950194423,
+   "bal_acc_nonG": 0.4437598012011696,
+   "gap_total": 0.05363562091503271,
+   "gap_class_mix": 0.011525240803855308,
+   "gap_remaining": 0.0421103801111774
+  },
+  {
+   "model": "Vote + ridge-EF member",
+   "tag": "fus_vote+ridgeA",
+   "acc_G": 0.5938375350140056,
+   "acc_nonG": 0.5305555555555556,
+   "acc_nonG_reweighted_to_G_class_mix": 0.5460219384826223,
+   "acc_nonG_where_folder_eq_echo": 0.5659090909090909,
+   "acc_G_vs_echo_class": 0.6031746031746033,
+   "bal_acc_G": 0.496148754860594,
+   "bal_acc_nonG": 0.42673783582353497,
+   "gap_total": 0.06328197945845004,
+   "gap_class_mix": 0.015466382927066702,
+   "gap_remaining": 0.04781559653138334
+  },
+  {
+   "model": "Vote + multitask member",
+   "tag": "fus_vote+mtsel",
+   "acc_G": 0.5873015873015873,
+   "acc_nonG": 0.5159722222222222,
+   "acc_nonG_reweighted_to_G_class_mix": 0.5278702958289058,
+   "acc_nonG_where_folder_eq_echo": 0.5462121212121213,
+   "acc_G_vs_echo_class": 0.5910364145658263,
+   "bal_acc_G": 0.5119975662557569,
+   "bal_acc_nonG": 0.43277717599706667,
+   "gap_total": 0.07132936507936516,
+   "gap_class_mix": 0.011898073606683601,
+   "gap_remaining": 0.05943129147268156
+  }
+ ]
+}

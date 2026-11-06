@@ -1,0 +1,6 @@
+# Phase 6A: private per-ECG labels, predictions, checkpoints, logs, caches. Never commit.
+data/
+*.pt
+*.pth
+*.npz
+*.npy

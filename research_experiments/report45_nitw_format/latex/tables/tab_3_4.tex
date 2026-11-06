@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\caption{Transfer learning: source, how the knowledge was transferred and what it gave on the hospital printouts.}\label{tab:3.4}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.199\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.295\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.505\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Source} & \textbf{Transfer method} & \textbf{Result on the hospital data} \\
+\midrule
+ImageNet (1.3 M natural images) & initialise ResNet-18; fine-tune on page images & 0.492 four-class (CV); natural-image features transfer only partly to thin line drawings \\
+ECGFounder (10.8 M ECGs, 150 labels) & frozen 1,024-d embedding + linear or MLP head & 0.528--0.542 (CV); screen AUC 0.82; EF $r$ 0.65; best single representation of the project \\
+ & partial fine-tuning (stages 5--6; stage 6) & 0.536 (CV); EF $r$ 0.650 against 0.652 frozen: the frozen embedding already holds the EF information \\
+ & layer choice (stage 4, 5, 6, diagnostic outputs) & final embedding best (0.544 against 0.517--0.531) \\
+EchoNext signals (4,827 US ECG-- echo pairs) & models trained only on EchoNext, applied zero-shot & AUROC 0.85 for EF $\le45$ \%, 0.75 Normal against Mild, EF $ r$ 0.62; four-class 0.551 with no hospital training of the model (only its decision thresholds tuned) \\
+ & EchoNext models as stack members & SUPER ensembles 0.583--0.587, the best all-patient results \\
+EchoNext images (drawn as printouts) & pre-train pixel CNN, then fine-tune & final ConvNeXt-Tiny ensemble 0.548; ResNet-18: 0.530 against 0.492 with ImageNet only (+3.8 points); EchoNext test accuracy of the pre-trained CNNs 0.58--0.72 \\
+\bottomrule
+\end{tabular}
+\end{table}

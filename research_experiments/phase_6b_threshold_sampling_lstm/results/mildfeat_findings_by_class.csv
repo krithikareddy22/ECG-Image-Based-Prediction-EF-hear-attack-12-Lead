@@ -1,0 +1,14 @@
+finding,Normal,Mild,Moderate,Severe
+spatial QRS-T angle > 100 deg,19.5,51.9,52.5,69.2
+frontal QRS-T angle > 45 deg,41.7,61.6,74.0,76.9
+QRS >= 110 ms,2.1,14.1,23.7,36.3
+poor R progression (R V3 <= 0.3 mV),7.3,30.8,42.9,36.3
+pathological Q (any territory),40.9,51.9,69.5,62.6
+fragmented QRS (>= 2 leads),30.7,34.1,37.3,41.8
+T inversion >= 2 leads,11.7,30.8,39.5,38.5
+lateral strain,6.0,13.0,18.1,19.8
+QTc (Bazett) > 450 ms,11.2,16.2,23.7,42.9
+heart rate > 100,11.5,15.1,21.5,31.9
+irregular RR (RMSSD/RR > 0.1),9.4,15.7,19.2,25.3
+P-terminal force V1 > 4 mV*ms,6.5,13.5,12.4,23.1
+low voltage (limb or precordial),7.0,10.3,11.3,6.6

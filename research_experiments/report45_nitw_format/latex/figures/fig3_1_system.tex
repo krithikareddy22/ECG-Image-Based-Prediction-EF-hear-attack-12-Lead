@@ -1,0 +1,28 @@
+% Figure 3.1 of report 45 (system architecture), redrawn in TikZ on a fixed grid: Latin Modern text at \small,
+% no overlapping labels, no hyphenation inside the boxes. Dashed arrows = knowledge transferred from EchoNext.
+\begin{tikzpicture}[font={\footnotesize\hyphenpenalty=10000\exhyphenpenalty=10000}, >={Stealth[length=2mm]},
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=3pt, minimum height=1.2cm, text width=#1},
+  box/.default=2.4cm, ar/.style={->, thick}, da/.style={->, thick, dashed}]
+\node[box=1.6cm, fill=blue!8]    (pdf)  at (0,0)     {ECG printout PDF (vector)};
+\node[box, fill=gray!12]         (ras)  at (3.25,2.3)  {Page raster, text removed, grid filtered};
+\node[box, fill=gray!12]         (dig)  at (3.25,0)    {Exact vector digitiser (12$\times$2.5\,s + 10\,s)};
+\node[box, fill=gray!12]         (med)  at (3.25,-2.3) {Median beat, fiducials, VCG};
+\node[box=2.8cm, fill=green!10]  (cnn)  at (6.85,2.3)  {Pixel CNNs: ResNet, ConvNeXt, EfficientNet};
+\node[box=2.8cm, fill=green!10]  (fm)   at (6.85,0)    {ECGFounder, ECG-FM, LSTM, \mbox{1-D} ResNet, MiniRocket};
+\node[box=2.8cm, fill=green!10]  (feat) at (6.85,-2.3) {LR, LightGBM, ridge EF on 594 features};
+\node[box=3.0cm, fill=blue!8]    (en)   at (6.85,4.4) {EchoNext public data in the printout format (pre-training)};
+\node[box=1.9cm, fill=orange!14] (ens)  at (10.45,0)   {Nested ensemble / stacking};
+\node[box=1.8cm, fill=orange!14] (dec)  at (13.05,0)   {Decision rule: four classes or triage};
+\draw[ar] (pdf.east) -- (dig.west);
+\draw[ar] (pdf.north) |- (ras.west);
+\draw[ar] (dig.south) -- (med.north);
+\draw[ar] (ras.east) -- (cnn.west);
+\draw[ar] (dig.east) -- (fm.west);
+\draw[ar] (med.east) -- (feat.west);
+\draw[ar] (cnn.east) -| (ens.north);
+\draw[ar] (fm.east) -- (ens.west);
+\draw[ar] (feat.east) -| (ens.south);
+\draw[ar] (ens.east) -- (dec.west);
+\draw[da] (en.south) -- (cnn.north);
+\draw[da] (en.east) -| ($(fm.east)+(0.42,0.38)$) -- ($(fm.east)+(0,0.38)$);
+\end{tikzpicture}

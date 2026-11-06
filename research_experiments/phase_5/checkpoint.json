@@ -1,0 +1,1210 @@
+{
+ "phase": "5",
+ "updated": "2026-11-05 05:08:44",
+ "git_commit": "ada4012",
+ "current_milestone": "complete",
+ "milestones": {
+  "M0 audit + foundation": "DONE",
+  "5A baseline": "DONE",
+  "5B error analysis": "DONE",
+  "5C features": "DONE",
+  "5D-E1 feature MLP": "DONE",
+  "5D-E2 boosting": "DONE",
+  "5D-E3 stacking": "DONE",
+  "5D-E4 hierarchical": "DONE",
+  "5D-E5 decision optimisation": "DONE",
+  "5D-E6 signal quality": "DONE",
+  "5D-E7 training strategies": "DONE",
+  "5E statistics": "DONE",
+  "5F selection + final report": "DONE"
+ },
+ "experiments": {
+  "P5A-import-vote-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-vote-v1__s0_r0": "DONE",
+    "P5A-import-vote-v1__s0_r1": "DONE",
+    "P5A-import-vote-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-stack-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-stack-v1__s0_r0": "DONE",
+    "P5A-import-stack-v1__s0_r1": "DONE",
+    "P5A-import-stack-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-wavg-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-wavg-v1__s0_r0": "DONE",
+    "P5A-import-wavg-v1__s0_r1": "DONE",
+    "P5A-import-wavg-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-mlpfusion-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-mlpfusion-v1__s42_r0": "DONE",
+    "P5A-import-mlpfusion-v1__s43_r0": "DONE",
+    "P5A-import-mlpfusion-v1__s44_r0": "DONE",
+    "P5A-import-mlpfusion-v1__s42_r1": "DONE",
+    "P5A-import-mlpfusion-v1__s43_r1": "DONE",
+    "P5A-import-mlpfusion-v1__s44_r1": "DONE",
+    "P5A-import-mlpfusion-v1__s42_r2": "DONE",
+    "P5A-import-mlpfusion-v1__s43_r2": "DONE",
+    "P5A-import-mlpfusion-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-mlp3way-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-mlp3way-v1__s42_r0": "DONE",
+    "P5A-import-mlp3way-v1__s43_r0": "DONE",
+    "P5A-import-mlp3way-v1__s44_r0": "DONE",
+    "P5A-import-mlp3way-v1__s42_r1": "DONE",
+    "P5A-import-mlp3way-v1__s43_r1": "DONE",
+    "P5A-import-mlp3way-v1__s44_r1": "DONE",
+    "P5A-import-mlp3way-v1__s42_r2": "DONE",
+    "P5A-import-mlp3way-v1__s43_r2": "DONE",
+    "P5A-import-mlp3way-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-ecgflin-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-ecgflin-v1__s0_r0": "DONE",
+    "P5A-import-ecgflin-v1__s0_r1": "DONE",
+    "P5A-import-ecgflin-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-ecgflindist-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-ecgflindist-v1__s0_r0": "DONE",
+    "P5A-import-ecgflindist-v1__s0_r1": "DONE",
+    "P5A-import-ecgflindist-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-hdrlr-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-hdrlr-v1__s0_r0": "DONE",
+    "P5A-import-hdrlr-v1__s0_r1": "DONE",
+    "P5A-import-hdrlr-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-hdrclinlr-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-hdrclinlr-v1__s0_r0": "DONE",
+    "P5A-import-hdrclinlr-v1__s0_r1": "DONE",
+    "P5A-import-hdrclinlr-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-p4-fusvotemlpreg-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-p4-fusvotemlpreg-v1__s0_r0": "DONE",
+    "P5A-import-p4-fusvotemlpreg-v1__s0_r1": "DONE",
+    "P5A-import-p4-fusvotemlpreg-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-p4-regmlpCclin-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-p4-regmlpCclin-v1__s42_r0": "DONE",
+    "P5A-import-p4-regmlpCclin-v1__s43_r0": "DONE",
+    "P5A-import-p4-regmlpCclin-v1__s44_r0": "DONE",
+    "P5A-import-p4-regmlpCclin-v1__s42_r1": "DONE",
+    "P5A-import-p4-regmlpCclin-v1__s43_r1": "DONE",
+    "P5A-import-p4-regmlpCclin-v1__s44_r1": "DONE",
+    "P5A-import-p4-regmlpCclin-v1__s42_r2": "DONE",
+    "P5A-import-p4-regmlpCclin-v1__s43_r2": "DONE",
+    "P5A-import-p4-regmlpCclin-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-p4-mtsel-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-p4-mtsel-v1__s42_r0": "DONE",
+    "P5A-import-p4-mtsel-v1__s43_r0": "DONE",
+    "P5A-import-p4-mtsel-v1__s44_r0": "DONE",
+    "P5A-import-p4-mtsel-v1__s42_r1": "DONE",
+    "P5A-import-p4-mtsel-v1__s43_r1": "DONE",
+    "P5A-import-p4-mtsel-v1__s44_r1": "DONE",
+    "P5A-import-p4-mtsel-v1__s42_r2": "DONE",
+    "P5A-import-p4-mtsel-v1__s43_r2": "DONE",
+    "P5A-import-p4-mtsel-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-imgcnn-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-imgcnn-v1__s0_r0": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-import-hdrimg-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.import_existing",
+   "runs": {
+    "P5A-import-hdrimg-v1__s0_r0": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-calmlp-protected-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.calibrated_mlp",
+   "runs": {
+    "P5A-calmlp-protected-v1__s0_r0": "DONE",
+    "P5A-calmlp-protected-v1__s0_r1": "DONE",
+    "P5A-calmlp-protected-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-calmlp-accuracy-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.calibrated_mlp",
+   "runs": {
+    "P5A-calmlp-accuracy-v1__s0_r0": "DONE",
+    "P5A-calmlp-accuracy-v1__s0_r1": "DONE",
+    "P5A-calmlp-accuracy-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-calmlp-floor-v1": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.calibrated_mlp",
+   "runs": {
+    "P5A-calmlp-floor-v1__s0_r0": "DONE",
+    "P5A-calmlp-floor-v1__s0_r1": "DONE",
+    "P5A-calmlp-floor-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5A-baseline-report": {
+   "status": "DONE",
+   "milestone": "5A baseline",
+   "command": "python -m research_experiments.phase_5.baseline.report",
+   "runs": null,
+   "artifacts": [
+    "results/phase5_baseline_results.csv",
+    "results/phase5_baseline_results.json"
+   ]
+  },
+  "P5B-error-analysis": {
+   "status": "DONE",
+   "milestone": "5B error analysis",
+   "command": "python -m research_experiments.phase_5.error_analysis.analyse",
+   "runs": null,
+   "artifacts": [
+    "results/error_analysis.json"
+   ]
+  },
+  "P5C-features-extract": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.extract",
+   "runs": null,
+   "artifacts": [
+    "results/feature_validation.json"
+   ]
+  },
+  "P5C-lr-qrs-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-qrs-v1__s0_r0": "DONE",
+    "P5C-lr-qrs-v1__s0_r1": "DONE",
+    "P5C-lr-qrs-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-st-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-st-v1__s0_r0": "DONE",
+    "P5C-lr-st-v1__s0_r1": "DONE",
+    "P5C-lr-st-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-hrv-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-hrv-v1__s0_r0": "DONE",
+    "P5C-lr-hrv-v1__s0_r1": "DONE",
+    "P5C-lr-hrv-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-freq-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-freq-v1__s0_r0": "DONE",
+    "P5C-lr-freq-v1__s0_r1": "DONE",
+    "P5C-lr-freq-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-wavelet-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-wavelet-v1__s0_r0": "DONE",
+    "P5C-lr-wavelet-v1__s0_r1": "DONE",
+    "P5C-lr-wavelet-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-leadstat-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-leadstat-v1__s0_r0": "DONE",
+    "P5C-lr-leadstat-v1__s0_r1": "DONE",
+    "P5C-lr-leadstat-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-sq-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-sq-v1__s0_r0": "DONE",
+    "P5C-lr-sq-v1__s0_r1": "DONE",
+    "P5C-lr-sq-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-clin3-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-clin3-v1__s0_r0": "DONE",
+    "P5C-lr-clin3-v1__s0_r1": "DONE",
+    "P5C-lr-clin3-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-hdr+qrs-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-hdr+qrs-v1__s0_r0": "DONE",
+    "P5C-lr-hdr+qrs-v1__s0_r1": "DONE",
+    "P5C-lr-hdr+qrs-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-hdr+st-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-hdr+st-v1__s0_r0": "DONE",
+    "P5C-lr-hdr+st-v1__s0_r1": "DONE",
+    "P5C-lr-hdr+st-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-hdr+hrv-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-hdr+hrv-v1__s0_r0": "DONE",
+    "P5C-lr-hdr+hrv-v1__s0_r1": "DONE",
+    "P5C-lr-hdr+hrv-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-hdr+freq-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-hdr+freq-v1__s0_r0": "DONE",
+    "P5C-lr-hdr+freq-v1__s0_r1": "DONE",
+    "P5C-lr-hdr+freq-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-hdr+wavelet-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-hdr+wavelet-v1__s0_r0": "DONE",
+    "P5C-lr-hdr+wavelet-v1__s0_r1": "DONE",
+    "P5C-lr-hdr+wavelet-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-hdr+leadstat-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-hdr+leadstat-v1__s0_r0": "DONE",
+    "P5C-lr-hdr+leadstat-v1__s0_r1": "DONE",
+    "P5C-lr-hdr+leadstat-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-hdr+sq-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-hdr+sq-v1__s0_r0": "DONE",
+    "P5C-lr-hdr+sq-v1__s0_r1": "DONE",
+    "P5C-lr-hdr+sq-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-allnew-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-allnew-v1__s0_r0": "DONE",
+    "P5C-lr-allnew-v1__s0_r1": "DONE",
+    "P5C-lr-allnew-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-hdr+allnew-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-hdr+allnew-v1__s0_r0": "DONE",
+    "P5C-lr-hdr+allnew-v1__s0_r1": "DONE",
+    "P5C-lr-hdr+allnew-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-lr-hdr+clin3+allnew-v1": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare",
+   "runs": {
+    "P5C-lr-hdr+clin3+allnew-v1__s0_r0": "DONE",
+    "P5C-lr-hdr+clin3+allnew-v1__s0_r1": "DONE",
+    "P5C-lr-hdr+clin3+allnew-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5C-feature-comparison": {
+   "status": "DONE",
+   "milestone": "5C features",
+   "command": "python -m research_experiments.phase_5.features.compare --table",
+   "runs": null,
+   "artifacts": [
+    "results/feature_comparison.csv"
+   ]
+  },
+  "P5D-E1-mlp-qrs-v1": {
+   "status": "DONE",
+   "milestone": "5D-E1 feature MLP",
+   "command": "python -m research_experiments.phase_5.experiments.e1_feature_mlp",
+   "runs": {
+    "P5D-E1-mlp-qrs-v1__s42_r0": "DONE",
+    "P5D-E1-mlp-qrs-v1__s43_r0": "DONE",
+    "P5D-E1-mlp-qrs-v1__s44_r0": "DONE",
+    "P5D-E1-mlp-qrs-v1__s42_r1": "DONE",
+    "P5D-E1-mlp-qrs-v1__s43_r1": "DONE",
+    "P5D-E1-mlp-qrs-v1__s44_r1": "DONE",
+    "P5D-E1-mlp-qrs-v1__s42_r2": "DONE",
+    "P5D-E1-mlp-qrs-v1__s43_r2": "DONE",
+    "P5D-E1-mlp-qrs-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E1-mlp-st-v1": {
+   "status": "DONE",
+   "milestone": "5D-E1 feature MLP",
+   "command": "python -m research_experiments.phase_5.experiments.e1_feature_mlp",
+   "runs": {
+    "P5D-E1-mlp-st-v1__s42_r0": "DONE",
+    "P5D-E1-mlp-st-v1__s43_r0": "DONE",
+    "P5D-E1-mlp-st-v1__s44_r0": "DONE",
+    "P5D-E1-mlp-st-v1__s42_r1": "DONE",
+    "P5D-E1-mlp-st-v1__s43_r1": "DONE",
+    "P5D-E1-mlp-st-v1__s44_r1": "DONE",
+    "P5D-E1-mlp-st-v1__s42_r2": "DONE",
+    "P5D-E1-mlp-st-v1__s43_r2": "DONE",
+    "P5D-E1-mlp-st-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E1-mlp-hrv-v1": {
+   "status": "DONE",
+   "milestone": "5D-E1 feature MLP",
+   "command": "python -m research_experiments.phase_5.experiments.e1_feature_mlp",
+   "runs": {
+    "P5D-E1-mlp-hrv-v1__s42_r0": "DONE",
+    "P5D-E1-mlp-hrv-v1__s43_r0": "DONE",
+    "P5D-E1-mlp-hrv-v1__s44_r0": "DONE",
+    "P5D-E1-mlp-hrv-v1__s42_r1": "DONE",
+    "P5D-E1-mlp-hrv-v1__s43_r1": "DONE",
+    "P5D-E1-mlp-hrv-v1__s44_r1": "DONE",
+    "P5D-E1-mlp-hrv-v1__s42_r2": "DONE",
+    "P5D-E1-mlp-hrv-v1__s43_r2": "DONE",
+    "P5D-E1-mlp-hrv-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E1-mlp-freq-v1": {
+   "status": "DONE",
+   "milestone": "5D-E1 feature MLP",
+   "command": "python -m research_experiments.phase_5.experiments.e1_feature_mlp",
+   "runs": {
+    "P5D-E1-mlp-freq-v1__s42_r0": "DONE",
+    "P5D-E1-mlp-freq-v1__s43_r0": "DONE",
+    "P5D-E1-mlp-freq-v1__s44_r0": "DONE",
+    "P5D-E1-mlp-freq-v1__s42_r1": "DONE",
+    "P5D-E1-mlp-freq-v1__s43_r1": "DONE",
+    "P5D-E1-mlp-freq-v1__s44_r1": "DONE",
+    "P5D-E1-mlp-freq-v1__s42_r2": "DONE",
+    "P5D-E1-mlp-freq-v1__s43_r2": "DONE",
+    "P5D-E1-mlp-freq-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E1-mlp-wavelet-v1": {
+   "status": "DONE",
+   "milestone": "5D-E1 feature MLP",
+   "command": "python -m research_experiments.phase_5.experiments.e1_feature_mlp",
+   "runs": {
+    "P5D-E1-mlp-wavelet-v1__s42_r0": "DONE",
+    "P5D-E1-mlp-wavelet-v1__s43_r0": "DONE",
+    "P5D-E1-mlp-wavelet-v1__s44_r0": "DONE",
+    "P5D-E1-mlp-wavelet-v1__s42_r1": "DONE",
+    "P5D-E1-mlp-wavelet-v1__s43_r1": "DONE",
+    "P5D-E1-mlp-wavelet-v1__s44_r1": "DONE",
+    "P5D-E1-mlp-wavelet-v1__s42_r2": "DONE",
+    "P5D-E1-mlp-wavelet-v1__s43_r2": "DONE",
+    "P5D-E1-mlp-wavelet-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E1-mlp-leadstat-v1": {
+   "status": "DONE",
+   "milestone": "5D-E1 feature MLP",
+   "command": "python -m research_experiments.phase_5.experiments.e1_feature_mlp",
+   "runs": {
+    "P5D-E1-mlp-leadstat-v1__s42_r0": "DONE",
+    "P5D-E1-mlp-leadstat-v1__s43_r0": "DONE",
+    "P5D-E1-mlp-leadstat-v1__s44_r0": "DONE",
+    "P5D-E1-mlp-leadstat-v1__s42_r1": "DONE",
+    "P5D-E1-mlp-leadstat-v1__s43_r1": "DONE",
+    "P5D-E1-mlp-leadstat-v1__s44_r1": "DONE",
+    "P5D-E1-mlp-leadstat-v1__s42_r2": "DONE",
+    "P5D-E1-mlp-leadstat-v1__s43_r2": "DONE",
+    "P5D-E1-mlp-leadstat-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E1-mlp-sq-v1": {
+   "status": "DONE",
+   "milestone": "5D-E1 feature MLP",
+   "command": "python -m research_experiments.phase_5.experiments.e1_feature_mlp",
+   "runs": {
+    "P5D-E1-mlp-sq-v1__s42_r0": "DONE",
+    "P5D-E1-mlp-sq-v1__s43_r0": "DONE",
+    "P5D-E1-mlp-sq-v1__s44_r0": "DONE",
+    "P5D-E1-mlp-sq-v1__s42_r1": "DONE",
+    "P5D-E1-mlp-sq-v1__s43_r1": "DONE",
+    "P5D-E1-mlp-sq-v1__s44_r1": "DONE",
+    "P5D-E1-mlp-sq-v1__s42_r2": "DONE",
+    "P5D-E1-mlp-sq-v1__s43_r2": "DONE",
+    "P5D-E1-mlp-sq-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E1-mlp-allnew-v1": {
+   "status": "DONE",
+   "milestone": "5D-E1 feature MLP",
+   "command": "python -m research_experiments.phase_5.experiments.e1_feature_mlp",
+   "runs": {
+    "P5D-E1-mlp-allnew-v1__s42_r0": "DONE",
+    "P5D-E1-mlp-allnew-v1__s43_r0": "DONE",
+    "P5D-E1-mlp-allnew-v1__s44_r0": "DONE",
+    "P5D-E1-mlp-allnew-v1__s42_r1": "DONE",
+    "P5D-E1-mlp-allnew-v1__s43_r1": "DONE",
+    "P5D-E1-mlp-allnew-v1__s44_r1": "DONE",
+    "P5D-E1-mlp-allnew-v1__s42_r2": "DONE",
+    "P5D-E1-mlp-allnew-v1__s43_r2": "DONE",
+    "P5D-E1-mlp-allnew-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E1-table": {
+   "status": "DONE",
+   "milestone": "5D-E1 feature MLP",
+   "command": "python -m research_experiments.phase_5.experiments.e1_feature_mlp --table",
+   "runs": null,
+   "artifacts": [
+    "results/e1_feature_mlp.csv"
+   ]
+  },
+  "P5D-E2-xgb-eng-v1": {
+   "status": "DONE",
+   "milestone": "5D-E2 boosting",
+   "command": "python -m research_experiments.phase_5.experiments.e2_boosting",
+   "runs": {
+    "P5D-E2-xgb-eng-v1__s42_r0": "DONE",
+    "P5D-E2-xgb-eng-v1__s42_r1": "DONE",
+    "P5D-E2-xgb-eng-v1__s42_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E2-xgb-compact-v1": {
+   "status": "DONE",
+   "milestone": "5D-E2 boosting",
+   "command": "python -m research_experiments.phase_5.experiments.e2_boosting",
+   "runs": {
+    "P5D-E2-xgb-compact-v1__s42_r0": "DONE",
+    "P5D-E2-xgb-compact-v1__s42_r1": "DONE",
+    "P5D-E2-xgb-compact-v1__s42_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E2-xgb-eng+ecgfpca-v1": {
+   "status": "DONE",
+   "milestone": "5D-E2 boosting",
+   "command": "python -m research_experiments.phase_5.experiments.e2_boosting",
+   "runs": {
+    "P5D-E2-xgb-eng+ecgfpca-v1__s42_r0": "DONE",
+    "P5D-E2-xgb-eng+ecgfpca-v1__s42_r1": "DONE",
+    "P5D-E2-xgb-eng+ecgfpca-v1__s42_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E2-lgbm-eng-v1": {
+   "status": "DONE",
+   "milestone": "5D-E2 boosting",
+   "command": "python -m research_experiments.phase_5.experiments.e2_boosting",
+   "runs": {
+    "P5D-E2-lgbm-eng-v1__s42_r0": "DONE",
+    "P5D-E2-lgbm-eng-v1__s42_r1": "DONE",
+    "P5D-E2-lgbm-eng-v1__s42_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E2-lgbm-compact-v1": {
+   "status": "DONE",
+   "milestone": "5D-E2 boosting",
+   "command": "python -m research_experiments.phase_5.experiments.e2_boosting",
+   "runs": {
+    "P5D-E2-lgbm-compact-v1__s42_r0": "DONE",
+    "P5D-E2-lgbm-compact-v1__s42_r1": "DONE",
+    "P5D-E2-lgbm-compact-v1__s42_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E2-lgbm-eng+ecgfpca-v1": {
+   "status": "DONE",
+   "milestone": "5D-E2 boosting",
+   "command": "python -m research_experiments.phase_5.experiments.e2_boosting",
+   "runs": {
+    "P5D-E2-lgbm-eng+ecgfpca-v1__s42_r0": "DONE",
+    "P5D-E2-lgbm-eng+ecgfpca-v1__s42_r1": "DONE",
+    "P5D-E2-lgbm-eng+ecgfpca-v1__s42_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E3-stack-lr-balanced-v1": {
+   "status": "DONE",
+   "milestone": "5D-E3 stacking",
+   "command": "python -m research_experiments.phase_5.experiments.e3_stacking",
+   "runs": {
+    "P5D-E3-stack-lr-balanced-v1__s0_r0": "DONE",
+    "P5D-E3-stack-lr-balanced-v1__s0_r1": "DONE",
+    "P5D-E3-stack-lr-balanced-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E3-stack-lr-unweighted-v1": {
+   "status": "DONE",
+   "milestone": "5D-E3 stacking",
+   "command": "python -m research_experiments.phase_5.experiments.e3_stacking",
+   "runs": {
+    "P5D-E3-stack-lr-unweighted-v1__s0_r0": "DONE",
+    "P5D-E3-stack-lr-unweighted-v1__s0_r1": "DONE",
+    "P5D-E3-stack-lr-unweighted-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E3-stack-wavg-acc-v1": {
+   "status": "DONE",
+   "milestone": "5D-E3 stacking",
+   "command": "python -m research_experiments.phase_5.experiments.e3_stacking",
+   "runs": {
+    "P5D-E3-stack-wavg-acc-v1__s0_r0": "DONE",
+    "P5D-E3-stack-wavg-acc-v1__s0_r1": "DONE",
+    "P5D-E3-stack-wavg-acc-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E4-hier-v1": {
+   "status": "DONE",
+   "milestone": "5D-E4 hierarchical",
+   "command": "python -m research_experiments.phase_5.experiments.e4_hierarchical",
+   "runs": {
+    "P5D-E4-hier-v1__s42_r0": "DONE",
+    "P5D-E4-hier-v1__s43_r0": "DONE",
+    "P5D-E4-hier-v1__s44_r0": "DONE",
+    "P5D-E4-hier-v1__s42_r1": "DONE",
+    "P5D-E4-hier-v1__s43_r1": "DONE",
+    "P5D-E4-hier-v1__s44_r1": "DONE",
+    "P5D-E4-hier-v1__s42_r2": "DONE",
+    "P5D-E4-hier-v1__s43_r2": "DONE",
+    "P5D-E4-hier-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E5-vote-prior-accuracy-v1": {
+   "status": "DONE",
+   "milestone": "5D-E5 decision optimisation",
+   "command": "python -m research_experiments.phase_5.experiments.e5_decision",
+   "runs": {
+    "P5D-E5-vote-prior-accuracy-v1__s0_r0": "DONE",
+    "P5D-E5-vote-prior-accuracy-v1__s0_r1": "DONE",
+    "P5D-E5-vote-prior-accuracy-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E5-vote-prior-floor-v1": {
+   "status": "DONE",
+   "milestone": "5D-E5 decision optimisation",
+   "command": "python -m research_experiments.phase_5.experiments.e5_decision",
+   "runs": {
+    "P5D-E5-vote-prior-floor-v1__s0_r0": "DONE",
+    "P5D-E5-vote-prior-floor-v1__s0_r1": "DONE",
+    "P5D-E5-vote-prior-floor-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E5-vote-prior-protected-v1": {
+   "status": "DONE",
+   "milestone": "5D-E5 decision optimisation",
+   "command": "python -m research_experiments.phase_5.experiments.e5_decision",
+   "runs": {
+    "P5D-E5-vote-prior-protected-v1__s0_r0": "DONE",
+    "P5D-E5-vote-prior-protected-v1__s0_r1": "DONE",
+    "P5D-E5-vote-prior-protected-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E5-vote-bias-accuracy-v1": {
+   "status": "DONE",
+   "milestone": "5D-E5 decision optimisation",
+   "command": "python -m research_experiments.phase_5.experiments.e5_decision",
+   "runs": {
+    "P5D-E5-vote-bias-accuracy-v1__s0_r0": "DONE",
+    "P5D-E5-vote-bias-accuracy-v1__s0_r1": "DONE",
+    "P5D-E5-vote-bias-accuracy-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E5-vote-bias-floor-v1": {
+   "status": "DONE",
+   "milestone": "5D-E5 decision optimisation",
+   "command": "python -m research_experiments.phase_5.experiments.e5_decision",
+   "runs": {
+    "P5D-E5-vote-bias-floor-v1__s0_r0": "DONE",
+    "P5D-E5-vote-bias-floor-v1__s0_r1": "DONE",
+    "P5D-E5-vote-bias-floor-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E5-vote-bias-protected-v1": {
+   "status": "DONE",
+   "milestone": "5D-E5 decision optimisation",
+   "command": "python -m research_experiments.phase_5.experiments.e5_decision",
+   "runs": {
+    "P5D-E5-vote-bias-protected-v1__s0_r0": "DONE",
+    "P5D-E5-vote-bias-protected-v1__s0_r1": "DONE",
+    "P5D-E5-vote-bias-protected-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E5-mlpfusion-bias-accuracy-v1": {
+   "status": "DONE",
+   "milestone": "5D-E5 decision optimisation",
+   "command": "python -m research_experiments.phase_5.experiments.e5_decision",
+   "runs": {
+    "P5D-E5-mlpfusion-bias-accuracy-v1__s0_r0": "DONE",
+    "P5D-E5-mlpfusion-bias-accuracy-v1__s0_r1": "DONE",
+    "P5D-E5-mlpfusion-bias-accuracy-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E5-mlpfusion-bias-floor-v1": {
+   "status": "DONE",
+   "milestone": "5D-E5 decision optimisation",
+   "command": "python -m research_experiments.phase_5.experiments.e5_decision",
+   "runs": {
+    "P5D-E5-mlpfusion-bias-floor-v1__s0_r0": "DONE",
+    "P5D-E5-mlpfusion-bias-floor-v1__s0_r1": "DONE",
+    "P5D-E5-mlpfusion-bias-floor-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E5-mlpfusion-bias-protected-v1": {
+   "status": "DONE",
+   "milestone": "5D-E5 decision optimisation",
+   "command": "python -m research_experiments.phase_5.experiments.e5_decision",
+   "runs": {
+    "P5D-E5-mlpfusion-bias-protected-v1__s0_r0": "DONE",
+    "P5D-E5-mlpfusion-bias-protected-v1__s0_r1": "DONE",
+    "P5D-E5-mlpfusion-bias-protected-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E6-qfilter-v1": {
+   "status": "DONE",
+   "milestone": "5D-E6 signal quality",
+   "command": "python -m research_experiments.phase_5.experiments.e6_quality",
+   "runs": {
+    "P5D-E6-qfilter-v1__s42_r0": "DONE",
+    "P5D-E6-qfilter-v1__s43_r0": "DONE",
+    "P5D-E6-qfilter-v1__s44_r0": "DONE",
+    "P5D-E6-qfilter-v1__s42_r1": "DONE",
+    "P5D-E6-qfilter-v1__s43_r1": "DONE",
+    "P5D-E6-qfilter-v1__s44_r1": "DONE",
+    "P5D-E6-qfilter-v1__s42_r2": "DONE",
+    "P5D-E6-qfilter-v1__s43_r2": "DONE",
+    "P5D-E6-qfilter-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E6-qweight-v1": {
+   "status": "DONE",
+   "milestone": "5D-E6 signal quality",
+   "command": "python -m research_experiments.phase_5.experiments.e6_quality",
+   "runs": {
+    "P5D-E6-qweight-v1__s42_r0": "DONE",
+    "P5D-E6-qweight-v1__s43_r0": "DONE",
+    "P5D-E6-qweight-v1__s44_r0": "DONE",
+    "P5D-E6-qweight-v1__s42_r1": "DONE",
+    "P5D-E6-qweight-v1__s43_r1": "DONE",
+    "P5D-E6-qweight-v1__s44_r1": "DONE",
+    "P5D-E6-qweight-v1__s42_r2": "DONE",
+    "P5D-E6-qweight-v1__s43_r2": "DONE",
+    "P5D-E6-qweight-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E6-qgate-v1": {
+   "status": "DONE",
+   "milestone": "5D-E6 signal quality",
+   "command": "python -m research_experiments.phase_5.experiments.e6_quality",
+   "runs": {
+    "P5D-E6-qgate-v1__s0_r0": "DONE",
+    "P5D-E6-qgate-v1__s0_r1": "DONE",
+    "P5D-E6-qgate-v1__s0_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-focal-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training",
+   "runs": {
+    "P5D-E7-focal-v1__s42_r0": "DONE",
+    "P5D-E7-focal-v1__s43_r0": "DONE",
+    "P5D-E7-focal-v1__s44_r0": "DONE",
+    "P5D-E7-focal-v1__s42_r1": "DONE",
+    "P5D-E7-focal-v1__s43_r1": "DONE",
+    "P5D-E7-focal-v1__s44_r1": "DONE",
+    "P5D-E7-focal-v1__s42_r2": "DONE",
+    "P5D-E7-focal-v1__s43_r2": "DONE",
+    "P5D-E7-focal-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-smooth-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training",
+   "runs": {
+    "P5D-E7-smooth-v1__s42_r0": "DONE",
+    "P5D-E7-smooth-v1__s43_r0": "DONE",
+    "P5D-E7-smooth-v1__s44_r0": "DONE",
+    "P5D-E7-smooth-v1__s42_r1": "DONE",
+    "P5D-E7-smooth-v1__s43_r1": "DONE",
+    "P5D-E7-smooth-v1__s44_r1": "DONE",
+    "P5D-E7-smooth-v1__s42_r2": "DONE",
+    "P5D-E7-smooth-v1__s43_r2": "DONE",
+    "P5D-E7-smooth-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-mixup-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training",
+   "runs": {
+    "P5D-E7-mixup-v1__s42_r0": "DONE",
+    "P5D-E7-mixup-v1__s43_r0": "DONE",
+    "P5D-E7-mixup-v1__s44_r0": "DONE",
+    "P5D-E7-mixup-v1__s42_r1": "DONE",
+    "P5D-E7-mixup-v1__s43_r1": "DONE",
+    "P5D-E7-mixup-v1__s44_r1": "DONE",
+    "P5D-E7-mixup-v1__s42_r2": "DONE",
+    "P5D-E7-mixup-v1__s43_r2": "DONE",
+    "P5D-E7-mixup-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-cosine-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training",
+   "runs": {
+    "P5D-E7-cosine-v1__s42_r0": "DONE",
+    "P5D-E7-cosine-v1__s43_r0": "DONE",
+    "P5D-E7-cosine-v1__s44_r0": "DONE",
+    "P5D-E7-cosine-v1__s42_r1": "DONE",
+    "P5D-E7-cosine-v1__s43_r1": "DONE",
+    "P5D-E7-cosine-v1__s44_r1": "DONE",
+    "P5D-E7-cosine-v1__s42_r2": "DONE",
+    "P5D-E7-cosine-v1__s43_r2": "DONE",
+    "P5D-E7-cosine-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-selacc-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training",
+   "runs": {
+    "P5D-E7-selacc-v1__s42_r0": "DONE",
+    "P5D-E7-selacc-v1__s43_r0": "DONE",
+    "P5D-E7-selacc-v1__s44_r0": "DONE",
+    "P5D-E7-selacc-v1__s42_r1": "DONE",
+    "P5D-E7-selacc-v1__s43_r1": "DONE",
+    "P5D-E7-selacc-v1__s44_r1": "DONE",
+    "P5D-E7-selacc-v1__s42_r2": "DONE",
+    "P5D-E7-selacc-v1__s43_r2": "DONE",
+    "P5D-E7-selacc-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-p2-unweighted-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training --import-phase2",
+   "runs": {
+    "P5D-E7-p2-unweighted-v1__s42_r0": "DONE",
+    "P5D-E7-p2-unweighted-v1__s43_r0": "DONE",
+    "P5D-E7-p2-unweighted-v1__s44_r0": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-p2-balsampler-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training --import-phase2",
+   "runs": {
+    "P5D-E7-p2-balsampler-v1__s42_r0": "DONE",
+    "P5D-E7-p2-balsampler-v1__s43_r0": "DONE",
+    "P5D-E7-p2-balsampler-v1__s44_r0": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-p2-do0.3-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training --import-phase2",
+   "runs": {
+    "P5D-E7-p2-do0.3-v1__s42_r0": "DONE",
+    "P5D-E7-p2-do0.3-v1__s43_r0": "DONE",
+    "P5D-E7-p2-do0.3-v1__s44_r0": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-p2-do0.7-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training --import-phase2",
+   "runs": {
+    "P5D-E7-p2-do0.7-v1__s42_r0": "DONE",
+    "P5D-E7-p2-do0.7-v1__s43_r0": "DONE",
+    "P5D-E7-p2-do0.7-v1__s44_r0": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-p2-h32-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training --import-phase2",
+   "runs": {
+    "P5D-E7-p2-h32-v1__s42_r0": "DONE",
+    "P5D-E7-p2-h32-v1__s43_r0": "DONE",
+    "P5D-E7-p2-h32-v1__s44_r0": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-p2-h128-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training --import-phase2",
+   "runs": {
+    "P5D-E7-p2-h128-v1__s42_r0": "DONE",
+    "P5D-E7-p2-h128-v1__s43_r0": "DONE",
+    "P5D-E7-p2-h128-v1__s44_r0": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5D-E7-augment-prep": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.features.ecgf_augment",
+   "runs": null,
+   "artifacts": [
+    "results/ecgf_augmentation_validation.json"
+   ]
+  },
+  "P5D-E7-augment-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training --augment",
+   "runs": {
+    "P5D-E7-augment-v1__s42_r0": "DONE",
+    "P5D-E7-augment-v1__s43_r0": "DONE",
+    "P5D-E7-augment-v1__s44_r0": "DONE",
+    "P5D-E7-augment-v1__s42_r1": "DONE",
+    "P5D-E7-augment-v1__s43_r1": "DONE",
+    "P5D-E7-augment-v1__s44_r1": "DONE",
+    "P5D-E7-augment-v1__s42_r2": "DONE",
+    "P5D-E7-augment-v1__s43_r2": "DONE",
+    "P5D-E7-augment-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5E-final-statistics": {
+   "status": "DONE",
+   "milestone": "5E statistics",
+   "command": "python -m research_experiments.phase_5.validation.final_stats",
+   "runs": null,
+   "artifacts": [
+    "results/phase5_all_models.csv"
+   ]
+  },
+  "P5D-E7-unweighted-v1": {
+   "status": "DONE",
+   "milestone": "5D-E7 training strategies",
+   "command": "python -m research_experiments.phase_5.experiments.e7_training --unweighted",
+   "runs": {
+    "P5D-E7-unweighted-v1__s42_r0": "DONE",
+    "P5D-E7-unweighted-v1__s43_r0": "DONE",
+    "P5D-E7-unweighted-v1__s44_r0": "DONE",
+    "P5D-E7-unweighted-v1__s42_r1": "DONE",
+    "P5D-E7-unweighted-v1__s43_r1": "DONE",
+    "P5D-E7-unweighted-v1__s44_r1": "DONE",
+    "P5D-E7-unweighted-v1__s42_r2": "DONE",
+    "P5D-E7-unweighted-v1__s43_r2": "DONE",
+    "P5D-E7-unweighted-v1__s44_r2": "DONE"
+   },
+   "artifacts": null
+  },
+  "P5F-selection-and-final-report": {
+   "status": "DONE",
+   "milestone": "5F selection + final report",
+   "command": "python -m research_experiments.phase_5.validation.final_stats",
+   "runs": null,
+   "artifacts": [
+    "results/phase5_selection.json",
+    "reports/PHASE5_FINAL_REPORT.md",
+    "PHASE5_HANDOFF.md"
+   ]
+  }
+ },
+ "completed": [
+  "P5A-import-vote-v1",
+  "P5A-import-stack-v1",
+  "P5A-import-wavg-v1",
+  "P5A-import-mlpfusion-v1",
+  "P5A-import-mlp3way-v1",
+  "P5A-import-ecgflin-v1",
+  "P5A-import-ecgflindist-v1",
+  "P5A-import-hdrlr-v1",
+  "P5A-import-hdrclinlr-v1",
+  "P5A-import-p4-fusvotemlpreg-v1",
+  "P5A-import-p4-regmlpCclin-v1",
+  "P5A-import-p4-mtsel-v1",
+  "P5A-import-imgcnn-v1",
+  "P5A-import-hdrimg-v1",
+  "P5A-calmlp-protected-v1",
+  "P5A-calmlp-accuracy-v1",
+  "P5A-calmlp-floor-v1",
+  "P5A-baseline-report",
+  "P5B-error-analysis",
+  "P5C-features-extract",
+  "P5C-lr-qrs-v1",
+  "P5C-lr-st-v1",
+  "P5C-lr-hrv-v1",
+  "P5C-lr-freq-v1",
+  "P5C-lr-wavelet-v1",
+  "P5C-lr-leadstat-v1",
+  "P5C-lr-sq-v1",
+  "P5C-lr-clin3-v1",
+  "P5C-lr-hdr+qrs-v1",
+  "P5C-lr-hdr+st-v1",
+  "P5C-lr-hdr+hrv-v1",
+  "P5C-lr-hdr+freq-v1",
+  "P5C-lr-hdr+wavelet-v1",
+  "P5C-lr-hdr+leadstat-v1",
+  "P5C-lr-hdr+sq-v1",
+  "P5C-lr-allnew-v1",
+  "P5C-lr-hdr+allnew-v1",
+  "P5C-lr-hdr+clin3+allnew-v1",
+  "P5C-feature-comparison",
+  "P5D-E1-mlp-qrs-v1",
+  "P5D-E1-mlp-st-v1",
+  "P5D-E1-mlp-hrv-v1",
+  "P5D-E1-mlp-freq-v1",
+  "P5D-E1-mlp-wavelet-v1",
+  "P5D-E1-mlp-leadstat-v1",
+  "P5D-E1-mlp-sq-v1",
+  "P5D-E1-mlp-allnew-v1",
+  "P5D-E1-table",
+  "P5D-E2-xgb-eng-v1",
+  "P5D-E2-xgb-compact-v1",
+  "P5D-E2-xgb-eng+ecgfpca-v1",
+  "P5D-E2-lgbm-eng-v1",
+  "P5D-E2-lgbm-compact-v1",
+  "P5D-E2-lgbm-eng+ecgfpca-v1",
+  "P5D-E3-stack-lr-balanced-v1",
+  "P5D-E3-stack-lr-unweighted-v1",
+  "P5D-E3-stack-wavg-acc-v1",
+  "P5D-E4-hier-v1",
+  "P5D-E5-vote-prior-accuracy-v1",
+  "P5D-E5-vote-prior-floor-v1",
+  "P5D-E5-vote-prior-protected-v1",
+  "P5D-E5-vote-bias-accuracy-v1",
+  "P5D-E5-vote-bias-floor-v1",
+  "P5D-E5-vote-bias-protected-v1",
+  "P5D-E5-mlpfusion-bias-accuracy-v1",
+  "P5D-E5-mlpfusion-bias-floor-v1",
+  "P5D-E5-mlpfusion-bias-protected-v1",
+  "P5D-E6-qfilter-v1",
+  "P5D-E6-qweight-v1",
+  "P5D-E6-qgate-v1",
+  "P5D-E7-focal-v1",
+  "P5D-E7-smooth-v1",
+  "P5D-E7-mixup-v1",
+  "P5D-E7-cosine-v1",
+  "P5D-E7-selacc-v1",
+  "P5D-E7-p2-unweighted-v1",
+  "P5D-E7-p2-balsampler-v1",
+  "P5D-E7-p2-do0.3-v1",
+  "P5D-E7-p2-do0.7-v1",
+  "P5D-E7-p2-h32-v1",
+  "P5D-E7-p2-h128-v1",
+  "P5D-E7-augment-prep",
+  "P5D-E7-augment-v1",
+  "P5E-final-statistics",
+  "P5D-E7-unweighted-v1",
+  "P5F-selection-and-final-report"
+ ],
+ "running": [],
+ "interrupted": [],
+ "pending": [],
+ "missing_private": [],
+ "last_successful_run": {
+  "run_id": "P5D-E7-unweighted-v1__s43_r2",
+  "at": "2026-11-05 04:38:10"
+ },
+ "n_runs_done": 362,
+ "aggregate_results": "research_experiments/phase_5/results/experiments/<run_id>.json",
+ "private_predictions": "research_experiments/phase_5/data/private/runs/<run_id>/oof.csv (git-ignored)",
+ "scripts": "research_experiments/phase_5/*.py (registry.py lists every experiment and its command)",
+ "configs": "research_experiments/phase_5/configs/ (+ the 'config' block inside every aggregate json)",
+ "seeds": [
+  42,
+  43,
+  44
+ ],
+ "repeats": [
+  0,
+  1,
+  2
+ ],
+ "fingerprints": {
+  "data/manifest.csv": "2463bd35b02013751474c418c195ef7a7c073699e8bfb5c113bd1848200fc4a8",
+  "results/split.csv": "7fc76b0e52a07f299f5bb2d004e809293f877dbb1d5f13520614dac82d5401c1",
+  "research_experiments/phase_2/configs/folds_D.csv": "a5e37f3ded8d958a1a183ad2438d707209697ad3b1af19852aaa9a7a72b69bbc",
+  "data/header_features.csv": "a9a379035729d806159185af53b1408644e63a53c820ec0cac95c394b1a4c638",
+  "research_experiments/phase_2/models/ecgf_aligned_features.npz": "7dab71334d92ea5e55dc7206077aaa5c2f21de08a7046db5064e2bf88d9fa3a5",
+  "data/signals.npz": "823c54ef0a2aa04e748b2c59e9dd14eee1ccdfd9d7d23dae38a4179902597367",
+  "research_experiments/phase_4/data/private/cohorts.csv": "631fce57bbad984ca6c4668d6e2a38694270ba53c4b060b357eae1115cd94d76"
+ },
+ "next_action": "all registered experiments complete",
+ "known_issues": [
+  "Patient key = hash of the normalised name (no MRN); 29 near-identical name pairs under different keys (15 inside development, 11 straddling development/locked test) - see REPOSITORY_AUDIT.md section 6.",
+  "Repository is PUBLIC; phases 1-3 already published per-ECG prediction CSVs (incl. 207 locked-test probability files). Phase 5 commits aggregates only.",
+  "Locked test exposed in phase 1; never predicted or scored in phase 5."
+ ]
+}

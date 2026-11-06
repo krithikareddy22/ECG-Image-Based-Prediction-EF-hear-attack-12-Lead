@@ -1,0 +1,78 @@
+{
+ "P5D-E5-vote-prior-protected-v1": {
+  "acc_ci_corrected": [
+   0.52,
+   0.603
+  ],
+  "acc_boot_r0": [
+   0.531,
+   0.597
+  ],
+  "bal_boot_r0": [
+   0.429,
+   0.499
+  ],
+  "mf1_boot_r0": [
+   0.42,
+   0.491
+  ],
+  "fold_acc_sd": 0.032
+ },
+ "P5D-E5-vote-bias-floor-v1": {
+  "acc_ci_corrected": [
+   0.518,
+   0.604
+  ],
+  "acc_boot_r0": [
+   0.524,
+   0.59
+  ],
+  "bal_boot_r0": [
+   0.412,
+   0.481
+  ],
+  "mf1_boot_r0": [
+   0.406,
+   0.479
+  ],
+  "fold_acc_sd": 0.032
+ },
+ "P5D-E7-unweighted-v1": {
+  "acc_ci_corrected": [
+   0.533,
+   0.612
+  ],
+  "acc_boot_r0": [
+   0.544,
+   0.61
+  ],
+  "bal_boot_r0": [
+   0.416,
+   0.482
+  ],
+  "mf1_boot_r0": [
+   0.406,
+   0.478
+  ],
+  "fold_acc_sd": 0.03
+ },
+ "P5D-E4-hier-v1": {
+  "acc_ci_corrected": [
+   0.533,
+   0.601
+  ],
+  "acc_boot_r0": [
+   0.535,
+   0.6
+  ],
+  "bal_boot_r0": [
+   0.425,
+   0.49
+  ],
+  "mf1_boot_r0": [
+   0.393,
+   0.461
+  ],
+  "fold_acc_sd": 0.026
+ }
+}

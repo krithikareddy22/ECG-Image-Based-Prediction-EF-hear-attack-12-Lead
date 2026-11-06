@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\caption{Label-quality, cohort and abstention studies (development CV).}\label{tab:4.7}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.404\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.303\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.291\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Study} & \textbf{Result} & \textbf{Finding} \\
+\midrule
+VER: 15 labels corrected to a high-confidence echo & C3 0.565 & label noise costs less than one point \\
+HC30: exact-name links within 30 days (395 ECGs) & 0.594; 0.603 with all ECG factors & reliable links give about 0.60 \\
+CLEAR: train without 255 border ECGs & 0.668 on the 582 clear-cut ECGs & clear cases are graded well \\
+MMCLEAN: remove 217 suspect Mild/Moderate labels & 0.677 on the 620 kept ECGs & accuracy follows label clarity \\
+NF / NFS: noise-free training & 0.707 on 264 clean, clear-cut ECGs & strong performance on clean labels \\
+MILDFEAT: image-only clinician features & spatial QRS-T angle best single marker & interpretable Mild markers found \\
+MILDFIX: Mild-aware, ordinal and EF-based rules & best Mild recall 0.218 at 0.537 & Mild can be traded for accuracy \\
+Selective prediction (nested thresholds) & 0.71 on 22 \%, 0.70 on 35 \% answered & confidence is informative \\
+\bottomrule
+\end{tabular}
+\end{table}

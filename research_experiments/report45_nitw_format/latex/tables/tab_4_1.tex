@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\caption{Overview of the experimental stages of Phase I.}\label{tab:4.1}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.151\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.319\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.212\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.315\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Stage} & \textbf{Main question} & \textbf{Evaluation} & \textbf{Outcome carried forward} \\
+\midrule
+Original project & Can a page-image CNN grade LVEF? & fixed 210-ECG test set & 27 models; header + ResNet-18 fusion 0.552 \\
+Phase 1 & Does a foundation ECG model help? & fixed test set & ECGFounder best for Mild (recall 0.26) \\
+Phase 2 & Robust re-evaluation, pre-registered & development CV & ECGFounder MLP fusion 0.544 \\
+Phase 3 & Fusion, ensembles, calibration & development CV & vote ensemble C1 0.547 \\
+Phase 4 & EF regression, multitask, label quality & development CV & EF $r$ = 0.66; information limit found \\
+Phase 5 & Features, boosting, decision rules & development CV & C3 selected, 0.562 \\
+Phase 6 / 6A / 6B & Fine-tuning, LSTM family, label variants & development CV & recurrent models tested; C3 kept \\
+Label studies & Cleaning, cohorts, abstention & CV and subsets & selective prediction reaches 0.71 \\
+Phase 7 & Representations, learning curve, triage & CV, then locked test & triage 0.694 (CV), 0.747 (locked test) \\
+Image-only push & HIER, ENH, ULT, EchoNext, SUPER & development CV & ensembles 0.57--0.587 \\
+\bottomrule
+\end{tabular}
+\end{table}

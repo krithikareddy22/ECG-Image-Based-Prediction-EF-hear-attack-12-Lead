@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\caption{Phase 5, development cross-validation (min recall = lowest per-class recall; admissible if $\ge$ 0.15).}\label{tab:4.4}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.360\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.225\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.162\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.250\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Experiment} & \textbf{Accuracy} & \textbf{Min recall} & \textbf{Note} \\
+\midrule
+E1 MLP + all engineered feature families & 0.554 & 0.164 & admissible \\
+E2 LightGBM & 0.544 & 0.184 & admissible \\
+E3 stacking, weighted & 0.547 & 0.184 & admissible \\
+E4 hierarchical model & 0.567 & 0.067 & Mild recall below floor \\
+\textbf{E5 vote + nested prior rule (C3)} & \textbf{0.562} [0.520, 0.603] & 0.177 & \textbf{selected} \\
+E6 signal-quality gating & 0.546 & 0.164 & admissible \\
+E7 mixup / augmentation & 0.552 / 0.533 & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,6 @@
+{
+ "reproduction_max_abs_diff": 1.430511474609375e-06,
+ "reproduction_mean_abs": 0.23068149387836456,
+ "aug1_mean_abs_shift_vs_original": 0.058593329042196274,
+ "aug2_mean_abs_shift_vs_original": 0.05804429203271866
+}

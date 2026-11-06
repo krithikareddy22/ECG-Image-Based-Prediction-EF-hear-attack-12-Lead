@@ -1,0 +1,26 @@
+% Display equations of report 45, re-typeset (numbered within chapters as in the original)
+\newcommand{\EqThreeOne}{%
+\begin{equation}
+v(t)=\frac{y_{\text{base}}-y(x)}{82}\,\text{mV},\qquad t=\frac{x-x_0}{205.2}\,\text{s},
+\label{eq:3.1}
+\end{equation}}
+\newcommand{\EqThreeTwo}{%
+\begin{equation}
+\begin{gathered}
+\mathrm{ReLU}(x)=\max(0,x),\qquad \mathrm{SiLU}(x)=x\,\sigma(x),\qquad \mathrm{GELU}(x)=x\,\Phi(x),\\[4pt]
+\text{h-swish}(x)=x\,\frac{\mathrm{ReLU6}(x+3)}{6},\qquad \sigma(x)=\frac{1}{1+e^{-x}},\\[4pt]
+\mathrm{softmax}(\mathbf{z})_c=\frac{e^{z_c}}{\sum_{j=1}^{4}e^{z_j}},
+\end{gathered}
+\label{eq:3.2}
+\end{equation}}
+\newcommand{\EqThreeThree}{%
+\begin{equation}
+\hat{y}=\arg\max_k\, w_k P_k,\qquad
+\mathbf{w}^{*}=\arg\max_{\mathbf{w}}\ \mathrm{Acc}(\mathbf{w})\ \ \text{s.t.}\ \ \min_k \mathrm{Rec}_k(\mathbf{w})\ge 0.18.
+\label{eq:3.3}
+\end{equation}}
+\newcommand{\EqThreeFour}{%
+\begin{equation}
+t=\bar{d}\;\Big/\sqrt{\Big(\frac{1}{J}+\frac{n_2}{n_1}\Big)\hat{\sigma}_d^{2}},\qquad J=15.
+\label{eq:3.4}
+\end{equation}}

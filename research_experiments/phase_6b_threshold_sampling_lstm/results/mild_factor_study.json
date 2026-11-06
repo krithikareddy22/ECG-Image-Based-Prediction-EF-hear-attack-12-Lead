@@ -1,0 +1,216 @@
+{
+ "mild_vs_normal": {
+  "top15": [
+   {
+    "family": "qrs",
+    "feature": "width_median",
+    "auroc": 0.734,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: LEFT BUNDLE BRANCH BLOCK",
+    "auroc": 0.722,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: NORMAL ECG",
+    "auroc": 0.278,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "freq",
+    "feature": "p15_40_V1",
+    "auroc": 0.282,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: T WAVE INVERSION LESS EVIDENT IN",
+    "auroc": 0.709,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "qrs",
+    "feature": "width_V4",
+    "auroc": 0.706,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "freq",
+    "feature": "spec_entropy_V1",
+    "auroc": 0.297,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "qrs",
+    "feature": "width_V6",
+    "auroc": 0.699,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: ACUTE",
+    "auroc": 0.696,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: INCOMPLETE LEFT BUNDLE BRANCH BLOCK",
+    "auroc": 0.694,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: ABNORMAL ECG",
+    "auroc": 0.694,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: ST MORE ELEVATED IN",
+    "auroc": 0.692,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "qrs",
+    "feature": "R_V4",
+    "auroc": 0.308,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: T WAVE INVERSION MORE EVIDENT IN",
+    "auroc": 0.692,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: ST ELEVATION NOW PRESENT IN",
+    "auroc": 0.691,
+    "direction": "higher in Mild"
+   }
+  ],
+  "best_by_family": {
+   "qrs": 0.734,
+   "logits150": 0.722,
+   "freq": 0.718,
+   "leadstat": 0.682,
+   "st": 0.68,
+   "clin3": 0.673,
+   "header": 0.663,
+   "wavelet": 0.658,
+   "sq": 0.642,
+   "hrv": 0.548
+  },
+  "n_features": 569
+ },
+ "mild_vs_moderate": {
+  "top15": [
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: ANTEROLATERAL INJURY PATTERN",
+    "auroc": 0.361,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: INFEROLATERAL INJURY PATTERN",
+    "auroc": 0.363,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "freq",
+    "feature": "p15_40_V5",
+    "auroc": 0.634,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: INCOMPLETE LEFT BUNDLE BRANCH BLOCK",
+    "auroc": 0.367,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "freq",
+    "feature": "p15_40_V4",
+    "auroc": 0.631,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: NONSPECIFIC INTRAVENTRICULAR BLOCK",
+    "auroc": 0.369,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: ST MORE ELEVATED IN",
+    "auroc": 0.369,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "wavelet",
+    "feature": "rel_lvl3_V5",
+    "auroc": 0.627,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "wavelet",
+    "feature": "rel_lvl0_V4",
+    "auroc": 0.373,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "wavelet",
+    "feature": "rel_lvl5_V5",
+    "auroc": 0.626,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "header",
+    "feature": "T_axis_cos",
+    "auroc": 0.626,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "freq",
+    "feature": "spec_entropy_V4",
+    "auroc": 0.625,
+    "direction": "higher in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: WITH MARKED SINUS ARRHYTHMIA",
+    "auroc": 0.375,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: INFERIOR INJURY PATTERN",
+    "auroc": 0.375,
+    "direction": "lower in Mild"
+   },
+   {
+    "family": "logits150",
+    "feature": "ECGFounder: LATERAL INJURY PATTERN",
+    "auroc": 0.376,
+    "direction": "lower in Mild"
+   }
+  ],
+  "best_by_family": {
+   "logits150": 0.639,
+   "freq": 0.634,
+   "wavelet": 0.627,
+   "header": 0.626,
+   "leadstat": 0.603,
+   "qrs": 0.601,
+   "sq": 0.592,
+   "clin3": 0.582,
+   "st": 0.576,
+   "hrv": 0.522
+  },
+  "n_features": 569
+ }
+}

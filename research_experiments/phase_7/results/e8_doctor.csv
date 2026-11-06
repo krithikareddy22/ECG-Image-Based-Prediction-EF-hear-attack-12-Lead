@@ -1,0 +1,14 @@
+model,answered,accuracy,accuracy_ci95,macro_f1,mild_precision,mild_recall_answered,mild_recall_overall,severe_recall_answered,severe_recall_overall,recall_answered_N_Mi_Mo_S,predicted_mix,infeasible_folds
+H-full (all patients),1.0000,0.5436,"[0.514, 0.573]",0.4160,0.2525,0.1928,0.1928,0.3260,0.3260,0.89/0.19/0.27/0.33,all,0
+"Hierarchy + refer: acc >= 0.65, Mild >= 0%, Severe >= 0%",0.6949,0.6499,"[0.615, 0.686]",,0.0000,0.0000,0.0000,0.5442,0.2564,0.99/0.00/0.19/0.54,490/2/29/60,0
+"Hierarchy + refer: acc >= 0.65, Mild >= 0%, Severe >= 15%",0.6969,0.6463,"[0.610, 0.684]",,0.0000,0.0000,0.0000,0.5501,0.2674,0.99/0.00/0.20/0.55,486/2/32/64,0
+"Hierarchy + refer: acc >= 0.65, Mild >= 5%, Severe >= 0%",0.4703,0.6328,"[0.572, 0.700]",,0.2589,0.0694,0.0288,0.6191,0.2088,0.95/0.07/0.12/0.62,303/20/14/57,3
+"Hierarchy + refer: acc >= 0.65, Mild >= 5%, Severe >= 15%",0.4703,0.6328,"[0.572, 0.700]",,0.2589,0.0694,0.0288,0.6191,0.2088,0.95/0.07/0.12/0.62,303/20/14/57,3
+"Hierarchy + refer: acc >= 0.65, Mild >= 10%, Severe >= 0%",0.0446,0.5625,"[nan, nan]",,0.2857,0.0800,0.0036,0.1818,0.0073,0.98/0.08/0.16/0.18,28/2/4/3,14
+"Hierarchy + refer: acc >= 0.65, Mild >= 10%, Severe >= 15%",0.0446,0.5625,"[nan, nan]",,0.2857,0.0800,0.0036,0.1818,0.0073,0.98/0.08/0.16/0.18,28/2/4/3,14
+"Hierarchy + refer: acc >= 0.70, Mild >= 0%, Severe >= 0%",0.4357,0.6766,"[0.623, 0.739]",,0.0000,0.0000,0.0000,0.6262,0.1978,0.99/0.00/0.08/0.63,306/1/10/47,1
+"Hierarchy + refer: acc >= 0.70, Mild >= 0%, Severe >= 15%",0.3417,0.6658,"[0.616, 0.725]",,0.0000,0.0000,0.0000,0.6142,0.1465,0.99/0.00/0.12/0.61,236/1/10/39,4
+"Hierarchy + refer: acc >= 0.70, Mild >= 5%, Severe >= 0%",0.0000,,"[nan, nan]",,,,0.0000,,0.0000,nan/nan/nan/nan,0/0/0/0,15
+"Hierarchy + refer: acc >= 0.70, Mild >= 5%, Severe >= 15%",0.0000,,"[nan, nan]",,,,0.0000,,0.0000,nan/nan/nan/nan,0/0/0/0,15
+"Hierarchy + refer: acc >= 0.70, Mild >= 10%, Severe >= 0%",0.0000,,"[nan, nan]",,,,0.0000,,0.0000,nan/nan/nan/nan,0/0/0/0,15
+"Hierarchy + refer: acc >= 0.70, Mild >= 10%, Severe >= 15%",0.0000,,"[nan, nan]",,,,0.0000,,0.0000,nan/nan/nan/nan,0/0/0/0,15

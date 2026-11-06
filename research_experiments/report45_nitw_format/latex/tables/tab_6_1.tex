@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+\caption{Headline results of Phase I (image-derived inputs only; original four-class labels).}\label{tab:6.1}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.200\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.321\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.210\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.267\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Result} & \textbf{Model} & \textbf{Accuracy [95 \% CI]} & \textbf{Population} \\
+\midrule
+\textbf{Best on all patients} & Ten-member ensemble with ordinal meta-learner (SUPER-TOP10-ORD) & \textbf{0.587} [0.565, 0.610] & all 837 development ECGs (cross-validation) \\
+Best staged model & STAGED-4 on the extended pool & 0.585 [0.557, 0.613] & all 837 development ECGs \\
+\textbf{Best in the 60s} & Image-only triage model & \textbf{0.694} [0.655, 0.736] & the 56 \% of patients it answers (cross-validation) \\
+\textbf{Best in the 70s} & Same frozen triage model, scored once & \textbf{0.747} [0.660, 0.837] & the 50 \% of unseen locked-test patients it answers \\
+\bottomrule
+\end{tabular}
+\end{table}

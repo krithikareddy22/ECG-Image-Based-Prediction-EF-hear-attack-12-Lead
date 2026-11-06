@@ -1,0 +1,6 @@
+# per-ECG outputs, features, logs, run markers and the local integrity snapshot never go to git
+data/
+logs/
+__pycache__/
+results/running/
+results/integrity_phase5_before.json

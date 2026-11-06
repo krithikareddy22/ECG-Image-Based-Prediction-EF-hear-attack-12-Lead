@@ -1,0 +1,11 @@
+{
+ "members": [
+  "mlp2",
+  "mlp3",
+  "gated"
+ ],
+ "method": "vote",
+ "params": {},
+ "seed": -1,
+ "repeat": 1
+}

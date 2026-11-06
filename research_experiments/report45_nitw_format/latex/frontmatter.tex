@@ -1,0 +1,225 @@
+% =============================================================================================
+% Front matter, laid out exactly as the NITW Phase I template (title page, approval, certificate,
+% declaration, acknowledgements, abstract, contents, lists).  Fill the [bracketed] fields.
+% =============================================================================================
+\newcommand{\ReportTitle}{Four-Class Left Ventricular Ejection Fraction Classification from 12-Lead ECG Printout Images using Foundation Models, Engineered ECG Features and Public-Data Transfer}
+\newcommand{\ReportTitleUpper}{FOUR-CLASS LEFT VENTRICULAR EJECTION FRACTION CLASSIFICATION FROM 12-LEAD ECG PRINTOUT IMAGES USING FOUNDATION MODELS, ENGINEERED ECG FEATURES AND PUBLIC-DATA TRANSFER}
+\newcommand{\StudentA}{Sai Chaithr}\newcommand{\RollA}{23ECB0A20}
+\newcommand{\StudentB}{[Student 2 name]}\newcommand{\RollB}{[Roll No.]}
+\newcommand{\StudentC}{[Student 3 name]}\newcommand{\RollC}{[Roll No.]}
+\newcommand{\Guide}{[Guide's name with title]}
+\newcommand{\GuideDesig}{[Designation]}
+\newcommand{\Dept}{Electronics and Communication Engineering}
+\newcommand{\DeptUpper}{ELECTRONICS AND COMMUNICATION ENGINEERING}
+\newcommand{\Programme}{Electronics and Communication Engineering}
+\newcommand{\MonthYear}{November 2026}
+
+% spacing of the approval, certificate and declaration pages, calibrated to the template
+\newlength{\apA}\setlength{\apA}{22.76pt}\newlength{\apB}\setlength{\apB}{86.91pt}\newlength{\apC}\setlength{\apC}{88.80pt}\newlength{\apD}\setlength{\apD}{88.80pt}
+\newlength{\ceA}\setlength{\ceA}{38.18pt}\newlength{\ceB}\setlength{\ceB}{30.06pt}\newlength{\ceC}\setlength{\ceC}{99.58pt}\newlength{\ceD}\setlength{\ceD}{56.91pt}
+\newlength{\deA}\setlength{\deA}{35.76pt}\newlength{\deB}\setlength{\deB}{10.01pt}\newlength{\deI}\setlength{\deI}{6.00pt}\newlength{\deS}\setlength{\deS}{2.00pt}\newlength{\deC}\setlength{\deC}{71.13pt}
+\pagenumbering{roman}
+% ---------------------------------------------------------------- title page (no number)
+% vertical positions calibrated to the template's title page (1.1 line stretch; a longer title pushes the
+% middle block down, the bottom block stays where it is)
+\newlength{\tpTop}\setlength{\tpTop}{-28.20pt}
+\newlength{\tpA}\setlength{\tpA}{25.61pt}     % title -> "Phase I ..."
+\newlength{\tpIt}\setlength{\tpIt}{3.00pt}    % between the italic lines
+\newlength{\tpB}\setlength{\tpB}{14.23pt}     % -> "of"
+\newlength{\tpC}\setlength{\tpC}{11.38pt}     % -> "Bachelor of Technology"
+\newlength{\tpD}\setlength{\tpD}{4.00pt}      % -> "in <programme>"
+\newlength{\tpE}\setlength{\tpE}{11.38pt}     % -> "by"
+\newlength{\tpF}\setlength{\tpF}{11.38pt}      % -> students
+\newlength{\tpG}\setlength{\tpG}{7.41pt}    % between students
+\newlength{\tpH}\setlength{\tpH}{17.64pt}     % -> "Under the guidance of"
+\newlength{\tpI}\setlength{\tpI}{8.54pt}      % -> guide
+\newlength{\tpJ}\setlength{\tpJ}{-0.00pt}      % -> designation
+\newlength{\tpK}\setlength{\tpK}{8pt}      % -> logo
+\newlength{\tpL}\setlength{\tpL}{3.00pt}      % department -> NITW
+\newlength{\tpM}\setlength{\tpM}{3.00pt}      % NITW -> date
+\newlength{\tpBottom}\setlength{\tpBottom}{0.00pt}
+\begin{titlepage}
+\setstretch{1.1}
+\begin{center}
+\vspace*{\tpTop}
+{\Large\bfseries\ReportTitleUpper\par}
+\vspace{\tpA}
+{\bfseries\itshape Phase I Project Progress Report submitted to the\\[\tpIt]
+National Institute of Technology Warangal\\[\tpIt]
+in partial fulfilment of the requirements for the award of the degree\par}
+\vspace{\tpB}
+{\bfseries\itshape of\par}
+\vspace{\tpC}
+{\large\bfseries Bachelor of Technology\\[\tpD] in \Programme\par}
+\vspace{\tpE}
+{\bfseries\itshape by\par}
+\vspace{\tpF}
+{\large\bfseries \StudentA}\ (Roll No.\ \RollA)\\[\tpG]
+{\large\bfseries \StudentB}\ (Roll No.\ \RollB)\\[\tpG]
+{\large\bfseries \StudentC}\ (Roll No.\ \RollC)\par
+\vspace{\tpH}
+Under the guidance of\par
+\vspace{\tpI}
+{\large\bfseries \Guide\par}
+\vspace{\tpJ}
+{\small \GuideDesig, Department of \Dept\par}
+\vspace{\tpK}
+\includegraphics[width=2.3cm]{figures/nitw_logo.png}\par
+\vfill
+{\bfseries DEPARTMENT OF \DeptUpper\\[\tpL]
+NATIONAL INSTITUTE OF TECHNOLOGY WARANGAL\\[\tpM]
+\MonthYear\par}
+\vspace{\tpBottom}
+\end{center}
+\end{titlepage}
+\setcounter{page}{2}
+
+% ---------------------------------------------------------------- approval of the project evaluation board
+\thispagestyle{empty}
+\addcontentsline{toc}{chapter}{Certificate of Approval}
+{\centering\large\bfseries APPROVAL OF THE PROJECT EVALUATION BOARD\par}
+\vspace{30pt}
+\hfill DD/MM/YYYY\hspace*{\fontdimen2\font}\par   % template keeps one word space after the date
+\vspace{\apA}
+Certified that the report entitled \textbf{\ReportTitle} submitted by \StudentA\ (Roll No.\ \RollA), \StudentB\ (Roll No.\ \RollB) and \StudentC\ (Roll No.\ \RollC) to the National Institute of Technology Warangal, as the Phase I progress report of their Bachelor of Technology project in \Programme, has been examined and accepted by the evaluation board.
+
+\vspace{\apB}
+\noindent(Member of the Board)\hfill(Member of the Board)\hfill(Member of the Board)
+
+\vspace{\apC}
+\noindent(Supervisor)\hfill(Co-Supervisor)
+
+\vspace{\apD}
+\noindent(Head of the Department)\hfill(Chairperson, Evaluation Board)
+\clearpage
+
+% ---------------------------------------------------------------- certificate
+\thispagestyle{empty}
+\addcontentsline{toc}{chapter}{Certificate}
+{\centering (The certificate is to be printed on the Departmental Letter-Head)\par}
+\vspace{\ceA}
+{\centering\large\bfseries\underline{CERTIFICATE}\par}
+\vspace{\ceB}
+\noindent This is to certify that the report entitled \textbf{\ReportTitle}, submitted by \textbf{\StudentA\ (Roll No.\ \RollA), \StudentB\ (Roll No.\ \RollB) and \StudentC\ (Roll No.\ \RollC)} to the National Institute of Technology Warangal, is a record of bona fide project work carried out by them under my (our) supervision during Phase I of their Bachelor of Technology project in \Programme.
+
+\vspace{\ceC}
+\noindent\begin{tabular}{@{}c@{}}
+\rule{6cm}{0.4pt}\\
+Supervisor\\
+\Guide
+\end{tabular}
+
+\vspace{\ceD}
+\noindent Date:
+\clearpage
+
+% ---------------------------------------------------------------- declaration
+\thispagestyle{empty}
+\addcontentsline{toc}{chapter}{Declaration}
+{\centering\large\bfseries DECLARATION\par}
+\vspace{\deA}
+\noindent We certify that
+\begin{enumerate}[label=\alph*.,leftmargin=2em,topsep=\deB,itemsep=\deI]
+  \item The work contained in the report is original and has been done by us under the general supervision of our supervisor(s).
+  \item The work has not been submitted to any other Institute for any degree or diploma.
+  \item We have followed the guidelines provided by the Institute in writing the report.
+  \item Whenever we have used materials (data, theoretical analysis, and text) from other sources, we have given due credit to them by citing them in the text of the report and giving their details in the references.
+  \item Whenever we have quoted written materials from other sources, we have put them under quotation marks and given due credit to the sources by citing them and giving required details in the references.
+  \item We took help from an AI assistant for some tasks, such as writing and checking code, running the documented experiments and checking the wording. All design decisions, data handling approvals and conclusions are our own.
+\end{enumerate}
+
+\vspace{\deC}
+\noindent\begin{tabular}{@{}c@{\hspace{35.1pt}}c@{\hspace{35.1pt}}c@{}}
+\rule{4.2cm}{0.4pt} & \rule{4.2cm}{0.4pt} & \rule{4.2cm}{0.4pt}\\
+\StudentA & \StudentB & \StudentC\\
+(\RollA) & (\RollB) & (\RollC)
+\end{tabular}\par
+\vspace{\deS}
+{\centering Signatures of the Students\par}
+\clearpage
+
+% ---------------------------------------------------------------- acknowledgements (moved here from the end, as in the template)
+\thispagestyle{empty}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\frontheading{Acknowledgements}
+We thank our supervisor, \Guide, for guidance throughout Phase I, and the Department of \Dept, National Institute of Technology Warangal, for its support. We thank the cardiology department of the partner hospital for the ECG and echocardiography records, and the creators of EchoNext, ECGFounder and the other open resources used in this work.
+
+\vspace{24pt}
+\hfill\textbf{\StudentA, \StudentB\ and \StudentC}
+\clearpage
+
+% ---------------------------------------------------------------- abstract
+\fancyhead[L]{}\fancyhead[R]{\thepage}
+\addcontentsline{toc}{chapter}{Abstract}
+\frontheading{Abstract}
+Heart failure with reduced left ventricular ejection fraction (LVEF) is common and treatable but often detected late, because echocardiography is not available at every point of care. The 12-lead ECG is recorded routinely, yet in many Indian hospitals it survives only as a printed PDF page. This project grades LVEF into four classes (Normal, Mild, Moderate, Severe) from such printout images alone.
+
+The data are 1,047 single-centre printouts from 993 patients, labelled from echocardiography: 837 ECGs for development and 210 locked until the final model was frozen. The traces were recovered exactly from the vector PDFs. Every model was evaluated with patient-grouped, repeated, nested cross-validation, corrected intervals and a written pre-registration. More than 1,300 results were recorded across ten stages, covering image CNNs, the ECGFounder and ECG-FM foundation models, LSTM and CNN-LSTM networks, 594 engineered features, gradient boosting, staged and ordinal ensembles and triage prediction. The public EchoNext data (4,827 ECGs) were redrawn in the hospital format and used for transfer learning.
+
+The best four-class accuracy on all patients, from image-derived inputs only, is 0.587 [0.565, 0.610], above the model that also reads the printed machine measurements (0.562) and the original image CNN (0.471). A triage model that answers only confident cases is correct for 0.694 of the 56\,\% of patients it answers in cross-validation and 0.747 of the 50\,\% it answers on the locked test, scored once. Models trained only on EchoNext detect EF $\le 45$\,\% on the hospital printouts with AUROC 0.85. A simulation shows why all model families converge near 0.59: the ECG-based EF estimate correlates with echo at $r\approx0.66$, and 0.70 on all patients would need $r\approx0.90$. Phase II will use digital ECGs, larger linked datasets and verified Simpson-method EF labels.
+
+\textbf{Index Terms:} electrocardiogram, left ventricular ejection fraction, heart failure screening, ECG printout digitisation, ECG foundation model, ECGFounder, EchoNext, transfer learning, ensemble learning, selective prediction, nested cross-validation.
+\clearpage
+\fancyhead[L]{\nouppercase{\leftmark}}\fancyhead[R]{\thepage}
+
+% ---------------------------------------------------------------- contents and lists
+\renewcommand{\contentsname}{Contents}
+\begingroup\setstretch{\liststretch}
+\tableofcontents
+\clearpage
+\phantomsection\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\clearpage
+\phantomsection\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\clearpage
+\endgroup
+
+% ---------------------------------------------------------------- abbreviations and notation
+% template: \LARGE heading, running header, list at 1.2 stretch, indented 18 pt, abbreviation column 2.6 cm
+\clearpage
+\begingroup\setstretch{\liststretch}
+\thispagestyle{fancy}
+\markboth{List of Abbreviations}{}
+\phantomsection\addcontentsline{toc}{chapter}{List of Abbreviations}
+\frontheading{List of Abbreviations}
+\vspace*{7pt}%                     template: the list starts 7 pt lower than body text under a heading
+\newcommand{\abbrtable}[1]{\noindent\hspace*{18pt}\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm}@{\hspace{12pt}}>{\raggedright\arraybackslash}p{\dimexpr\linewidth-18pt-2.6cm-12pt\relax}@{}}#1\end{tabular}\par}
+\abbrtable{%
+AUROC & Area under the receiver operating characteristic curve\\
+CI & Confidence interval (corrected for repeated cross-validation unless stated)\\
+CNN & Convolutional neural network\\
+CV & Cross-validation\\
+ECG & Electrocardiogram\\
+ECGF, ECGFounder & ECG foundation model pre-trained on more than 10 million ECGs (Li et al.)\\
+EchoNext & Public ECG--echocardiography dataset (PhysioNet), about 100,000 ECGs\\
+EF, LVEF & (Left ventricular) ejection fraction, in per cent\\
+GBM & Gradient-boosting machine (LightGBM)\\
+HF & Heart failure\\
+LR & Logistic regression\\
+LSTM & Long short-term memory recurrent network\\
+Mi, Mo, N, S & Mild, Moderate, Normal and Severe classes\\
+MLP & Multi-layer perceptron\\
+STAGED-4 & Staged four-class decision: Normal / \{Mild, Moderate\} / Severe, then Mild vs Moderate\\
+SUPER & Ensemble of all image-derived members pruned inside each training fold\\
+TCRT & Total cosine R-to-T\\
+TOP10 & Ensemble keeping the ten best single members per fold\\
+}
+
+% the Notation block is kept in one piece, so its heading never ends a page on its own
+\vspace{14pt}
+\noindent\begin{minipage}{\linewidth}
+\setstretch{\liststretch}
+{\large\bfseries Notation\par}\vspace{6pt}
+\abbrtable{%
+$y$ & Class label $y\in\{0,1,2,3\}$: Normal, Mild, Moderate, Severe\\
+$\hat{\mu}$ & Predicted EF (per cent)\\
+$\sigma$ & Standard deviation of the EF estimation error\\
+$r$ & Pearson correlation between predicted and echo EF\\
+$\Phi(\cdot)$ & Standard normal cumulative distribution function\\
+$\mathbf{w}$ & Class weights of the decision rule\\
+$J$ & Number of cross-validation cells (here 15)\\
+}
+\end{minipage}
+\endgroup
+\clearpage

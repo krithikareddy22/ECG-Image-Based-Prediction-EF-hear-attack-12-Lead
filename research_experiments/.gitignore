@@ -1,0 +1,6 @@
+# large binaries: keep out of git (reproduce with the download step in reports/)
+models/pretrained/
+models/**/*.pt
+models/**/*.npz
+results/**/features_*.npz
+__pycache__/

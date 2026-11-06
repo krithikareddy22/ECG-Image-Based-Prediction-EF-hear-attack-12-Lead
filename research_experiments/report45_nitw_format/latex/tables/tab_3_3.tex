@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\caption{Training against validation accuracy of the main networks. Upper part: original project, fixed training/validation split, at the selected epoch (training accuracy is measured during the epoch, with aug- mentation and dropout active). Lower part: frozen-feature models in development cross-validation (repeat 0, seed 42): accuracy on the training folds against the held-out fold.}\label{tab:3.3}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.343\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.156\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.151\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.164\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.184\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Network} & \textbf{Epochs (selected)} & \textbf{Training accuracy} & \textbf{Validation / held-out accuracy} & \textbf{Train / val loss} \\
+\midrule
+ResNet-18 (filtered image) & 24 (14) & 0.515 & 0.524 & 1.237 / 1.142 \\
+ECGNet (SE-ResNet) & 30 (21) & 0.523 & 0.476 & 1.222 / 1.213 \\
+EfficientNet-B0 & 29 (19) & 0.447 & 0.351 & 1.327 / 1.436 \\
+$_{-3}$ &  &  &  &  \\
+ConvNeXt-Atto (10 ) & 30 (25) & 0.404 & 0.452 & 1.336 / 1.318 \\
+1-D SE-ResNet on digitised waveforms & 29 (14) & 0.553 & 0.482 & 1.127 / 1.344 \\
+ECGFounder fine-tuned (stages 5--6) & 13 (8) & -- & 0.524 & 0.660 / 1.174 \\
+\midrule
+ECGFounder linear head (CV) & -- & 0.730 & 0.510 & -- \\
+ECGFounder MLP head (CV) & -- & 0.761 & 0.514 & -- \\
+Header + ECGFounder MLP fusion (CV) & -- & 0.668 & 0.535 & -- \\
+Header + clinical features, logistic regression (CV) & -- & 0.562 & 0.507 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

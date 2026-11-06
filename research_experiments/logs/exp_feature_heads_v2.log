@@ -1,0 +1,28 @@
+[A1_ecgf_aligned_deep_multinomial] TEST acc 0.500 bal 0.421 mF1 0.412 QWK 0.464 MildF1 0.265 macroAUC 0.668 HF-AUC 0.810 | VAL bal 0.445 mF1 0.444
+[A1_ecgf_aligned_logits_multinomial] TEST acc 0.514 bal 0.462 mF1 0.442 QWK 0.519 MildF1 0.286 macroAUC 0.703 HF-AUC 0.801 | VAL bal 0.421 mF1 0.414
+[A1_ecgf_aligned_deep_logits_multinomial] TEST acc 0.514 bal 0.451 mF1 0.429 QWK 0.499 MildF1 0.219 macroAUC 0.688 HF-AUC 0.811 | VAL bal 0.444 mF1 0.441
+[A1_ecgf_tiled_deep_multinomial] TEST acc 0.486 bal 0.398 mF1 0.392 QWK 0.402 MildF1 0.250 macroAUC 0.633 HF-AUC 0.734 | VAL bal 0.418 mF1 0.411
+[A1_ecgf_tiled_logits_multinomial] TEST acc 0.429 bal 0.343 mF1 0.314 QWK 0.360 MildF1 0.061 macroAUC 0.631 HF-AUC 0.732 | VAL bal 0.382 mF1 0.361
+[A1_ecgf_tiled_deep_logits_multinomial] TEST acc 0.452 bal 0.357 mF1 0.349 QWK 0.382 MildF1 0.187 macroAUC 0.641 HF-AUC 0.745 | VAL bal 0.397 mF1 0.386
+[A1_ecgf_short_deep_multinomial] TEST acc 0.467 bal 0.373 mF1 0.370 QWK 0.440 MildF1 0.214 macroAUC 0.649 HF-AUC 0.765 | VAL bal 0.458 mF1 0.449
+[A1_ecgf_short_logits_multinomial] TEST acc 0.471 bal 0.377 mF1 0.344 QWK 0.403 MildF1 0.143 macroAUC 0.633 HF-AUC 0.736 | VAL bal 0.450 mF1 0.417
+[A1_ecgf_short_deep_logits_multinomial] TEST acc 0.481 bal 0.395 mF1 0.392 QWK 0.420 MildF1 0.262 macroAUC 0.652 HF-AUC 0.760 | VAL bal 0.444 mF1 0.438
+[AB_ecgf_aligned_deep_focal] TEST acc 0.510 bal 0.437 mF1 0.428 QWK 0.471 MildF1 0.265 macroAUC 0.678 HF-AUC 0.812 | VAL bal 0.428 mF1 0.433
+[AB_ecgf_aligned_deep_coral] TEST acc 0.390 bal 0.376 mF1 0.345 QWK 0.394 MildF1 0.329 macroAUC 0.673 HF-AUC 0.785 | VAL bal 0.428 mF1 0.410
+[AB_ecgf_aligned_deep_cumlink] TEST acc 0.467 bal 0.427 mF1 0.421 QWK 0.463 MildF1 0.308 macroAUC 0.679 HF-AUC 0.792 | VAL bal 0.469 mF1 0.463
+/home/user/ECG-Image-Based-Prediction-EF-hear-attack-12-Lead/ecg_ef/header.py:89: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["stmt=" + v] = st.map(lambda L: float(v in L))
+[B_header_multinomial] TEST acc 0.524 bal 0.458 mF1 0.425 QWK 0.453 MildF1 0.147 macroAUC 0.686 HF-AUC 0.807 | VAL bal 0.479 mF1 0.438
+[B_header_focal] TEST acc 0.519 bal 0.461 mF1 0.436 QWK 0.476 MildF1 0.184 macroAUC 0.684 HF-AUC 0.806 | VAL bal 0.459 mF1 0.433
+[B_header_coral] TEST acc 0.414 bal 0.382 mF1 0.373 QWK 0.348 MildF1 0.310 macroAUC 0.655 HF-AUC 0.730 | VAL bal 0.394 mF1 0.380
+[B_header_cumlink] TEST acc 0.462 bal 0.422 mF1 0.409 QWK 0.480 MildF1 0.247 macroAUC 0.642 HF-AUC 0.790 | VAL bal 0.429 mF1 0.402
+                                    tag  val_score  test_bal
+       A1_ecgf_aligned_deep_multinomial      0.612     0.421
+     A1_ecgf_aligned_logits_multinomial      0.580     0.462
+A1_ecgf_aligned_deep_logits_multinomial      0.607     0.451
+         A1_ecgf_tiled_deep_multinomial      0.535     0.398
+       A1_ecgf_tiled_logits_multinomial      0.515     0.343
+  A1_ecgf_tiled_deep_logits_multinomial      0.519     0.357
+         A1_ecgf_short_deep_multinomial      0.563     0.373
+       A1_ecgf_short_logits_multinomial      0.524     0.377
+  A1_ecgf_short_deep_logits_multinomial      0.549     0.395

@@ -1,0 +1,30 @@
+{
+  "method": "stack_lr",
+  "members": [
+    "hdr_all_skLR",
+    "img_resnet18_baseline_recipe"
+  ],
+  "rule": "argmax",
+  "objective": "s3",
+  "params": {
+    "fold0": {
+      "C": 0.03
+    },
+    "fold1": {
+      "C": 0.01
+    },
+    "fold2": {
+      "C": 0.03
+    },
+    "fold3": {
+      "C": 0.1
+    },
+    "fold4": {
+      "C": 0.01
+    },
+    "final": {
+      "C": 0.01
+    }
+  },
+  "decision_params": {}
+}

@@ -1,0 +1,39 @@
+\chapter{Introduction}\label{ch:1}
+
+\section{Background and motivation}\label{sec:1.1}
+
+Heart failure affects tens of millions of people, and its outcome depends on how early left ventricular (LV) systolic dysfunction is recognised \cite{ref1,ref2}. Systolic function is graded by the left ventricular ejection fraction (LVEF), measured by echocardiography, which needs an ultrasound machine and a trained operator. The 12-lead electrocardiogram (ECG), in contrast, is recorded for almost every cardiac patient, and deep learning has shown that it carries information about reduced LVEF \cite{ref3,ref4}. That evidence comes mostly from digital signals and very large datasets. In many Indian hospitals the ECG survives only as a printed page or its PDF, which shows each lead for just 2.5 s plus one 10-s rhythm strip.
+
+\section{Problem statement}\label{sec:1.2}
+
+Given only the image of a hospital 12-lead ECG printout, predict the patient's four-class LVEF category:
+
+\begin{itemize}
+  \item \textbf{Normal:} EF above 52 \% (men) or at least 54 \% (women) \cite{ref5};
+  \item \textbf{Mild:} 41 \% up to the Normal limit;
+  \item \textbf{Moderate:} 31 to below 41 \%;
+  \item \textbf{Severe:} below 31 \%.
+\end{itemize}
+The model may use only the waveform on the page: no printed machine measurements, age or sex. The Mild band, only 11--13 EF points wide, is where an early warning is most valuable and where the ECG changes are subtle. A useful model must therefore detect Mild and not only the extremes.
+
+\section{Objectives}\label{sec:1.3}
+
+\begin{enumerate}
+  \item Recover the exact ECG signal from the printout and build image-derived representations of it.
+  \item Train and compare the widest practical range of models, from classical features and CNNs to foundation models, LSTMs and ensembles, under a nested and pre-registered protocol.
+  \item Transfer knowledge from public ECG--echo data (EchoNext) drawn in the hospital printout format.
+  \item Find the best all-patient four-class model and a triage model that answers confidently, and confirm it once on a locked test set.
+  \item Quantify the accuracy that the data can support.
+\end{enumerate}
+\section{Contributions}\label{sec:1.4}
+
+\begin{itemize}
+  \item An exact vector digitiser and an inverse printout renderer for the hospital ECG format.
+  \item More than 1,300 evaluated configurations across ten experimental stages, all documented.
+  \item A best all-patient four-class accuracy of \textbf{0.587} from image-derived inputs only, a triage accuracy of \textbf{0.694} on 56 \% of patients, and \textbf{0.747} on unseen locked-test patients.
+  \item A quantitative explanation of the accuracy ceiling in terms of the precision of the EF labels.
+\end{itemize}
+\section{Organisation of the report}\label{sec:1.5}
+
+Chapter~\ref{ch:2} reviews the literature. Chapter~\ref{ch:3} describes the data, digitisation, features, networks and evaluation protocol. Chapter~\ref{ch:4} reports the experimental study phase by phase and Chapter~\ref{ch:5} the public-data transfer. Chapter~\ref{ch:6} presents the results and their analysis, and Chapter~\ref{ch:7} concludes with the plan for Phase II.
+

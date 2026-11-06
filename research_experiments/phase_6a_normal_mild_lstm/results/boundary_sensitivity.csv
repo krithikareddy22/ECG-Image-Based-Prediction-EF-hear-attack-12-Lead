@@ -1,0 +1,23 @@
+rule,threshold,sex_specific,mild_to_normal_ecgs,mild_to_normal_patients,mild_to_normal_consistent_ecgs,normal_to_mild_ecgs,normal_to_mild_patients
+sex-independent EF >= 48 is Normal,48.0,False,67,67,57,0,0
+sex-independent EF >= 48.5 is Normal,48.5,False,55,55,45,0,0
+sex-independent EF >= 49 is Normal,49.0,False,47,47,37,0,0
+sex-independent EF >= 49.5 is Normal,49.5,False,40,40,30,0,0
+sex-independent EF >= 50 is Normal,50.0,False,37,37,27,0,0
+sex-independent EF >= 50.5 is Normal,50.5,False,35,35,25,<5,<5
+sex-independent EF >= 51 is Normal,51.0,False,31,31,21,<5,<5
+sex-independent EF >= 51.5 is Normal,51.5,False,27,27,17,<5,<5
+sex-independent EF >= 52 is Normal,52.0,False,22,22,12,<5,<5
+sex-independent EF >= 52.5 is Normal,52.5,False,17,17,7,<5,<5
+sex-independent EF >= 53 is Normal,53.0,False,15,15,5,5,5
+sex-independent EF >= 53.5 is Normal,53.5,False,13,13,<5,6,6
+sex-independent EF >= 54 is Normal,54.0,False,10,10,0,9,9
+sex-independent EF >= 54.5 is Normal,54.5,False,10,10,0,11,11
+sex-independent EF >= 55 is Normal,55.0,False,10,10,0,13,13
+original sex-specific boundary -4 points,-4.0,True,57,57,47,0,0
+original sex-specific boundary -3 points,-3.0,True,37,37,27,0,0
+original sex-specific boundary -2 points,-2.0,True,25,25,15,0,0
+original sex-specific boundary -1 points,-1.0,True,17,17,7,<5,<5
+original sex-specific boundary +0 points,0.0,True,10,10,0,<5,<5
+original sex-specific boundary +1 points,1.0,True,10,10,0,5,5
+original sex-specific boundary +2 points,2.0,True,10,10,0,10,10

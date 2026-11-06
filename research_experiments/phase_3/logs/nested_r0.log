@@ -1,0 +1,11 @@
+fold 0 done (1.1 min)
+fold 1 done (2.3 min)
+fold 2 done (3.5 min)
+fold 3 done (4.8 min)
+fold 4 done (5.7 min)
+                              accuracy  balanced_accuracy  macro_f1  f1_mild  recall_mild    qwk  recall_Normal  share_pred_normal
+original                         0.551              0.486     0.459    0.227        0.178  0.588          0.786              0.492
+calibrated: prior, accuracy      0.576              0.446     0.434    0.209        0.146  0.555          0.893              0.595
+calibrated: prior, protected     0.571              0.479     0.462    0.217        0.162  0.574          0.844              0.539
+calibrated: bias, accuracy       0.583              0.460     0.418    0.051        0.027  0.576          0.919              0.611
+calibrated: bias, protected      0.575              0.474     0.439    0.115        0.070  0.591          0.878              0.564

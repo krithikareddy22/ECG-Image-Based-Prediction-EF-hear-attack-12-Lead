@@ -1,0 +1,46 @@
+\chapter{Experimental Study}\label{ch:4}
+
+\input{tables/tab_4_1}
+
+Phase I was carried out in ten stages(Table~\ref{tab:4.1}). Each stage asked one question, and its lesson was carried into the next. Together they produced more than 1,300 recorded results; the Supplementary Tables list every configuration, and Figure~\ref{fig:6.2} in Chapter~\ref{ch:6} compares all model families.
+
+\section{Original project and Phase 1}\label{sec:4.1}
+
+\input{tables/tab_4_2}
+
+\input{tables/tab_4_3}
+
+The original project compared 27 models on the fixed 210-ECG test set: classical HOG features with an SVM, CNNs trained from scratch (ECGNet, EfficientNet-B0, MobileNetV3, ConvNeXt-Atto), ImageNet ResNet-18, a 1-D ResNet on digitised waveforms, gradient boosting on 263 engineered features, and the printed header. Every pre-trained model screened heart failure with AUC 0.73--0.80, and the header + ResNet-18 fusion reached 0.552. Phase 1 introduced ECGFounder, which gave the best balanced accuracy (0.464), macro-F1 (0.448), Mild recall (0.255) and screen AUC (0.81--0.82); it became the backbone of later work.
+
+\section{Phases 2--5: robust evaluation, fusion and decision rules}\label{sec:4.2}
+
+\input{tables/tab_4_4}
+
+Phase 2 moved all modelling to pre-registered, patient-grouped cross-validation on the 837 development ECGs. Phase 3 combined representations; its soft-vote ensemble C1 (0.547) became the reference. Phase 4 added EF regression from the image (MAE 10.4 points, $r=0.66$, AUROC 0.82 for EF $<41$ \%). Phase 5 selected C3, a vote ensemble with a nested class-prior rule (0.562 with all four classes detected), and showed that the most confident half of the ECGs is graded with 0.66--0.68 accuracy, the first evidence for triage.
+
+\section{Phases 6, 6A and 6B: fine-tuning and the LSTM family}\label{sec:4.3}
+
+\input{tables/tab_4_5}
+
+\input{tables/tab_4_6}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1.00\linewidth,height=0.80\textheight,keepaspectratio]{figures/fig_4_1}
+\caption{Phase 6B architectures: waveform encoders (A), early fusion with the header and ECGFounder (B) and late fusion with the vote ensemble (C).}\label{fig:4.1}
+\end{figure}
+
+Fine-tuning ECGFounder and adding a second encoder (ECG-FM) did not raise the EF correlation above the frozen embedding ($r\approx0.65$), which confirmed it as the best representation. Phase 6A then built a family of recurrent networks that read the waveform directly (Table~\ref{tab:4.5}): five LSTM variants with 1--2 layers and 64 hidden units, a nested selection among them, and a CNN-LSTM with a three-layer convolutional front-end. The CNN-LSTM had the best screen AUC (0.76) and Mild recall (0.19) of the family with only 117 thousand parameters. Fused with ECGFounder in Phase 6B, the recurrent encoders reached the level of the best ensembles (0.55--0.56, screen AUC 0.83).
+
+\section{Label-quality, cohort and abstention studies}\label{sec:4.4}
+
+Pre-registered studies asked whether cleaner labels, reliable cohorts or abstention could lift performance. On ECGs with clear or verified labels the models score in the 60s and 70s (0.668 on 582 clear-cut ECGs, 0.677 on 620 kept after removing suspect labels, 0.707 on 264 clean, clear-cut ECGs), and selective prediction reaches 0.71 on 22 \% of ECGs. Clinician-style features identified interpretable Mild markers: a spatial QRS--T angle above 100$^{\circ}$ in 52 \% of Mild against 20 \% of Normal ECGs, and poor R-wave progression in 31 \% against 7 \%.
+
+\section{Phase 7 and the image-only ensembles}\label{sec:4.5}
+
+\input{tables/tab_4_7}
+
+\input{tables/tab_4_8}
+
+Phase 7 tested new representations and objectives in pilots, measured the learning curve ($+1.4$ accuracy points per doubling of the data) and built header-free cascades. The cascade AGT-img answers only when its EF grade agrees with the image-only classifier and the estimate is far from every class limit: \textbf{0.694 on 56 \%} of ECGs. It was frozen and scored once on the locked test set (\textbf{0.747}). The image-only stacks (HIER, ENH, ULT) then reached 0.570--0.571 without the printed header, above the header-using C3 (0.562).
+

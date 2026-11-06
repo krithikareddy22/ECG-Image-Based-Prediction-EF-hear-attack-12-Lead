@@ -1,0 +1,32 @@
+{\small
+\begin{longtable}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.165\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.239\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.150\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.177\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.267\linewidth-2\tabcolsep\relax}}
+\caption{Relevant studies: data, input, task and main reported result (as printed in each abstract).}\label{tab:2.1}\\
+\toprule
+\textbf{Study} & \textbf{Data} & \textbf{Input} & \textbf{Task} & \textbf{Main reported result} \\
+\midrule
+\endfirsthead
+\multicolumn{5}{l}{\small\emph{Table~\thetable\ (continued)}}\\
+\toprule
+\textbf{Study} & \textbf{Data} & \textbf{Input} & \textbf{Task} & \textbf{Main reported result} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Attia et al. \cite{ref3} & 44,959 train / 52,870 test patients, Mayo Clinic & digital 12-lead & EF $\le35$ \% & AUC 0.93, accuracy 85.7 \% \\
+Attia et al. \cite{ref32} & 3,874 prospective patients & digital 12-lead & EF $\le35$ \% & AUC 0.918; 39.8 \% of false positives had EF 36--50 \% \\
+Yao et al. \cite{ref4} & 22,641 adults, 120 care teams (RCT) & digital 12-lead & new low-EF diagnosis & diagnoses 1.6 \% $\rightarrow$ 2.1 \% (OR 1.32) \\
+Adedinsewo et al. \cite{ref33} & 1,606 emergency patients & digital 12-lead & EF $\le35$ \% / $<50$ \% & AUROC 0.89 / 0.85 \\
+Vaid et al. \cite{ref12} & 715,890 ECGs, 147,636 patients, 5 hospitals & digital 12-lead & EF 3 classes + regression & AUC 0.94 / 0.82 / 0.89 (internal); MAE 5.8--6.1 \\
+Kwon et al. \cite{ref34} & 55,163 ECGs, 2 hospitals & ECG features + demographics & HFrEF (EF $\le40$ \%) & AUROC 0.843 internal, 0.889 external \\
+Sangha et al. \cite{ref35} & 2.2 million ECGs plotted as images & ECG images & 6 rhythm / conduction labels & mean AUROC 0.99 (external 0.97) \\
+Sangha et al. \cite{ref13} & 385,601 ECGs, Yale + external sites & ECG images & EF $<40$ \% & AUROC 0.91 internal, 0.90--0.95 external \\
+Ulloa-Cerna et al. \cite{ref17} & 2.2 million ECGs, 484,765 adults & ECG + age, sex & composite structural disease & AUROC 0.91 \\
+Elias et al. \cite{ref36} & 77,163 patients & digital 12-lead & moderate / severe AS, AR, MR & AUROC 0.88 / 0.77 / 0.83 \\
+Poterucha et al. \cite{ref23} & $>1$ million ECG-- imaging pairs & digital 12-lead & structural heart disease & outperformed cardiologists; data and weights released \\
+Hughes et al. \cite{ref24} & 100,000 ECGs, 36,286 patients (public) & digital, 250 Hz & composite + 11 labels & composite AUROC 82.0 \\
+McKeen et al. \cite{ref22} & 1.5 million ECGs (pre-training) & digital 12-lead & EF $\le40$ \% and others & AUROC 0.929 for EF $\le40$ \% \\
+Li et al. \cite{ref21} & 10.8 million ECGs, 150 labels & digital 12-lead & broad diagnosis & AUROC $>0.95$ for 80 diagnoses \\
+\midrule
+\textbf{This work} & 837 development + 210 locked printouts, one centre; EchoNext 4,827 & printout images (and derived traces) & \textbf{four-class EF} & 0.587 all patients; 0.694 (56 \% answered); 0.747 locked test (50 \%); EF $\le45$ \% AUROC 0.85 from EchoNext only \\
+\end{longtable}
+}

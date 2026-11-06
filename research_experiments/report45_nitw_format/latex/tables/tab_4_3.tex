@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\caption{Phase 1 key models (fixed test set).}\label{tab:4.3}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.414\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.119\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.113\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.123\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.131\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.098\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Model} & \textbf{Accuracy} & \textbf{Bal. acc.} & \textbf{Macro-F1} & \textbf{Mild recall} & \textbf{HF AUC} \\
+\midrule
+Default pipeline, reproduced & 0.552 & 0.454 & 0.433 & 0.106 & 0.791 \\
+A1 ECGFounder, frozen & 0.500 & 0.421 & 0.412 & 0.234 & 0.810 \\
+\textbf{A2 ECGFounder, fine-tuned (3-seed ensemble)} & 0.524 & \textbf{0.464} & \textbf{0.448} & \textbf{0.255} & 0.812 \\
+A2 with a cumulative-link ordinal head & 0.510 & 0.417 & 0.393 & 0.170 & 0.790 \\
+A1 with a CORAL ordinal head & 0.390 & 0.376 & 0.345 & 0.489 & -- \\
+Header + A2 fusion & 0.505 & 0.445 & 0.425 & 0.213 & \textbf{0.819} \\
+\bottomrule
+\end{tabular}
+\end{table}

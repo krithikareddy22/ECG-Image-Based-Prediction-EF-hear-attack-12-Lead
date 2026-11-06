@@ -1,0 +1,61 @@
+{
+ "spec": {
+  "blocks": [
+   [
+    "hdr",
+    "numeric"
+   ],
+   [
+    "clin"
+   ],
+   [
+    "ecgf",
+    "aligned",
+    "f6"
+   ]
+  ],
+  "raw_std": true
+ },
+ "cfg": null,
+ "seed": 43,
+ "sk_lr": false,
+ "folds": [
+  {
+   "fold": 0,
+   "wd": 0.01,
+   "val_s3": 0.5591243445434787,
+   "best_epoch": 10,
+   "n_params": 34695
+  },
+  {
+   "fold": 1,
+   "wd": 0.01,
+   "val_s3": 0.5212139940848443,
+   "best_epoch": 67,
+   "n_params": 34695
+  },
+  {
+   "fold": 2,
+   "wd": 0.1,
+   "val_s3": 0.5368738794367433,
+   "best_epoch": 28,
+   "n_params": 34695
+  },
+  {
+   "fold": 3,
+   "wd": 0.01,
+   "val_s3": 0.4918545494678563,
+   "best_epoch": 6,
+   "n_params": 34695
+  },
+  {
+   "fold": 4,
+   "wd": 0.01,
+   "val_s3": 0.5337464229456765,
+   "best_epoch": 34,
+   "n_params": 34695
+  }
+ ],
+ "minutes": 0.39878032604853314,
+ "repeat": 2
+}

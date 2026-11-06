@@ -1,0 +1,29 @@
+{
+  "method": "stack_mlp_hdr",
+  "members": [
+    "ecgf_f6_lin_cedist1"
+  ],
+  "rule": "argmax",
+  "objective": "s3",
+  "params": {
+    "fold0": {
+      "alpha": 1.0
+    },
+    "fold1": {
+      "alpha": 0.1
+    },
+    "fold2": {
+      "alpha": 1.0
+    },
+    "fold3": {
+      "alpha": 1.0
+    },
+    "fold4": {
+      "alpha": 0.1
+    },
+    "final": {
+      "alpha": 1.0
+    }
+  },
+  "decision_params": {}
+}

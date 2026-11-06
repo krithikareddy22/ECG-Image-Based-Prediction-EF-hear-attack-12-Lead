@@ -1,0 +1,18 @@
+\chapter{Summary and Conclusions}\label{ch:7}
+
+\section{Conclusions}\label{sec:7.1}
+
+\begin{enumerate}
+  \item \textbf{Best on all patients: 0.587} [0.565, 0.610] from image-derived inputs only, about 99 \% of the 0.592 that the EF information of the ECG permits, and above the model that also reads the printed measurements (0.562).
+  \item \textbf{Best in the 60s: 0.694} [0.655, 0.736] on the 56 \% of patients the triage model answers in cross-validation.
+  \item \textbf{Best in the 70s: 0.747} [0.660, 0.837] on the 50 \% of unseen locked-test patients it answers, above its own development estimate.
+  \item \textbf{Transfer works across populations:} a model trained only on US public data detects EF $\le45$ \% on our printouts with AUROC 0.85.
+  \item \textbf{The ceiling is set by the labels and the information in the ECG:} 70 \% on all patients would need EF estimates correlating at $r\approx0.90$ with echo, against about 0.66 achievable today.
+\end{enumerate}
+\section{Scope for future work (Phase II)}\label{sec:7.2}
+
+\begin{itemize}
+  \item Larger, multi-year data with biplane-Simpson EF linked by patient identifier within days of the ECG.
+  \item Digital 10-s simultaneous ECGs where available, and enrichment for Mild and Moderate patients.
+  \item Prospective evaluation of the triage model as an echocardiography-referral aid, and deployment as a lightweight application.
+\end{itemize}

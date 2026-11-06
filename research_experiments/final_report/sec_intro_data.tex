@@ -1,0 +1,63 @@
+% ---------------------------------------------------------------------------------------------------------
+\section{Objective}\label{sec:intro}
+Estimate the LVEF class of a patient from the image of a standard hospital 12-lead ECG printout:
+\begin{itemize}
+  \item \textbf{Normal:} EF $>52$\,\% (men) or $\ge54$\,\% (women);
+  \item \textbf{Mild:} 41\,\% up to the Normal limit;
+  \item \textbf{Moderate:} 31--$<$41\,\%;
+  \item \textbf{Severe:} $<31$\,\%.
+\end{itemize}
+The owner's requirements, as they evolved over the project:
+\begin{enumerate}
+  \item four-class only (no binary simplification), with the original labels as the primary result;
+  \item image only: no printed machine measurements, age or sex as model inputs;
+  \item every class detected, with Mild recall $\ge 15$\,\%;
+  \item the highest accuracy obtainable without manipulating labels or the evaluation set.
+\end{enumerate}
+
+% ---------------------------------------------------------------------------------------------------------
+\section{Data}\label{sec:data}
+\begin{itemize}
+  \item \textbf{ECGs:} 1,047 single-centre 12-lead ECG PDFs from 993 patients (2020--2024: 232 / 294 / 226 / 295),
+    in the standard $3\times4$ + rhythm layout. Each lead is 2.5\,s long; lead II also appears as a 10-s rhythm strip.
+    Class totals: Normal 480, Mild 232, Moderate 221, Severe 114.
+  \item \textbf{Waveforms:} the traces are vector drawings and are digitised exactly from the PDF.
+  \item \textbf{Split:}
+    \begin{itemize}
+      \item a \textbf{development set} of 837 ECGs from 794 patients, used for all modelling;
+      \item a \textbf{locked test set} of 210 ECGs from 199 patients, with no patient overlap.
+    \end{itemize}
+    The original project and Phase 1 scored models on the test split. From Phase 2 on it was locked: never used for
+    training or selection, and scored once at the end with the frozen model (Section~\ref{sec:final}).
+  \item \textbf{Labels:} Teichholz EF from echocardiography reports, linked to each ECG by fuzzy patient-name
+    similarity. The yearly ECG--echo sheets (2020, 2021, 2022, 2024) contain no patient identifier.
+  \item \textbf{Development class counts:} Normal 384, Mild 185, Moderate 177, Severe 91.
+\end{itemize}
+
+\paragraph{Data-quality audit (Phases 4--6B).}
+\begin{itemize}
+  \item All 837 development ECGs link to at least one echo.
+  \item The folder label agrees with the nearest echo for 93.4\,\% of ECGs (55 disagree).
+  \item Link quality: 391 links have a name-match score $<100$; 192 have the nearest echo more than 30 days away.
+  \item Echo consistency: 85 ECGs have a linked echo of another class, and 77 have an EF spread of more than 10 points.
+  \item 221 ECGs lie within 3 EF points of a class limit.
+  \item The 2021 sheet's ECG dates were day/month-swapped; this was corrected (C6A-1) and does not change labels.
+  \item 29 near-identical name pairs exist under different patient keys: 15 within development, 11 straddling
+    development and test (excluded from the locked-test primary analysis), and 3 within test.
+\end{itemize}
+
+% ---------------------------------------------------------------------------------------------------------
+\section{Evaluation protocol}\label{sec:protocol}
+\begin{itemize}
+  \item \textbf{Cross-validation:} patient-grouped 5-fold CV $\times$ 3 repeats, identical folds for every model
+    (\texttt{phase\_2/configs/folds\_D.csv}).
+  \item \textbf{Nested choices:} hyper-parameters, thresholds and decision rules are chosen only inside the training
+    folds (inner CV).
+  \item \textbf{Confidence intervals:} corrected repeated-CV 95\,\% CIs (Nadeau--Bengio,
+    $n_{\text{train}}=535$, $n_{\text{test}}=167$, 15 cells).
+  \item \textbf{Comparisons:} paired corrected $t$-tests with Holm correction. A \emph{genuine improvement} requires
+    Holm $p<0.05$, the same sign in all 3 repeats, and admissibility.
+  \item \textbf{Admissibility:} every class recall $\ge 0.15$. Eligibility: 3 repeats $\times$ 3 seeds.
+  \item \textbf{Pre-registration:} plans and dated amendments were committed before running, so results cannot steer
+    the design.
+\end{itemize}

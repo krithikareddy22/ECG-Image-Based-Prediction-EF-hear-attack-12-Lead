@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink]{cleveref}
+\setlist{nosep,leftmargin=*}
+\definecolor{accent}{HTML}{2A78D6}
+\hypersetup{colorlinks=true,linkcolor=accent,urlcolor=accent,citecolor=accent}
+\setlength{\parskip}{3pt}
+
+\title{\textbf{Four-class LVEF classification from 12-lead ECG printout images}\\[4pt]
+\large Complete record of experiments (all branches, Phases 1--7) and final result}
+\author{[Student name] \\ Supervisor: [Professor name]}
+\date{November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent \textbf{Task.} Classify left-ventricular ejection fraction (LVEF) into four classes (Normal, Mild, Moderate,
+Severe) from images of hospital 12-lead ECG printouts. Labels come from echocardiography reports (Teichholz EF) linked
+to the ECGs by patient-name matching.
+
+\noindent \textbf{Data and protocol.} 837 development ECGs (794 patients) and a locked test set of 210 ECGs.
+\begin{itemize}
+  \item Every model was evaluated with patient-grouped 5-fold cross-validation repeated 3 times, with all choices
+    nested inside the training folds.
+  \item Comparisons use corrected repeated-CV tests with Holm correction.
+  \item Each study was pre-registered before it was run.
+\end{itemize}
+
+\noindent \textbf{What was tested.} Across seven phases and the branches of the repository:
+\begin{itemize}
+  \item image CNNs, foundation-model embeddings (ECGFounder, ECG-FM) and their fine-tuning;
+  \item LSTM, CNN-LSTM and 1-D ResNet models, MiniRocket, median-beat and clinician features;
+  \item ensembles, stacking and two-stage models;
+  \item label-cleaning schemes, threshold and band sweeps, and an external model trained on about 100,000 patients.
+\end{itemize}
+
+\noindent \textbf{Four-class result.} Four-class accuracy on all patients converges at 0.55--0.57 (best image-only
+0.571 [0.542, 0.600]; locked test 0.553 [0.485, 0.621]). Mild is the hardest class.
+
+\noindent \textbf{Final model: image-only triage.} It answers only when it is confident and refers the rest to echo.
+\begin{itemize}
+  \item \textbf{Cross-validation:} 56\,\% of patients answered, with \textbf{0.694} [0.655, 0.736] accuracy.
+  \item \textbf{Locked test, scored once:} 50\,\% answered, with \textbf{0.747} [0.660, 0.837] accuracy.
+  \item 85--90\,\% of its confident ``Normal'' answers exclude moderate or severe dysfunction.
+\end{itemize}
+
+\noindent \textbf{The limit.} The ECG estimates EF to about $\pm$13 points against class bands 10--12 points wide.
+Improvement needs ID-linked Simpson EF labels, digital ECGs, more Mild and Moderate patients, or large-scale public
+pre-training, which is under way.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\input{sec_intro_data}
+\input{sec_summary}
+\input{sec_final_model}
+\input{sec_phases_1_5}
+\input{sec_phase6_7}
+\input{sec_why}
+\input{sec_appendix}
+
+\end{document}

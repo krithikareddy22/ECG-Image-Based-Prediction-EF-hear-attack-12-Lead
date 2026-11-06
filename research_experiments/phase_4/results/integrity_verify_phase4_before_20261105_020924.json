@@ -1,0 +1,16 @@
+{
+ "checked": "2026-11-05 02:09:24",
+ "n_ref": 4648,
+ "n_cur": 4654,
+ "changed": 0,
+ "missing": 0,
+ "added_groups": {
+  "research_experiments/DATA_ACCESS.md": 1,
+  "research_experiments/EXPERIMENT_INVENTORY.md": 1,
+  "research_experiments/HANDOFF.md": 1,
+  "research_experiments/make_inventory.py": 1,
+  "research_experiments/regenerate_data_cache.py": 1,
+  "research_experiments/requirements-research.txt": 1
+ },
+ "ok_original_and_previous_unchanged": true
+}

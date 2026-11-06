@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\caption{Image-only four-class models (all 837 ECGs, development CV).}\label{tab:4.8}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.452\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.379\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.167\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Model} & \textbf{Accuracy [95 \% CI]} & \textbf{Recall N / Mi / Mo / S} \\
+\midrule
+HIER: two-stage (Normal / middle / Severe, then Mild vs Moderate) & 0.558 [0.522, 0.594] 0.86 / 0.17 / 0.41 / 0.34 &  \\
+HIER-ext (wider tuning grid) & 0.570 [0.527, 0.612] 0.88 / 0.16 / 0.43 / 0.34 &  \\
+ENH: synthetic 10-s reconstruction $\rightarrow$ ECGFounder & 0.528 0.76 / 0.18 / 0.44 / 0.41 &  \\
+ENH: median-beat shape model & 0.467 0.68 / 0.19 / 0.36 / 0.33 &  \\
+ENH: MiniRocket & 0.504 0.74 / 0.22 / 0.38 / 0.33 &  \\
+ENH-vote (6 members, tuned class weights) & 0.569 [0.527, 0.610] 0.88 / 0.17 / 0.46 / 0.29 &  \\
+\textbf{ULT-stack (10 members + predicted} \textbf{EF)} & \textbf{0.571 [0.542, 0.600]} 0.91 / 0.16 / 0.42 / 0.29 &  \\
+ULT2-stack (+ EchoNext-Mini) & 0.569 [0.538, 0.599] 0.90 / 0.15 / 0.44 / 0.28 &  \\
+\bottomrule
+\end{tabular}
+\end{table}

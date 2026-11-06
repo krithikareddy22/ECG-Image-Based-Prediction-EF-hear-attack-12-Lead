@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\caption{LSTM fusions (development CV, original labels).}\label{tab:4.6}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.324\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.187\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.123\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.122\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.097\linewidth-2\tabcolsep\relax}>{\raggedright\arraybackslash\hspace{0pt}}p{\dimexpr 0.145\linewidth-2\tabcolsep\relax}}
+\toprule
+\textbf{Model} & \textbf{Accuracy [95 \% CI]} & \textbf{Macro-F1} & \textbf{Mild recall} & \textbf{HF AUC} & \textbf{Params} \\
+\midrule
+F4 vote + LSTM-sel + prior rule & 0.559 [0.517, 0.600] & 0.449 & 0.182 & 0.834 & C1 + 24k--147k \\
+F3 vote + LSTM-sel & 0.553 [0.508, 0.597] & 0.453 & 0.198 & 0.834 & C1 + 24k--147k \\
+F2 CNN-LSTM + header + ECGFounder & 0.551 [0.517, 0.585] & 0.452 & 0.166 & 0.834 & 198,820 \\
+F1 LSTM + header + ECGFounder & 0.540 [0.507, 0.573] & 0.439 & 0.151 & 0.831 & 130,372 \\
+L6 CNN-LSTM + header & 0.497 [0.456, 0.539] & 0.389 & 0.182 & 0.799 & 116,644 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,46 @@
+{
+ "n_ecgs": 837,
+ "shape": [
+  837,
+  1000,
+  26
+ ],
+ "sampling_hz": 100,
+ "seconds": 10.0,
+ "channels": [
+  "I",
+  "II",
+  "III",
+  "aVR",
+  "aVL",
+  "aVF",
+  "V1",
+  "V2",
+  "V3",
+  "V4",
+  "V5",
+  "V6",
+  "rhythm_II",
+  "mask_I",
+  "mask_II",
+  "mask_III",
+  "mask_aVR",
+  "mask_aVL",
+  "mask_aVF",
+  "mask_V1",
+  "mask_V2",
+  "mask_V3",
+  "mask_V4",
+  "mask_V5",
+  "mask_V6",
+  "mask_rhythm_II"
+ ],
+ "missing_lead_segments": 3,
+ "lead_segments": 10044,
+ "recorded_fraction_within_windows": 0.9896758198738098,
+ "rhythm_recorded_fraction": 0.9989545941352844,
+ "amplitude_mV_p1_p99": [
+  -0.573784589767456,
+  0.6830287575721741
+ ]
+}

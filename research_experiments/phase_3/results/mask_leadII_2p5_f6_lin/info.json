@@ -1,0 +1,52 @@
+{
+ "spec": {
+  "blocks": [
+   [
+    "ecgf3",
+    "leadII_2p5",
+    "f6"
+   ]
+  ]
+ },
+ "cfg": {
+  "head": "linear",
+  "loss": "ce",
+  "weight": "balanced"
+ },
+ "seed": 42,
+ "sk_lr": false,
+ "folds": [
+  {
+   "fold": 0,
+   "l2": 3.0,
+   "best_epoch": null,
+   "n_params": 4100
+  },
+  {
+   "fold": 1,
+   "l2": 10.0,
+   "best_epoch": null,
+   "n_params": 4100
+  },
+  {
+   "fold": 2,
+   "l2": 0.1,
+   "best_epoch": null,
+   "n_params": 4100
+  },
+  {
+   "fold": 3,
+   "l2": 10.0,
+   "best_epoch": null,
+   "n_params": 4100
+  },
+  {
+   "fold": 4,
+   "l2": 10.0,
+   "best_epoch": null,
+   "n_params": 4100
+  }
+ ],
+ "minutes": 0.10217962662378947,
+ "repeat": 0
+}

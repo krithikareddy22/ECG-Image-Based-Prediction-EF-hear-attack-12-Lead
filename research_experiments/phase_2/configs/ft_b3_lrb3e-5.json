@@ -1,0 +1,25 @@
+{
+ "tag": "ft_b3_lrb3e-5",
+ "depth": "block3",
+ "head": "ce",
+ "loss": "ce",
+ "weight": "balanced",
+ "sampler": "none",
+ "gamma": 2.0,
+ "lr_b": 3e-05,
+ "lr_h": 0.001,
+ "wd": 0.05,
+ "dropout": 0.3,
+ "smooth": 0.05,
+ "noise": 0.1,
+ "crop": 0.9,
+ "ema": 0.99,
+ "bs": 16,
+ "epochs": 20,
+ "min_epochs": 3,
+ "patience": 6,
+ "seeds": [
+  42
+ ],
+ "threads": 1
+}

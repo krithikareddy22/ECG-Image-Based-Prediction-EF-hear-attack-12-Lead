@@ -1,0 +1,29 @@
+{
+ "n_ecgs": 837,
+ "dim": 768,
+ "build_minutes": 1.0171825289726257,
+ "embed_minutes": 5.6513301452000935,
+ "nan_embeddings": 0,
+ "sanity_ridge_cv_r": {
+  "Rate": {
+   "ecgfm_pretrained": 0.9578175344576697,
+   "ecgfm_random_init": 0.6434324694434057,
+   "ecgfounder_f6": 0.9629858757282277
+  },
+  "QRSD": {
+   "ecgfm_pretrained": 0.8359222524521727,
+   "ecgfm_random_init": 0.5892227560601672,
+   "ecgfounder_f6": 0.8407808187237176
+  },
+  "QTcB": {
+   "ecgfm_pretrained": 0.6489988742688334,
+   "ecgfm_random_init": 0.4011523842233129,
+   "ecgfounder_f6": 0.6282482490295507
+  },
+  "PR": {
+   "ecgfm_pretrained": 0.768650013134322,
+   "ecgfm_random_init": 0.20743666910861408,
+   "ecgfounder_f6": 0.6643041993331835
+  }
+ }
+}

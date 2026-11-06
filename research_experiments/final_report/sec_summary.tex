@@ -1,0 +1,24 @@
+% ---------------------------------------------------------------------------------------------------------
+\section{Summary of all work}\label{sec:summary}
+\begin{table}[H]\centering\small
+\caption{Every phase at a glance. Accuracy is four-class: on the test split for the original project and Phase 1,
+and in development cross-validation for Phases 2--7. Detail is in Sections~\ref{sec:p15}--\ref{sec:bands}.}\label{tab:summary}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{6.2cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{4.8cm}}\toprule
+Phase & What was tried & Best result & Conclusion \\\midrule
+Original & ECGNet, ResNet-18, EfficientNet, MobileNet, ConvNeXt, HOG+SVM, 1-D ResNet, header LR, XGBoost, fusions & 0.552 (header + ResNet-18; test) & the header numbers carried most of the signal; Mild recall 11\,\% \\
+Phase 1 & ECGFounder frozen / fine-tuned, ordinal heads, fusions & 0.524, macro-F1 0.448 (A2; test) & foundation model best balanced; test set exposed \\
+Phase 2 & audit, pre-registration, development CV, input variants & 0.544 (header + ECGFounder MLP) & rigorous protocol fixed \\
+Phase 3 & clinical features, gated / attention fusion, ensembles, calibration & 0.547 (C1 vote) & plateau at 0.53--0.55 \\
+Phase 4 & EF regression, multitask, label-quality training & 0.560 (n.s.) & information limit: $r=0.66$ vs 0.80 needed \\
+Phase 5 & engineered features, LightGBM, stacking, hierarchy, decision rules, augmentation & \textbf{0.561} (C3, selected) & 0 of 43 genuine improvements \\
+Phase 6 & fine-tuning, ECG-FM, inputs, digitisation & 0.561 (unchanged) & no candidate passed the screen \\
+Phase 6A/6B & Normal 270, borderline relabelling, T50/T55, Normal sizes, LSTM, CNN-LSTM, fusions & 0.569 (T55, n.s.) & LSTMs significantly worse; definition effects only \\
+Label studies & VER, BRES, CLEAR, SUB591, HC30, MMCLEAN, NF, MILDFIX & $\le$ 0.565 on all ECGs & label noise explains $<$\,1 point \\
+Phase 7 & multi-scale, soft labels, contrastive, 1-D ResNet, learning curve, cascades & 0.568 (cascade, not admissible) & \textbf{triage 0.694 on 56\,\%} \\
+Image-only push & two-stage, 10-s reconstruction, MiniRocket, median beats, stacking, EchoNext-Mini & \textbf{0.571} (ULT-stack) & plateau 0.57; external model adds nothing \\
+Band sweep & 3,313 class definitions & 0.626 (ESC 2021) & sensitivity analysis only \\
+\textbf{Locked test} & frozen image-only triage model, scored once & \textbf{0.747 on 50\,\%}; 4-class 0.553 & development estimates confirmed \\\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

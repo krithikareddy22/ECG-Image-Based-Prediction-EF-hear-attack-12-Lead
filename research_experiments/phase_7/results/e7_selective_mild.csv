@@ -1,0 +1,7 @@
+variant,mild_requirement,coverage,accuracy_answered,accuracy_ci95_corrected,mild_recall_overall,mild_precision_answered,n_mild_predicted,infeasible_folds,answered_Normal,answered_Mild,answered_Moderate,answered_Severe,recall_answered_Normal,recall_answered_Mild,recall_answered_Moderate,recall_answered_Severe,predicted_Normal,predicted_Mild,predicted_Moderate,predicted_Severe
+vote,0.1000,0.0000,,"[nan, nan]",0.0000,,0.0000,15,0.0000,0.0000,0.0000,0.0000,,,,,0.0000,0.0000,0.0000,0.0000
+vote,0.1500,0.0000,,"[nan, nan]",0.0000,,0.0000,15,0.0000,0.0000,0.0000,0.0000,,,,,0.0000,0.0000,0.0000,0.0000
+vote,0.2000,0.0000,,"[nan, nan]",0.0000,,0.0000,15,0.0000,0.0000,0.0000,0.0000,,,,,0.0000,0.0000,0.0000,0.0000
+AG,0.1000,0.0000,,"[nan, nan]",0.0000,,0.0000,15,0.0000,0.0000,0.0000,0.0000,,,,,0.0000,0.0000,0.0000,0.0000
+AG,0.1500,0.0000,,"[nan, nan]",0.0000,,0.0000,15,0.0000,0.0000,0.0000,0.0000,,,,,0.0000,0.0000,0.0000,0.0000
+AG,0.2000,0.0000,,"[nan, nan]",0.0000,,0.0000,15,0.0000,0.0000,0.0000,0.0000,,,,,0.0000,0.0000,0.0000,0.0000

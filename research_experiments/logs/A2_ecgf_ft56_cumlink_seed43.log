@@ -1,0 +1,18 @@
+[A2_ecgf_ft56_cumlink_seed43] params total 30,666,292 trainable 26,709,796
+ep  1 loss 1.368/1.234 vacc 0.524 vbal 0.473 vF1 0.467 vQWK 0.559 vHF 0.791 score 0.606 0.4m
+ep  2 loss 1.226/1.145 vacc 0.512 vbal 0.447 vF1 0.415 vQWK 0.583 vHF 0.799 score 0.599 0.8m
+ep  3 loss 1.155/1.107 vacc 0.500 vbal 0.433 vF1 0.400 vQWK 0.585 vHF 0.806 score 0.597 1.2m *
+ep  4 loss 1.091/1.112 vacc 0.506 vbal 0.454 vF1 0.406 vQWK 0.581 vHF 0.808 score 0.599 1.7m *
+ep  5 loss 1.039/1.104 vacc 0.500 vbal 0.447 vF1 0.398 vQWK 0.588 vHF 0.810 score 0.599 2.1m
+ep  6 loss 0.962/1.098 vacc 0.494 vbal 0.430 vF1 0.382 vQWK 0.591 vHF 0.810 score 0.594 2.6m
+ep  7 loss 0.905/1.079 vacc 0.506 vbal 0.440 vF1 0.399 vQWK 0.590 vHF 0.811 score 0.600 3.0m *
+ep  8 loss 0.859/1.063 vacc 0.506 vbal 0.430 vF1 0.398 vQWK 0.607 vHF 0.806 score 0.604 3.5m *
+ep  9 loss 0.810/1.061 vacc 0.518 vbal 0.440 vF1 0.412 vQWK 0.615 vHF 0.803 score 0.610 4.0m *
+ep 10 loss 0.772/1.063 vacc 0.512 vbal 0.433 vF1 0.401 vQWK 0.582 vHF 0.797 score 0.593 4.4m
+ep 11 loss 0.738/1.065 vacc 0.494 vbal 0.409 vF1 0.382 vQWK 0.578 vHF 0.794 score 0.584 4.8m
+ep 12 loss 0.718/1.067 vacc 0.482 vbal 0.399 vF1 0.368 vQWK 0.571 vHF 0.795 score 0.578 5.2m
+ep 13 loss 0.708/1.070 vacc 0.482 vbal 0.399 vF1 0.369 vQWK 0.573 vHF 0.793 score 0.578 5.6m
+ep 14 loss 0.703/1.072 vacc 0.476 vbal 0.392 vF1 0.361 vQWK 0.570 vHF 0.793 score 0.575 6.0m
+early stop
+[A2_ecgf_ft56_cumlink_seed43] TEST acc 0.495 bal 0.407 mF1 0.383 QWK 0.490 MildF1 0.164 macroAUC 0.688 HF-AUC 0.786 | VAL bal 0.440 mF1 0.412
+[A2_ecgf_ft56_cumlink_seed43] best epoch 9, 6.0 min
